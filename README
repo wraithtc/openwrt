@@ -1,0 +1,128 @@
+Ubuntu 14.04.5 LTS \n \l
+
+Qualcomm ChipCodeTM distribution tag (Use this tag to check out the code from git repository): r00005.1
+
+1. Generating the QSDK framework:
+$ repo init -u git://codeaurora.org/quic/qsdk/releases/manifest/qstak -b release -m caf_AU_LINUX_QSDK_RELEASE_ENDIVE_CC_TARGET_ALL.0.1.719.026.xml --repo-url=git://codeaurora.org/tools/repo.git --repo-branch=caf-stable
+$ repo sync
+$ mkdir -p qsdk/dl
+$ cp -rf qca-networking-2017-spf-5-0_qca_oem.git/NHSS.QSDK.5.0/apss_proc/out/proprietary/Wifi/qsdk-qca-wifi/* qsdk
+$ cp -rf qca-networking-2017-spf-5-0_qca_oem.git/NHSS.QSDK.5.0/apss_proc/out/proprietary/Wifi/qsdk-qca-wlan/* qsdk
+$ cp -rf qca-networking-2017-spf-5-0_qca_oem.git/NHSS.QSDK.5.0/apss_proc/out/proprietary/Wifi/qsdk-ieee1905-security/* qsdk
+$ cp -rf qca-networking-2017-spf-5-0_qca_oem.git/NHSS.QSDK.5.0/apss_proc/out/proprietary/Wifi/qsdk-qca-athdiag/* qsdk
+$ cp -rf qca-networking-2017-spf-5-0_qca_oem.git/NHSS.QSDK.5.0/apss_proc/out/proprietary/QSDK-Base/qca-lib/* qsdk
+$ cp -rf qca-networking-2017-spf-5-0_qca_oem.git/NHSS.QSDK.5.0/apss_proc/out/proprietary/QSDK-Base/qca-mcs-apps/* qsdk
+$ tar -xzvf qca-networking-2017-spf-5-0_qca_oem.git/WLAN.BL.3.5/cnss_proc/src/components/qca-wifi-fw-src-component-cmn-WLAN.BL.3.5-00007-S-1.tgz
+$ mv include qsdk/qca/src/qca-wifi-10.4/fwcommon
+$ tar -xzvf qca-networking-2017-spf-5-0_qca_oem.git/WLAN.BL.3.5/cnss_proc/src/components/qca-wifi-fw-src-component-halphy_tools-WLAN.BL.3.5-00007-S-1.tgz
+$ mv wlan/halphy_tools qsdk/qca/src/qca-wifi-10.4
+$ tar xjvf qca-networking-2017-spf-5-0_qca_oem.git/NHSS.QSDK.5.0/apss_proc/out/proprietary/BLUETOPIA/qca-bluetopia.tar.bz2 -C qsdk
+$ cp qca-networking-2017-spf-5-0_qca_oem.git/WLAN.BL.3.5/cnss_proc/bin/IPQ4019/hw.1/* qsdk/dl
+$ cp qca-networking-2017-spf-5-0_qca_oem.git/WLAN.BL.3.5/cnss_proc/bin/QCA9888/hw.2/* qsdk/dl
+$ cp qca-networking-2017-spf-5-0_qca_oem.git/WLAN.BL.3.5/cnss_proc/bin/QCA9984/hw.1/* qsdk/dl
+$ cp -rf qca-networking-2017-spf-5-0_qca_oem.git/WLAN.BL.3.5/cnss_proc/src/components/* qsdk/dl
+$ cp qca-networking-2017-spf-5-0_qca_oem.git/CNSS.PS.2.5/* qsdk/dl
+
+This step applies only for customers with HY-FI, or WHC packages.
+HY-FI or WHC PLC customers: Run the additional code:
+HY-FI:
+$ cp -rf qca-networking-2017-spf-5-0_qca_oem.git/NHSS.QSDK.5.0/apss_proc/out/proprietary/Hyfi/hyfi-ipq/* qsdk
+WHC:
+$ cp -rf qca-networking-2017-spf-5-0_qca_oem.git/NHSS.QSDK.5.0/apss_proc/out/proprietary/Wifi/qsdk-whc/* qsdk
+$ cp -rf qca-networking-2017-spf-5-0_qca_oem.git/NHSS.QSDK.5.0/apss_proc/out/proprietary/Wifi/qsdk-whcpy/* qsdk
+
+The local directory qsdk is created by these repo steps as a sub-directory of the current working directory, from which repo was executed. This is the working QSDK top level directory.
+
+If the CONFIG_DOWNLOAD_FOLDER=”” item in the default .config file is changed, the files qca-wifi-fw-*.tgz in cnss_proc/src/components must be copied to both the qsdk/dl folder as well as the newly configured download folder, in order for the builds on third party machines to complete. The file qca-wifi-fw-IPQ4019_hw_1-WLAN.BL.3.5-00007-S-1.tar.bz2 must be located in the newly configured download folder.
+
+2. Build the QSDK Environment:
+$ sudo apt-get install gcc g++ binutils patch bzip2 flex make gettext \
+pkg-config unzip zlib1g-dev libc6-dev subversion libncurses5-dev gawk \
+sharutils curl libxml-parser-perl ocaml-nox ocaml-nox ocaml ocaml-findlib \
+libpcre3-dev binutils-gold python-yaml
+
+3. Create the QSDK build
+To create the QSDK build, do the following:
+1). Move to the qsdk dir
+$ cd qsdk
+2). Install the different feeds in the build framework:
+$ ./scripts/feeds update -a
+$ ./scripts/feeds install -a -f
+3). Copy the base configuration to use for the build. Choose either the premium profile.
+Premium:
+$ cp qca/configs/qsdk/ipq806x_premium.config .config
+4). Regenerate a complete configuration file.
+$ make defconfig
+$ for pkg_num in 2 9;do sed 's/CONFIG_PACKAGE_qca-wifi-fw-hw'${pkg_num}'-10.4-asic=y/# CONFIG_PACKAGE_qca-wifi-fw-hw'${pkg_num}'-10.4-asic is not set/g' -i .config;done
+$ sed 's/CONFIG_PACKAGE_kmod-wil6210=m/# CONFIG_PACKAGE_kmod-wil6210 is not set/g' -i .config
+$ sed 's/CONFIG_PACKAGE_wigig-firmware=m/# CONFIG_PACKAGE_wigig-firmware is not set/g' -i .config
+5). Use the following code to build GCC v5.2:
+$ echo "CONFIG_TOOLCHAINOPTS=y" >> .config
+$ echo '# CONFIG_GCC_USE_VERSION_4_8_LINARO is not set' >> .config
+$ echo "CONFIG_GCC_USE_VERSION_5=y" >> .config
+$ echo 'CONFIG_GCC_VERSION="5.2.0"' >> .config
+$ echo "CONFIG_GCC_VERSION_5=y" >> .config
+6). Start the build:
+$ make V=s
+
+The preceding instructions download the packages required for the corresponding profile and create the image. After the build is complete, these files are available in the qsdk/bin/ipq806x directory:
+■  openwrt-ipq40xx-u-boot-stripped.elf (Bootloader)
+■  openwrt-ipq806x-qcom-ipq40xx-ap.dkxx-fit-uImage.itb (Kernel + dtb)
+■  openwrt-ipq806x-squashfs-root.img (SquashFS)
+■  openwrt-ipq806x-ipq40xx-ubi-root.img (UBIFS)
+
+4. Generate a complete firmware image:
+To build a complete firmware image:
+1). Install mkimage: 
+$ sudo apt-get install uboot-mkimage
+2). Install DTC: 
+$ sudo apt-get install device-tree-compiler
+3). Install Python 2.7
+4). Switch to the Qualcomm ChipCode directory:
+$ cd <chipcode directory>
+5). Some systems may require installing/updating the U-Boot tools: 
+$ sudo apt-get install u-boot-tools.
+Ubuntu 14.04 build hosts also require the mtd-utils package, 
+$ sudo apt-get install mtd-utils
+6). Copy the flash config files to IPQ4019.ILQ.5.0/common/build/ipq; choose the premium profile:
+Premium:
+$ cp meta-scripts/ipq40xx_premium/* qca-networking-2017-spf-5-0_qca_oem.git/IPQ4019.ILQ.5.0/common/build/ipq
+7). Copy pack.py to the NHSS.QSDK.5.0/apss_proc/out/ directory:
+$ cp -rf qsdk/qca/src/uboot-1.0/tools/pack.py qca-networking-2017-spf-5-0_qca_oem.git/NHSS.QSDK.5.0/apss_proc/out/
+8). Copy trustzone files to common/build/ipq
+$ cp -rf qca-networking-2017-spf-5-0_qca_oem.git/TZ.BF.2.7/trustzone_images/build/ms/bin/MAZAANAA/* qca-networking-2017-spf-5-0_qca_oem.git/IPQ4019.ILQ.5.0/common/build/ipq
+9). Copy the openwrt* images built to the IPQ4019.ILQ.5.0/common/build/ipq folder:
+$ cp -rf qsdk/bin/ipq806x/openwrt* qca-networking-2017-spf-5-0_qca_oem.git/IPQ4019.ILQ.5.0/common/build/ipq
+10). Copy the boardconfig* files to the IPQ4019.ILQ.5.0/common/build/ipq folder; choose the premium profile depending on your requirement:
+Premium:
+$ cp qca-networking-2017-spf-5-0_qca_oem.git/BOOT.BF.3.1.1/boot_images/build/ms/bin/40xx/misc/tools/config/boardconfig_premium qca-networking-2017-spf-5-0_qca_oem.git/IPQ4019.ILQ.5.0/common/build/ipq
+$ cp qca-networking-2017-spf-5-0_qca_oem.git/BOOT.BF.3.1.1/boot_images/build/ms/bin/40xx/misc/tools/config/appsboardconfig_premium qca-networking-2017-spf-5-0_qca_oem.git/IPQ4019.ILQ.5.0/common/build/ipq
+$ cp qca-networking-2017-spf-5-0_qca_oem.git/IPQ4019.ILQ.5.0/common/build/ipq/* qca-networking-2017-spf-5-0_qca_oem.git/IPQ4019.ILQ.5.0/common/build/ipq_p_gcc5/
+$ cp qca-networking-2017-spf-5-0_qca_oem.git/IPQ4019.ILQ.5.0/common/build/ipq/* qca-networking-2017-spf-5-0_qca_oem.git/IPQ4019.ILQ.5.0/common/build/ipq_allconf/
+11). Modify the SI path in contents.xml
+$ sed -i 's#</linux_root_path>#/</linux_root_path>#' qca-networking-2017-spf-5-0_qca_oem.git/IPQ4019.ILQ.5.0/contents.xml
+$ sed -i 's#</windows_root_path>#\\</windows_root_path>#' qca-networking-2017-spf-5-0_qca_oem.git/IPQ4019.ILQ.5.0/contents.xml
+12). Run these commands to create a single image; choose the premium profile depending on your requirement:
+$ cd qca-networking-2017-spf-5-0_qca_oem.git/IPQ4019.ILQ.5.0/common/build
+Premium:
+$ sed '/debug/d' -i update_common_info.py
+$ python update_common_info.py
+
+The commands create nor-ipq40xx-single.img, nand-ipq40xx-single.img, nornand-ipq40xx-single.img, emmc-ipq40xx-single.img, norplusemmc-single.img, and nor-ipq40xx-standard-single.img single images in the bin folder.
+Flash Type										Single Image
+SPI NOR (32 MBytes)								nor-ipq40xx-single.img
+SPI NOR + NAND									nornand-ipq40xx-single.img
+SPI NOR (16 MBytes) and DDR 128 MBytes			nor-ipq40xx-standard-single.img
+ONFI NAND										nand-ipq40xx-single.img
+eMMC											emmc-ipq40xx-single.img
+SPI NOR (16 MBytes) + eMMC						norplusemmc-ipq40xx-single.img
+
+5. Load the flash image and boot the platform:
+To load the image in flash and boot the platform using the image from flash, do the following:
+1). Commands for the TFTP process:
+(IPQ40XX) # set ipaddr 192.168.1.11
+(IPQ40XX) # set serverip 192.168.1.xx (This must be the address of the TFTP server)
+(IPQ40XX) # ping ${serverip}
+(IPQ40XX) # tftpboot 0x84000000 xxxx-ipq40xx-single.img
+2). Flash the image with this command:
+(IPQ40XX)# imgaddr=0x84000000 && source $imgaddr:script
