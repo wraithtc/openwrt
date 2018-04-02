@@ -1,0 +1,28 @@
+Package: kmod-qca-mcs
+Version: 3.14.77+g1d65974-dirty-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c)
+Source: qca/feeds/qca-mcs/qca-mcs-lkm
+Section: kernel
+Maintainer: Qualcomm Atheros, Inc.
+Architecture: ipq806x
+Installed-Size: 25929
+Filename: kmod-qca-mcs_3.14.77+g1d65974-dirty-1_ipq806x.ipk
+Size: 26729
+MD5Sum: fcbe53b5f38f400328fb62f2a6230ae5
+SHA256sum: 0ae4e2e66064bda00ec64753f141163beb16a29b20e9e9dd33559b09eba0c44e
+Description:  This package installs the IGMP/MLD Snooping Module
+
+Package: qca-mcs-apps
+Version: g1d65974-dirty-1
+Depends: libc, kmod-qca-mcs, libhyficommon, libpthread
+Source: qca/feeds/qca-mcs/qca-mcs-apps
+Section: QCA
+Maintainer: Qualcomm Atheros
+Architecture: ipq806x
+Installed-Size: 30997
+Filename: qca-mcs-apps_g1d65974-dirty-1_ipq806x.ipk
+Size: 31776
+MD5Sum: 83b35be4f2e97b8a32fa6e325d482905
+SHA256sum: 24dad5fe83db1b624a496623cb8e4af5f0f0a4da9945da1b6e5d09f34d09cd5e
+Description:  This package installs the IGMP/MLD snooping daemon and tools
+

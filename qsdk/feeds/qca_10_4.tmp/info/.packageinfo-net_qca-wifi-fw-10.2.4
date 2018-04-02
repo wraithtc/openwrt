@@ -1,0 +1,90 @@
+Source-Makefile: feeds/qca_10_4/net/qca-wifi-fw-10.2.4/Makefile
+Package: qca-wifi-fw-hw3-10.4-asic
+Version: CNSS.PS.2.5-00003-S-1-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: -AR9887_hw_1
+Section: QCA
+Category: QCA Proprietary software
+Title: QCA Wifi Firmware-hw3-10.4-asic
+Maintainer: Qualcomm Atheros
+Source: qca-wifi-fw-CNSS.PS.2.5-00003-S-1.tar.bz2
+Type: ipkg
+Description:     This package contains the qca-wifi firmware(-hw3-10.4-asic) used in 10.x drivers
+http://www.qca.qualcomm.com
+Qualcomm Atheros
+@@
+Config:
+  	menu "custom source directory"
+		depends on PACKAGE_qca-wifi-fw-hw3-10.4-asic
+	config qca-wifi-fw_USE_CUSTOM_SOURCE_DIR
+		depends on PACKAGE_qca-wifi-fw-hw3-10.4-asic
+		bool "Use custom source directory"
+		default n
+	config qca-wifi-fw_CUSTOM_SOURCE_DIR
+		depends on qca-wifi-fw_USE_CUSTOM_SOURCE_DIR
+		string "Custom source directory"
+		default ""
+	endmenu
+  	menu "overwrite package version"
+		depends on PACKAGE_qca-wifi-fw-hw3-10.4-asic
+	config qca-wifi-fw_USE_CUSTOM_VERSION
+		depends on PACKAGE_qca-wifi-fw-hw3-10.4-asic
+		bool "Use custom package version"
+		default n
+
+	config qca-wifi-fw_CUSTOM_VERSION
+		depends on qca-wifi-fw_USE_CUSTOM_VERSION
+		string "qca-wifi-fw version as string (default version: CNSS.PS.2.5-00003-S-1)"
+		default "CNSS.PS.2.5-00003-S-1"
+
+	endmenu
+@@
+
+Package: qca-wifi-fw-hw6-10.4-asic
+Version: CNSS.PS.2.5-00003-S-1-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: -AR9888_hw_2
+Section: QCA
+Category: QCA Proprietary software
+Title: QCA Wifi Firmware-hw6-10.4-asic
+Maintainer: Qualcomm Atheros
+Source: qca-wifi-fw-CNSS.PS.2.5-00003-S-1.tar.bz2
+Type: ipkg
+Description:     This package contains the qca-wifi firmware(-hw6-10.4-asic) used in 10.x drivers
+http://www.qca.qualcomm.com
+Qualcomm Atheros
+@@
+Config:
+  	menu "custom source directory"
+		depends on PACKAGE_qca-wifi-fw-hw6-10.4-asic
+	config qca-wifi-fw_USE_CUSTOM_SOURCE_DIR
+		depends on PACKAGE_qca-wifi-fw-hw6-10.4-asic
+		bool "Use custom source directory"
+		default n
+	config qca-wifi-fw_CUSTOM_SOURCE_DIR
+		depends on qca-wifi-fw_USE_CUSTOM_SOURCE_DIR
+		string "Custom source directory"
+		default ""
+	endmenu
+  	menu "overwrite package version"
+		depends on PACKAGE_qca-wifi-fw-hw6-10.4-asic
+	config qca-wifi-fw_USE_CUSTOM_VERSION
+		depends on PACKAGE_qca-wifi-fw-hw6-10.4-asic
+		bool "Use custom package version"
+		default n
+
+	config qca-wifi-fw_CUSTOM_VERSION
+		depends on qca-wifi-fw_USE_CUSTOM_VERSION
+		string "qca-wifi-fw version as string (default version: CNSS.PS.2.5-00003-S-1)"
+		default "CNSS.PS.2.5-00003-S-1"
+
+	endmenu
+@@
+
+

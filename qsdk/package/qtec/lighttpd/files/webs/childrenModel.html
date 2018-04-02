@@ -1,0 +1,156 @@
+<div class="children-model">
+    <div class="title-description">
+        <span class="title-main">儿童模式</span>
+        <span class="detail-description">可以限制终端上网时间</span>
+    </div>
+    <div class="children-content frame-content">
+        <div class="children-add" style="display: none;">
+            <div class="title-content">
+                <span class="title">儿童模式设备添加</span>
+            </div>
+            <div class="children-time-content">
+                <div class="child-add-device-info">
+                    <span class="child-device-name left-label">设备名称</span><span class="child-name"></span>
+                </div>
+                <div class="timelist">
+                    <span class="lable-title left-label">时间段</span>
+                    <input type="text" maxlength="2" value="00" class="hour-start hour" autocomplete="off"/>
+                    <label>时</label>
+                    <input type="text" maxlength="2" value="00" class="minute-start minute" autocomplete="off"/>
+                    <label>分</label>
+                    <span class="children-line"></span>
+                    <input type="text" maxlength="2" value="00" class="hour-end hour" autocomplete="off"/>
+                    <label>时</label>
+                    <input type="text" maxlength="2" value="00" class="minute-end minute" autocomplete="off"/>
+                    <label>分</label>
+                </div>
+                <div class="date-list">
+                    <span class="repeat left-label">重复周期</span>
+                    <div class="data-choose child-add-choose">
+                        <div class="monday">
+                            <input type="checkbox" class="checkhide" checked="checked"/>
+                            <span class="week-choose">星期一</span>
+                        </div>
+                        <div class="tuesday">
+                            <input type="checkbox" class="checkhide" checked="checked"/>
+                            <span class="week-choose">星期二</span>
+                        </div>
+                        <div class="wednesday">
+                            <input type="checkbox" class="checkhide" checked="checked"/>
+                            <span class="week-choose">星期三</span>
+                        </div>
+                        <div class="thursday">
+                            <input type="checkbox" class="checkhide" checked="checked"/>
+                            <span class="week-choose">星期四</span>
+                        </div>
+                        <div class="friday">
+                            <input type="checkbox" class="checkhide" checked="checked"/>
+                            <span class="week-choose">星期五</span>
+                        </div>
+                        <div class="saturday">
+                            <input type="checkbox" class="checkhide" checked="checked"/>
+                            <span class="week-choose">星期六</span>
+                        </div>
+                        <div class="sunday">
+                            <input type="checkbox" class="checkhide" checked="checked"/>
+                            <span class="week-choose">星期日</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="setting-btn font-clear">
+                    <button class="child-add-cancel btn" type="button">取消</button>
+                    <button class="child-save btn" type="button">
+                        <span>确认</span>
+                        <b class="disabled hide"></b>
+                    </button>
+                    <button class="child-modify btn hide" type="button">
+                        <span>修改</span>
+                        <b class="disabled hide"></b>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="children-info-list">
+            <div class="device-list-content">
+                <div class="title-top">
+                    <span class="list-title">设备列表</span>
+                    <button class="list-refresh-btn" type="button">
+                        <span>刷新列表</span>
+                        <b class="disabled hide"></b>
+                    </button>
+                </div>
+                <div class="device-list"></div>
+            </div>
+            <div class="children-device-list">
+                <div class="title-top">
+                    <span class="list-title">儿童模式设备列表</span>
+                </div>
+                <div class="description-con children-list"></div>
+                <!--<div class="shadow interval-modify hide">-->
+                <!--<div class="add-anti-contnet popup-content">-->
+                <!--<div class="title-content">-->
+                <!--<span class="title">儿童模式设备修改</span>-->
+                <!--</div>-->
+                <!--<div class="children-time-content">-->
+                <!--<div class="child-add-device-info">-->
+                <!--<span class="child-device-mac">MAC地址：<span class="child-modify-mac"></span></span>-->
+                <!--</div>-->
+                <!--<div class="timelist">-->
+                <!--<span class="lable-title">时间段：</span>-->
+                <!--<input type="text" maxlength="2" value="00" class="hour-start-modify hour" autocomplete="off"/>-->
+                <!--<label>时</label>-->
+                <!--<input type="text" maxlength="2" value="00" class="minute-start-modify minute" autocomplete="off"/>-->
+                <!--<label>分</label>-->
+                <!--<span class="children-line"></span>-->
+                <!--<input type="text" maxlength="2" value="00" class="hour-end-modify hour" autocomplete="off"/>-->
+                <!--<label>时</label>-->
+                <!--<input type="text" maxlength="2" value="00" class="minute-end-modify minute" autocomplete="off"/>-->
+                <!--<label>分</label>-->
+                <!--</div>-->
+                <!--<div class="date-list">-->
+                <!--<span class="repeat">重复周期：</span>-->
+                <!--<div class="data-choose child-modify-choose">-->
+                <!--<div class="monday">-->
+                <!--<input type="checkbox" class="checkhide"/>-->
+                <!--<span class="week-choose">星期一</span>-->
+                <!--</div>-->
+                <!--<div class="tuesday">-->
+                <!--<input type="checkbox" class="checkhide"/>-->
+                <!--<span class="week-choose">星期二</span>-->
+                <!--</div>-->
+                <!--<div class="wednesday">-->
+                <!--<input type="checkbox" class="checkhide"/>-->
+                <!--<span class="week-choose">星期三</span>-->
+                <!--</div>-->
+                <!--<div class="thursday">-->
+                <!--<input type="checkbox" class="checkhide"/>-->
+                <!--<span class="week-choose">星期四</span>-->
+                <!--</div>-->
+                <!--<div class="friday">-->
+                <!--<input type="checkbox" class="checkhide"/>-->
+                <!--<span class="week-choose">星期五</span>-->
+                <!--</div>-->
+                <!--<div class="saturday">-->
+                <!--<input type="checkbox" class="checkhide"/>-->
+                <!--<span class="week-choose">星期六</span>-->
+                <!--</div>-->
+                <!--<div class="sunday">-->
+                <!--<input type="checkbox" class="checkhide"/>-->
+                <!--<span class="week-choose">星期日</span>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="setting-btn">-->
+                <!--<button class="interval-modify-cancel btn" type="button">取消</button>-->
+                <!--<button class="child-modify btn" type="button">-->
+                <!--<span>确认</span>-->
+                <!--<b class="disabled hide"></b>-->
+                <!--</button>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+            </div>
+        </div>
+    </div>
+</div>

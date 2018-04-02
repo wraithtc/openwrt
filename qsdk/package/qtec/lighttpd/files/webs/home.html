@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<!--[if lt IE 9 ]>
+<html class="ie" lang="zh-cn"><![endif]-->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" >
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="./public/styles/normalize.css">
+    <link rel="stylesheet" type="text/css" href="./public/styles/common.css?v=1.2.2">
+    <link rel="stylesheet" type="text/css" href="./public/styles/home.css?v=1.2.2">
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="nav">
+                <div class="logo">
+                    <img src="./public/images/toplogo.png">
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li><a class="active" href="./home.html" target="_self">首页</a></li>
+                        <li><a href="./settings.html" target="_self">网关设置</a></li>
+                        <li><a href="./extend.html" target="_self">功能扩展</a></li>
+                        <!--<li><a href="./#">智能存储</a></li>-->
+                    </ul>
+                </div>
+            </div>
+            <div class="logout-content"><a class="logout" href="javascript:void(0)">注销</a></div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="manage-choose">
+                <div class="device-icon">
+                    <img src="./public/images/tools.png" alt="device-manage">
+                    <span>在线设备</span>
+                    <span class="connect-num"></span>
+                </div>
+                <div class="router-icon active">
+                    <img src="./public/images/router.png" alt="router-manage">
+                    <span class="router-mode">三点安全网关</span>
+                    <div class="router-ssid">
+                        <span class="normal-name"></span>
+                        <span class="speed-name"></span>
+                    </div>
+                </div>
+                <div class="internet-icon">
+                    <img src="./public/images/internet.png" alt="internet-manage">
+                    <span>互联网</span>
+                    <span class="speed-num"></span>
+                </div>
+            </div>
+            <div class="content">
+                <div class="device-content hide">
+                    <ul class="normal">
+                        <li class="normal-header fl active">联网设备</li>
+                        <li class="blacklist-header fr">黑名单</li>
+                    </ul>
+                    <div class="list">
+                        <div class="device-list"></div>
+                        <div class="black-list-content hide"></div>
+                    </div>
+                    <div class="limit-speed shadow hide">
+                        <div class="limit-speed-box popup-content">
+                            <div class="popup-header"><span>确认限速设备信息并输入限速值</span></div>
+                            <div class="popup-warp">
+                                <div class="limit-speed-content">
+                                    <div class="limit-info">
+                                        <span class="limit-label">设备名称：</span>
+                                        <span class="limit-speed-device-model-name"></span>
+                                    </div>
+                                    <div class="limit-info">
+                                        <span class="limit-label">设备ip：</span>
+                                        <span class="limit-speed-device-ip"></span>
+                                    </div>
+                                    <div class="limit-info limit-line">
+                                        <span class="limit-label">MAC地址：</span>
+                                        <span class="limit-speed-device-mac"></span>
+                                    </div>
+                                    <div class="limit-form">
+                                        <div class="form-item">
+                                            <label>下载速度</label>
+                                            <input type="text" class="limit-speed-download" maxlength="4" value="0">
+                                            <em>KB/s</em>
+                                        </div>
+                                        <div class="form-item">
+                                            <label>上传速度</label>
+                                            <input type="text" class="limit-speed-upload" maxlength="4" value="0">
+                                            <em>KB/s</em>
+                                        </div>
+                                    </div>
+                                    <div class="limit-tip">
+                                        <!--<span class="limit-label">是否生效：</span>-->
+                                        <!--<input type="checkbox">-->
+                                        <!--<label></label>-->
+                                        <span>* 0代表不限速，最大值为1000</span>
+                                    </div>
+                                    <div class="form-btn">
+                                        <button class="cancel" type="button">取消</button>
+                                        <button class="confirm" type="button"><span>确认</span><b class="disabled hide"></b></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="black-device-tip shadow hide">
+                        <div class="black-device-tip-box">
+                            <div class="popup-header"><span>确定将此设备拉黑？</span></div>
+                            <div class="black-device-content">
+                                <div class="black-device-info">
+                                    <div>
+                                        <span>设备名称：</span>
+                                        <span class="black-device-model-name"></span>
+                                    </div>
+                                    <div>
+                                        <span>设备ip：</span>
+                                        <span class="black-device-ip"></span>
+                                    </div>
+                                    <div>
+                                        <span>设备MAC地址：</span>
+                                        <span class="black-device-mac"></span>
+                                    </div>
+                                </div>
+                                <div class="form-btn">
+                                    <button class="black-cancel" type="button">取消</button>
+                                    <button class="black-confirm" type="button"><span>确认</span><b class="disabled hide"></b></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="black-device-remove shadow hide">
+                        <div class="black-device-tip-box">
+                            <div class="popup-warp">
+                                <div class="popup-header"><span>确定将此设备从黑名单移除？</span></div>
+                                <div class="black-device-content black-remove">
+                                    <div class="black-device-info">
+                                        <!--<div>-->
+                                        <!--<span>设备名称：</span>-->
+                                        <!--<span class="black-device-remove-name"></span>-->
+                                        <!--</div>-->
+                                        <div>
+                                            <span>设备mac：</span>
+                                            <span class="black-device-remove-mac"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-btn">
+                                        <button class="cancel" type="button">取消</button>
+                                        <button class="black-remove" type="button"><span>确认</span><b class="disabled hide"></b></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="router-content hide">
+                    <div class="router-info">
+                        <div class="router-status content-title">网关状态</div>
+                        <div class="router-info-content">
+                            <div class="router-info-left">
+                                <div class="model">
+                                    <span>网关型号</span>
+                                    <span class="model-info"></span>
+                                </div>
+                                <div class="rom">
+                                    <span>系统ROM版本</span>
+                                    <span class="rom-info"></span>
+                                </div>
+                            </div>
+                            <div class="router-info-right">
+                                <div class="mac">
+                                    <span>MAC地址</span>
+                                    <span class="router-mac"></span>
+                                </div>
+                                <div class="sn">
+                                    <span>S/N</span>
+                                    <span class="sn-info"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="other-status">
+                        <div class="status-upper">
+                            <div class="download-status">
+                                <div class="speed-status-header">
+                                    <span class="speed-status-title content-title">实时下行速度</span>
+                                    <span>下行速度：<span class="download-speed">--</span></span>
+                                </div>
+                                <div class="speed-status-description">
+                                    <div class="speed-status-img">
+                                        <div id="downloadSpeedChart" class="speed-line-chart"></div>
+                                    </div>
+                                    <div class="speed-status-statistics">
+                                        <span>下行带宽：<span class="download-bandwidth">--</span><span class="interval">|</span>最快下载速度：<span class="fast-download">--</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="upload-status">
+                                <div class="speed-status-header">
+                                    <span class="speed-status-title content-title">实时上行速度</span>
+                                    <span>上行速度：<span class="upload-speed">--</span></span>
+                                </div>
+                                <div class="speed-status-description">
+                                    <div class="speed-status-img">
+                                        <div id="uploadSpeedChart" class="speed-line-chart"></div>
+                                    </div>
+                                    <div class="speed-status-statistics">
+                                        <span>上行带宽：<span class="upload-bandwidth">--</span><span class="interval">|</span>最快上传速度：<span class="fast-upload">--</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="status-lower">
+                            <div class="cpu-status">
+                                <div class="cpu-status-header">
+                                    <span class="cpu-status-title content-title">当前CPU状态</span>
+                                    <span>当前CPU负载：<span class="cpu-load">--</span></span>
+                                </div>
+                                <div class="cpu-status-description">
+                                    <div class="cpu-status-img">
+                                        <div id="cpuChart" class="cpu-line-chart"></div>
+                                    </div>
+                                    <div class="cpu-status-statistics">
+                                        <span>CPU核心数：<span class="core-num">--</span><span class="interval">|</span>核心频率：<span class="core-frequency">--</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="memory-status">
+                                <div class="memory-status-header">
+                                    <span class="memory-status-title content-title">当前内存状态</span>
+                                    <span>当前内存占用：<span class="memory-overthead">--</span></span>
+                                </div>
+                                <div class="memory-status-description">
+                                    <div class="memory-status-img">
+                                        <div id="memoryChart" class="memory-line-chart"></div>
+                                    </div>
+                                    <div class="memory-status-statistics">
+                                        <span>内存容量：<span class="memory-capacity">--MB</span><span class="interval">|</span>内存类型：<span class="memory-type">--</span><span class="interval">|</span>内存频率：<span class="memory-frequency">--</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="connect-content hide">
+                    <div class="extranet-status">
+                        <span class="extranet-status-header content-title">外网状态</span>
+                        <div class="extranet-info">
+                            <div class="extranet-info-row">
+                                <div><span>连接类型</span><span class="conntect-way extranet-info-item"></span></div>
+                                <div><span>IP地址</span><span class="extranet-ip extranet-info-item"></span></div>
+                            </div>
+                            <div class="extranet-info-row">
+                                <div>
+                                    <span>DNS</span>
+                                    <span class="preferreddns extranet-info-item"></span>
+                                    <span class="sparedns extranet-info-item"></span>
+                                </div>
+                                <div>
+                                    <span>网关地址</span>
+                                    <span class="gateway extranet-info-item"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="boradband-status">
+                        <span class="boradband-status-header content-title">外网带宽</span>
+                        <div class="boradband-status-row">
+                            <div class="boradband-status-info">
+                                <div>
+                                    <span>下行带宽</span>
+                                    <span class="download-boradband boradband-info-item">--Mbps</span>
+                                </div>
+                                <div>
+                                    <span>上行带宽</span>
+                                    <span class="upload-boradband boradband-info-item">--Mbps</span>
+                                </div>
+                            </div>
+                            <div class="boradband-status-control">
+                                <div><a href="javascript:void(0)" target="_self" class="boradband-setting">手动设置</a></div>
+                                <div><button class="boradband-test" type="button">一键测速</button></div>
+                            </div>
+                            <div class="boradband-testing popup-content">
+                                <div class="popup-warp">
+                                    <div class="popup-header"><span>宽带测速</span></div>
+                                    <div class="tip-content">
+                                        <div class="tip-span">
+                                            <span>宽带测速会占用大部分带宽将会对已连接设备网速产生较大影响</span>
+                                            <span>确认继续测试带宽？</span>
+                                        </div>
+                                        <div class="form-btn">
+                                            <button class="cancel" type="button">取消</button>
+                                            <button class="speed-testing-confirm" type="button"><span>确认</span><b class="disabled hide"></b></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="speed-testing popup-content">
+                                <div id="speedTestingCanvas" class="speed-testing-canvas"></div>
+                                <div class="speed-test-bottom">
+                                    <div class="current-speed">
+                                        <span>当前网速：</span>
+                                        <span class="real-speed">正在获取，请稍候...</span>
+                                    </div>
+                                    <div class="speed-testing-tip"><span class="speed-testing-tip-content">测速中请稍候，此过程需要1-2分钟左右</span></div>
+                                    <div class="form-btn">
+                                        <button class="testing-cancel" type="button">取消测试</button>
+                                        <!--<button class="testing-confirm" type="button">确认</button>-->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="speed-testing-results popup-content">
+                                <div class="popup-header"><span>测速结果</span></div>
+                                <div class="speed-result">
+                                    <span class="result-label">测试的最大带宽为</span>
+                                    <span class="testing-result"></span>
+                                </div>
+                                <!--<div class="speed-result">-->
+                                <!--<span class="result-label">上传带宽</span>-->
+                                <!--<span class="testing-result-upload"></span>-->
+                                <!--</div>-->
+                                <div class="speed-testing-results-btn">
+                                    <button type="button" class="restart-testing">重新测试</button>
+                                    <button type="button" class="result-confirm">确认</button>
+                                </div>
+                                <!--<div class="speed-testing-results-footer">-->
+                                    <!--<span>测速不准?</span>-->
+                                    <!--<a href="javascript:void(0)" onclick="manualSetting()">手动设置</a>-->
+                                <!--</div>-->
+                            </div>
+                            <div class="manual-setting popup-content">
+                                <div class="popup-warp">
+                                    <div class="popup-header"><span>手动设置带宽</span></div>
+                                    <div class="manual-setting-content">
+                                        <div class="form-item">
+                                            <label>下行带宽</label>
+                                            <input type="text" class="manual-setting-download" maxlength="6" placeholder="" autocomplete="off">
+                                            <span>Mbps</span>
+                                        </div>
+                                        <div class="form-item">
+                                            <label>上行带宽</label>
+                                            <input type="text" class="manual-setting-upload" maxlength="6" placeholder="" autocomplete="off">
+                                            <span>Mbps</span>
+                                        </div>
+                                        <div class="form-tip"><span class="tip-info"></span></div>
+                                        <div class="form-btn">
+                                            <button class="cancel manual-setting-cancel" type="button">取消</button>
+                                            <button class="manual-setting-confirm" type="button"><span>确认</span><b class="disabled hide"></b></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="error-tip"><span class="error-info"></span></div>
+    </div>
+    <footer>
+        <p class="text-center">Copyright&copy;浙江三点科技有限公司</p>
+    </footer>
+    <div class="shadow popup-shadow hide"></div>
+    <div class="result-content" style="display: none;">
+        <div class="result-icon hide"></div>
+        <div class="result-tip"></div>
+    </div>
+    <div class="loading-content" style="display: none;">
+        <div class="loading-img">
+            <img src="./public/images/spinner.gif" alt="loading...">
+        </div>
+        <div class="loading-tip">正在保存，请稍候...</div>
+    </div>
+    <script src="./public/javascripts/jquery-3.2.1.min.js"></script>
+    <script>
+        var rand = Math.random();
+        $('.menu a').each(function(){
+            var href = $(this).attr('href');
+            $(this).attr('href', href + '?t=' + rand);
+        });
+    </script>
+    <script src="./public/javascripts/echarts.min.js"></script>
+    <script src="./public/javascripts/error.js?v=1.2.2"></script>
+    <script src="public/javascripts/common.js?v=1.2.2"></script>
+    <script src="public/javascripts/setting_common.js?v=1.2.2"></script>
+    <script src="./public/javascripts/home.js?v=1.2.2"></script>
+    <script src="./public/javascripts/underscore-min.js"></script>
+    <script type="text/template" id="deviceListTemplate">
+        <%_.each(obj, function(e,i){%>
+            <%if(e.stastatus>0){%>
+            <div class="device-list-detail">
+                <div class="device-info">
+                    <div class="point-info">
+                        <div class="device-logo">
+                            <%if(e.devicetype==0){%>
+                            <span class="device-type pc"></span>
+                            <%}%>
+                            <%if(e.devicetype==1){%>
+                                <span class="device-type andriod"></span>
+                            <%}%>
+                            <%if(e.devicetype==2){%>
+                            <span class="device-type ios"></span>
+                            <%}%>
+                            <%if(e.devicetype==3){%>
+                            <span class="device-type other-device"></span>
+                            <%}%>
+                            <%if(e.ownip==e.ipaddr){%>
+                            <span class="self-tip">本机</span>
+                            <%}%>
+                        </div>
+                        <div class="device-model">
+                            <span class="model-name"><%=e.staname%></span>
+                            <%if(e.accesstype=='wired'){%>
+                            <span class="connect-way">有线</span>
+                            <%}%>
+                            <%if(e.accesstype=='2.4G'){%>
+                            <span class="connect-way">2.4G</span>
+                            <%}%>
+                            <%if(e.accesstype=='5G'){%>
+                            <span class="connect-way">5G</span>
+                            <%}%>
+                            <div>在线时长：<span class="online-time"><%=e.time%></span></div>
+                        </div>
+                    </div>
+                    <div class="device-connect-info">
+                        <span>IP：<span class="ipaddr"><%=e.ipaddr%></span></span>
+                        <span>MAC：<span class="mac-info"><%=e.macaddr%></span></span>
+                    </div>
+                    <div class="device-speed">
+                        <%if((e.tx/1024).toFixed(2)<=1024){%>
+                        <span>上行速度：<span class="device-download-speed"><%=(e.tx/1024).toFixed(2)%></span>KB/s</span>
+                        <%}else{%>
+                        <span>上行速度：<span class="device-download-speed"><%=(e.tx/1048576).toFixed(2)%></span>MB/s</span>
+                        <%}%>
+                        <%if((e.rx/1024).toFixed(2)<=1024){%>
+                        <span>下行速度：<span class="device-download-speed"><%=(e.rx/1024).toFixed(2)%></span>KB/s</span>
+                        <%}else{%>
+                        <span>下行速度：<span class="device-download-speed"><%=(e.rx/1048576).toFixed(2)%></span>MB/s</span>
+                        <%}%>
+                    </div>
+                    <div class="device-control">
+                        <button class="speed-limit" type="button" onclick="speedlimit('<%=i%>','<%=e.staname%>','<%=e.macaddr%>','<%=e.ipaddr%>')"><span>限速</span><b class="disabled hide"></b></button>
+                        <%if(e.ownip==e.ipaddr){%>
+                        <button class="black-device-btn" disabled="disabled" type="button">拉黑</button>
+                        <%}else{%>
+                        <button class="black-device-btn" type="button" onclick="forbid('<%=e.staname%>','<%=e.macaddr%>','<%=e.ipaddr%>')">拉黑</button>
+                        <%}%>
+                    </div>
+                </div>
+                <div class="limit-setting hide">
+                    <div class="limit-speed">
+                        <label>下行速度</label>
+                        <input type="text" class="limit-speed-download" value="0" maxlength="4" placeholder="">
+                        <em>KB/s</em>
+                    </div>
+                    <div class="limit-speed">
+                        <label>上行速度</label>
+                        <input type="text" class="limit-speed-upload" value="0" maxlength="4" placeholder="">
+                        <em>KB/s</em>
+                    </div>
+                    <span>* 0代表不限速，最大值为1000</span>
+                    <div class="limit-speed-btn">
+                        <button class="limit-cancel" type="button">取消</button>
+                        <button class="limit-confirm" type="button">确认</button>
+                    </div>
+                </div>
+            </div>
+            <%}%>
+        <%})%>
+    </script>
+    <script type="text/template" id="blackListTemplate">
+        <%_.each(obj, function(e){%>
+            <div class="black-list">
+                <div class="terminal-name"><span class="black-device-name"><%=e.name%></span></div>
+                <div class="device-mac">mac:<span class="black-device-mac"><%=e.macaddr%></span></div>
+                <div class="black-list-del"><button type="button" onclick="blackdel('<%=e.name%>','<%=e.macaddr%>')"><span>移除</span><b class="disabled hide"></b></button></div>
+            </div>
+        <%})%>
+    </script>
+</body>
+</html>

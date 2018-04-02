@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/gwsw/S304/!svn/ver/7551/trunk/platform/src/fwk/include/xml
+END
+xml_nano.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/gwsw/S304/!svn/ver/7551/trunk/platform/src/fwk/include/xml/xml_nano.h
+END
+xml_parser_sm.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/gwsw/S304/!svn/ver/1017/trunk/platform/src/fwk/include/xml/xml_parser_sm.h
+END

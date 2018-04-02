@@ -1,0 +1,46 @@
+Source-Makefile: feeds/qca_10_4/net/qca-lowi/Makefile
+Package: qca-lowi
+Version: g96b5b9e-dirty-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread qca-hostap-10.4 @(!(PACKAGE_hostapd)) +librt +libpthread +libnl +libxml2 +USE_UCLIBCXX:uclibcxx +USE_LIBSTDCXX:libstdcpp
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Depends: qca-hostap-10.4
+Section: QCA
+Category: QCA Proprietary software
+Title: QCA Location WiFi Interface
+Maintainer: Qualcomm Atheros
+Source: 
+Type: ipkg
+Description: QCA Location WiFi Interface
+http://www.qca.qualcomm.com
+Qualcomm Atheros
+@@
+Config:
+	menu "custom source directory"
+		depends on PACKAGE_qca-lowi
+	config qca-lowi_USE_CUSTOM_SOURCE_DIR
+		depends on PACKAGE_qca-lowi
+		bool "Use custom source directory"
+		default n
+	config qca-lowi_CUSTOM_SOURCE_DIR
+		depends on qca-lowi_USE_CUSTOM_SOURCE_DIR
+		string "Custom source directory"
+		default ""
+	endmenu
+	menu "overwrite package version"
+		depends on PACKAGE_qca-lowi
+	config qca-lowi_USE_CUSTOM_VERSION
+		depends on PACKAGE_qca-lowi
+		bool "Use custom package version"
+		default n
+
+	config qca-lowi_CUSTOM_VERSION
+		depends on qca-lowi_USE_CUSTOM_VERSION
+		string "qca-lowi version as string (default version: g96b5b9e-dirty)"
+		default "g96b5b9e-dirty"
+
+	endmenu
+@@
+
+

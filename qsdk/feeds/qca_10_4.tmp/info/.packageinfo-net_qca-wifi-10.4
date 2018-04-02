@@ -1,0 +1,378 @@
+Source-Makefile: feeds/qca_10_4/net/qca-wifi-10.4/Makefile
+Package: kmod-qca-wifi-10.4-akronite-perf
+Menu: 1
+Prereq-Check: 1
+Version: <LINUX_VERSION>+g96b5b9e-dirty-1
+Depends: +libgcc +libc +wireless-tools +librt +iproute2 @(!(PACKAGE_kmod-ath&&PACKAGE_kmod-mac80211)) @TARGET_ipq806x +TARGET_ipq806x:kmod-qca-nss-drv
+Conflicts: 
+Menu-Depends: 
+Provides: kmod-qca-wifi-10.4
+Build-Variant: akronite-perf
+Build-Depends: qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic
+Section: QCA
+Category: QCA Proprietary software
+Title: QCA Wireless LAN Driver
+Maintainer: Qualcomm Atheros
+Source: 
+Type: ipkg
+Description: QCA Wireless LAN Driver
+http://www.qca.qualcomm.com
+Qualcomm Atheros
+@@
+Config:
+	menu "custom source directory"
+		depends on PACKAGE_kmod-qca-wifi-10.4-akronite-perf
+	config qca-wifi-10.4_USE_CUSTOM_SOURCE_DIR
+		depends on PACKAGE_kmod-qca-wifi-10.4-akronite-perf
+		bool "Use custom source directory"
+		default n
+	config qca-wifi-10.4_CUSTOM_SOURCE_DIR
+		depends on qca-wifi-10.4_USE_CUSTOM_SOURCE_DIR
+		string "Custom source directory"
+		default ""
+	endmenu
+	menu "overwrite package version"
+		depends on PACKAGE_kmod-qca-wifi-10.4-akronite-perf
+	config qca-wifi-10.4_USE_CUSTOM_VERSION
+		depends on PACKAGE_kmod-qca-wifi-10.4-akronite-perf
+		bool "Use custom package version"
+		default n
+
+	config qca-wifi-10.4_CUSTOM_VERSION
+		depends on qca-wifi-10.4_USE_CUSTOM_VERSION
+		string "qca-wifi-10.4 version as string (default version: g96b5b9e-dirty)"
+		default "g96b5b9e-dirty"
+
+	endmenu
+@@
+
+Package: kmod-qca-wifi-10.4-akronite-perf-emu
+Menu: 1
+Prereq-Check: 1
+Version: <LINUX_VERSION>+g96b5b9e-dirty-1
+Depends: +libgcc +libc +wireless-tools +librt +iproute2 @(!(PACKAGE_kmod-ath&&PACKAGE_kmod-mac80211)) @TARGET_ipq806x +TARGET_ipq806x:kmod-qca-nss-drv
+Conflicts: 
+Menu-Depends: 
+Provides: kmod-qca-wifi-10.4
+Build-Variant: akronite-perf-emu
+Build-Depends: qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic
+Section: QCA
+Category: QCA Proprietary software
+Title: QCA Wireless LAN Driver
+Maintainer: Qualcomm Atheros
+Source: 
+Type: ipkg
+Description: QCA Wireless LAN Driver
+http://www.qca.qualcomm.com
+Qualcomm Atheros
+@@
+Config:
+	menu "custom source directory"
+		depends on PACKAGE_kmod-qca-wifi-10.4-akronite-perf-emu
+	config qca-wifi-10.4_USE_CUSTOM_SOURCE_DIR
+		depends on PACKAGE_kmod-qca-wifi-10.4-akronite-perf-emu
+		bool "Use custom source directory"
+		default n
+	config qca-wifi-10.4_CUSTOM_SOURCE_DIR
+		depends on qca-wifi-10.4_USE_CUSTOM_SOURCE_DIR
+		string "Custom source directory"
+		default ""
+	endmenu
+	menu "overwrite package version"
+		depends on PACKAGE_kmod-qca-wifi-10.4-akronite-perf-emu
+	config qca-wifi-10.4_USE_CUSTOM_VERSION
+		depends on PACKAGE_kmod-qca-wifi-10.4-akronite-perf-emu
+		bool "Use custom package version"
+		default n
+
+	config qca-wifi-10.4_CUSTOM_VERSION
+		depends on qca-wifi-10.4_USE_CUSTOM_VERSION
+		string "qca-wifi-10.4 version as string (default version: g96b5b9e-dirty)"
+		default "g96b5b9e-dirty"
+
+	endmenu
+@@
+
+Package: kmod-qca-wifi-10.4-perf
+Menu: 1
+Prereq-Check: 1
+Version: <LINUX_VERSION>+g96b5b9e-dirty-1
+Depends: +libgcc +libc +wireless-tools +librt +iproute2 @(!(PACKAGE_kmod-ath&&PACKAGE_kmod-mac80211)) @TARGET_ar71xx
+Conflicts: 
+Menu-Depends: 
+Provides: kmod-qca-wifi-10.4
+Build-Variant: perf
+Build-Depends: qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic
+Section: QCA
+Category: QCA Proprietary software
+Title: QCA Wireless LAN Driver
+Maintainer: Qualcomm Atheros
+Source: 
+Type: ipkg
+Description: QCA Wireless LAN Driver
+http://www.qca.qualcomm.com
+Qualcomm Atheros
+@@
+Config:
+	menu "custom source directory"
+		depends on PACKAGE_kmod-qca-wifi-10.4-perf
+	config qca-wifi-10.4_USE_CUSTOM_SOURCE_DIR
+		depends on PACKAGE_kmod-qca-wifi-10.4-perf
+		bool "Use custom source directory"
+		default n
+	config qca-wifi-10.4_CUSTOM_SOURCE_DIR
+		depends on qca-wifi-10.4_USE_CUSTOM_SOURCE_DIR
+		string "Custom source directory"
+		default ""
+	endmenu
+	menu "overwrite package version"
+		depends on PACKAGE_kmod-qca-wifi-10.4-perf
+	config qca-wifi-10.4_USE_CUSTOM_VERSION
+		depends on PACKAGE_kmod-qca-wifi-10.4-perf
+		bool "Use custom package version"
+		default n
+
+	config qca-wifi-10.4_CUSTOM_VERSION
+		depends on qca-wifi-10.4_USE_CUSTOM_VERSION
+		string "qca-wifi-10.4 version as string (default version: g96b5b9e-dirty)"
+		default "g96b5b9e-dirty"
+
+	endmenu
+@@
+
+Package: kmod-qca-wifi-10.4-unified-perf
+Menu: 1
+Prereq-Check: 1
+Version: <LINUX_VERSION>+g96b5b9e-dirty-1
+Depends: +libgcc +libc +wireless-tools +librt +iproute2 @(!(PACKAGE_kmod-ath&&PACKAGE_kmod-mac80211)) @TARGET_ar71xx
+Conflicts: 
+Menu-Depends: 
+Provides: kmod-qca-wifi-10.4
+Build-Variant: unified-perf
+Build-Depends: qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic
+Section: QCA
+Category: QCA Proprietary software
+Title: QCA Wireless LAN Driver
+Maintainer: Qualcomm Atheros
+Source: 
+Type: ipkg
+Description: QCA Wireless LAN Driver
+http://www.qca.qualcomm.com
+Qualcomm Atheros
+@@
+Config:
+	menu "custom source directory"
+		depends on PACKAGE_kmod-qca-wifi-10.4-unified-perf
+	config qca-wifi-10.4_USE_CUSTOM_SOURCE_DIR
+		depends on PACKAGE_kmod-qca-wifi-10.4-unified-perf
+		bool "Use custom source directory"
+		default n
+	config qca-wifi-10.4_CUSTOM_SOURCE_DIR
+		depends on qca-wifi-10.4_USE_CUSTOM_SOURCE_DIR
+		string "Custom source directory"
+		default ""
+	endmenu
+	menu "overwrite package version"
+		depends on PACKAGE_kmod-qca-wifi-10.4-unified-perf
+	config qca-wifi-10.4_USE_CUSTOM_VERSION
+		depends on PACKAGE_kmod-qca-wifi-10.4-unified-perf
+		bool "Use custom package version"
+		default n
+
+	config qca-wifi-10.4_CUSTOM_VERSION
+		depends on qca-wifi-10.4_USE_CUSTOM_VERSION
+		string "qca-wifi-10.4 version as string (default version: g96b5b9e-dirty)"
+		default "g96b5b9e-dirty"
+
+	endmenu
+@@
+
+Package: kmod-qca-wifi-10.4-dakota-perf
+Menu: 1
+Prereq-Check: 1
+Version: <LINUX_VERSION>+g96b5b9e-dirty-1
+Depends: +libgcc +libc +wireless-tools +librt +iproute2 @(!(PACKAGE_kmod-ath&&PACKAGE_kmod-mac80211)) @TARGET_ipq806x +TARGET_ipq806x:kmod-qca-nss-drv
+Conflicts: 
+Menu-Depends: 
+Provides: kmod-qca-wifi-10.4
+Build-Variant: dakota-perf
+Build-Depends: qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic
+Section: QCA
+Category: QCA Proprietary software
+Title: QCA Wireless LAN Driver
+Maintainer: Qualcomm Atheros
+Source: 
+Type: ipkg
+Description: QCA Wireless LAN Driver
+http://www.qca.qualcomm.com
+Qualcomm Atheros
+@@
+Config:
+	menu "custom source directory"
+		depends on PACKAGE_kmod-qca-wifi-10.4-dakota-perf
+	config qca-wifi-10.4_USE_CUSTOM_SOURCE_DIR
+		depends on PACKAGE_kmod-qca-wifi-10.4-dakota-perf
+		bool "Use custom source directory"
+		default n
+	config qca-wifi-10.4_CUSTOM_SOURCE_DIR
+		depends on qca-wifi-10.4_USE_CUSTOM_SOURCE_DIR
+		string "Custom source directory"
+		default ""
+	endmenu
+	menu "overwrite package version"
+		depends on PACKAGE_kmod-qca-wifi-10.4-dakota-perf
+	config qca-wifi-10.4_USE_CUSTOM_VERSION
+		depends on PACKAGE_kmod-qca-wifi-10.4-dakota-perf
+		bool "Use custom package version"
+		default n
+
+	config qca-wifi-10.4_CUSTOM_VERSION
+		depends on qca-wifi-10.4_USE_CUSTOM_VERSION
+		string "qca-wifi-10.4 version as string (default version: g96b5b9e-dirty)"
+		default "g96b5b9e-dirty"
+
+	endmenu
+@@
+
+Package: kmod-qca-wifi-10.4-unified-profile
+Menu: 1
+Prereq-Check: 1
+Version: <LINUX_VERSION>+g96b5b9e-dirty-1
+Depends: +libgcc +libc +wireless-tools +librt +iproute2 @(!(PACKAGE_kmod-ath&&PACKAGE_kmod-mac80211)) @TARGET_ipq806x +TARGET_ipq806x:kmod-qca-nss-drv
+Conflicts: 
+Menu-Depends: 
+Provides: kmod-qca-wifi-10.4
+Build-Variant: unified-profile
+Build-Depends: qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic
+Section: QCA
+Category: QCA Proprietary software
+Title: QCA Wireless LAN Driver
+Maintainer: Qualcomm Atheros
+Source: 
+Type: ipkg
+Description: QCA Wireless LAN Driver
+http://www.qca.qualcomm.com
+Qualcomm Atheros
+@@
+Config:
+	menu "custom source directory"
+		depends on PACKAGE_kmod-qca-wifi-10.4-unified-profile
+	config qca-wifi-10.4_USE_CUSTOM_SOURCE_DIR
+		depends on PACKAGE_kmod-qca-wifi-10.4-unified-profile
+		bool "Use custom source directory"
+		default n
+	config qca-wifi-10.4_CUSTOM_SOURCE_DIR
+		depends on qca-wifi-10.4_USE_CUSTOM_SOURCE_DIR
+		string "Custom source directory"
+		default ""
+	endmenu
+	menu "overwrite package version"
+		depends on PACKAGE_kmod-qca-wifi-10.4-unified-profile
+	config qca-wifi-10.4_USE_CUSTOM_VERSION
+		depends on PACKAGE_kmod-qca-wifi-10.4-unified-profile
+		bool "Use custom package version"
+		default n
+
+	config qca-wifi-10.4_CUSTOM_VERSION
+		depends on qca-wifi-10.4_USE_CUSTOM_VERSION
+		string "qca-wifi-10.4 version as string (default version: g96b5b9e-dirty)"
+		default "g96b5b9e-dirty"
+
+	endmenu
+@@
+
+Package: kmod-qca-wifi-10.4-lowmem-profile
+Menu: 1
+Prereq-Check: 1
+Version: <LINUX_VERSION>+g96b5b9e-dirty-1
+Depends: +libgcc +libc +wireless-tools +librt +iproute2 @(!(PACKAGE_kmod-ath&&PACKAGE_kmod-mac80211)) @TARGET_ar71xx
+Conflicts: 
+Menu-Depends: 
+Provides: kmod-qca-wifi-10.4
+Build-Variant: lowmem-profile
+Build-Depends: qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic
+Section: QCA
+Category: QCA Proprietary software
+Title: QCA Wireless LAN Driver
+Maintainer: Qualcomm Atheros
+Source: 
+Type: ipkg
+Description: QCA Wireless LAN Driver
+http://www.qca.qualcomm.com
+Qualcomm Atheros
+@@
+Config:
+	menu "custom source directory"
+		depends on PACKAGE_kmod-qca-wifi-10.4-unified-perf
+	config qca-wifi-10.4_USE_CUSTOM_SOURCE_DIR
+		depends on PACKAGE_kmod-qca-wifi-10.4-unified-perf
+		bool "Use custom source directory"
+		default n
+	config qca-wifi-10.4_CUSTOM_SOURCE_DIR
+		depends on qca-wifi-10.4_USE_CUSTOM_SOURCE_DIR
+		string "Custom source directory"
+		default ""
+	endmenu
+	menu "overwrite package version"
+		depends on PACKAGE_kmod-qca-wifi-10.4-unified-perf
+	config qca-wifi-10.4_USE_CUSTOM_VERSION
+		depends on PACKAGE_kmod-qca-wifi-10.4-unified-perf
+		bool "Use custom package version"
+		default n
+
+	config qca-wifi-10.4_CUSTOM_VERSION
+		depends on qca-wifi-10.4_USE_CUSTOM_VERSION
+		string "qca-wifi-10.4 version as string (default version: g96b5b9e-dirty)"
+		default "g96b5b9e-dirty"
+
+	endmenu
+@@
+
+Package: kmod-qca-wifi-10.4-fulloffload
+Menu: 1
+Prereq-Check: 1
+Version: <LINUX_VERSION>+g96b5b9e-dirty-1
+Depends: +libgcc +libc +wireless-tools +librt +iproute2 @(!(PACKAGE_kmod-ath&&PACKAGE_kmod-mac80211)) @TARGET_ar71xx
+Conflicts: 
+Menu-Depends: 
+Provides: kmod-qca-wifi-10.4
+Build-Variant: fulloffload
+Build-Depends: qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic qca-wifi-fw-hw2-10.4-asic qca-wifi-fw-hw3-10.4-asic qca-wifi-fw-hw4-10.4-emu_bb qca-wifi-fw-hw4-10.4-emu_m2m qca-wifi-fw-hw4-10.4-asic qca-wifi-fw-hw5-10.4-asic qca-wifi-fw-hw6-10.4-asic qca-wifi-fw-hw5-10.4-emu_bb qca-wifi-fw-hw5-10.4-emu_m2m qca-wifi-fw-hw7-10.4-asic qca-wifi-fw-hw8-10.4-asic qca-wifi-fw-hw9-10.4-asic
+Section: QCA
+Category: QCA Proprietary software
+Title: QCA Wireless LAN Driver
+Maintainer: Qualcomm Atheros
+Source: 
+Type: ipkg
+Description: QCA Wireless LAN Driver
+http://www.qca.qualcomm.com
+Qualcomm Atheros
+@@
+Config:
+	menu "custom source directory"
+		depends on PACKAGE_kmod-qca-wifi-10.4-fulloffload
+	config qca-wifi-10.4_USE_CUSTOM_SOURCE_DIR
+		depends on PACKAGE_kmod-qca-wifi-10.4-fulloffload
+		bool "Use custom source directory"
+		default n
+	config qca-wifi-10.4_CUSTOM_SOURCE_DIR
+		depends on qca-wifi-10.4_USE_CUSTOM_SOURCE_DIR
+		string "Custom source directory"
+		default ""
+	endmenu
+	menu "overwrite package version"
+		depends on PACKAGE_kmod-qca-wifi-10.4-fulloffload
+	config qca-wifi-10.4_USE_CUSTOM_VERSION
+		depends on PACKAGE_kmod-qca-wifi-10.4-fulloffload
+		bool "Use custom package version"
+		default n
+
+	config qca-wifi-10.4_CUSTOM_VERSION
+		depends on qca-wifi-10.4_USE_CUSTOM_VERSION
+		string "qca-wifi-10.4 version as string (default version: g96b5b9e-dirty)"
+		default "g96b5b9e-dirty"
+
+	endmenu
+@@
+
+

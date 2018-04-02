@@ -1,0 +1,13 @@
+Package: athdiag
+Version: g1d65974-dirty-1
+Depends: libc, qca-wifi-10.4
+Source: qca/feeds/athdiag/athdiag
+Section: QCA
+Architecture: ipq806x
+Installed-Size: 28300
+Filename: athdiag_g1d65974-dirty-1_ipq806x.ipk
+Size: 28997
+MD5Sum: 0950bd62b042264141a018d27017cb6f
+SHA256sum: f37e90daeba38fca2c8c9419e45eb50688ea9c9f492cd210c1667399c9c75679
+Description:  athdiag command support for ath10k
+

@@ -1,0 +1,15 @@
+net/qca-acfg-10.4
+net/qca-hostap-10.4
+net/qca-iface-mgr-10.4
+net/qca-lowi
+net/qca-wifi-10.4
+net/qca-wifi-fulloffload
+net/qca-wifi-fw-10.2.4
+net/qca-wifi-fw-10.4
+net/qca-wifi-fw-10.4-ar71xx
+net/qca-wpc-10.4
+net/qca-wrapd-10.4
+utils/btdiag
+utils/qca-spectral-10.4
+utils/qca-thermald-10.4
+utils/qcmbr-10.4

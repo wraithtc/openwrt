@@ -1,0 +1,4 @@
+#!/bin/sh
+[ "$ACTION" = ifdown ] || exit 0
+[ "$INTERFACE" = wan ] || exit 0
+ifup wwan

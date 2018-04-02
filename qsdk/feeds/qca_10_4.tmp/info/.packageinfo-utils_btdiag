@@ -1,0 +1,45 @@
+Source-Makefile: feeds/qca_10_4/utils/btdiag/Makefile
+Package: btdiag
+Version: g96b5b9e-dirty-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libpthread +librt
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: QCA
+Category: QCA Proprietary software
+Title: - QCA ART Driver & tools
+Maintainer: Qualcomm Atheros
+Source: -g96b5b9e-dirty.tar.gz
+Type: ipkg
+Description: - QCA ART Driver & tools
+http://www.qca.qualcomm.com
+Qualcomm Atheros
+@@
+Config:
+	menu "custom source directory"
+		depends on PACKAGE_
+	config btdiag_USE_CUSTOM_SOURCE_DIR
+		depends on PACKAGE_
+		bool "Use custom source directory"
+		default n
+	config btdiag_CUSTOM_SOURCE_DIR
+		depends on btdiag_USE_CUSTOM_SOURCE_DIR
+		string "Custom source directory"
+		default ""
+	endmenu
+	menu "overwrite package version"
+		depends on PACKAGE_
+	config btdiag_USE_CUSTOM_VERSION
+		depends on PACKAGE_
+		bool "Use custom package version"
+		default n
+
+	config btdiag_CUSTOM_VERSION
+		depends on btdiag_USE_CUSTOM_VERSION
+		string "btdiag version as string (default version: g96b5b9e-dirty)"
+		default "g96b5b9e-dirty"
+
+	endmenu
+@@
+
+

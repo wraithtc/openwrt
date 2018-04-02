@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<!--[if lt IE 10 ]>
+<html class="ie" lang="zh-cn"><![endif]-->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>网关设置</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" >
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="shortcut icon" href="././favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="./public/styles/normalize.css">
+    <link rel="stylesheet" type="text/css" href="./public/styles/common.css?v=1.2.2">
+    <link rel="stylesheet" type="text/css" href="./public/styles/setting_common.css?v=1.2.2">
+    <link rel="stylesheet" type="text/css" href="./public/styles/settings.css?v=1.2.2">
+    <script>
+        window.onload=function () {
+            if(document.location.hash){
+                var m='.'+document.location.hash.substr(1);
+                var n='.'+document.location.hash.substr(1)+'-icon';
+                if($('.nav-list-content a'+n).length>0){
+                    $(n).trigger('click');
+                    $(m).addClass('show');
+                    $(m).fadeIn();
+                }else {
+                    location.hash='wifi-setting';
+                    $('.nav-list ul li').eq(0).trigger('click');
+                    $('.frame-list>div').eq(0).addClass('show');
+                    $('.frame-list>div').eq(0).fadeIn();
+                }
+                var i=$('.frame-list>div.show').index();
+                $('.nav-list ul li a').eq(i).addClass('active');
+            }else {
+                $('.nav-list ul li').eq(0).trigger('click');
+                $('.frame-list>div').eq(0).addClass('show');
+                $('.frame-list>div').eq(0).fadeIn();
+                $('.nav-list ul li a').eq(0).addClass('active');
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header">
+           <div class="nav">
+               <div class="logo">
+                   <img src="./public/images/toplogo.png">
+               </div>
+               <div class="menu">
+                   <ul>
+                       <li><a href="./home.html" target="_self">首页</a></li>
+                       <li><a class="active" href="./settings.html" target="_self">网关设置</a></li>
+                       <li><a href="./extend.html" target="_self">功能扩展</a></li>
+                       <!--<li><a href="./#">智能存储</a></li>-->
+                   </ul>
+               </div>
+           </div>
+            <div class="logout-content"><a class="logout" href="javascript:void(0)">注销</a></div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="nav-list hide">
+            <div class="nav-list-content">
+                <ul>
+                    <li><a class="wifi-setting-icon" href="#wifi-setting">wifi设置</a></li>
+                    <li><a class="connect-ways-icon" href="#connect-ways">上网方式</a></li>
+                    <li><a class="manage-pwd-modify-icon" href="#manage-pwd-modify">管理员密码修改</a></li>
+                    <li><a class="regular-reboot-icon" href="#regular-reboot">网关定时重启</a></li>
+                    <li><a class="lan-setting-icon" href="#lan-setting">网关地址修改</a></li>
+                    <li><a class="firmware-update-icon" href="#firmware-update">固件升级</a></li>
+                    <li><a class="reboot-icon" href="#reboot">重启网关</a></li>
+                    <li><a class="reback-icon" href="#reback">恢复出厂设置</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="frame">
+            <div class="frame-list">
+                <div class="wifi-settings">
+                    <div class="normal-settings">
+                        <div class="title-description">
+                            <span class="title-main">2.4G wifi设置</span>
+                        </div>
+                        <div class="setting-content">
+                            <div class="form-item switch-content">
+                                <label>2.4G wifi状态</label>
+                                <div class="switch">
+                                    <input type="checkbox" class="normal-switch-input switch-input">
+                                    <span class="switch-icon normal-switch"></span>
+                                </div>
+                            </div>
+                            <div class="settings-form">
+                                <div class="form-item">
+                                    <label>wifi名称</label>
+                                    <input class="normal-ssid" type="text" autocomplete="off" maxlength="32" placeholder="请输入1-32位的wifi名称">
+                                </div>
+                                <div class="form-item hide-wifi">
+                                    <label></label>
+                                    <div class="hide-checked">
+                                        <input class="hide-normal-wifi-checked" type="checkbox">
+                                        <label>隐藏网络</label>
+                                    </div>
+                                </div>
+                                <div class="form-item">
+                                    <label>加密方式</label>
+                                    <select class="normal-encrypt-mode" >
+                                        <option value="none">不加密</option>
+                                        <option value="psk">WPA-PSK</option>
+                                        <option value="psk2">WPA2-PSK</option>
+                                        <option value="psk-mixed">WPA-PSK/WPA2-PSK混合加密</option>
+                                    </select>
+                                </div>
+                                <div class="form-item">
+                                    <label>wifi密码</label>
+                                    <input class="normal-wifi-pwd" type="password" autocomplete="off" maxlength="63" placeholder="请设置8-63位wifi密码">
+                                    <!--<div class="pwd-content normal-pwd">-->
+                                        <!--<input class="normal-wifi-pwd" type="password" autocomplete="off" maxlength="63" placeholder="请设置8-63位wifi密码">-->
+                                        <!--<span class="pwd-switch hidePassword"></span>-->
+                                    <!--</div>-->
+                                </div>
+                                <div class="form-item">
+                                    <label>频道带宽</label>
+                                    <select class="normal-wifi-band-width">
+                                        <option value="0">自动</option>
+                                        <option value="1">20MHZ</option>
+                                        <option value="2">40MHZ</option>
+                                    </select>
+                                </div>
+                                <div class="form-item">
+                                    <label>无线模式</label>
+                                    <select class="normal-wifi-network-mode">
+                                        <option value="0">802.11b/g</option>
+                                        <option value="1">802.11b</option>
+                                        <option value="2">802.11a</option>
+                                        <option value="4">802.11g</option>
+                                        <option value="7">802.11g/n</option>
+                                        <option value="8">802.11a/n</option>
+                                        <option value="9">802.11b/g/n</option>
+                                        <option value="14">802.11a/an/ac</option>
+                                        <option value="15">802.11an/ac</option>
+                                    </select>
+                                </div>
+                                <div class="form-item">
+                                    <label>无线信道</label>
+                                    <select class="normal-wifi-wireless-channel">
+                                        <option value="auto">自动</option>
+                                        <option value="1">信道1</option>
+                                        <option value="2">信道2</option>
+                                        <option value="3">信道3</option>
+                                        <option value="4">信道4</option>
+                                        <option value="5">信道5</option>
+                                        <option value="6">信道6</option>
+                                        <option value="7">信道7</option>
+                                        <option value="8">信道8</option>
+                                        <option value="9">信道9</option>
+                                        <option value="10">信道10</option>
+                                        <option value="11">信道11</option>
+                                        <option value="12">信道12</option>
+                                        <option value="13">信道13</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speed-settings">
+                        <div class="title-description">
+                            <span class="title-main">5G wifi设置</span>
+                        </div>
+                        <div class="setting-content">
+                            <div class="form-item switch-content">
+                                <label>5G wifi状态</label>
+                                <div class="switch">
+                                    <input type="checkbox" class="speed-switch-input switch-input">
+                                    <span class="switch-icon speed-switch"></span>
+                                </div>
+                            </div>
+                            <div class="settings-form">
+                                <div class="form-item">
+                                    <label>wifi名称</label>
+                                    <input class="speed-ssid" type="text" autocomplete="off" maxlength="32" placeholder="请设置1-32位的wifi名称">
+                                </div>
+                                <div class=" form-item hide-wifi">
+                                    <label></label>
+                                    <div class="hide-checked">
+                                        <input class="hide-speed-wifi-checked" type="checkbox">
+                                        <label>隐藏网络</label>
+                                    </div>
+                                </div>
+                                <div class="form-item">
+                                    <label>加密方式</label>
+                                    <select class="speed-encrypt-mode" >
+                                        <option value="none">不加密</option>
+                                        <option value="psk">WPA-PSK</option>
+                                        <option value="psk2">WPA2-PSK</option>
+                                        <option value="psk-mixed">WPA-PSK/WPA2-PSK混合加密</option>
+                                    </select>
+                                </div>
+                                <div class="form-item">
+                                    <label>wifi密码</label>
+                                    <input class="speed-wifi-pwd" type="password" autocomplete="off" maxlength="63" placeholder="请设置8-63位wifi密码">
+                                    <!--<div class="pwd-content speed-pwd">-->
+                                        <!--<input class="speed-wifi-pwd" type="password" autocomplete="off" maxlength="63" placeholder="请设置8-63位wifi密码">-->
+                                        <!--<span class="pwd-switch hidePassword"></span>-->
+                                    <!--</div>-->
+                                </div>
+                                <div class="form-item">
+                                    <label>频道带宽</label>
+                                    <select class="speed-wifi-band-width">
+                                        <option value="0">自动</option>
+                                        <option value="1">20MHZ</option>
+                                        <option value="2">40MHZ</option>
+                                        <option value="3">80MHZ</option>
+                                    </select>
+                                </div>
+                                <div class="form-item">
+                                    <label>无线模式</label>
+                                    <select class="speed-wifi-network-mode">
+                                        <option value="0">802.11b/g</option>
+                                        <option value="1">802.11b</option>
+                                        <option value="2">802.11a</option>
+                                        <option value="4">802.11g</option>
+                                        <option value="7">802.11g/n</option>
+                                        <option value="8">802.11a/n</option>
+                                        <option value="9">802.11b/g/n</option>
+                                        <option value="14">802.11a/an/ac</option>
+                                        <option value="15">802.11an/ac</option>
+                                    </select>
+                                </div>
+                                <div class="form-item">
+                                    <label>无线信道</label>
+                                    <select class="speed-wifi-wireless-channel">
+                                        <option value="auto">自动</option>
+                                        <option value="36">信道36</option>
+                                        <option value="40">信道40</option>
+                                        <option value="44">信道44</option>
+                                        <option value="48">信道48</option>
+                                        <option value="52">信道52</option>
+                                        <option value="56">信道56</option>
+                                        <option value="60">信道60</option>
+                                        <option value="64">信道64</option>
+                                        <option value="149">信道149</option>
+                                        <option value="153">信道153</option>
+                                        <option value="157">信道157</option>
+                                        <option value="161">信道161</option>
+                                        <option value="165">信道165</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="setting-save"><button class="wifi-save-btn save-btn" type="button"><span>保存</span><b class="disabled hide"></b></button></div>
+                </div>
+                <div class="connect-ways">
+                    <!--<div class="wan-info">-->
+                    <!--<div class="settings-header"><span>WAN口信息</span></div>-->
+                    <!--<div class="wan-info-list">-->
+                    <!--<div class="wan-info-item">-->
+                    <!--<span>连接类型：</span><span class="connet-model"></span>-->
+                    <!--</div>-->
+                    <!--<div class="wan-info-item">-->
+                    <!--<span>IP地址：</span><span class="ip"></span>-->
+                    <!--</div>-->
+                    <!--<div class="wan-info-item">-->
+                    <!--<span>子网掩码：</span><span class="mask"></span>-->
+                    <!--</div>-->
+                    <!--<div class="wan-info-item">-->
+                    <!--<span>默认网关：</span><span class="gateway"></span>-->
+                    <!--</div>-->
+                    <!--<div class="wan-info-item">-->
+                    <!--<span>DNS：</span><span class="dns"></span>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <div class="wan-settings">
+                        <div class="title-description">
+                            <span class="title-main">WAN设置</span></div>
+                        <div class="connect-ways-list">
+                            <label>选择上网方式</label>
+                            <select class="connect-ways-choose">
+                                <option value="0">宽带拨号(PPPoE)</option>
+                                <option value="1">动态IP连接</option>
+                                <option value="2">静态IP连接</option>
+                            </select>
+                        </div>
+                        <div class="form-tabs">
+                            <div class="pppoe-form">
+                                <div class="form-item">
+                                    <label>帐号</label>
+                                    <input class="account" type="text" minlength="4" maxlength="20" placeholder="请输入4-20位宽带帐号" autocomplete="off">
+                                </div>
+                                <div class="form-item">
+                                    <label>密码</label>
+                                    <div class="pwd-content pppoe-pwd">
+                                        <input class="pwd" type="password" minlength="4" maxlength="20" placeholder="请输入4-20位宽带密码" autocomplete="off">
+                                        <span class="pwd-switch hidePassword"></span>
+                                    </div>
+                                </div>
+                                <div class="setting-save"><button class="connect-way-save-btn pppoe-save save-btn" type="button"><span>保存</span><b class="disabled hide"></b></button></div>
+                            </div>
+                            <div class="dhcp-main">
+                                <span>动态IP上网方式，无需设置参数，直接点击保存即可</span>
+                                <div class="setting-save"><button class="connect-way-save-btn dhcp-save save-btn" type="button"><span>保存</span><b class="disabled hide"></b></button></div>
+                            </div>
+                            <div class="static-form">
+                                <div class="form-item">
+                                    <label>IP地址</label>
+                                    <input class="ip" type="text" minlength="7" maxlength="15" autocomplete="off" placeholder="请输入IP地址">
+                                </div>
+                                <div class="form-item">
+                                    <label>子网掩码</label>
+                                    <input class="mask" type="text" minlength="7"  maxlength="15" autocomplete="off" placeholder="请输入子网掩码">
+                                </div>
+                                <div class="form-item">
+                                    <label>默认网关</label>
+                                    <input class="gateway" type="text" minlength="7"  maxlength="15" placeholder="请输入默认网关">
+                                </div>
+                                <div class="form-item">
+                                    <label>首选DNS</label>
+                                    <input class="preferreddns" type="text" minlength="7"  maxlength="15" autocomplete="off" placeholder="请输入首选DNS">
+                                </div>
+                                <div class="form-item">
+                                    <label>备用DNS(可选)</label>
+                                    <input class="sparedns" type="text" minlength="7"  maxlength="15" autocomplete="off" placeholder="请输入备用DNS">
+                                </div>
+                                <div class="setting-save"><button class="connect-way-save-btn static-save save-btn" type="button"><span>保存</span><b class="disabled hide"></b></button></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="manage-pwd-modify">
+                    <div class="title-description">
+                        <span class="title-main">管理密码修改</span>
+                    </div>
+                    <div class="setting-content">
+                        <div class="settings-form">
+                            <div class="form-item">
+                                <label>原密码</label>
+                                <div class="pwd-content old-pwd">
+                                    <input class="manage-old-pwd" type="password"  maxlength="63" autocomplete="off">
+                                    <span class="pwd-switch hidePassword"></span>
+                                </div>
+                            </div>
+                            <div class="form-item">
+                                <label>新密码</label>
+                                <div class="pwd-content new-pwd">
+                                    <input class="manage-new-pwd" type="password" maxlength="63" autocomplete="off">
+                                    <span class="pwd-switch hidePassword"></span>
+                                </div>
+                            </div>
+                            <div class="form-item">
+                                <label>确认密码</label>
+                                <div class="pwd-content confirm-pwd">
+                                    <input class="manage-conform-pwd" type="password" maxlength="63" autocomplete="off">
+                                    <span class="pwd-switch hidePassword"></span>
+                                </div>
+                            </div>
+                            <div class="setting-save"><button class="manage-pwd-modify-save-btn save-btn" type="button"><span>确认</span><b class="disabled hide"></b></button></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="regular-reboot">
+                    <div class="title-description">
+                        <span class="title-main">定时重启</span>
+                    </div>
+                    <div class="regular-reboot-content">
+                        <div class="form-item switch-content">
+                            <label>定时重启开关</label>
+                            <div class="switch">
+                                <input type="checkbox" class="reboot-switch-input switch-input">
+                                <span class="switch-icon"></span>
+                            </div>
+                        </div>
+                        <div class="regular-reboot-settings" style="display: none;">
+                            <div class="form-item">
+                                <label>重启时间</label>
+                                <div class="reboot-time">
+                                    <!--<input class="time" type="time">-->
+                                    <!--<label>时</label>-->
+                                    <!--<input class="minute" type="number"><label>分</label>-->
+                                    <input type="text" maxlength="2" value="00" class="hour" autocomplete="off"/>
+                                    <label>时</label>
+                                    <input type="text" maxlength="2" value="00" class="minute" autocomplete="off"/>
+                                    <label>分</label>
+                                </div>
+                            </div>
+                            <div class="form-item">
+                                <label>重复周期</label>
+                                <div class="checked-btn">
+                                    <input type="checkbox" class="checkhide"/>
+                                    <span class="workingday">工作日</span>
+                                </div>
+                                <div class="checked-btn">
+                                    <input type="checkbox" class="checkhide"/>
+                                    <span class="weekend">周末</span>
+                                </div>
+                                <div class="checked-btn">
+                                    <input type="checkbox" class="checkhide"/>
+                                    <span class="all">全选</span>
+                                </div>
+                                <div class="checked-btn">
+                                    <input type="checkbox" class="checkhide"/>
+                                    <span class="notAll">全不选</span>
+                                </div>
+                                <div class="checked-btn">
+                                    <input type="checkbox" class="checkhide"/>
+                                    <span class="inverse">反选</span>
+                                </div>
+                            </div>
+                            <div class="cycle-list">
+                                <div class="monday">
+                                    <input type="checkbox" class="checkhide" checked/>
+                                    <span>星期一</span>
+                                </div>
+                                <div class="tuesday">
+                                    <input type="checkbox" class="checkhide" checked/>
+                                    <span>星期二</span>
+                                </div>
+                                <div class="wednesday">
+                                    <input type="checkbox" class="checkhide" checked/>
+                                    <span>星期三</span>
+                                </div>
+                                <div class="thursday">
+                                    <input type="checkbox" class="checkhide" checked/>
+                                    <span>星期四</span>
+                                </div>
+                                <div class="friday">
+                                    <input type="checkbox" class="checkhide" checked/>
+                                    <span>星期五</span>
+                                </div>
+                                <div class="saturday">
+                                    <input type="checkbox" class="checkhide" checked/>
+                                    <span>星期六</span>
+                                </div>
+                                <div class="sunday">
+                                    <input type="checkbox" class="checkhide"  checked/>
+                                    <span>星期日</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="setting-save"><button class="regular-start-save-btn save-btn" type="button"><span>保存</span><b class="disabled hide"></b></button></div>
+                    </div>
+                </div>
+                <div class="lan-settings">
+                    <div class="lan-settings">
+                        <div class="title-description">
+                            <span class="title-main">网关地址修改</span>
+                        </div>
+                        <div class="setting-content">
+                            <div class="form-item">
+                                <label>ip地址</label>
+                                <input class="lan-ip" type="text" autocomplete="off">
+                            </div>
+                            <div class="form-item">
+                                <label>子网掩码</label>
+                                <input class="lan-mask" type="text" autocomplete="off">
+                            </div>
+                            <div class="form-item switch-content">
+                                <label>DHCP服务器</label>
+                                <div class="switch">
+                                    <input type="checkbox" class="lan-switch-input switch-input">
+                                    <span class="switch-icon dhcp-switch"></span>
+                                </div>
+                            </div>
+                            <div class="settings-form">
+                                <div class="form-item">
+                                    <label>地址池开始</label>
+                                    <input class="pool-start" type="text" autocomplete="off" disabled>
+                                </div>
+                                <div class="form-item">
+                                    <label>地址池结束</label>
+                                    <input class="pool-end" type="text" autocomplete="off" disabled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="setting-save"><button class="lan-save-btn save-btn" type="button"><span>保存</span><b class="disabled hide"></b></button></div>
+                </div>
+                <div class="firmware-update">
+                    <div class="title-description">
+                        <span class="title-main">固件升级</span>
+                    </div>
+                    <div class="firmware-update-content">
+                       <div class="version-check">
+                           <div class="version-info">
+                               <div class="current-version"><span>当前固件版本：</span><span class="version">--</span></div>
+                               <span class="newest-version"></span>
+                               <div class="firmware-version" style="display: none;">
+                                   <div class="tip"><span>是否保存当前配置信息？</span></div>
+                                   <div class="config-checked"><input type="checkbox" checked="checked"/><label class="config-tip">已选择保存配置</label></div>
+                               </div>
+                           </div>
+                           <div class="update-btn setting-save">
+                               <button class="check-again save-btn" type="button"><span>重新检测</span><b class="disabled hide"></b></button>
+                               <!--<button class="upload-btn" type="button">手动升级<input class="manual-update" type="file"></button>-->
+                           </div>
+                           <div class="setting-save firmware-update-version" style="display: none;">
+                               <button class="update-just save-btn" type="button">立即升级</button>
+                           </div>
+                       </div>
+                        <!--<div class="firmware-update-version hide" style="display: none;">-->
+                        <!--<div><span>检测到新版固件：</span><span class="update-version"></span></div>-->
+                        <!--<div class="firmware-update-info">-->
+                        <!--<span>更新内容：</span>-->
+                        <!--<span class="firmware-update-detail"></span>-->
+                        <!--</div>-->
+                        <!--<div class="setting-save"><button class="update-just save-btn" type="button">立即升级</button></div>-->
+                        <!--</div>-->
+                        <div class="upgrade-progress" style="display: none;">
+                            <div>升级进度：<span class="upgrade-status"></span></div>
+                            <div class="am-progress am-progress-striped am-progress-sm am-active"><div class="am-progress-bar am-progress-bar-secondary"></div></div>
+                            <span>正在升级，请勿关闭网关或断开电源！</span>
+                        </div>
+                    </div>
+                    <div class="upgrade-loading " style="display: none;">
+                        <div class="waitting-box">
+                            <span>正在升级请稍候,升级过程中网关将会重启！</span>
+                            <div class="am-progress am-progress-striped am-progress-sm am-active"><div class="am-progress-bar am-progress-bar-secondary"></div></div>
+                            <div class="waitting-time">预计剩余时间<span class="upgrade-cutdown"></span>s</div>
+                        </div>
+                    </div>
+                    <div class="update-failed" style="display: none;">
+                        <div class="failed-info"><span></span></div>
+                        <div class="setting-save">
+                            <button class="failed-confirm save-btn" type="button">确定</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="reboot">
+                    <div class="title-description">
+                        <span class="title-main">重启网关</span>
+                    </div>
+                    <div class="reboot-content">
+                        <div class="reboot-info">
+                            <div>重启网关需要60-80s左右的时间来完成，重启过程中请勿断开网关电源！</div>
+                            <div class="setting-save"><button class="reboot-btn save-btn" type="button">立即重启</button></div>
+                        </div>
+                        <div class="reboot-loading" style="display: none;">
+                            <div class="reboot-tip">正在重启请稍候...</div>
+                            <!--<div class="loading-gif"><img src="./public/images/spinner.gif" alt="loading..."/></div>-->
+                            <div class="am-progress am-progress-striped am-progress-sm am-active"><div class="am-progress-bar am-progress-bar-secondary"></div></div>
+                            <div class="waitting-time">预计剩余时间<span class="reboot-cutdown"></span>s</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="restore">
+                    <div class="title-description">
+                        <span class="title-main">恢复出厂设置</span>
+                    </div>
+                    <div class="restore-content">
+                        <div class="restore-info">
+                            <span>所有信息将恢复到出厂时的配置，需要重新配置网关。</span>
+                            <span>恢复过程需要60-80s左右的时间完成，恢复过程中请勿断开网关电源！</span>
+                            <div class="setting-save"><button class="restore-btn save-btn" type="button">恢复出厂设置</button></div>
+                        </div>
+                        <div class="restore-loading" style="display: none;">
+                            <div class="restore-loading-tip">正在将网关恢复到出厂时的配置,请稍候...</div>
+                            <div class="am-progress am-progress-striped am-progress-sm am-active"><div class="am-progress-bar am-progress-bar-secondary"></div></div>
+                            <!--<div class="loading-gif"><img src="./public/images/spinner.gif" alt="loading..."/></div>-->
+                            <div class="waitting-time">预计剩余时间<span class="restore-cutdown"></span>s</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="error-tip"><span class="error-info"></span></div>
+        </div>
+    </div>
+    <footer>
+        <p class="text-center">Copyright&copy;浙江三点科技有限公司</p>
+    </footer>
+    <div class="progress-loading hide"></div>
+    <div class="shadow popup-shadow hide"></div>
+    <div class="keepconfig txt-center shadow" style="display: none;">
+        <div class="tip-content">
+            <div class="tip-header">提示</div>
+            <div class="tip-description"><span>确定升级固件？</span></div>
+            <div class="choose-btn">
+                <!--<button type="button" class="save-btn false-btn">否</button>-->
+                <button type="button" class="btn upgrade-cancel">取消</button>
+                <button type="button" class="btn upgrade-confirm">确认</button>
+            </div>
+        </div>
+    </div>
+    <div class="reboot-popup shadow" style="display: none;">
+        <div class="tip-content">
+            <div class="tip-header">提示</div>
+            <div class="tip-info">
+                <!--<span>重启网关需要60-80s左右的时间完成</span>-->
+                <span>确定立即重启网关？</span>
+            </div>
+            <div class="choose-btn">
+                <button class="reboot-cancel btn" type="button">取消</button>
+                <button class="reboot-confirm btn" type="button"><span>确定</span><b class="disabled hide"></b></button>
+            </div>
+        </div>
+    </div>
+    <div class="restore-tip shadow" style="display: none;">
+        <div class="tip-content">
+            <div class="tip-header">提示</div>
+            <div class="tip-info">
+                <!--<span>恢复过程需要60-80s左右的时间来完成</span>-->
+                <span>确定立即将网关恢复到出厂时的配置？</span>
+            </div>
+            <div class="choose-btn">
+                <button class="restore-cancel btn" type="button">取消</button>
+                <button class="restore-confirm btn" type="button"><span>确定</span><b class="disabled hide"></b></button>
+            </div>
+        </div>
+    </div>
+    <div class="result-content" style="display: none;">
+        <div class="result-icon hide"></div>
+        <div class="result-tip"></div>
+    </div>
+    <script src="./public/javascripts/jquery-3.2.1.min.js"></script>
+    <script>
+        var rand = Math.random();
+        $('.menu a').each(function(){
+            var href = $(this).attr('href');
+            $(this).attr('href', href + '?t=' + rand);
+        });
+    </script>
+    <script src="./public/javascripts/common.js?v=1.2.2"></script>
+    <script src="public/javascripts/setting_common.js?v=1.2.2"></script>
+    <script src="./public/javascripts/error.js?v=1.2.2"></script>
+    <script src="./public/javascripts/settings.js?v=1.2.2"></script>
+    <script src="./public/javascripts/jsencrypt.min.js"></script>
+    <script src="./public/javascripts/base64.js"></script>
+</body>
+</html>

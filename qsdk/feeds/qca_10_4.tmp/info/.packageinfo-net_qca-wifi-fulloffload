@@ -1,0 +1,94 @@
+Source-Makefile: feeds/qca_10_4/net/qca-wifi-fulloffload/Makefile
+Package: kmod-qca-wifi-fulloffload-host
+Menu: 1
+Version: <LINUX_VERSION>+2.9.2.069-1
+Depends: +libgcc +libc
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: host
+Build-Depends: PACKAGE_kmod-qca-wifi-10.4-unified-perf:qca-wifi-10.4 PACKAGE_kmod-qca-wifi-10.4-fulloffload:qca-wifi-10.4
+Section: QCA
+Category: QCA Proprietary software
+Title: QCA Wireless Fulloffload Host Driver
+Maintainer: Qualcomm Atheros
+Source: fulloffload-driver-2.9.2.069.tar.bz2
+Type: ipkg
+Description: QCA Wireless Fulloffload Host Driver
+http://www.qca.qualcomm.com
+Qualcomm Atheros
+@@
+Config:
+	menu "custom source directory"
+		depends on PACKAGE_kmod-qca-wifi-fulloffload
+	config qca-wifi-fulloffload_USE_CUSTOM_SOURCE_DIR
+		depends on PACKAGE_kmod-qca-wifi-fulloffload
+		bool "Use custom source directory"
+		default n
+	config qca-wifi-fulloffload_CUSTOM_SOURCE_DIR
+		depends on qca-wifi-fulloffload_USE_CUSTOM_SOURCE_DIR
+		string "Custom source directory"
+		default ""
+	endmenu
+	menu "overwrite package version"
+		depends on PACKAGE_kmod-qca-wifi-fulloffload
+	config qca-wifi-fulloffload_USE_CUSTOM_VERSION
+		depends on PACKAGE_kmod-qca-wifi-fulloffload
+		bool "Use custom package version"
+		default n
+
+	config qca-wifi-fulloffload_CUSTOM_VERSION
+		depends on qca-wifi-fulloffload_USE_CUSTOM_VERSION
+		string "qca-wifi-fulloffload version as string (default version: 2.9.2.069)"
+		default "2.9.2.069"
+
+	endmenu
+@@
+
+Package: kmod-qca-wifi-fulloffload-target
+Menu: 1
+Version: <LINUX_VERSION>+2.9.2.069-1
+Depends: +libgcc +libc
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: target
+Build-Depends: PACKAGE_kmod-qca-wifi-10.4-unified-perf:qca-wifi-10.4 PACKAGE_kmod-qca-wifi-10.4-fulloffload:qca-wifi-10.4
+Section: QCA
+Category: QCA Proprietary software
+Title: QCA Wireless Fulloffload Target Driver
+Maintainer: Qualcomm Atheros
+Source: fulloffload-driver-2.9.2.069.tar.bz2
+Type: ipkg
+Description: QCA Wireless Fulloffload Target Driver
+http://www.qca.qualcomm.com
+Qualcomm Atheros
+@@
+Config:
+	menu "custom source directory"
+		depends on PACKAGE_kmod-qca-wifi-fulloffload
+	config qca-wifi-fulloffload_USE_CUSTOM_SOURCE_DIR
+		depends on PACKAGE_kmod-qca-wifi-fulloffload
+		bool "Use custom source directory"
+		default n
+	config qca-wifi-fulloffload_CUSTOM_SOURCE_DIR
+		depends on qca-wifi-fulloffload_USE_CUSTOM_SOURCE_DIR
+		string "Custom source directory"
+		default ""
+	endmenu
+	menu "overwrite package version"
+		depends on PACKAGE_kmod-qca-wifi-fulloffload
+	config qca-wifi-fulloffload_USE_CUSTOM_VERSION
+		depends on PACKAGE_kmod-qca-wifi-fulloffload
+		bool "Use custom package version"
+		default n
+
+	config qca-wifi-fulloffload_CUSTOM_VERSION
+		depends on qca-wifi-fulloffload_USE_CUSTOM_VERSION
+		string "qca-wifi-fulloffload version as string (default version: 2.9.2.069)"
+		default "2.9.2.069"
+
+	endmenu
+@@
+
+

@@ -1,0 +1,48 @@
+Source-Makefile: feeds/qca_10_4/net/qca-acfg-10.4/Makefile
+Package: qca-acfg-10.4
+Version: g96b5b9e-dirty-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread kmod-qca-wifi-10.4 @(!(PACKAGE_hostapd))
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Depends: qca-wifi-10.4
+Section: QCA
+Category: QCA Proprietary software
+Title: QCA Configuration Utility
+Maintainer: Qualcomm Atheros
+Source: 
+Type: ipkg
+Description:  QCA configuration utility provides a set of library
+ API's through which user applications can configure
+ and register events for wifi driver and hostap
+http://www.qca.qualcomm.com
+Qualcomm Atheros
+@@
+Config:
+	menu "custom source directory"
+		depends on PACKAGE_qca-acfg
+	config qca-acfg-10.4_USE_CUSTOM_SOURCE_DIR
+		depends on PACKAGE_qca-acfg
+		bool "Use custom source directory"
+		default n
+	config qca-acfg-10.4_CUSTOM_SOURCE_DIR
+		depends on qca-acfg-10.4_USE_CUSTOM_SOURCE_DIR
+		string "Custom source directory"
+		default ""
+	endmenu
+	menu "overwrite package version"
+		depends on PACKAGE_qca-acfg
+	config qca-acfg-10.4_USE_CUSTOM_VERSION
+		depends on PACKAGE_qca-acfg
+		bool "Use custom package version"
+		default n
+
+	config qca-acfg-10.4_CUSTOM_VERSION
+		depends on qca-acfg-10.4_USE_CUSTOM_VERSION
+		string "qca-acfg-10.4 version as string (default version: g96b5b9e-dirty)"
+		default "g96b5b9e-dirty"
+
+	endmenu
+@@
+
+

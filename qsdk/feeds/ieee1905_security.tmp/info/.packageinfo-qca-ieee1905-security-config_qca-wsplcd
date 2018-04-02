@@ -1,0 +1,26 @@
+Source-Makefile: feeds/ieee1905_security/qca-ieee1905-security-config/qca-wsplcd/Makefile
+Package: qca-wsplcd
+Submenu: IEEE1905.1 features
+Version: g96b5b9e-dirty-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread @PACKAGE_kmod-qca-wifi-10.4-unified-profile||PACKAGE_kmod-qca-wifi-10.4-akronite-perf||PACKAGE_kmod-qca-wifi-10.4-dakota-perf||PACKAGE_kmod-qca-wifi-10.4-perf||PACKAGE_kmod-qca-wifi-10.4-unified-perf||PACKAGE_kmod-qca-wifi-perf||PACKAGE_kmod-qca-wifi-akronite-perf +qca-ieee1905-init +libhyficommon +libstorage +libwpa2 +libieee1905 +libuci +libpthread
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Depends: PACKAGE_kmod-qca-wifi-10.4-unified-profile:qca-wifi-10.4 PACKAGE_kmod-qca-wifi-10.4-akronite-perf:qca-wifi-10.4 PACKAGE_kmod-qca-wifi-10.4-dakota-perf:qca-wifi-10.4 PACKAGE_kmod-qca-wifi-10.4-perf:qca-wifi-10.4 PACKAGE_kmod-qca-wifi-10.4-unified-perf:qca-wifi-10.4 PACKAGE_kmod-qca-wifi-perf:qca-wifi PACKAGE_kmod-qca-wifi-akronite-perf:qca-wifi
+Section: QCA
+Category: QCA Proprietary software
+Title: IEEE 1905.1 AP Auto-Configuration daemon
+Maintainer: Qualcomm Atheros, Inc.
+Source: 
+Type: ipkg
+Description:   This package installs the IEEE 1905.1 AP Auto-Configuration daemon: Wi-Fi credential cloning over backbone network (e.g. HomePlugAV, Ethernet, Wi-Fi)
+http://www.qca.qualcomm.com
+Qualcomm Atheros, Inc.
+@@
+Config:
+  source "qca/feeds/ieee1905-security/qca-ieee1905-security-config/qca-wsplcd/Config.in"
+  
+  
+@@
+
+

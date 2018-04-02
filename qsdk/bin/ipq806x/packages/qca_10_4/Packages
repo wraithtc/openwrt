@@ -1,0 +1,284 @@
+Package: btdiag
+Version: g1d65974-dirty-1
+Depends: libc, libpthread, librt
+Source: qca/feeds/qca_10_4/utils/btdiag
+Section: QCA
+Maintainer: Qualcomm Atheros
+Architecture: ipq806x
+Installed-Size: 16645
+Filename: btdiag_g1d65974-dirty-1_ipq806x.ipk
+Size: 17325
+MD5Sum: 76fa1f29e4a34d46f55e0aa48bc806a6
+SHA256sum: 3d36afa9fa798051d02bebd9318a9c80fc8a123c06a4f8b5608348d2e82defb3
+Description:  - QCA ART Driver & tools
+
+Package: kmod-qca-wifi-10.4-unified-profile
+Version: 3.14.77+g1d65974-dirty-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), libgcc, libc, wireless-tools, librt, iproute2, kmod-qca-nss-drv
+Provides: kmod-qca-wifi-10.4
+Source: qca/feeds/qca_10_4/net/qca-wifi-10.4
+Section: QCA
+Maintainer: Qualcomm Atheros
+Architecture: ipq806x
+Installed-Size: 2140313
+Filename: kmod-qca-wifi-10.4-unified-profile_3.14.77+g1d65974-dirty-1_ipq806x.ipk
+Size: 2115457
+MD5Sum: 69a9385c083394d4dabf426477d0d3fa
+SHA256sum: 469c70cb9eeac894ed59b50ad6460449022f6ff7b3f91b0692085c48180a47d8
+Description:  QCA Wireless LAN Driver
+
+Package: qca-acfg-10.4
+Version: g1d65974-dirty-1
+Depends: libc, kmod-qca-wifi-10.4
+Source: qca/feeds/qca_10_4/net/qca-acfg-10.4
+Section: QCA
+Maintainer: Qualcomm Atheros
+Architecture: ipq806x
+Installed-Size: 56253
+Filename: qca-acfg-10.4_g1d65974-dirty-1_ipq806x.ipk
+Size: 57049
+MD5Sum: 91d4ec74d31b32d173f115e697155ad0
+SHA256sum: 025f8ee5c282ad7c6907394d8ddb597e1062226f44b8dcea89629bc5313a8099
+Description:  QCA configuration utility provides a set of library
+ API's through which user applications can configure
+ and register events for wifi driver and hostap
+
+Package: qca-hostap-10.4
+Version: g1d65974-dirty-1
+Depends: libc, libnl
+Source: qca/feeds/qca_10_4/net/qca-hostap-10.4
+Section: QCA
+Maintainer: Qualcomm Atheros
+Architecture: ipq806x
+Installed-Size: 423132
+Filename: qca-hostap-10.4_g1d65974-dirty-1_ipq806x.ipk
+Size: 423596
+MD5Sum: ac3e248de220992c657b5f195a7ef0ae
+SHA256sum: d035c81265484f57f54bcd5c168074b5525ed5049ba377bcb84bf2660e7dfa73
+Description:  This package contains the IEEE 802.1x/WPA/EAP/RADIUS Authenticator.
+
+Package: qca-hostapd-cli-10.4
+Version: g1d65974-dirty-1
+Depends: libc, qca-hostap-10.4, librt
+Source: qca/feeds/qca_10_4/net/qca-hostap-10.4
+Section: QCA
+Maintainer: Qualcomm Atheros
+Architecture: ipq806x
+Installed-Size: 24795
+Filename: qca-hostapd-cli-10.4_g1d65974-dirty-1_ipq806x.ipk
+Size: 25544
+MD5Sum: 429068122bf4324975ff8f49e1981f9d
+SHA256sum: 48ed8cd56c7d21f7e41bcf32604380d13d83ffc1f4222ce48ed7b6a43dab659c
+Description:  This package contains a command line utility to control the
+ IEEE 802.1x/WPA/EAP/RADIUS Authenticator.
+
+Package: qca-iface-mgr-10.4
+Version: g1d65974-dirty-1
+Depends: libc, qca-hostap-10.4
+Source: qca/feeds/qca_10_4/net/qca-iface-mgr-10.4
+Section: QCA
+Maintainer: Qualcomm Atheros
+Architecture: ipq806x
+Installed-Size: 24624
+Filename: qca-iface-mgr-10.4_g1d65974-dirty-1_ipq806x.ipk
+Size: 25348
+MD5Sum: 7e0cc64b6cc41cc1355163f9c914010e
+SHA256sum: ae50d113e089c0288606d3d8bdb293731875f815f24d9386b9fee7fb1b45992a
+Description:  User Space application to manage interfaces
+
+Package: qca-lowi
+Version: g1d65974-dirty-1
+Depends: libc, qca-hostap-10.4, librt, libpthread, libnl, libxml2, uclibcxx
+Source: qca/feeds/qca_10_4/net/qca-lowi
+Section: QCA
+Maintainer: Qualcomm Atheros
+Architecture: ipq806x
+Installed-Size: 245627
+Filename: qca-lowi_g1d65974-dirty-1_ipq806x.ipk
+Size: 244960
+MD5Sum: ff508e8083e8123930ef3cf8f7e63527
+SHA256sum: 7d00ca1bbc803a097dfbcfa63283f9357c06146d01cfbb1b0c2a3329ad430cb2
+Description:  QCA Location WiFi Interface
+
+Package: qca-spectral-10.4
+Version: g1d65974-dirty-1
+Depends: libc, kmod-qca-wifi-10.4, libpthread
+Source: qca/feeds/qca_10_4/utils/qca-spectral-10.4
+Section: QCA
+Maintainer: Qualcomm Atheros
+Architecture: ipq806x
+Installed-Size: 69470
+Filename: qca-spectral-10.4_g1d65974-dirty-1_ipq806x.ipk
+Size: 70297
+MD5Sum: 3309dcbaa933f60f036eb072ff0963e0
+SHA256sum: 6d341b81dec71888ba845add00e0c0f9f89c6712cd7fe0e1a08c002874fefc64
+Description:  QCA Spectral Analysis
+
+Package: qca-thermald-10.4
+Version: g1d65974-dirty-1
+Depends: libc, libpthread
+Source: qca/feeds/qca_10_4/utils/qca-thermald-10.4
+Section: QCA
+Maintainer: Qualcomm Atheros
+Architecture: ipq806x
+Installed-Size: 14334
+Filename: qca-thermald-10.4_g1d65974-dirty-1_ipq806x.ipk
+Size: 15055
+MD5Sum: 98d9bae4306dd61c77bf65a4d3557f7b
+SHA256sum: 93e5b9b3b4830c14edca37d024af5df9750b80bfd545c8952c6747ed4e30c293
+Description:  This package is IPQ Thermal Mitigation daemon.
+
+Package: qca-wifi-fw-hw11-10.4-asic
+Version: WLAN.BL.3.5-00007-S-1-1
+Depends: libc
+Source: qca/feeds/qca_10_4/net/qca-wifi-fw-10.4
+Section: QCA
+Maintainer: Qualcomm Atheros
+Architecture: all
+Installed-Size: 889343
+Filename: qca-wifi-fw-hw11-10.4-asic_WLAN.BL.3.5-00007-S-1-1_all.ipk
+Size: 887884
+MD5Sum: 687368831a7e323d32882725aee84884
+SHA256sum: 51936762ae32fca1c206a39424b32b7eac069058054e8451757d18545759d628
+Description:  This package contains the qca-wifi firmware used in 10.x drivers
+
+Package: qca-wifi-fw-hw3-10.4-asic
+Version: CNSS.PS.2.5-00003-S-1-1
+Depends: libc
+Source: qca/feeds/qca_10_4/net/qca-wifi-fw-10.2.4
+Section: QCA
+Maintainer: Qualcomm Atheros
+Architecture: all
+Installed-Size: 372152
+Filename: qca-wifi-fw-hw3-10.4-asic_CNSS.PS.2.5-00003-S-1-1_all.ipk
+Size: 373049
+MD5Sum: 2730f511984311e942a14cbf39c11cc5
+SHA256sum: 0428231c08da98d15e15350184a731d85325541900f43c5c426bf48e00d4d46f
+Description:  This package contains the qca-wifi firmware(-hw3-10.4-asic) used in 10.x drivers
+
+Package: qca-wifi-fw-hw4-10.4-asic
+Version: WLAN.BL.3.5-00007-S-1-1
+Depends: libc
+Source: qca/feeds/qca_10_4/net/qca-wifi-fw-10.4
+Section: QCA
+Maintainer: Qualcomm Atheros
+Architecture: all
+Installed-Size: 1003569
+Filename: qca-wifi-fw-hw4-10.4-asic_WLAN.BL.3.5-00007-S-1-1_all.ipk
+Size: 992863
+MD5Sum: c2c79d1b5d10895247873aa7e8176d31
+SHA256sum: d83f8b6a5bcb5d28d6b41e9b5604065a65877ae011144bea5e4dc03c4373beb1
+Description:  This package contains the qca-wifi firmware used in 10.x drivers
+
+Package: qca-wifi-fw-hw5-10.4-asic
+Version: WLAN.BL.3.5-00007-S-1-1
+Depends: libc
+Source: qca/feeds/qca_10_4/net/qca-wifi-fw-10.4
+Section: QCA
+Maintainer: Qualcomm Atheros
+Architecture: all
+Installed-Size: 833766
+Filename: qca-wifi-fw-hw5-10.4-asic_WLAN.BL.3.5-00007-S-1-1_all.ipk
+Size: 832114
+MD5Sum: 1eaed9f807724e20ec42a5129abec573
+SHA256sum: b771b6e21730a548b10f5f45ae642bb251511083cd67c3b5c6082bafad9a8927
+Description:  This package contains the qca-wifi firmware used in 10.x drivers
+
+Package: qca-wifi-fw-hw6-10.4-asic
+Version: CNSS.PS.2.5-00003-S-1-1
+Depends: libc
+Source: qca/feeds/qca_10_4/net/qca-wifi-fw-10.2.4
+Section: QCA
+Maintainer: Qualcomm Atheros
+Architecture: all
+Installed-Size: 809026
+Filename: qca-wifi-fw-hw6-10.4-asic_CNSS.PS.2.5-00003-S-1-1_all.ipk
+Size: 810038
+MD5Sum: de30ff3cd369d3ce5c4e3c58746f0080
+SHA256sum: 217da5ac2d8f5a9bf4029c6d65df6a1628df9a2400ad815cf59843419d73ffee
+Description:  This package contains the qca-wifi firmware(-hw6-10.4-asic) used in 10.x drivers
+
+Package: qca-wpa-cli-10.4
+Version: g1d65974-dirty-1
+Depends: libc, librt, libopenssl, libnl
+Source: qca/feeds/qca_10_4/net/qca-hostap-10.4
+Section: QCA
+Maintainer: Qualcomm Atheros
+Architecture: ipq806x
+Installed-Size: 34448
+Filename: qca-wpa-cli-10.4_g1d65974-dirty-1_ipq806x.ipk
+Size: 35298
+MD5Sum: 07f8b63fdbcc39095255eb1ff7b218a4
+SHA256sum: b4f0a54c16c24af41fba01a67bc9ad64bccaef9e5c352b20e2caea152c75039b
+Description:  WPA Supplicant command line interface
+
+Package: qca-wpa-supplicant-10.4-macsec
+Version: g1d65974-dirty-1
+Depends: libc, libopenssl, libnl, kmod-qca-nss-macsec
+Source: qca/feeds/qca_10_4/net/qca-hostap-10.4
+Section: QCA
+Maintainer: Qualcomm Atheros
+Architecture: ipq806x
+Installed-Size: 588650
+Filename: qca-wpa-supplicant-10.4-macsec_g1d65974-dirty-1_ipq806x.ipk
+Size: 588686
+MD5Sum: b470254c3c08babab498833bcc739bad
+SHA256sum: d0696fb7c06c36a84197beff6b408a0abd1cfeb2c97359246289e0054a333808
+Description:  WPA Supplicant (MACSEC)
+
+Package: qca-wpa-supplicant-10.4
+Version: g1d65974-dirty-1
+Depends: libc, libopenssl, libnl
+Source: qca/feeds/qca_10_4/net/qca-hostap-10.4
+Section: QCA
+Maintainer: Qualcomm Atheros
+Architecture: ipq806x
+Installed-Size: 568985
+Filename: qca-wpa-supplicant-10.4_g1d65974-dirty-1_ipq806x.ipk
+Size: 568958
+MD5Sum: 103dc1c6c7dc1b930d57673ce2b411d9
+SHA256sum: 28a35f7b2015e9ae3100bfd8530ff3ce7c5d9e9b4720023d5fdcaa06e039bca8
+Description:  WPA Supplicant
+
+Package: qca-wpc-10.4
+Version: g1d65974-dirty-1
+Depends: libc, kmod-qca-wifi-10.4, libpthread
+Source: qca/feeds/qca_10_4/net/qca-wpc-10.4
+Section: QCA
+Maintainer: Qualcomm Atheros
+Architecture: ipq806x
+Installed-Size: 14180
+Filename: qca-wpc-10.4_g1d65974-dirty-1_ipq806x.ipk
+Size: 14893
+MD5Sum: 5bec0d0ae0213580df7d55e975abb119
+SHA256sum: 41604b989ac8566ae7cf0b22130ff0eb9ebe2b17150eb7717f8767f036cb4051
+Description:  QCA Wifi Positioning
+
+Package: qca-wrapd-10.4
+Version: g1d65974-dirty-1
+Depends: libc, qca-hostap-10.4
+Source: qca/feeds/qca_10_4/net/qca-wrapd-10.4
+Section: QCA
+Maintainer: Qualcomm Atheros
+Architecture: ipq806x
+Installed-Size: 34105
+Filename: qca-wrapd-10.4_g1d65974-dirty-1_ipq806x.ipk
+Size: 34938
+MD5Sum: 7ed7d2ca8c73b97a6290fe2eb03b78bf
+SHA256sum: 179e5ccff0de21901ddc3a9ca497add5cdb063d68f9a3ba92cb8f86fb1b20594
+Description:  User Space application to support QWRAP feature
+
+Package: qcmbr-10.4
+Version: g1d65974-dirty-1
+Depends: libc, libpthread, librt
+Source: qca/feeds/qca_10_4/utils/qcmbr-10.4
+Section: QCA
+Maintainer: Qualcomm Atheros
+Architecture: ipq806x
+Installed-Size: 15634
+Filename: qcmbr-10.4_g1d65974-dirty-1_ipq806x.ipk
+Size: 16320
+MD5Sum: 6ae3743a8eb0cf3c43dc23e0c629351b
+SHA256sum: c22f5624513918ea83c6fb01a989b4b92d8d23118d3ac051f3767db75c46be78
+Description:  - QCA ART Driver & tools
+

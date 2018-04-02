@@ -1,0 +1,53 @@
+10
+
+dir
+25033
+http://10.58.100.247/gwsw/S304/trunk/platform/src/fwk/include
+http://10.58.100.247/gwsw/S304
+
+
+
+2014-10-28T11:23:41.744778Z
+24305
+wangsongchang
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5686892c-11e8-4613-9069-13c2574acfef
+
+xml
+dir
+
+vos
+dir
+
+sf
+dir
+
+util
+dir
+
+fwk.h
+file
+
+
+
+
+2014-07-02T09:23:48.000000Z
+5f38c0507f29e413c76ae305e6f1d9cf
+2014-01-15T11:43:23.685409Z
+14063
+liqingyang
+has-props
+

@@ -1,0 +1,47 @@
+10
+
+dir
+25033
+http://10.58.100.247/gwsw/S304/trunk/platform/src/fwk
+http://10.58.100.247/gwsw/S304
+
+
+
+2014-10-28T11:23:41.744778Z
+24305
+wangsongchang
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+5686892c-11e8-4613-9069-13c2574acfef
+
+include
+dir
+
+src
+dir
+
+Makefile
+file
+
+
+
+
+2014-07-02T09:23:48.000000Z
+4f9cf35db9e5ab137cfe8adaf2b82d0b
+2013-04-19T07:59:37.162345Z
+4516
+zhangdingli
+has-props
+

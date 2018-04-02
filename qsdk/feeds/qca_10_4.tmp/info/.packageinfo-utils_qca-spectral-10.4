@@ -1,0 +1,45 @@
+Source-Makefile: feeds/qca_10_4/utils/qca-spectral-10.4/Makefile
+Package: qca-spectral-10.4
+Version: g96b5b9e-dirty-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread kmod-qca-wifi-10.4 +libpthread
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: QCA
+Category: QCA Proprietary software
+Title: QCA Spectral Analysis
+Maintainer: Qualcomm Atheros
+Source: 
+Type: ipkg
+Description: QCA Spectral Analysis
+http://www.qca.qualcomm.com
+Qualcomm Atheros
+@@
+Config:
+   	menu "overwrite package version"
+		depends on PACKAGE_qca-spectral-10.4
+	config qca-spectral-10.4_USE_CUSTOM_VERSION
+		depends on PACKAGE_qca-spectral-10.4
+		bool "Use custom package version"
+		default n
+
+	config qca-spectral-10.4_CUSTOM_VERSION
+		depends on qca-spectral-10.4_USE_CUSTOM_VERSION
+		string "qca-spectral-10.4 version as string (default version: g96b5b9e-dirty)"
+		default "g96b5b9e-dirty"
+
+	endmenu
+   	menu "custom source directory"
+		depends on PACKAGE_qca-spectral-10.4
+	config qca-spectral-10.4_USE_CUSTOM_SOURCE_DIR
+		depends on PACKAGE_qca-spectral-10.4
+		bool "Use custom source directory"
+		default n
+	config qca-spectral-10.4_CUSTOM_SOURCE_DIR
+		depends on qca-spectral-10.4_USE_CUSTOM_SOURCE_DIR
+		string "Custom source directory"
+		default ""
+	endmenu
+@@
+
+

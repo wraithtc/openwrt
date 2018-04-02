@@ -1,0 +1,493 @@
+.nav-list{
+    height: 400px;
+}
+.wifi-setting-icon{
+    background-image: url("../images/ic_wifi.png");
+}
+.connect-ways-icon{
+    background-image: url("../images/ic_net.png");
+}
+.manage-pwd-modify-icon{
+    background-image: url("../images/ic_password.png");
+}
+.regular-reboot-icon{
+    background-image: url("../images/ic_reboot.png");
+}
+.lan-setting-icon{
+    background-image: url("../images/ic_lan_modify.png");
+}
+.nav-list .firmware-update-icon{
+    background-image: url("../images/ic_update.png");
+    background-size: 17px 23px;
+}
+.reboot-icon{
+    background-image: url("../images/ic_restart.png");
+}
+.reback-icon{
+    background-image: url("../images/ic_reset.png");
+}
+.wifi-settings{
+    font-size: 0;
+}
+.wan-info{
+    padding-bottom: 20px;
+}
+.normal-settings,.speed-settings{
+    width: 100%;
+}
+.title-description {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.title-main {
+    margin-right: 20px;
+    font-size: 18px;
+    color: #59b3f8;
+}
+.no-show{
+    color: #aaa;
+}
+.connect-ways-list{
+    margin-bottom: 16px;
+    font-size: 0;
+}
+.connect-ways-list>label{
+    width: 40%;
+    height: 40px;
+    line-height: 40px;
+    text-align: right;
+    margin-right: -13px;
+    padding-right: 29px;
+    display: inline-block;
+}
+.connect-ways-choose{
+    width: 240px;
+    padding: 6px;
+    display: inline-block;
+}
+.connect-ways-choose>li{
+    display: inline-block;
+    width: 33.33333%;
+    text-align: center;
+    padding: 10px 0;
+    cursor: pointer;
+    background-color: #f2f2f2;
+    color: #aaa;
+    border-radius: 3px;
+}
+.connect-ways-choose>li:hover{
+    opacity: 0.85;
+    background-color: #eee;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+.connect-ways-choose>li.active{
+    color: #fff;
+    background-color: #179CF3;
+}
+.connect-ways-choose>li.active:hover{
+    opacity: 0.75;
+}
+.form-tabs>div{
+    display: none;
+}
+.dhcp-main{
+    text-align: center;
+}
+.dhcp-main>span{
+    display: inline-block;
+    margin-bottom: 16px;
+}
+.switch-content{
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 18px;
+}
+.firmware-update-content,.reboot-content,.restore-content{
+    overflow: hidden;
+    padding-top: 20px;
+    text-align: center;
+}
+.firmware-update-content .upgrade-progress{
+    width: 50%;
+    margin: 0 auto;
+}
+.keepconfig .tip-content-info{
+    padding: 0;
+}
+.keepconfig .tip-btn{
+    padding-top: 0;
+    text-align: center;
+}
+.keepconfig button{
+    margin-top: 12px;
+}
+.reboot-content .setting-save,.restore-content .setting-save{
+    margin-top: 20px;
+}
+.switch-input,.checkhide{
+    display: none;
+}
+.switch-icon{
+    cursor: pointer;
+    float: right;
+    display: inline-block;
+    position: relative;
+    width: 50px;
+    height: 22px;
+    border: 1px solid #d9d9d9;
+    border-radius: 10px;
+    background: #d9d9d9;
+    cursor: pointer;
+}
+.switch-icon:after, .switch-icon:before {
+    content: " ";
+    top: 0;
+    left: 0;
+    position: absolute;
+    -webkit-transition: -webkit-transform .3s;
+    transition: -webkit-transform .3s;
+    transition: transform .3s;
+    transition: transform .3s, -webkit-transform .3s;
+    border-radius: 10px;
+}
+.switch-icon:before {
+    width: 22px;
+    height: 20px;
+}
+.switch-icon:after {
+    width: 22px;
+    height:20px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,.4);
+}
+.switch-input:checked+.switch-icon {
+    border-color: #26a2ff;
+    background-color: #26a2ff;
+}
+.switch-input:checked+.switch-icon:before{
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+.switch-input:checked+.switch-icon:after{
+    -webkit-transform: translateX(26px);
+    transform: translateX(26px);
+}
+.settings-form{
+    width: 100%;
+}
+.normal-seitch,.form-item,.wan-info-item,.setting-save,.reboot-switch{
+    overflow: hidden;
+}
+.form-item{
+    font-size: 0;
+}
+.form-item>span{
+    font-size: 14px;
+}
+.hide-wifi{
+    margin-top: -10px;
+    margin-bottom: 16px;
+}
+.hide-wifi>label{
+    height: auto;
+}
+.hide-checked{
+    display: inline-block;
+}
+.hide-checked>input,.hide-checked>label{
+    display: inline-block;
+    vertical-align: middle;
+}
+.hide-checked>label{
+    line-height: 16px;
+    height: 16px;
+    text-align: left;
+}
+.form-item>label{
+    display: inline-block;
+}
+.form-tabs label{
+    text-align: right;
+    padding-right: 18px;
+}
+.form-item>input,.form-item select{
+    width:240px;
+}
+.pwd-content{
+    position: relative;
+    display: inline-block;
+    width: 240px;
+}
+.pwd-content>input{
+    width: 100%;
+    padding-right: 36px;
+}
+.form-item>input,.form-item select,.form-item select>option{
+}
+.pwd{
+    padding-right: 36px;
+}
+.form-tip{
+    height: 20px;
+    line-height: 20px;
+    font-size: 14px;
+    margin: 8px 0;
+    text-align: center;
+}
+.form-tip>span{
+    color: #FF0000;
+}
+.form-item select,.form-item select>option{
+
+}
+.pwd-switch{
+    position: absolute;
+    right: 8px;
+    top: 12px;
+    width: 26px;
+    height: 16px;
+    background-size: 26px 24px;
+}
+.showPassword{
+    background-image: url("../images/show-password.png");
+}
+.hidePassword {
+    background-image: url("../images/hide-password.png");
+}
+.reboot-time{
+    display: inline-block;
+}
+.reboot-time input{
+    width: 64px;
+    height: auto;
+    padding: 4px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 16px;
+}
+.reboot-time>label {
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+}
+.checkhide:checked+span{
+    background-color: #179CF3;
+    border-color: #179CF3;
+    color: #fff;
+}
+.cycle-list{
+    margin-left: 48px;
+    margin-bottom: 24px;
+    font-size: 0;
+    text-align: center;
+}
+.checked-btn span,.cycle-list div span{
+    display: inline-block;;
+    border-radius: 3px;
+    border: 1px solid #bdbdbd;
+    padding: 5px 9px;
+    cursor: pointer;
+}
+.checked-btn span:hover{
+    background-color: #179CF3;
+    border-color: #179CF3;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+.regular-reboot .form-item>div{
+    display: inline-block;
+    margin-left:  14px;
+}
+.cycle-list>div{
+    display: inline-block;
+    margin-right: 9px ;
+}
+.firmware-update-content{
+    text-align: center;
+}
+.version-info{
+    height: 136px;
+}
+.firmware-update-content span,.failed-info span{
+    display: inline-block;
+    padding: 10px 0;
+    text-align: center;
+}
+.firmware-update-detail{
+    word-break: break-all;
+}
+.setting-save{
+    text-align: center;
+}
+.update-btn,.firmware-update-version{
+    padding-top: 12px;
+}
+.update-btn button{
+    display: inline-block;
+}
+.failed-info{
+    text-align: center;
+}
+.manual-update{
+    cursor: pointer;
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+    font-size: 0;
+}
+.popup-content{
+    margin-top: -90px;
+    margin-left: -240px;
+    width: 480px;
+    min-height: 180px;
+}
+.false-btn{
+    margin: 0 10px;
+}
+.restore-content span,.waitting-box span{
+    display: block;
+    /*padding: 6px 0;*/
+    text-align: center;
+    line-height: 22px;
+}
+.choose-btn{
+    padding-top: 14px;
+}
+.shadow{
+    width: 100%;
+    background-color: rgba(0,0,0,.5);
+}
+.tip-content,.waitting-box{
+    position: absolute;
+    width: 360px;
+    height: 200px;
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    top:50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -180px;
+    text-align: center;
+}
+.tip-content span,.waitting-box>span{
+    display: block;
+    padding-top: 14px;
+}
+.tip-content .reboot-tip-header{
+    padding: 10px 0;
+    font-size: 16px;
+    background-color: #eee;
+}
+.config-checked{
+    padding: 6px 0;
+}
+.tip-content .tip-header,.waitting-box .waitting-box-header{
+    padding: 10px 0;
+    font-size: 18px;
+}
+.tip-description{
+    padding: 20px 0;
+}
+.tip-info{
+    margin: 20px 0;
+    text-align: center;
+}
+.btn{
+    display: inline-block;
+    text-align: center;
+    padding: 8px 0;
+    width: 120px;
+    margin: 0 10px;
+}
+.reboot-confirm>span,.restore-confirm>span{
+    padding: 0;
+}
+.reboot-loading,.restore-loading{
+    width: 600px;
+    margin: 0 auto;
+}
+.reboot-tip,.restore-loading-tip{
+    margin: 10px 0;
+}
+.am-progress-sm {
+    height: 10px;
+}
+.am-progress {
+    overflow: hidden;
+    height: 10px;
+    background-color: #f5f5f5;
+    border-radius: 0;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+}
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.am-progress.am-active .am-progress-bar {
+    -webkit-animation: progress-bar-stripes 2s linear infinite;
+    animation: progress-bar-stripes 2s linear infinite;
+}
+.am-progress-striped .am-progress-bar-secondary {
+    background-image: -webkit-gradient(linear,0 100%,100% 0,color-stop(.25,rgba(255,255,255,.15)),color-stop(.25,transparent),color-stop(.5,transparent),color-stop(.5,rgba(255,255,255,.15)),color-stop(.75,rgba(255,255,255,.15)),color-stop(.75,transparent),to(transparent));
+    background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+    background-image: linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+}
+.am-progress-striped .am-progress-bar {
+    background-image: -webkit-gradient(linear,0 100%,100% 0,color-stop(.25,rgba(255,255,255,.15)),color-stop(.25,transparent),color-stop(.5,transparent),color-stop(.5,rgba(255,255,255,.15)),color-stop(.75,rgba(255,255,255,.15)),color-stop(.75,transparent),to(transparent));
+    background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+    background-image: linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+    -webkit-background-size: 36px 36px;
+    background-size: 36px 36px;
+}
+.am-progress-bar-secondary {
+    background-color: #179CF3;
+}
+.am-progress-bar {
+    width:100%;
+    height: 100%;
+    border-radius: 3px;
+    background-color: #0e90d2;
+    -webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+    -webkit-transition: width .6s ease;
+    transition: width .6s ease;
+}
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+     box-sizing: border-box;
+}
+@keyframes progress-bar-stripes {
+    0% {
+        background-position: 36px 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+.loading-gif{
+    width: 50px;
+    margin: 8px auto;
+}
+.loading-gif>img{
+    width: 100%;
+}
+.waitting-time{
+    margin-top: 10px;
+}
+.waitting-time span{
+    display: inline-block;
+    padding: 0;
+}

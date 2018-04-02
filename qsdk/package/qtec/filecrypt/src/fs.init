@@ -1,0 +1,12 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2006-2011 OpenWrt.org
+
+START=99
+
+start() {
+	fscrypt -o allow_other,big_writes,max_write=65536,noauto_cache /tmp/qtec;
+}
+
+stop() {
+	killall fscrypt;fusermount -u -z /tmp/qtec;
+}

@@ -1,0 +1,19 @@
+Source-Makefile: feeds/alljoyn/alljoyn-sample_apps/Makefile
+Package: alljoyn-sample_apps
+Version: 15.04.00-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread alljoyn +alljoyn-about +alljoyn-config +alljoyn-controlpanel +alljoyn-notification +alljoyn-services_common
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Title: AllJoyn services sample_apps - sample applications
+Maintainer: AllSeen Alliance <allseen-core@lists.allseenalliance.org>
+Source: alljoyn-services-15.04.00-src.tar.gz
+Type: ipkg
+Description: AllJoyn services sample_apps sample applications - includes ServerSample and ACServerSample.
+http://www.allseenalliance.org
+AllSeen Alliance <allseen-core@lists.allseenalliance.org>
+@@
+
+

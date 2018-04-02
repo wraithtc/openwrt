@@ -1,0 +1,78 @@
+#!/bin/sh /etc/rc.common
+
+START=20
+USE_PROCD=1
+
+#validate_qtec_ebtables_rule()
+#{
+#	uci_validate_section firewall redirect "${1}" \
+#		'proto:or(uinteger, string)' \
+#		'src:string' \
+#		'src_ip:cidr' \
+#		'src_dport:or(port, portrange)' \
+#		'dest:string' \
+#		'dest_ip:cidr' \
+#		'dest_port:or(port, portrange)' \
+#		'target:or("SNAT", "DNAT")'
+#}
+
+validate_qtec_ebtables_speedlimitrule()
+{
+	uci_validate_section qtec_ebtables speedlimitrule "${1}" \
+		'mac:string' \
+		'limit:uinteger' \
+		'dest:uinteger' \
+        'enabled:uinteger' \
+        'enabled:uinteger'
+
+}
+
+service_triggers() {
+    echo "====wjj ebtables service_triggers =====\n" > /dev/console
+    procd_add_reload_trigger qtec_ebtables
+
+	procd_open_validate
+	validate_qtec_ebtables_rule
+	procd_close_validate
+}
+
+restart() {
+	qtec_ebtables restart
+    
+    
+}
+
+start_service() {
+	qtec_ebtables start
+}
+
+stop_service() {
+	qtec_ebtables stop
+}
+
+reload_service() {
+	qtec_ebtables reload
+}
+
+boot() {
+	# Be silent on boot, firewall might be started by hotplug already,
+	# so don't complain in syslog.
+	echo "----wjianjia qtec_ebtables boot ----" > /dev/console
+    ebtables -N Callanuploadspeed
+    ebtables -N Callandownloadspeed
+    ebtables -N Lanupspeedlimit
+    ebtables -N Landownspeedlimit
+	ebtables -N GuestWifiRule
+    ebtables -P Callanuploadspeed RETURN
+    ebtables -P Callandownloadspeed RETURN
+    ebtables -P Lanupspeedlimit RETURN 
+    ebtables -P Landownspeedlimit RETURN 
+	ebtables -P GuestWifiRule RETURN
+
+    ebtables -I INPUT -j Callanuploadspeed
+    ebtables -I OUTPUT -j Callandownloadspeed
+    ebtables -I INPUT -j Lanupspeedlimit
+    ebtables -I OUTPUT -j Landownspeedlimit
+	ebtables -I FORWARD -j GuestWifiRule
+    start
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>恶意网址提醒</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" >
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <style>
+        html,body,div,span,h2,a{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-weight: 400;
+        }
+        html,body{
+            background-color: #f2f2f2;
+            font-family: 'PingFangSC-Regular', 'PingFang SC', 'Microsoft YaHei';
+        }
+        h2{
+            font-size: 22px;
+            line-height: 1.5;
+            font-weight: normal;
+        }
+        .container{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 680px;
+            height: 360px;
+            margin-left: -298px;
+            margin-top: -220px;
+            text-align: center;
+            font-size: 18px;
+            background-color: #fff;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        .tip-header{
+            width: 100%;
+            height: 120px;
+            background-color: #CD352E;
+        }
+        .tip-header-info{
+            width: 50%;
+            height: 100%;
+            margin: 0 auto;
+            padding: 24px 0;
+            /*padding-left: 86px;*/
+            background-image: url('./firewall_tip_logo.png');
+            background-position: 10px center;
+            background-repeat: no-repeat;
+            background-size: 39px 51px;
+            color: #fff;
+        }
+        .tip-header-top{
+           margin-top: 12px;
+        }
+        .tip-header-top span{
+            line-height: 100%;
+        }
+        .tip-content{
+            width: 100%;
+            height: 240px;
+            color: #424242;
+            padding: 32px 0;
+        }
+        .tip-content-info{
+            margin-top: 12px;
+        }
+        .tip-close{
+            margin-top: 48px;
+        }
+        .close{
+            display: inline-block;
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px 16px;
+            background-color: #81C034;
+            border-radius: 5px;
+            border: 1px solid #81C034;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="tip-header">
+                <div class="tip-header-info">
+                    <div class="tip-header-top"><span>三点量子安全网关提醒您</span></div>
+                    <div class="tip-header-bottom"> <h2>您访问的是恶意网站</h2></div>
+                </div>
+            </div>
+            <div class="tip-content">
+                <div class="tip-content-info">
+                    <span>建议尽快关闭，防止系统被攻击、安装恶意程序或泄漏隐私危及个人信息安全</span>
+                </div>
+                <div class="tip-close">
+                    <a class="close"href="javascript:close()">立即关闭页面</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function close() {
+            var userAgent = navigator.userAgent;
+            var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1 && !isOpera;
+            if(isIE){
+                window.opener=null;
+                window.open('','_self');
+                window.close();
+            }else {
+                window.open('about:blank', '_self');
+            }
+        }
+        window.onunloadcancel = function()
+        {
+            return;
+        }
+    </script>
+</body>
+</html>

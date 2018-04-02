@@ -1,0 +1,161 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/gwsw/S304/!svn/ver/21473/trunk/platform/src/fwk/src/util
+END
+util_assert.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/gwsw/S304/!svn/ver/1017/trunk/platform/src/fwk/src/util/util_assert.c
+END
+util_passwd.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/gwsw/S304/!svn/ver/7551/trunk/platform/src/fwk/src/util/util_passwd.c
+END
+util_base64encode.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/gwsw/S304/!svn/ver/7758/trunk/platform/src/fwk/src/util/util_base64encode.c
+END
+util_tmr.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/gwsw/S304/!svn/ver/21155/trunk/platform/src/fwk/src/util/util_tmr.c
+END
+util_vector.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/gwsw/S304/!svn/ver/7758/trunk/platform/src/fwk/src/util/util_vector.c
+END
+util_tms.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/gwsw/S304/!svn/ver/1017/trunk/platform/src/fwk/src/util/util_tms.c
+END
+util_srpc.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/gwsw/S304/!svn/ver/2302/trunk/platform/src/fwk/src/util/util_srpc.c
+END
+util_shell.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/gwsw/S304/!svn/ver/7758/trunk/platform/src/fwk/src/util/util_shell.c
+END
+util_crc.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/gwsw/S304/!svn/ver/1017/trunk/platform/src/fwk/src/util/util_crc.c
+END
+util_cli.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/gwsw/S304/!svn/ver/5266/trunk/platform/src/fwk/src/util/util_cli.c
+END
+util_fil.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/gwsw/S304/!svn/ver/7113/trunk/platform/src/fwk/src/util/util_fil.c
+END
+util_list.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/gwsw/S304/!svn/ver/14062/trunk/platform/src/fwk/src/util/util_list.c
+END
+util_lzw_decode.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/gwsw/S304/!svn/ver/7758/trunk/platform/src/fwk/src/util/util_lzw_decode.c
+END
+util_random.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/gwsw/S304/!svn/ver/1017/trunk/platform/src/fwk/src/util/util_random.c
+END
+util_bget.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/gwsw/S304/!svn/ver/6308/trunk/platform/src/fwk/src/util/util_bget.c
+END
+util_hashmap.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/gwsw/S304/!svn/ver/14220/trunk/platform/src/fwk/src/util/util_hashmap.c
+END
+util_image.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/gwsw/S304/!svn/ver/21473/trunk/platform/src/fwk/src/util/util_image.c
+END
+util_prctl.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/gwsw/S304/!svn/ver/9340/trunk/platform/src/fwk/src/util/util_prctl.c
+END
+util_msg.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/gwsw/S304/!svn/ver/12856/trunk/platform/src/fwk/src/util/util_msg.c
+END
+util_net.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/gwsw/S304/!svn/ver/17666/trunk/platform/src/fwk/src/util/util_net.c
+END
+util_base64decode.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/gwsw/S304/!svn/ver/7758/trunk/platform/src/fwk/src/util/util_base64decode.c
+END
+util_lzw_encode.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/gwsw/S304/!svn/ver/16842/trunk/platform/src/fwk/src/util/util_lzw_encode.c
+END
+util_linklist.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/gwsw/S304/!svn/ver/9340/trunk/platform/src/fwk/src/util/util_linklist.c
+END
+util_hexbinary.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/gwsw/S304/!svn/ver/8282/trunk/platform/src/fwk/src/util/util_hexbinary.c
+END
+util_strconv.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/gwsw/S304/!svn/ver/17004/trunk/platform/src/fwk/src/util/util_strconv.c
+END
+util_xml.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/gwsw/S304/!svn/ver/7758/trunk/platform/src/fwk/src/util/util_xml.c
+END

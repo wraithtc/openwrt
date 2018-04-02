@@ -1,0 +1,48 @@
+Source-Makefile: feeds/whc/qca-whc-lbd/Makefile
+Package: qca-whc-lbd
+Submenu: Whole Home Coverage features
+Version: g96b5b9e-dirty-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +qca-whc-init +libhyficommon +libpthread +@BUSYBOX_CONFIG_STAT +@BUSYBOX_CONFIG_FEATURE_STAT_FORMAT @PACKAGE_kmod-qca-wifi-10.4-unified-profile||PACKAGE_kmod-qca-wifi-10.4-akronite-perf||PACKAGE_kmod-qca-wifi-10.4-dakota-perf||PACKAGE_kmod-qca-wifi-10.4-perf||PACKAGE_kmod-qca-wifi-perf||PACKAGE_kmod-qca-wifi-akronite-perf||PACKAGE_kmod-qca-wifi-10.4-unified-perf +jansson
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Depends: PACKAGE_kmod-qca-wifi-10.4-unified-profile:qca-wifi-10.4 PACKAGE_kmod-qca-wifi-10.4-akronite-perf:qca-wifi-10.4 PACKAGE_kmod-qca-wifi-10.4-dakota-perf:qca-wifi-10.4 PACKAGE_kmod-qca-wifi-perf:qca-wifi PACKAGE_kmod-qca-wifi-akronite-perf:qca-wifi PACKAGE_kmod-qca-wifi-10.4-perf:qca-wifi-10.4 PACKAGE_kmod-qca-wifi-10.4-unified-perf:qca-wifi-10.4 libhyficommon
+Section: QCA
+Category: QCA Proprietary software
+Title: Whole Home Coverage Load Balancing daemon
+Maintainer: Qualcomm Atheros
+Source: qca-whc-lbd-g96b5b9e-dirty.tar.gz
+Type: ipkg
+Description:   This package installs the Whole Home Coverage Load Balancing daemon
+http://www.qca.qualcomm.com
+Qualcomm Atheros
+@@
+Config:
+  source "qca/feeds/whc/qca-whc-lbd/Config.in"
+  	menu "overwrite package version"
+		depends on PACKAGE_qca-whc-lbd
+	config qca-whc-lbd_USE_CUSTOM_VERSION
+		depends on PACKAGE_qca-whc-lbd
+		bool "Use custom package version"
+		default n
+
+	config qca-whc-lbd_CUSTOM_VERSION
+		depends on qca-whc-lbd_USE_CUSTOM_VERSION
+		string "qca-whc-lbd version as string (default version: g96b5b9e-dirty)"
+		default "g96b5b9e-dirty"
+
+	endmenu
+  	menu "custom source directory"
+		depends on PACKAGE_qca-whc-lbd
+	config qca-whc-lbd_USE_CUSTOM_SOURCE_DIR
+		depends on PACKAGE_qca-whc-lbd
+		bool "Use custom source directory"
+		default n
+	config qca-whc-lbd_CUSTOM_SOURCE_DIR
+		depends on qca-whc-lbd_USE_CUSTOM_SOURCE_DIR
+		string "Custom source directory"
+		default ""
+	endmenu
+@@
+
+

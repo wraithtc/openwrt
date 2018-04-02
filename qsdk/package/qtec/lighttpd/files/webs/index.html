@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" >
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>index</title>
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <script src="./public/javascripts/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+        var data={
+            "requestUrl": "get_systemconfigure_cfg",
+            "method": "get"
+        };
+        var config;
+        $.ajax({
+            type: 'POST',
+            url: '/cgi-bin/web.cgi/',
+            data: JSON.stringify(data),
+            dataType: 'json',
+            async : false,
+            success: function (res) {
+                if(res.errorcode==0){
+                    config=res.data.configured
+                }
+            },
+            error:function () {
+                setTimeout(function () {
+                    resultTipshow(-1,-1);
+                },2000)
+            }
+        })
+        var common =  {};
+        common.ua = navigator.userAgent;
+        common.iphone =  common.ua.indexOf('iPhone;') >= 0;
+        common.ipad =  common.ua.indexOf('iPad;') >= 0;
+        common.ipod =  common.ua.indexOf('iPod;') >= 0;
+        common.android =  common.ua.indexOf(' Android') >= 0;
+        common.mobile = !!common.ua.match(/AppleWebKit.*Mobile.*/);
+        common.winPhone= common.ua.indexOf('Windows Phone') >= 0;
+        if (common.iphone || common.ipad || common.ipod || common.android || common.mobile || common.winPhone) {
+            if (config== 0) {
+                location.href = "./mobile.html?t="+Math.random();
+            } else {
+                if (config== 1) {
+                    location.href = './mobile.html?t='+Math.random()+'#/login';
+                }
+            }
+        } else {
+            if (config==0) {
+                location.href = "./firstSettings.html?t="+Math.random();
+            } else {
+                if (config==1) {
+                    location.href = './login.html?t='+Math.random();
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" value="DeviceFlag" style="display:none;" />
+</body>
+</html>

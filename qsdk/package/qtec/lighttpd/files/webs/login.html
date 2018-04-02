@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" >
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="./public/styles/normalize.css">
+    <link rel="stylesheet" type="text/css" href="./public/styles/common.css?v=1.2.2">
+    <link rel="stylesheet" type="text/css" href="./public/styles/login.css?v=1.2.2">
+</head>
+<body style="display: none">
+    <header>
+        <div class="header">
+            <div class="nav">
+                <div class="logo">
+                    <img src="./public/images/toplogo.png">
+                </div>
+            </div>
+            <div class="guide">
+                <a href="/downloadApp.html" target="_self">下载app(无效)</a>
+                <a href="http://www.qtec.cn" target="_self">去官网</a>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="router-logo"><img src="./public/images/logo.png" alt="router-logo"></div>
+            <h2>欢迎使用三点安全网关</h2>
+            <div class="login-form">
+                <form>
+                    <div class="login-form-item">
+                        <input class="pass" type="password" maxlength="63" autofocus="autofocus" placeholder="请输入管理密码" autocomplete="off" >
+                        <span class="pwd-switch hidePassword"></span>
+                    </div>
+                    <div class="tip"><span class="tip-content"></span></div>
+                    <button type="button" class="login-button"><span>登录</span><b class="disabled hide"></b></button>
+                </form>
+            </div>
+            <div class="forgot-tip">
+                <span>默认情况下，网关的管理密码就是您的WiFi密码忘记密码可以通过RESET键复位，重新配置网关</span>
+            </div>
+        </div>
+    </div>
+    <div class="tipshow" style="display: none;">
+        <div class="result-content">
+            <div class="result-icon hide"></div>
+            <span class="result-tip"></span>
+        </div>
+    </div>
+    <script src="./public/javascripts/jsencrypt.min.js"></script>
+    <script src="./public/javascripts/jquery-3.2.1.min.js"></script>
+    <script>
+        $('body').fadeIn()
+        var err=new Object();
+        err.id={
+            '-86':"未找到对应的数据",
+            '-87':"没有处理权限",
+            '-93':"密码错误",
+            '-94':"解密失败",
+            '-95':"内部逻辑错误",
+            '-96':"值错误",
+            '-97':"关键参数缺失",
+            '-98':"数据请求方式错误",
+            '-99':"数据请求链接错误",
+            '-100':"未登录"
+        };
+        err.error_msg=function (res) {
+            var errorcode=res.errorcode;
+            if(err.id[errorcode]){
+                tip.html(err.id[errorcode]);
+            }else {
+                tip.html(res.msg);
+            }
+        }
+        var data = {
+            "requestUrl": "get_systemconfigure_cfg",
+            "method": "get"
+        }
+        $.ajax({
+            type:'POST',
+            url:'/cgi-bin/web.cgi/',
+            data:JSON.stringify(data),
+            dataType:'json',
+            success:function (res) {
+                if(res.errorcode==0){
+                    if(res.data.configured==0){
+                        location.href='./firstSettings.html?t='+Math.random();
+                    }
+                } else {
+                    err.error_msg(res);
+                }
+            },
+            error:function () {
+                tip.html('网络异常，请检查')
+            }
+        })
+        function loading(e) {
+            $(e).attr('disabled','disabled');
+            $(e).addClass('disabled');
+            $(e).find('.disabled').removeClass('hide')
+        }
+        function disLoading(e) {
+            $(e).removeAttr('disabled');
+            $(e).removeClass('disabled');
+            $(e).find('.disabled').addClass('hide')
+        }
+        // 在接收到数据后做统一处理
+        function GetQueryString(name)
+        {
+            var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+            var r = location.search.substr(1).match(reg);
+            if(r!=null){
+                return  unescape(r[2]);
+                return null;
+            }
+        }
+        var tip=$('.tip-content');
+        $('.pwd-switch').click(function () {
+            $(this).toggleClass('hidePassword');
+            $(this).toggleClass('showPassword');
+            if($('.pass').attr('type')=='password'){
+                $('.pass').attr('type','text')
+            }else {
+                $('.pass').attr('type','password')
+            }
+        })
+        document.onkeydown=function(event){
+            var e = event || window.event || arguments.callee.caller.arguments[0];
+            if(e && e.keyCode==13){
+                e.preventDefault();
+                $('.login-button').click();
+            }
+        };
+//        $('.pass').on('blur',function () {
+//            var pwd=$(this).val();
+//            var pwd_filter= (/^.{4,63}$/).test(pwd);
+//            if(!pwd_filter){
+//                tip.html('请输入4-63位管理密码');
+//            }else {
+//                tip.html('');
+//            }
+//        })
+        function cn_test(m) {
+            var buf = m;
+            for (var h = 0; h < buf.length; h++) {
+                var tst = buf.substring(h, h + 1);
+                if (tst.charCodeAt(0) < 0 || tst.charCodeAt(0) > 255) {
+                    // var ss = '密码不支持中文字符';
+                    return -1;
+                }
+            }
+        }
+        $('.pass').on('input',function () {
+            tip.html('');
+        })
+        $('.login-button').click(function () {
+            var pwd=$('.pass').val();
+            if(pwd.length==0){
+                tip.html('密码不能为空');
+                return;
+            }
+           if(cn_test(pwd)==-1){
+                tip.html("wifi密码不支持中文字符");
+                return
+            }
+            var pwd_filter= (/^.{4,63}$/).test(pwd);
+//                var pwd_filter= (/(?=.*\d)(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9]).{8,18}/).test(pwd);
+            if(!pwd_filter){
+                tip.html('请输入4-63位管理密码');
+                return;
+            }
+            loading(this);
+            var self=this;
+            var i=0;
+            getkey(pwd,self,i)
+        })
+        function getkey(pwd,self,i) {
+            var data={
+                "requestUrl": "getkeycfg",
+                "method": "get"
+            }
+            $.ajax({
+                type:'POST',
+                url:'/cgi-bin/web.cgi/',
+                data:JSON.stringify(data),
+                dataType:'json',
+                success:function (res) {
+                    if(res.errorcode==0) {
+                        var publickey = res.data.rand_key;
+                        if (publickey.length == 0) {
+                            if (i < 3) {
+                                getkey(pwd, self, i++)
+                            } else {
+                                disLoading(self);
+                                $('.pass').val(pwd);
+                                tip.html('网关异常请检查后重试');
+                            }
+                        } else {
+                            var encrypt = new JSEncrypt();
+                            encrypt.setPublicKey(publickey);
+                            var passencrypted = encrypt.encrypt(pwd);
+                            submit(passencrypted, self, pwd);
+                        }
+                    }else{
+                        $('.pass').val(pwd);
+                        err.error_msg(res);
+                        disLoading(self);
+                        }
+                    },
+                    error:function () {
+                        $('.pass').val(pwd);
+                        disLoading(self);
+                        tip.html('网络异常，请检查')
+                    }
+            })
+        }
+        function submit(passencrypted,self,pwd) {
+            var tip=$('.tip-content');
+            var data = {
+                "data": {
+                    "username": "admin",
+                    "password": passencrypted,
+                    "target": "check"
+                },
+                "requestUrl": "logincfg",
+                "method": "put"
+            }
+            $.ajax({
+                type:'POST',
+                url:'/cgi-bin/web.cgi/',
+                data:JSON.stringify(data),
+                dataType:'json',
+                success:function (res) {
+                    if(res.errorcode==0)
+                    {
+                        window.localStorage.setItem('qtec_router_token',res.data.tokenid);
+                        var url=GetQueryString("redirect");
+                        if(location.hash){
+                            location.href=url+location.hash;
+                        }
+                        else {
+                            if(url!=null){
+                                location.href=url;
+                            }else {
+                                location.href='./home.html?t='+Math.random();
+                            }
+                        }
+                    }else{
+                        $('.pass').val(pwd);
+                        err.error_msg(res);
+                    }
+                    disLoading(self);
+                },
+                error:function () {
+                    disLoading(self);
+                    $('.pass').val(pwd);
+                    tip.html('网络异常，请检查')
+                }
+            })
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,221 @@
+Package: kmod-qca-edma
+Version: 3.14.77+g1d65974-dirty-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c)
+Source: qca/feeds/nss-host/qca-edma
+Section: kernel
+Architecture: ipq806x
+Installed-Size: 21621
+Filename: kmod-qca-edma_3.14.77+g1d65974-dirty-1_ipq806x.ipk
+Size: 22380
+MD5Sum: 837ede7b14e98a545ede9503f8ce3f62
+SHA256sum: 47361ea857a180647069c4031c113d6e29dd645a454311c154faa70bae6b6dc9
+Description:  Kernel modules for IPQ40xx integrated ethernet adapater.
+
+Package: kmod-qca-nss-cfi
+Version: 3.14.77+g1d65974-dirty-2
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-qca-nss-crypto, kmod-crypto-ocf
+Source: qca/feeds/nss-host/qca-nss-cfi
+Section: kernel
+Architecture: ipq806x
+Installed-Size: 19819
+Filename: kmod-qca-nss-cfi_3.14.77+g1d65974-dirty-2_ipq806x.ipk
+Size: 20567
+MD5Sum: 52ea7ad6b440543c167a1ead44b7b973
+SHA256sum: 394feb8c4b213f03159fe1ba759e1b9c8848fc0918ec5ea06342d6054bba60c5
+Description:  Kernel driver for NSS cfi
+
+Package: kmod-qca-nss-crypto
+Version: 3.14.77+g1d65974-dirty-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-qca-nss-drv
+Source: qca/feeds/nss-host/qca-nss-crypto
+Section: kernel
+Architecture: ipq806x
+Installed-Size: 19453
+Filename: kmod-qca-nss-crypto_3.14.77+g1d65974-dirty-1_ipq806x.ipk
+Size: 20252
+MD5Sum: 648c6e92ccf27203d0d28195ef4a1088
+SHA256sum: e7c87d0dcd3381602aa843fb48f92692b4e1fa2713e881ec0fa28b4be752e3b8
+Description:  Kernel driver for NSS crypto driver
+
+Package: kmod-qca-nss-drv-ipsecmgr
+Version: 3.14.77+g1d65974-dirty-2
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-qca-nss-drv
+Source: qca/feeds/nss-host/qca-nss-clients
+Section: kernel
+Architecture: ipq806x
+Installed-Size: 18462
+Filename: kmod-qca-nss-drv-ipsecmgr_3.14.77+g1d65974-dirty-2_ipq806x.ipk
+Size: 19264
+MD5Sum: 4ae036ecb7538d14b18c919fea6091cf
+SHA256sum: fdbea1c347f582c4efec767fb35865a30c30593fcf5adffb3c5824b6e618da9c
+Description:  Kernel driver for NSS (ipsec manager) - ipsecmgr
+
+Package: kmod-qca-nss-drv-l2tpv2
+Version: 3.14.77+g1d65974-dirty-2
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-qca-nss-drv, kmod-l2tp
+Source: qca/feeds/nss-host/qca-nss-clients
+Section: kernel
+Architecture: ipq806x
+Installed-Size: 7279
+Filename: kmod-qca-nss-drv-l2tpv2_3.14.77+g1d65974-dirty-2_ipq806x.ipk
+Size: 8094
+MD5Sum: 776e42636aebd0a6757f0d1092f0b51f
+SHA256sum: ff686e9ab6e2fa272f0da2f727aa4239c2ff881738fd399b4561849d380b1fd4
+Description:  Kernel driver for NSS (connection manager) - l2tp
+
+Package: kmod-qca-nss-drv-lag-mgr
+Version: 3.14.77+g1d65974-dirty-2
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-qca-nss-drv, kmod-bonding
+Source: qca/feeds/nss-host/qca-nss-clients
+Section: kernel
+Architecture: ipq806x
+Installed-Size: 2589
+Filename: kmod-qca-nss-drv-lag-mgr_3.14.77+g1d65974-dirty-2_ipq806x.ipk
+Size: 3400
+MD5Sum: 9807c536b6cefe7adf17030ce960f61e
+SHA256sum: 83019b43ce5f2ff10149f6c84154a167dc348bbc5d52c0c0aa98581d735b4489
+Description:  Kernel driver for NSS LAG manager
+
+Package: kmod-qca-nss-drv-map-t
+Version: 3.14.77+g1d65974-dirty-2
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-qca-nss-drv, kmod-nat46
+Source: qca/feeds/nss-host/qca-nss-clients
+Section: kernel
+Architecture: ipq806x
+Installed-Size: 6905
+Filename: kmod-qca-nss-drv-map-t_3.14.77+g1d65974-dirty-2_ipq806x.ipk
+Size: 7742
+MD5Sum: f7db87cba5825b4a016e14a0d7469c24
+SHA256sum: 32270cfa9905f58edcb7ec2e24a18e8d4487568a35b3c49c723c5f68a16bffd1
+Description:  Kernel driver for NSS (connection manager) - MAP-T
+
+Package: kmod-qca-nss-drv-pptp
+Version: 3.14.77+g1d65974-dirty-2
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-qca-nss-drv, kmod-pptp
+Source: qca/feeds/nss-host/qca-nss-clients
+Section: kernel
+Architecture: ipq806x
+Installed-Size: 3292
+Filename: kmod-qca-nss-drv-pptp_3.14.77+g1d65974-dirty-2_ipq806x.ipk
+Size: 4101
+MD5Sum: eb695f6b99860606cb0b0fe5318943b4
+SHA256sum: 8448e09260fedba460b4e7cc5121607847c65cda3545dfcbaded05178b41fd1b
+Description:  Kernel driver for NSS (connection manager) - PPTP
+
+Package: kmod-qca-nss-drv-profile
+Version: 3.14.77+g1d65974-dirty-2
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-qca-nss-drv
+Source: qca/feeds/nss-host/qca-nss-clients
+Section: kernel
+Architecture: ipq806x
+Installed-Size: 5922
+Filename: kmod-qca-nss-drv-profile_3.14.77+g1d65974-dirty-2_ipq806x.ipk
+Size: 6667
+MD5Sum: d36ddd06ff8c5951e428f83cb72997f6
+SHA256sum: a78bf6695407b47e99942d2041bde116843fd95ae732d582a63c75b9b2a5bac1
+Description:  Profiler for QCA NSS driver (IPQ806x)
+
+Package: kmod-qca-nss-drv-qdisc
+Version: 3.14.77+g1d65974-dirty-2
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-qca-nss-drv
+Source: qca/feeds/nss-host/qca-nss-clients
+Section: kernel
+Architecture: ipq806x
+Installed-Size: 21659
+Filename: kmod-qca-nss-drv-qdisc_3.14.77+g1d65974-dirty-2_ipq806x.ipk
+Size: 22393
+MD5Sum: f8fab65159bdb1a0a3fdf58abe631cf4
+SHA256sum: 83974a4d32cfbffc65093665bfe2e902b5313624cd6bdf08ab4c1f8c052fbcec
+Description:  Qdisc for configuring shapers in NSS
+
+Package: kmod-qca-nss-drv-tun6rd
+Version: 3.14.77+g1d65974-dirty-2
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-qca-nss-drv, kmod-sit
+Source: qca/feeds/nss-host/qca-nss-clients
+Section: kernel
+Architecture: ipq806x
+Installed-Size: 4141
+Filename: kmod-qca-nss-drv-tun6rd_3.14.77+g1d65974-dirty-2_ipq806x.ipk
+Size: 4942
+MD5Sum: a8acf834ed1eb3bbc9c35978954a4009
+SHA256sum: 660db325c85fd471e5c745c8dd4d99556113c5d27a24d00665242735a4ea37f5
+Description:  Kernel driver for NSS (connection manager) - tun6rd
+
+Package: kmod-qca-nss-drv-tunipip6
+Version: 3.14.77+g1d65974-dirty-2
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-qca-nss-drv, kmod-iptunnel6, kmod-ip6-tunnel
+Source: qca/feeds/nss-host/qca-nss-clients
+Section: kernel
+Architecture: ipq806x
+Installed-Size: 1911
+Filename: kmod-qca-nss-drv-tunipip6_3.14.77+g1d65974-dirty-2_ipq806x.ipk
+Size: 2781
+MD5Sum: ed1c7adc37c19b4d6b3757aad5afce38
+SHA256sum: b4b779a4dc87c3391d7e7c5815795bc980ea8148c8c550cfbfdb2a512f4a4da8
+Description:  Kernel driver for NSS (connection manager) - DS-lite and ipip6 Tunnel
+
+Package: kmod-qca-nss-drv
+Version: 3.14.77+g1d65974-dirty-2
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-qca-nss-gmac, kmod-ppp, kmod-pppoe
+Source: qca/feeds/nss-host/qca-nss-drv
+Section: kernel
+Architecture: ipq806x
+Installed-Size: 137303
+Filename: kmod-qca-nss-drv_3.14.77+g1d65974-dirty-2_ipq806x.ipk
+Size: 134052
+MD5Sum: 69a728db5c377bd48756d24cdf52024d
+SHA256sum: 4e7a076e0ec0617e315dbbfe9b286cde4be163730c03857d1cfd0c1ae1ae6e12
+Description:  Kernel driver for NSS (core driver)
+
+Package: kmod-qca-nss-ecm-premium
+Version: 3.14.77+g1d65974-dirty-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-qca-nss-drv, iptables-mod-extra, kmod-ipt-conntrack, kmod-ipv6, kmod-shortcut-fe-drv, kmod-l2tp, kmod-pppol2tp, kmod-bonding, kmod-pptp, kmod-qca-hyfi-bridge, kmod-qca-mcs, kmod-nat46
+Source: qca/feeds/nss-host/qca-nss-ecm
+Section: kernel
+Architecture: ipq806x
+Installed-Size: 354387
+Filename: kmod-qca-nss-ecm-premium_3.14.77+g1d65974-dirty-1_ipq806x.ipk
+Size: 336173
+MD5Sum: 28e87d7f7b5976c5faef4a919e961418
+SHA256sum: 662f5e1f444876989d56524be055455e97c6edf8f8042f326c4fc225afcb48e8
+Description:  QCA NSS Enhanced Connection Manager (ECM) (with premium features)
+
+Package: kmod-qca-nss-gmac
+Version: 3.14.77+g1d65974-dirty-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c)
+Source: qca/feeds/nss-host/qca-nss-gmac
+Section: kernel
+Architecture: ipq806x
+Installed-Size: 28963
+Filename: kmod-qca-nss-gmac_3.14.77+g1d65974-dirty-1_ipq806x.ipk
+Size: 29608
+MD5Sum: c852d09b12471ebb2640ea952900a997
+SHA256sum: 87c29fa4020fc1b468b12938d478c24b1dec25929b9c87a39a6a48338d316388
+Description:  Kernel driver for NSS gmac
+
+Package: kmod-qca-nss-macsec
+Version: 3.14.77+g1d65974-dirty-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-qca-nss-drv, libpthread, libc
+Source: qca/feeds/nss-host/qca-nss-macsec
+Section: kernel
+Architecture: ipq806x
+Installed-Size: 57840
+Filename: kmod-qca-nss-macsec_3.14.77+g1d65974-dirty-1_ipq806x.ipk
+Size: 57967
+MD5Sum: 2d29baa7816d172ff974d8a41da5d9ac
+SHA256sum: 9cb30898da1b7bb4ebbe82dc704829a46fd7b2f9d51f278bd0ade04f258ab37d
+Description:  Kernel driver for NSS macsec
+
+Package: kmod-qca-rfs
+Version: 3.14.77+g1d65974-dirty-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-ipt-conntrack
+Source: qca/feeds/nss-host/qca-rfs
+Section: kernel
+Architecture: ipq806x
+Installed-Size: 17830
+Filename: kmod-qca-rfs_3.14.77+g1d65974-dirty-1_ipq806x.ipk
+Size: 18684
+MD5Sum: 988645f2098ef3e7ceec13830b5b6547
+SHA256sum: d065350e612f1e0ce9b11081fcf298feefb4549014adbcde311785c9bf917ed2
+Description:  Kernel module for QCA Receiving Flow Steering
+

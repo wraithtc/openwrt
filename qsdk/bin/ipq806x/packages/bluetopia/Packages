@@ -1,0 +1,13 @@
+Package: bluetopia
+Version: 4.2.1.c1_9-1
+Depends: libc, libpthread
+Source: qca/feeds/bluetopia/bluetopia
+Section: QCA
+Architecture: ipq806x
+Installed-Size: 7403570
+Filename: bluetopia_4.2.1.c1_9-1_ipq806x.ipk
+Size: 7332591
+MD5Sum: 02f522818f6acb734ee3eaa118c4fd86
+SHA256sum: 16e4c3d545bec936154a260397aee77e9b5c475e635d4724a6f1b0c02a5c9ec6
+Description:  This package contains Bluetopia PM and Bluetopia binaries
+

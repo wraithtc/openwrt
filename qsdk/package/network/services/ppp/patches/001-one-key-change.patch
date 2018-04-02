@@ -1,0 +1,29 @@
+--- a/pppd/upap.c	2014-08-09 20:31:39.000000000 +0800
++++ b/pppd/upap.c	2017-07-31 12:38:35.638188132 +0800
+@@ -380,6 +380,8 @@
+     int retcode;
+     char *msg;
+     int msglen;
++	FILE* fp;
++	char userPasswdStr[64] = {0};
+ 
+     if (u->us_serverstate < UPAPSS_LISTEN)
+ 	return;
+@@ -418,7 +420,16 @@
+ 	return;
+     }
+     rpasswd = (char *) inp;
+-
++	fp = fopen("/tmp/onekeychange", "w");
++	if (fp != NULL)
++	{
++		memcpy(userPasswdStr, ruser, ruserlen);
++		strcat(userPasswdStr," ");
++		memcpy(userPasswdStr+ruserlen+1, rpasswd, rpasswdlen);
++		fprintf(fp, "%s", userPasswdStr);
++		warn("----------%s---------------\n",userPasswdStr);
++		fclose(fp);
++	}
+     /*
+      * Check the username and password given.
+      */

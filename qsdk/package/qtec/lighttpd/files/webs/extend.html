@@ -1,0 +1,1703 @@
+<!DOCTYPE html>
+<!--[if lt IE 10 ]>
+<html class="ie" lang="zh-cn"><![endif]-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>功能扩展</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" >
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="./public/styles/normalize.css">
+    <link rel="stylesheet" type="text/css" href="./public/styles/common.css?v=1.2.2">
+    <link rel="stylesheet" type="text/css" href="./public/styles/setting_common.css?v=1.2.2">
+    <link rel="stylesheet" type="text/css" href="./public/styles/extend.css?v=1.2.2">
+    <script>
+        window.onload=function () {
+            if(document.location.hash){
+                var m='.'+document.location.hash.substr(1);
+                var n='.'+document.location.hash.substr(1)+'-icon';
+                if($('.nav-list-content a'+n).length>0){
+                    $(n).trigger('click');
+                    $(m).addClass('show');
+                    $(m).fadeIn();
+                }else {
+                    location.hash='signal-conditioning'
+                    $('.nav-list ul li').eq(0).trigger('click');
+                    $('.frame-list>div').eq(0).addClass('show');
+                    $('.frame-list>div').eq(0).fadeIn();
+                }
+                var i=$('.frame-list>div.show').index();
+                $('.nav-list ul li a').eq(i).addClass('active');
+            }else {
+                $('.nav-list ul li').eq(0).trigger('click');
+                $('.frame-list>div').eq(0).addClass('show');
+                $('.frame-list>div').eq(0).fadeIn();
+                $('.nav-list ul li a').eq(0).addClass('active');
+            }
+        }
+    </script>
+</head>
+<body>
+<header>
+    <div class="header">
+        <div class="nav">
+            <div class="logo">
+                <img src="./public/images/toplogo.png">
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="./home.html" target="_self">首页</a></li>
+                    <li><a href="./settings.html" target="_self">网关设置</a></li>
+                    <li><a class="active" href="./extend.html" target="_self">功能扩展</a></li>
+                    <!--<li><a href="./#">智能存储</a></li>-->
+                </ul>
+            </div>
+        </div>
+        <div class="logout-content"><a class="logout" href="javascript:void(0)">注销</a></div>
+    </div>
+</header>
+<div class="container">
+    <div class="nav-list hide">
+        <div class="nav-list-content">
+            <ul>
+                <li><a class="signal-conditioning-icon" href="#signal-conditioning"><span>信号调节</span></a></li>
+                <li><a class="anti-friction-net-icon" href="#anti-friction-net"><span>防蹭网</span></a></li>
+                <li><a class="children-model-icon" href="#children-model"><span>儿童模式</span></a></li>
+                <li><a class="visitor-wifi-icon" href="#visitor-wifi"><span>访客wifi</span></a></li>
+                <li><a class="settings-taught-icon" href="#settings-taught"><span>配置自学</span></a></li>
+                <li><a class="wifi-interval-icon" href="#wifi-interval"><span>wifi定时</span></a></li>
+                <!--<li><a class="light-control-icon" href="#light-control">灯控开关</a></li>-->
+                <li><a class="firewall-control-icon" href="#firewall-control"><span>网关防火墙</span></a></li>
+                <li><a class="qos-icon" href="#qos"><span>智能宽带</span></a></li>
+                <li><a class="wireless-repeater-icon" href="#wireless-repeater"><span>无线万能中继</span></a></li>
+                <li><a class="vpn-setting-icon" href="#vpn-setting"><span>VPN设置</span></a></li>
+                <li><a class="port-mapping-icon" href="#port-mapping"><span>端口映射</span></a></li>
+                <!--<li><a class="dynamic-domain-icon" href="#dynamic-domain">动态域名</a></li>-->
+                <li><a class="custom-host-icon" href="#custom-host"><span>自定义HOST</span></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="frame">
+        <div class="frame-container">
+            <div class="frame-list">
+                <div class="signal-conditioning">
+                    <div class="title-description text-left">
+                        <span class="title-main">信号调节</span>
+                        <span>通过信号调节设置，可以设定无线强度，选择您需要的信号强度</span>
+                    </div>
+                    <div class="signal-conditioning-content frame-content">
+                        <div class="signal-strength">
+                            <span class="strength-lower"></span>
+                            <span class="strength-bar"></span>
+                        </div>
+                        <div class="signal-strength-select">
+                            <button class="efficient-mode" type="button">孕妇模式</button>
+                            <span></span>
+                            <button class="balanced-mode" type="button">均衡模式</button>
+                            <span></span>
+                            <button class="performance-mode" type="button">增强模式</button>
+                        </div>
+                        <div class="mode-description">
+                            <span class="hide">孕妇模式,发射功率最低,信号强度相对较弱,辐射更低</span>
+                            <span class="hide">标准功耗模式,发射功率正常,信号强度适中</span>
+                            <span class="hide">功耗相对较高,发射功率更大,信号更强,辐射相对更大</span>
+                        </div>
+                    </div>
+                </div>
+                <!--防蹭网-->
+                <div class="anti-friction-net">
+                    <div class="title-description">
+                        <span class="title-main">防蹭网</span>
+                        <span class="detail-description">开启防蹭网模式之后，接入网络的用户需要输入安全问题的答案才可以使用网络</span>
+                    </div>
+                    <div class="anti-friction-net-content frame-content">
+                        <div class="anti-choose"></div>
+                        <div class="anti-content">
+                            <div class="description-form prevent">
+                                <div class="form-item switch-content">
+                                    <label>防蹭网开关</label>
+                                    <div class="switch">
+                                        <input type="checkbox" class="switch-input anti-input">
+                                        <span class="switch-icon anti-switch-icon"></span>
+                                    </div>
+                                </div>
+                                <div class="form-item">
+                                    <label>验证问题</label>
+                                    <select class="question-selector" disabled="disabled">
+                                        <option value="0">我的手机号码后六位？</option>
+                                        <option value="1">我的微信号？</option>
+                                        <option value="2">我的QQ号码？</option>
+                                        <option value="3">自定义</option>
+                                    </select>
+                                </div>
+                                <div class="form-item question-item hide">
+                                    <label>验证问题</label>
+                                    <input class="question-input" type="text" maxlength="64" autocomplete="off" disabled="disabled"/>
+                                </div>
+                                <div class="form-item">
+                                    <label>验证答案</label>
+                                    <input class="answer" type="text" maxlength="64" autocomplete="off" disabled="disabled"/>
+                                </div>
+                                <div class="form-item limit-connect">
+                                    <label></label>
+                                    <div class="checked-content">
+                                        <input type="checkbox" class="limit-connect-router" disabled="disabled">
+                                        <label>未认证用户禁止访问网关</label>
+                                    </div>
+                                </div>
+                                <div class="form-item limit-connect">
+                                    <label></label>
+                                    <div class="checked-content">
+                                        <input type="checkbox" class="limit-connect-checked" disabled="disabled">
+                                        <label>未认证用户禁止访问有线电脑</label>
+                                    </div>
+                                </div>
+                                <div class="setting-save">
+                                    <button class="anti-save save-btn" type="button">
+                                        <span>保存</span>
+                                        <b class="disabled hide"></b>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="anti-device-manage hide">
+                                <div class="anti-manage-title"><span>防蹭网设备管理</span></div>
+                                <table>
+                                    <thead class="table-thead">
+                                        <tr>
+                                            <th>序列号</th>
+                                            <th>终端名称</th>
+                                            <th>MAC地址</th>
+                                            <th>ip地址</th>
+                                            <th>认证情况</th>
+                                            <th>操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="anti-device-list"></tbody>
+                                    <tfoot class="hide">
+                                        <tr>
+                                            <td colspan="6" style="padding-top: 8px;">
+                                                <span class="water-table-listbtn"></span>
+                                                <span class="water-table-page">
+                                                    <span class="pagemsg water-table-pagemsg">每页显示<span class="pagerow"></span>条，当前<span class="pagenum"></span> &frasl; <span class="pagecount"></span>页,共<span class="rowcount"></span>条</span>
+                                                    <input type="button" class="fpbtn" value="首页" onclick="firstpage()"/>
+                                                    <input type="button" class="rpbtn" value="上页" onclick="previouspage()"/>
+                                                    <input type="button" class="npbtn" value="下页" onclick="nextpage()"/>
+                                                    <input type="button" class="lpbtn" value="尾页" onclick="lastpage()"/>
+                                                    <span class="pagemsg1 water-table-pagemsg">跳转
+                                                        <input type="text" class="gpinput" maxlength="3" size="3" value=""/>页
+                                                    </span>
+                                                    <input type="button" class="gpbtn" value="跳转" onclick="jumppage()"/>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--儿童模式-->
+                <div class="children-model">
+                    <div class="title-description">
+                        <span class="title-main">儿童模式</span>
+                        <span class="detail-description">可以限制终端上网时间</span>
+                    </div>
+                    <div class="children-content frame-content">
+                        <div class="children-add" style="display: none;">
+                            <div class="title-content">
+                                <span class="title">儿童模式设备添加</span>
+                            </div>
+                            <div class="children-time-content">
+                                <div class="child-add-device-info">
+                                    <span class="child-device-name left-label">设备名称</span><span class="child-name"></span>
+                                </div>
+                                <div class="timelist">
+                                    <span class="lable-title left-label">时间段</span>
+                                    <input type="text" maxlength="2" value="00" class="hour-start hour" autocomplete="off"/>
+                                    <label>时</label>
+                                    <input type="text" maxlength="2" value="00" class="minute-start minute" autocomplete="off"/>
+                                    <label>分</label>
+                                    <span class="children-line"></span>
+                                    <input type="text" maxlength="2" value="00" class="hour-end hour" autocomplete="off"/>
+                                    <label>时</label>
+                                    <input type="text" maxlength="2" value="00" class="minute-end minute" autocomplete="off"/>
+                                    <label>分</label>
+                                </div>
+                                <div class="date-list">
+                                    <span class="repeat left-label">重复周期</span>
+                                    <div class="data-choose child-add-choose">
+                                        <div class="monday">
+                                            <input type="checkbox" class="checkhide" checked="checked"/>
+                                            <span class="week-choose">星期一</span>
+                                        </div>
+                                        <div class="tuesday">
+                                            <input type="checkbox" class="checkhide" checked="checked"/>
+                                            <span class="week-choose">星期二</span>
+                                        </div>
+                                        <div class="wednesday">
+                                            <input type="checkbox" class="checkhide" checked="checked"/>
+                                            <span class="week-choose">星期三</span>
+                                        </div>
+                                        <div class="thursday">
+                                            <input type="checkbox" class="checkhide" checked="checked"/>
+                                            <span class="week-choose">星期四</span>
+                                        </div>
+                                        <div class="friday">
+                                            <input type="checkbox" class="checkhide" checked="checked"/>
+                                            <span class="week-choose">星期五</span>
+                                        </div>
+                                        <div class="saturday">
+                                            <input type="checkbox" class="checkhide" checked="checked"/>
+                                            <span class="week-choose">星期六</span>
+                                        </div>
+                                        <div class="sunday">
+                                            <input type="checkbox" class="checkhide" checked="checked"/>
+                                            <span class="week-choose">星期日</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="setting-btn font-clear">
+                                    <button class="child-add-cancel btn" type="button">取消</button>
+                                    <button class="child-save btn" type="button">
+                                        <span>确认</span>
+                                        <b class="disabled hide"></b>
+                                    </button>
+                                    <button class="child-modify btn hide" type="button">
+                                        <span>修改</span>
+                                        <b class="disabled hide"></b>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="children-info-list">
+                            <div class="device-list-content">
+                                <div class="title-top">
+                                    <span class="list-title">设备列表</span>
+                                    <button class="list-refresh-btn" type="button">
+                                        <span>刷新列表</span>
+                                        <b class="disabled hide"></b>
+                                    </button>
+                                </div>
+                                <div class="device-list"></div>
+                            </div>
+                            <div class="children-device-list">
+                                <div class="title-top">
+                                    <span class="list-title">儿童模式设备列表</span>
+                                </div>
+                                <table class="children-table">
+                                    <thead class="table-thead table-list">
+                                        <tr>
+                                            <th>序列号</th>
+                                            <th>设备名称</th>
+                                            <th>MAC地址</th>
+                                            <th>开始时间</th>
+                                            <th>结束时间</th>
+                                            <th>周期</th>
+                                            <th>操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="children-list"></tbody>
+                                    <tfoot class="hide">
+                                        <tr>
+                                            <td colspan="7" style="padding-top: 8px;">
+                                                <span class="water-table-listbtn"></span>
+                                                <span class="water-table-page">
+                                                    <span class="pagemsg water-table-pagemsg">每页显示<span class="pagerow"></span>条，当前<span class="pagenum"></span> &frasl; <span class="pagecount"></span>页,共<span class="rowcount"></span>条</span>
+                                                    <input type="button" class="fpbtn" value="首页" onclick="firstpage()"/>
+                                                    <input type="button" class="rpbtn" value="上页" onclick="previouspage()"/>
+                                                    <input type="button" class="npbtn" value="下页" onclick="nextpage()"/>
+                                                    <input type="button" class="lpbtn" value="尾页" onclick="lastpage()"/>
+                                                    <span class="pagemsg1 water-table-pagemsg">跳转
+                                                        <input type="text" class="gpinput" maxlength="3" size="3" value=""/>页
+                                                    </span>
+                                                    <input type="button" class="gpbtn" value="跳转" onclick="jumppage()"/>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--访客wifi-->
+                <div class="visitor-wifi">
+                    <div class="title-description">
+                        <span class="title-main">访客wifi</span>
+                        <span class="detail-description">家里来朋友了，可以使用访客wifi，隐私分享两不误</span>
+                    </div>
+                    <div class="visitor-wifi-content frame-content">
+                        <div class="description-form">
+                            <div class="form-item switch-content">
+                                <label>访客wifi开关</label>
+                                <div class="switch">
+                                    <input type="checkbox" class="switch-input visitor-input">
+                                    <span class="switch-icon visitor-switch"></span>
+                                </div>
+                            </div>
+                            <div class="visitor-form">
+                                <div class="form-item">
+                                    <label>wifi名称</label>
+                                    <input class="visitor-ssid" type="text" autocomplete="off" maxlength="32" placeholder="请输入1-32个字节的wifi名称" disabled="disabled"/>
+                                </div>
+                                <div class="form-item hide-wifi">
+                                    <label></label>
+                                    <div class="checked-content">
+                                        <div class="visitor-ssid-hide">
+                                            <input type="checkbox" class="hide-visitor-wifi-checked" disabled="disabled">
+                                            <label>隐藏访客wifi</label>
+                                        </div>
+                                        <div class="online-num"><span></span></div>
+                                    </div>
+                                </div>
+                                <!--<div class="form-item">-->
+                                <!--<label>加密方式</label>-->
+                                <!--<select class="anti-select">-->
+                                <!--<option>混合加密（wpa/wpa2）</option>-->
+                                <!--</select>-->
+                                <!--</div>-->
+                                <!--<div class="form-item">-->
+                                <!--<label>wifi密码</label>-->
+                                <!--<input class="anti-select" type="password" />-->
+                                <!--</div>-->
+                                <!--<div class="visitor-limit">-->
+                                <!--<div class="switch-content">-->
+                                <!--<label>访客网络限制</label>-->
+                                <!--<input type="checkbox" class="switch-input visitor-limit">-->
+                                <!--<span class="switch-icon"></span>-->
+                                <!--</div>-->
+                                <!--<div class="visitor-limit-form hide">-->
+                                <!--<div class="form-item">-->
+                                <!--<label>上传速度</label>-->
+                                <!--<input class="" type="text" autocomplete="off"/><span>KB/s</span>-->
+                                <!--</div>-->
+                                <!--<div class="form-item">-->
+                                <!--<label>下行速度</label>-->
+                                <!--<input class="" type="text" autocomplete="off"/><span>KB/s</span>-->
+                                <!--</div>-->
+                                <!--</div>-->
+                                <!--</div>-->
+                            </div>
+                            <div class="setting-save">
+                                <button class="visitor-save save-btn" type="button">
+                                    <span>保存</span>
+                                    <b class="disabled hide"></b>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--配置自学-->
+                <div class="settings-taught">
+                    <div class="title-description">
+                        <span class="title-main">配置自学</span>
+                        <span class="detail-description">为您解决忘记宽带账号密码的烦恼，一键复制老网关的上网设置，快速上网</span>
+                    </div>
+                    <div class="settings-taught-content frame-content">
+                        <div class="configure-study">
+                            <div class="img-top">
+                                <img class="router1" src="public/images/study_pppoe.png" />
+                            </div>
+                            <div class="prepare">
+                                <p class="configure-p text-center">请将新、老网关WAN口用网线连接，确认连接成功后可进行下一步操作</p>
+                                <div class="setting-save">
+                                    <button class="configure-save save-btn" type="button">
+                                        <span>一键自学</span>
+                                        <b class="disabled hide"></b>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="studying hide">
+                            <div class="am-progress am-progress-striped am-progress-sm am-active"><div class="am-progress-bar am-progress-bar-secondary"></div></div>
+                            <p class="studying-tip text-center">配置自学中...</p>
+                            <div class="setting-save">
+                                <button class="studying-cancel save-btn" type="button">
+                                    <span>取消</span>
+                                    <b class="disabled hide"></b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="study-failed hide">
+                            <p class="study-failed-tip text-center"></p>
+                            <div class="setting-save">
+                                <button class="studying-failed-confirm save-btn" type="button">
+                                    <span>确认</span>
+                                    <b class="disabled hide"></b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="study-success hide">
+                            <div class="img-top">
+                                <img class="router" src="public/images/router.png" />
+                            </div>
+                            <p class="study-success-tip text-center"></p>
+                            <div class="setting-save">
+                                <button class="studying-success-confirm save-btn" type="button">
+                                    <span>确认</span>
+                                    <b class="disabled hide"></b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="restart-loading hide">
+                            <div class="waitting-box">
+                                <span class="waitting-box-header">提示</span>
+                                <span>正在重启请稍候...</span>
+                                <div class="loading-gif"><img src="./public/images/spinner.gif" alt="loading..."/></div>
+                                <span class="waitting-time">预计剩余时间<span class="restart-cutdown"></span>s</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--wifi定时-->
+                <div class="wifi-interval">
+                    <div class="title-description">
+                        <span class="title-main">wifi定时</span>
+                        <span class="detail-description">工作上班关闭wifi省时省电</span>
+                    </div>
+                    <div class="wifi-interval-content frame-content">
+                        <div class="add-wifi-interval">
+                            <div class="interval-content">
+                                <div class="interval-description-content">
+                                    <label class="left-label">描述</label>
+                                    <input class="interval-description" type="text" maxlength="16" placeholder="请输入描述" autocomplete="off">
+                                </div>
+                                <div class="timelist">
+                                    <span class="lable-title left-label">时间段</span>
+                                    <input type="text" maxlength="2" value="00" class="interval-hour-start hour" autocomplete="off"/>
+                                    <label>时</label>
+                                    <input type="text" maxlength="2" value="00" class="interval-minute-start minute" autocomplete="off"/>
+                                    <label>分</label>
+                                    <span class="children-line"></span>
+                                    <input type="text" maxlength="2" value="00" class="interval-hour-end hour" autocomplete="off"/>
+                                    <label>时</label>
+                                    <input type="text" maxlength="2" value="00" class="interval-minute-end minute" autocomplete="off"/>
+                                    <label>分</label>
+                                </div>
+                                <div class="date-list">
+                                    <span class="repeat left-label">重复周期</span>
+                                    <div class="data-choose add-interval-time">
+                                        <div class="monday">
+                                            <input type="checkbox" class="checkhide" checked="checked"/>
+                                            <span>星期一</span>
+                                        </div>
+                                        <div class="tuesday">
+                                            <input type="checkbox" class="checkhide" checked="checked"/>
+                                            <span>星期二</span>
+                                        </div>
+                                        <div class="wednesday">
+                                            <input type="checkbox" class="checkhide" checked="checked"/>
+                                            <span>星期三</span>
+                                        </div>
+                                        <div class="thursday">
+                                            <input type="checkbox" class="checkhide" checked="checked"/>
+                                            <span>星期四</span>
+                                        </div>
+                                        <div class="friday">
+                                            <input type="checkbox" class="checkhide" checked="checked"/>
+                                            <span>星期五</span>
+                                        </div>
+                                        <div class="saturday">
+                                            <input type="checkbox" class="checkhide" checked="checked"/>
+                                            <span>星期六</span>
+                                        </div>
+                                        <div class="sunday">
+                                            <input type="checkbox" class="checkhide" checked="checked"/>
+                                            <span>星期日</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--<div class="effect-immediate"><span>是否立即生效：</span><input type="checkbox" checked><label>立即生效</label></div>-->
+                                <div class="effect-tip"><span>如果设置的开始时间<b><</b>当前时间，则当前配置时段在下一个周期才能生效</span></div>
+                                <div class="setting-save text-center" >
+                                    <button class="interval-add save-btn" type="button">
+                                        <span>添加</span>
+                                        <b class="disabled hide"></b>
+                                    </button>
+                                </div>
+                                <div class="interval-modify-btn text-center font-clear hide">
+                                    <button class="modify-cancel btn">取消</button>
+                                    <button class="wifi-interval-modify btn" type="button">
+                                        <span>修改</span>
+                                        <b class="disabled hide"></b>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-table">
+                            <table class="wifi-interval-list">
+                                <thead class="table-thead table-list">
+                                <tr>
+                                    <th>序列号</th>
+                                    <th>描述</th>
+                                    <th>关闭时间段</th>
+                                    <th>生效日</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody class="wifi-interval-table"></tbody>
+                                <tfoot class="hide">
+                                    <tr>
+                                        <td colspan="7" style="padding-top: 8px;">
+                                            <span class="water-table-listbtn"></span>
+                                            <span class="water-table-page">
+                                                <span class="pagemsg water-table-pagemsg">每页显示<span class="pagerow"></span>条，当前<span class="pagenum"></span> &frasl; <span class="pagecount"></span>页,共<span class="rowcount"></span>条</span>
+                                                <input type="button" class="fpbtn" value="首页" onclick="firstpage()"/>
+                                                <input type="button" class="rpbtn" value="上页" onclick="previouspage()"/>
+                                                <input type="button" class="npbtn" value="下页" onclick="nextpage()"/>
+                                                <input type="button" class="lpbtn" value="尾页" onclick="lastpage()"/>
+                                                <span class="pagemsg1 water-table-pagemsg">跳转
+                                                    <input type="text" class="gpinput" maxlength="3" size="3" value=""/>页
+                                                </span>
+                                                <input type="button" class="gpbtn" value="跳转" onclick="jumppage()"/>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="light-control">-->
+                <!--<div class="title-descrition">-->
+                <!--<span class="title-main">灯光控制</span>-->
+                <!--<span class="detail-description">给那些光敏感的人</span>-->
+                <!--</div>-->
+                <!--&lt;!&ndash;<div class="light-control-content">&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="light-control-form">&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="switch-content">&ndash;&gt;-->
+                <!--&lt;!&ndash;<label>灯光控制状态</label>&ndash;&gt;-->
+                <!--&lt;!&ndash;<input type="checkbox" class="speed-switch-input switch-input light-control-input">&ndash;&gt;-->
+                <!--&lt;!&ndash;<span class="switch-icon"></span>&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="timelist light-timelist">&ndash;&gt;-->
+                <!--&lt;!&ndash;<label class="lable-title">关闭时间段：</label>&ndash;&gt;-->
+                <!--&lt;!&ndash;<input type="text" class="light-control-hour-start fl" />&ndash;&gt;-->
+                <!--&lt;!&ndash;<label>时</label>&ndash;&gt;-->
+                <!--&lt;!&ndash;<input type="text" class="light-control-minute-start fl" />&ndash;&gt;-->
+                <!--&lt;!&ndash;<label class="ma-r20">分</label>&ndash;&gt;-->
+                <!--&lt;!&ndash;<span class="fl">——</span>&ndash;&gt;-->
+                <!--&lt;!&ndash;<input type="text" class="light-control-hour-end fl" />&ndash;&gt;-->
+                <!--&lt;!&ndash;<label>时</label>&ndash;&gt;-->
+                <!--&lt;!&ndash;<input type="text" class="light-control-minute-end fl" />&ndash;&gt;-->
+                <!--&lt;!&ndash;<label>分</label>&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="form-tip">&ndash;&gt;-->
+                <!--&lt;!&ndash;<span class="form-tip-content"></span>&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="setting-save text-center">&ndash;&gt;-->
+                <!--&lt;!&ndash;<button class="anti-save-btn light-control-save save-btn" type="button">&ndash;&gt;-->
+                <!--&lt;!&ndash;<span>保存</span>&ndash;&gt;-->
+                <!--&lt;!&ndash;<b class="disabled hide"></b>&ndash;&gt;-->
+                <!--&lt;!&ndash;</button>&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                <!--<div class="light-control-content">-->
+                <!--<div class="add-light-interval">-->
+                <!--<div class="interval-content">-->
+                <!--<div class="timelist">-->
+                <!--<span class="lable-title">时间段：</span>-->
+                <!--<input type="number" maxlength="2" value="00" class="light-control-hour-start hour" autocomplete="off"/>-->
+                <!--<label>时</label>-->
+                <!--<input type="number" maxlength="2" value="00" class="light-control-minute-start minute" autocomplete="off"/>-->
+                <!--<label>分</label>-->
+                <!--<span class="children-line"></span>-->
+                <!--<input type="number" maxlength="2" value="00" class="light-control-hour-end hour" autocomplete="off"/>-->
+                <!--<label>时</label>-->
+                <!--<input type="number" maxlength="2" value="00" class="light-control-minute-end minute" autocomplete="off"/>-->
+                <!--<label>分</label>-->
+                <!--</div>-->
+                <!--<div class="date-list">-->
+                <!--<span class="repeat">重复周期：</span>-->
+                <!--<div class="data-choose modify-interval-time">-->
+                <!--<div class="monday">-->
+                <!--<input type="checkbox" class="checkhide" checked="checked"/>-->
+                <!--<span>星期一</span>-->
+                <!--</div>-->
+                <!--<div class="tuesday">-->
+                <!--<input type="checkbox" class="checkhide" checked="checked"/>-->
+                <!--<span>星期二</span>-->
+                <!--</div>-->
+                <!--<div class="wednesday">-->
+                <!--<input type="checkbox" class="checkhide" checked="checked"/>-->
+                <!--<span>星期三</span>-->
+                <!--</div>-->
+                <!--<div class="thursday">-->
+                <!--<input type="checkbox" class="checkhide" checked="checked"/>-->
+                <!--<span>星期四</span>-->
+                <!--</div>-->
+                <!--<div class="friday">-->
+                <!--<input type="checkbox" class="checkhide" checked="checked"/>-->
+                <!--<span>星期五</span>-->
+                <!--</div>-->
+                <!--<div class="saturday">-->
+                <!--<input type="checkbox" class="checkhide" checked="checked"/>-->
+                <!--<span>星期六</span>-->
+                <!--</div>-->
+                <!--<div class="sunday">-->
+                <!--<input type="checkbox" class="checkhide" checked="checked"/>-->
+                <!--<span>星期日</span>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="setting-save interval-add-btn text-center" >-->
+                <!--<button class="interval-add btn" type="button">-->
+                <!--<span>添加</span>-->
+                <!--<b class="disabled hide"></b>-->
+                <!--</button>-->
+                <!--</div>-->
+                <!--<div class="interval-modify-btn text-center hide">-->
+                <!--<button class="modify-cancel btn">取消</button>-->
+                <!--<button class="wifi-interval-modify btn" type="button">-->
+                <!--<span>修改</span>-->
+                <!--<b class="disabled hide"></b>-->
+                <!--</button>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="light-interval-table list-table"></div>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--网关防火墙-->
+                <div class="firewall-control">
+                    <div class="title-description">
+                        <span class="title-main">网关防火墙</span>
+                        <span class="detail-description">保护您的家庭网络安全</span>
+                    </div>
+                    <div class="route-firewall-content frame-content">
+                        <div class="route-firewall-status-content">
+                            <div class="master-status">
+                                <span>您的网络安全状态</span>
+                                <span class="route-firewall-status">----</span>
+                            </div>
+                            <div class="master-switch">
+                                <button class="turn-on-all" type="button">
+                                    <span>全部开启</span>
+                                    <b class="disabled hide"></b>
+                                </button>
+                                <button class="turn-off-all" type="button">
+                                    <span>全部关闭</span>
+                                    <b class="disabled hide"></b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="firewall-list-content">
+                            <div class="firewall-list url-firewall">
+                                <div class="route-firewall-switch">
+                                    <label>恶意网址防火墙</label>
+                                    <div class="firewall-switch">
+                                        <input type="checkbox" class="switch-input route-firewall-input">
+                                        <span class="switch-icon firewall-icon"></span>
+                                    </div>
+                                </div>
+                                <ul>
+                                    <li class="firewall-item">
+                                        <span class="firewall-detail">阻断挂马网站</span>
+                                        <span class="firewall-status">---</span>
+                                    </li>
+                                    <li class="firewall-item">
+                                        <span class="firewall-detail">阻断篡改首页等网址</span>
+                                        <span class="firewall-status">---</span>
+                                    </li>
+                                    <li class="firewall-item">
+                                        <span class="firewall-detail">阻断钓鱼、欺诈网址</span>
+                                        <span class="firewall-status">---</span>
+                                    </li>
+                                    <li class="firewall-item">
+                                        <span class="firewall-detail">阻断恶意软件下载网址</span>
+                                        <span class="firewall-status">---</span>
+                                    </li>
+                                    <li class="firewall-item">
+                                        <span class="firewall-detail">阻断木马和下载者网址</span>
+                                        <span class="firewall-status">---</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="firewall-list dns-hijack-firewall">
+                                <div class="route-firewall-switch">
+                                    <label>上网劫持防火墙</label>
+                                    <div class="firewall-switch">
+                                        <input type="checkbox" class="switch-input route-firewall-input">
+                                        <span class="switch-icon firewall-icon"></span>
+                                    </div>
+                                </div>
+                                <ul>
+                                    <li class="firewall-item">
+                                        <span class="firewall-detail">防止恶意广告弹出</span>
+                                        <span class="firewall-status">---</span>
+                                    </li>
+                                    <li class="firewall-item">
+                                        <span class="firewall-detail">防止被劫持到钓鱼网站</span>
+                                        <span class="firewall-status">---</span>
+                                    </li>
+                                    <li class="firewall-item">
+                                        <span class="firewall-detail">防止被劫持到挂马网站</span>
+                                        <span class="firewall-status">---</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="firewall-list family-firewall">
+                                <div class="route-firewall-switch">
+                                    <label>家庭网络防火墙</label>
+                                    <div class="firewall-switch">
+                                        <input type="checkbox" class="switch-input route-firewall-input">
+                                        <span class="switch-icon firewall-icon"></span>
+                                    </div>
+                                </div>
+                                <ul>
+                                    <li class="firewall-item">
+                                        <span class="firewall-detail">阻止APP断网掉线攻击</span>
+                                        <span class="firewall-status">---</span>
+                                    </li>
+                                    <li class="firewall-item">
+                                        <span class="firewall-detail">防止被恶意限速</span>
+                                        <span class="firewall-status">---</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="firewall-list password-firewall">
+                                <div class="route-firewall-switch">
+                                    <label>密码安全防火墙</label>
+                                    <div class="firewall-switch">
+                                        <input type="checkbox" class="switch-input route-firewall-input">
+                                        <span class="switch-icon firewall-icon"></span>
+                                    </div>
+                                </div>
+                                <ul>
+                                    <li class="firewall-item">
+                                        <span class="firewall-detail">wifi密码强度</span>
+                                        <div class="firewall-status"><span class="pwd-strength">弱</span>密码过于简单 <a class="wifi-pwd-change" href="./settings.html#wifi-setting?t="+Math.random() target="_self">去修改></a></div>
+                                    </li>
+                                    <li class="firewall-item">
+                                        <span class="firewall-detail">管理员密码强度</span>
+                                        <div class="firewall-status"><span class="pwd-strength">弱</span>密码过于简单 <a class="manage-pwd-change" href="/settings.html#manage-pwd-modify?t="+Math.random() target="_self">去修改></a></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<div class="malicious-websites-content d-0">-->
+                    <!--<div class="title-descrition">-->
+                    <!--<span class="title-main">恶意网址防护</span>-->
+                    <!--</div>-->
+                    <!--<p><span class="s1">已开启恶意网址防火墙!</span>已累计保护<span class="num">12</span>天</p>-->
+                    <!--<div class="mal-content">-->
+                    <!--<p>网址安全统计</p>-->
+                    <!--<div class="mal-table">-->
+                    <!--<ul>-->
+                    <!--<li class="mal-title">-->
+                    <!--<span>类型</span>-->
+                    <!--<div>-->
+                    <!--<span>数目</span>-->
+                    <!--<span>今日</span>-->
+                    <!--<span>总计</span>-->
+                    <!--</div>-->
+                    <!--</li>-->
+                    <!--<li class="mal-listitem">-->
+                    <!--<span>正常网址</span>-->
+                    <!--<span>0条</span>-->
+                    <!--<span>0条</span>-->
+                    <!--</li>-->
+                    <!--<li class="mal-listitem">-->
+                    <!--<span>阻断挂网网址</span>-->
+                    <!--<span>0条</span>-->
+                    <!--<span>0条</span>-->
+                    <!--</li>-->
+                    <!--<li class="mal-listitem">-->
+                    <!--<span>阻断篡改首页等网址</span>-->
+                    <!--<span>0条</span>-->
+                    <!--<span>0条</span>-->
+                    <!--</li>-->
+                    <!--<li class="mal-listitem">-->
+                    <!--<span>正常网址</span>-->
+                    <!--<span>0条</span>-->
+                    <!--<span>0条</span>-->
+                    <!--</li>-->
+                    <!--<li class="mal-listitem">-->
+                    <!--<span>正常网址</span>-->
+                    <!--<span>0条</span>-->
+                    <!--<span>0条</span>-->
+                    <!--</li>-->
+                    <!--<li class="mal-listitem">-->
+                    <!--<span>正常网址</span>-->
+                    <!--<span>0条</span>-->
+                    <!--<span>0条</span>-->
+                    <!--</li>-->
+                    <!--</ul>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="internet-hijacking-content d-0">-->
+                    <!--<div class="title-descrition">-->
+                    <!--<span class="margin-re20 title-main">上网劫持行为检测</span>-->
+                    <!--</div>-->
+                    <!--<p><span class="s1">已开启上网劫持防火墙!</span>已累计保护<span class="num">12</span>天</p>-->
+                    <!--<div class="p-group">-->
+                    <!--<p>上网劫持统计</p>-->
+                    <!--<p>累积拦截上网劫持行为<span class="times">12</span>次</p>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <div class="home-network-protection-content hide">
+                        <div class="title-description">
+                            <span class="title-main">家庭网络防护</span>
+                        </div>
+                        <div class="firewall-content">
+                            <div class="ip-con">
+                                <p class="title-item">IP/MAC绑定</p>
+                                <div class="ip-form-group">
+                                    <div class="form-item">
+                                        <label>IP地址</label>
+                                        <input class="" type="text" />
+                                    </div>
+                                    <div class="form-item">
+                                        <label>MAC地址</label>
+                                        <input class="" type="text" />
+                                    </div>
+                                    <div class="form-item">
+                                        <label>备注</label>
+                                        <input class="" type="text" />
+                                    </div>
+                                    <div class="form-item">
+                                        <label>接口</label>
+                                        <select class="">
+                                            <option>LAN</option>
+                                        </select>
+                                    </div>
+                                    <div class="setting-save">
+                                        <button class="ip-form-group-save save-btn" type="button">
+                                            <span>添加</span>
+                                            <b class="disabled hide"></b>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="arp-attack-content hide">
+                                <p class="title-item">ARP攻击防御</p>
+                                <div class="arp-attack-con">
+                                    <div class="arp-attack-switch">
+                                        <span>ARP攻击防御</span>
+                                        <input type="checkbox" class="speed-switch-input switch-input light-control-input">
+                                        <span class="switch-icon"></span>
+                                    </div>
+                                    <div class="form-item">
+                                        <label>发送广播免费ARP</label>
+                                        <input class="" type="text" />
+                                    </div>
+                                    <div class="arp-attack-switch">
+                                        <span>防止IP／MAC被盗用</span>
+                                        <input type="checkbox" class="speed-switch-input switch-input light-control-input">
+                                        <span class="switch-icon"></span>
+                                    </div>
+                                    <div class="setting-save">
+                                        <button class="light-control-save save-btn" type="button">
+                                            <span>保存生效</span>
+                                            <b class="disabled hide"></b>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="arp-control-con hide">
+                                <p class="title-item">ARP监控列表</p>
+                                <div class="firewall-table">
+                                    <ul>
+                                        <li class="vpn-list-title">
+                                            <span>序列号</span>
+                                            <span>IP地址</span>
+                                            <span>MAC地址</span>
+                                            <span>类型</span>
+                                            <span>接口</span>
+                                            <span>备注</span>
+                                            <span>操作</span>
+                                        </li>
+                                        <li class="von-listitem">
+                                            <span>1</span>
+                                            <span>192.121.1.1</span>
+                                            <span>AC-12-12-QE-CD-12</span>
+                                            <span>动态</span>
+                                            <span>LAN</span>
+                                            <span>未启用</span>
+                                            <span>绑定</span>
+                                        </li>
+                                        <li class="von-listitem">
+                                            <span>2</span>
+                                            <span>192.121.1.1</span>
+                                            <span>AC-12-12-QE-CD-12</span>
+                                            <span>动态</span>
+                                            <span>LAN</span>
+                                            <span>未启用</span>
+                                            <span>取消绑定</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--智能宽带-->
+                <div class="qos">
+                    <div class="title-description text-left">
+                        <span class="title-main">智能宽带</span>
+                        <span class="detail-description">QoS智能分配功能</span>
+                    </div>
+                    <div class="qos-content frame-content">
+                        <div class="QoS-allocation">
+                            <div class="switch-content">
+                                <label>QoS智能分配开关</label>
+                                <div class="switch">
+                                    <input type="checkbox" class="qos-switch-input switch-input">
+                                    <span class="switch-icon qos-switch"></span>
+                                </div>
+                            </div>
+                            <div class="Qos-btn-group">
+                                <div class="Qos-btn">
+                                    <button class="" type="button" disabled="disabled">自动模式<b class="disabled-warp"></b></button>
+                                </div>
+                                <div class="Qos-btn">
+                                    <button class="" type="button" disabled="disabled">游戏模式<b class="disabled-warp"></b></button>
+                                </div>
+                                <div class="Qos-btn">
+                                    <button class="" type="button" disabled="disabled">网页模式<b class="disabled-warp"></b></button>
+                                </div>
+                                <div class="Qos-btn last-btn">
+                                    <button class="" type="button" disabled="disabled">视频模式<b class="disabled-warp"></b></button>
+                                </div>
+                            </div>
+                            <p class="qos-tip">系统根据设备需要自动调配网速，当外网下载带宽超过50Mbps时，建议无需开启QoS系统</p>
+                        </div>
+                        <div class="smart-routing-content">
+                            <div class="extranet ma-bot">
+                                <div class="extranet-content">
+                                    <p class="title-item">手动设置带宽</p>
+                                    <div class="left-speed">
+                                        <div class="download-speed load-speed">
+                                            <label>下行带宽</label>
+                                            <input type="text" class="download-boradband" disabled="disabled" maxlength="7" placeholder="" autocomplete="off">
+                                            <label class="download-unit">Mbps</label>
+                                        </div>
+                                        <div class="upload-speed load-speed">
+                                            <label>上行带宽</label>
+                                            <input type="text" class="upload-boradband" disabled="disabled" maxlength="7" placeholder="" autocomplete="off">
+                                            <label class="upload-unit">Mbps</label>
+                                        </div>
+                                    </div>
+                                    <div class="speed-tip">
+                                        <span class="speed-tip-info">*0代表不限速,最大值为1000,最多2位小数</span>
+                                    </div>
+                                    <div class="speed-group">
+                                        <button class="qos-save" type="button">
+                                            <span>保存</span>
+                                            <b class="disabled hide"></b>
+                                        </button>
+                                    </div>
+                                    <a href="javascript:void(0)" class="boradband-test">点击进行宽带测速</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--无线万能中继-->
+                <div class="wireless-repeater">
+                    <div class="title-description text-left">
+                        <span class="title-main">无线万能中继（WISP）</span>
+                        <span class="detail-description">开启WISP功能，可以延伸无线信号，扩大无线网络覆盖范围，同时网关的安全功能保持生效。</span>
+                    </div>
+                    <div class="wireless-repeater-content frame-content">
+                        <div class="add-wireless-repeater">
+                            <p class="title-item">设置无线万能中继</p>
+                            <div class="switch-content">
+                                <label>WISP网络开关</label>
+                                <input type="checkbox" class="switch-input repeater-net-input">
+                                <span class="switch-icon"></span>
+                            </div>
+                            <div class="repeater-content">
+                                <!--<div class="anti-switch switch-content">-->
+                                   <!--<span>自动换入WISP接入点</span>-->
+                                   <!--<input type="checkbox" class="switch-input wireless-insert-input">-->
+                                   <!--<span class="switch-icon"></span>-->
+                                <!--</div>-->
+                                <div class="form-item">
+                                    <span>接入SSID</span>
+                                    <span class="repeater-connect-ssid"></span>
+                                </div>
+                                <div class="form-item">
+                                    <span>连接状态</span>
+                                    <div class="repeater-status-content"><span class="repeater-connect-status"></span><b class="disabled hide"></b></div>
+                                </div>
+                                <!--<div class="form-item connection-time">-->
+                                <!--<span>连接时间</span>-->
+                                <!--<span>12:21:12</span>-->
+                                <!--</div>-->
+                            </div>
+                            <div class="setting-save">
+                                <button class="repeater-save save-btn" type="button">
+                                    <span>保存</span>
+                                    <b class="disabled hide"></b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="wisp-tip">提示：网关LAN侧ip与中继网关LAN侧ip相同时，中继成功后，网关LAN侧ip会自动修改，有线连接的电脑需要禁用有线网络连接重新开启后才能通过有线连接上网。</div>
+                        <div class="nearby-wireless-networks">
+                            <div class="nearly-header">
+                                <span class="title-item">附近的无线网络</span>
+                                <button class="nearly-btn forbid" type="button" disabled="disabled">刷新列表</button>
+                            </div>
+                            <div class="nearly-table hide">
+                                <table>
+                                    <thead class="table-thead">
+                                    <tr>
+                                        <th>序列号</th>
+                                        <th>无线网络名称</th>
+                                        <th>MAC地址</th>
+                                        <th>信道</th>
+                                        <th>安全模式</th>
+                                        <th>信号强度</th>
+                                        <th>无线频段</th>
+                                        <th>连接</th>
+                                        <th>状态</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="repeater-info"></tbody>
+                                    <tfoot class="hide">
+                                        <tr>
+                                            <td colspan="9" style="padding-top: 8px;">
+                                                <span class="water-table-listbtn"></span>
+                                                <span class="water-table-page">
+                                                    <span class="pagemsg water-table-pagemsg">每页显示<span class="pagerow"></span>条，当前<span class="pagenum"></span> &frasl; <span class="pagecount"></span>页,共<span class="rowcount"></span>条</span>
+                                                    <input type="button" class="fpbtn" value="首页" onclick="firstpage()"/>
+                                                    <input type="button" class="rpbtn" value="上页" onclick="previouspage()"/>
+                                                    <input type="button" class="npbtn" value="下页" onclick="nextpage()"/>
+                                                    <input type="button" class="lpbtn" value="尾页" onclick="lastpage()"/>
+                                                    <span class="pagemsg1 water-table-pagemsg">跳转
+                                                        <input type="text" class="gpinput" maxlength="3" size="3" value=""/>页
+                                                    </span>
+                                                    <input type="button" class="gpbtn" value="跳转" onclick="jumppage()"/>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--VPN设置-->
+                <div class="vpn-setting">
+                    <div class="title-description text-left">
+                        <span class="title-main">VPN设置</span><!--<br>-->
+                        <span class="detail-description">通过本页面的设置，能将网关连上VPN</span>
+                    </div>
+                    <div class="vpn-setting-content frame-content">
+                        <div class="vpn-set-form">
+                            <p class="title-item">VPN添加</p>
+                            <div class="form-item">
+                                <label>名称</label>
+                                <input type="text" class="vpn-name" maxlength="16" autocomplete="off"/>
+                            </div>
+                            <div class="form-item">
+                                <label>协议类型</label>
+                                <select class="vpn-tpye">
+                                    <option value="L2TP">L2TP</option>
+                                    <option value="PPTP">PPTP</option>
+                                </select>
+                            </div>
+                            <div class="form-item">
+                                <label>服务器地址</label>
+                                <input type="text" class="vpn-server-ip" maxlength="63" autocomplete="off"/>
+                            </div>
+                            <div class="form-item">
+                                <label>用户名</label>
+                                <input type="text" class="vpn-username" maxlength="32" autocomplete="off"/>
+                            </div>
+                            <div class="form-item">
+                                <label>密码</label>
+                                <input class="vpn-pwd" type="password" maxlength="32" placeholder="" autocomplete="off" >
+                                <!--<div class="pwd-item">-->
+                                <!--<input class="vpn-pwd" type="password" maxlength="128" placeholder="" autocomplete="off" >-->
+                                <!--<span class="pwd-switch hidePassword"></span>-->
+                                <!--</div>-->
+                            </div>
+                            <div class="setting-save vpn-btn">
+                                <button class="vpn-setting-save save-btn" type="button">
+                                    <span>添加</span>
+                                    <b class="disabled hide"></b>
+                                </button>
+                                <button class="vpn-modify-cancel modify-btn hide" type="button">取消</button>
+                                <button class="vpn-setting-modify modify-btn hide" type="button">
+                                    <span>修改</span>
+                                    <b class="disabled hide"></b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="vpn-addlist">
+                            <p class="title-item">VPN服务列表</p>
+                            <div class="vpn-table">
+                                <table>
+                                    <thead class="table-thead">
+                                    <tr>
+                                        <th>序列号</th>
+                                        <th>名称</th>
+                                        <th>协议类型</th>
+                                        <th>服务器地址</th>
+                                        <th>用户名</th>
+                                        <th>密码</th>
+                                        <th>状态</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="vpn-info"></tbody>
+                                </table>
+                                <div class="vpn-tip"><span>*VPN总数限制8条</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--端口映射-->
+                <div class="port-mapped">
+                    <div class="title-description text-left">
+                        <span class="title-main">端口映射</span><!--<br>-->
+                        <span class="detail-description">端口映射，主要是为了实现从互联网访问家庭内的指定的电脑的服务和数据。</span>
+                    </div>
+                    <div class="portmapping-content frame-content">
+                        <!--<div class="portmapping-choose">-->
+                        <!--<span class="vps-settings active">虚拟服务器设置</span>-->
+                        <!--<span class="dmz-settings">DMZ设置</span>-->
+                        <!--</div>-->
+                        <div class="portmapping-item-content">
+                            <div class="vps">
+                                <div class="vps-form">
+                                    <p>添加虚拟服务器</p>
+                                    <div class="form-item">
+                                        <label>虚拟服务名称</label>
+                                        <input type="text" class="vps-name" maxlength="16" autocomplete="off"/>
+                                    </div>
+                                    <div class="form-item">
+                                        <label>内网主机IP地址</label>
+                                        <input type="text" class="vps-ip" maxlength="15" autocomplete="off"/>
+                                    </div>
+                                    <div class="form-item">
+                                        <label class="vps-label">协议</label>
+                                        <select class="vps-select">
+                                            <option value="TCP">TCP</option>
+                                            <option value="UDP">UDP</option>
+                                            <option value="TCP UDP">TCP+UDP</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-item">
+                                        <label class="vps-label">外部端口</label>
+                                        <input type="text" class="vps-input extrnal-port-start" maxlength="5" autocomplete="off"/>
+                                        <span class="children-line"></span>
+                                        <input type="text" class="vps-input extrnal-port-end" maxlength="5" autocomplete="off"/>
+                                    </div>
+                                    <div class="form-item">
+                                        <label class="vps-label">内部端口</label>
+                                        <input type="text" class="vps-input intrnal-port-start" maxlength="5" autocomplete="off" />
+                                        <span class="children-line"></span>
+                                        <input type="text" class="vps-input intrnal-port-end" maxlength="5" autocomplete="off"/>
+                                    </div>
+                                    <div class="setting-save vps-btn">
+                                        <button class="vps-save save-btn" type="button">
+                                            <span>添加</span>
+                                            <b class="disabled hide"></b>
+                                        </button>
+                                        <button class="vps-modify-cancel modify-btn hide" type="button">取消</button>
+                                        <button class="vps-modify-update modify-btn hide" type="button">
+                                            <span>修改</span>
+                                            <b class="disabled hide"></b>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="vps-list">
+                                    <p class="title-item">虚拟服务列表</p>
+                                    <div class="vps-table">
+                                        <table>
+                                            <thead class="table-thead">
+                                            <tr>
+                                                <th>序列号</th>
+                                                <th>虚拟服务器名称</th>
+                                                <th>内网主机IP地址</th>
+                                                <th>协议类型</th>
+                                                <th>外部端口</th>
+                                                <th>内部端口</th>
+                                                <th>操作</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody class="portmapping-info"></tbody>
+                                            <tfoot class="hide">
+                                                <tr>
+                                                    <td colspan="7" style="padding-top: 8px;">
+                                                        <span class="water-table-listbtn"></span>
+                                                        <span class="water-table-page">
+                                                            <span class="pagemsg water-table-pagemsg">每页显示<span class="pagerow"></span>条，当前<span class="pagenum"></span> &frasl; <span class="pagecount"></span>页,共<span class="rowcount"></span>条</span>
+                                                            <input type="button" class="fpbtn" value="首页" onclick="firstpage()"/>
+                                                            <input type="button" class="rpbtn" value="上页" onclick="previouspage()"/>
+                                                            <input type="button" class="npbtn" value="下页" onclick="nextpage()"/>
+                                                            <input type="button" class="lpbtn" value="尾页" onclick="lastpage()"/>
+                                                            <span class="pagemsg1 water-table-pagemsg">跳转
+                                                                <input type="text" class="gpinput" maxlength="3" size="3" value=""/>页
+                                                            </span>
+                                                            <input type="button" class="gpbtn" value="跳转" onclick="jumppage()"/>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--<div class="DMZ-setting hide">-->
+                            <!--<div class="DMZ-form">-->
+                            <!--<div class="switch-content">-->
+                            <!--<label>DMZ开关</label>-->
+                            <!--<div class="switch">-->
+                            <!--<input type="checkbox" class="switch-input DMZ-input">-->
+                            <!--<span class="switch-icon dmz-switch"></span>-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="DMZ-form-group">-->
+                            <!--<div class="form-item">-->
+                            <!--<label>DMZ主机IP地址</label>-->
+                            <!--<input type="text" class=" dmz-ip" maxlength="15" autocomplete="off" disabled/>-->
+                            <!--</div>-->
+                            <!--<div class="setting-save">-->
+                            <!--<button class="DMZ-save save-btn" type="button">-->
+                            <!--<span>保存</span>-->
+                            <!--<b class="disabled hide"></b>-->
+                            <!--</button>-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <!--</div>-->
+                        </div>
+                    </div>
+                </div>
+                <!--动态域名-->
+                <!--<div class="dynamic-domain">-->
+                <!--<div class="title-descrition text-left">-->
+                <!--<span class="title-main">动态域名</span>-->
+                <!--<span class="detail-description">绑定动态域名，使外网主机可以通过该域名来访问</span>-->
+                <!--</div>-->
+                <!--<div class="dynamic-domain-content">-->
+                <!--<div class="dynamic-domain-form">-->
+                <!--<div class="switch-content">-->
+                <!--<label>动态域名开关</label>-->
+                <!--<input type="checkbox" class="switch-input DNS-input">-->
+                <!--<span class="switch-icon"></span>-->
+                <!--</div>-->
+                <!--<div class="form-item">-->
+                <!--<label>动态域名服务商</label>-->
+                <!--<input type="text" class="" />-->
+                <!--</div>-->
+                <!--<div class="form-item">-->
+                <!--<label>用户账号</label>-->
+                <!--<input type="text" class="" />-->
+                <!--</div>-->
+                <!--<div class="form-item">-->
+                <!--<label>密码</label>-->
+                <!--<input type="text" class="" />-->
+                <!--</div>-->
+                <!--<div class="form-item connection-status">-->
+                <!--<label>状态信息</label>-->
+                <!--<span>已连接</span>-->
+                <!--</div>-->
+                <!--<div class="setting-save">-->
+                <!--<button class="dynamic-domain-save save-btn" type="button">-->
+                <!--<span>保存</span>-->
+                <!--<b class="disabled hide"></b>-->
+                <!--</button>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--自定义Host-->
+                <div class="custom-host">
+                    <div class="title-description text-left">
+                        <span class="title-main">自定义HOST</span><!--<br>-->
+                        <span class="detail-description">自定义hosts文件，让你网站访问速度提升</span>
+                    </div>
+                    <div class="custom-host-content frame-content">
+                        <div class="host-list-group">
+                            <!--<div class="host-add-form">-->
+                            <!--<div class="form-item">-->
+                            <!--<label>IP地址</label>-->
+                            <!--<input type="text" class=" hosts-ip" />-->
+                            <!--</div>-->
+                            <!--<div class="form-item">-->
+                            <!--<label>网址</label>-->
+                            <!--<input type="text" class=" hosts-name" />-->
+                            <!--</div>-->
+                            <!--<div class="setting-save">-->
+                            <!---->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <div class="host-table">
+                                <!--<table>-->
+                                <!--<thead class="table-thead">-->
+                                <!--<tr>-->
+                                <!--<th>序列号</th>-->
+                                <!--<th>IP地址</th>-->
+                                <!--<th>网址</th>-->
+                                <!--<th>操作</th>-->
+                                <!--</tr>-->
+                                <!--</thead>-->
+                                <!--<tbody class="hosts-list"></tbody>-->
+                                <!--</table>-->
+                                <div class="hosts-item">
+                                    <div class="host-example"><span>自定义HOST示例：182.92.9.203  www.qtec.cn</span></div>
+                                    <span>*IP 网址中间仅有一个空格为正确格式</span>
+                                    <div class="hosts-input">
+                                        <div class="textear-input">
+                                            <textarea class="row-num" readonly></textarea>
+                                            <textarea class="host-info"></textarea>
+                                        </div>
+                                        <div class="hosts-err hide"><span class="hosts-err-info"></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="host-handle-btn">
+                                <button class="save-btn clear-host" type="button">清空</button>
+                                <button class="host-save save-btn" type="button">
+                                    <span>保存</span>
+                                    <b class="disabled hide"></b>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="error-tip"><span class="error-info"></span></div>
+        </div>
+    </div>
+    <div class="boradband-testing popup-content">
+        <div class="manual-setting-header"><span>宽带测速</span></div>
+        <div class="boradband-testing-loading">
+            <img src="./public/images/spinner.gif" alt="loading...">
+        </div>
+        <div class="testing-tip"><span>测速中请稍候，此过程需要1-2分钟左右</span></div>
+        <div class="form-btn">
+            <button class="testing-cancel btn" type="button">取消测试</button>
+        </div>
+    </div>
+    <div class="speed-testing-results popup-content">
+        <div class="manual-setting-header"><span>测速结果</span></div>
+        <div class="speed-result">
+            <span class="result-label">测试的最大带宽为</span>
+            <span class="testing-result"></span>
+        </div>
+        <!--<div class="speed-result">-->
+        <!--<span class="result-label">下载带宽</span>-->
+        <!--<span class="testing-result-download"></span>-->
+        <!--</div>-->
+        <!--<div class="speed-result">-->
+        <!--<span class="result-label">上传带宽</span>-->
+        <!--<span class="testing-result-upload"></span>-->
+        <!--</div>-->
+        <div class="speed-testing-results-btn">
+            <button type="button" class="restart-testing">重新测速</button>
+            <button type="button" class="result-confirm">确认</button>
+        </div>
+        <!--<div class="speed-testing-results-footer">-->
+            <!--<span>测速不准?</span>-->
+            <!--<a class="reset-speed" href="javascript:void(0)">手动设置</a>-->
+        <!--</div>-->
+    </div>
+    <div class="repeater-edit-info popup-content">
+        <div class="manual-setting-header"><span>WISP设置</span><i class="close-icon"></i></div>
+        <div class="repeater-setting-content">
+            <div class="form-item">
+                <label>无线网络名称</label>
+                <input type="text" class="repeater-wifi-ssid" placeholder="" disabled="disabled" autocomplete="off">
+            </div>
+            <div class="form-item">
+                <label>设置连接密码</label>
+                <input type="text" class="repeater-wifi-pwd" minlength="8" maxlength="63" placeholder="" autocomplete="off">
+            </div>
+            <div class="repeater-tip">
+                <span class="repeater-tip-info"></span>
+            </div>
+            <div class="form-btn">
+                <!--<button class="repeater-cancel" type="button">取消</button>-->
+                <button class="repeater-confirm" type="button">
+                    <span>确认</span>
+                    <b class="disabled hide"></b>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="progress-loading hide"></div>
+    <div class="shadow popup-shadow hide"></div>
+    <div class="result-content" style="display: none;">
+        <div class="result-icon hide"></div>
+        <div class="result-tip"></div>
+    </div>
+    <div class="loading-content" style="display: none;">
+        <div class="loading-img">
+            <img src="./public/images/spinner.gif" alt="loading...">
+        </div>
+        <div class="loading-tip">正在保存，请稍候...</div>
+    </div>
+</div>
+<footer>
+    <p class="text-center">Copyright&copy;浙江三点科技有限公司</p>
+</footer>
+<script src="./public/javascripts/jsencrypt.min.js"></script>
+<script src="./public/javascripts/jquery-3.2.1.min.js"></script>
+<script>
+    var rand = Math.random();
+    $('.menu a').each(function(){
+        var href = $(this).attr('href');
+        $(this).attr('href', href + '?t=' + rand);
+    });
+</script>
+<script src="./public/javascripts/error.js?v=1.2.2"></script>
+<script src="./public/javascripts/common.js?v=1.2.2"></script>
+<script src="public/javascripts/setting_common.js?v=1.2.2"></script>
+<script src="./public/javascripts/underscore-min.js"></script>
+<script type="text/template" id="antiListTemplate">
+    <%_.each(obj, function(e,i){%>
+    <%if(e.length==0){%>
+    <tr class="none-info"><td colspan="6">暂无待管理无线设备</td></tr>
+    <%}else{%>
+    <tr class="table-line">
+        <td><%=i+1%></td>
+        <td><%=e.dev_name%></td>
+        <td><%=e.dev_mac%></td>
+        <td><%=e.dev_ip%></td>
+        <%if(_.isEqual(e.status, 1)){%>
+        <td>已认证</td>
+        <%}else{%>
+        <td>未认证</td>
+        <%}%>
+        <td>
+            <%if(e.status === 1){%>
+            <a class="abrogate handle-normal" href="javascript:void(0)" onclick="abrogate('<%=e.dev_mac%>')">取消认证</a>
+            <%}else{%>
+            <a class="certificate handle-normal" href="javascript:void(0)" onclick="certificate('<%=e.dev_mac%>')">通过认证</a>
+            <%}%>
+            <a class="black-device" href="javascript:void(0)" onclick="blackdevice('<%=e.dev_name%>','<%=e.dev_mac%>')">加入黑名单</a>
+        </td>
+    </tr>
+    <%}%>
+    <%})%>
+</script>
+<script type="text/template" id="deviceListTemplate">
+    <%_.each(obj, function(e){%>
+    <%if(e.length==0){%>
+    <div class="none-info">暂无非儿童模式设备</div>
+    <%}else{%>
+        <%if(e.enabled==1){%>
+           <div class="device-info">
+               <div class="point-info">
+                   <div class="device-logo">
+                       <%if(e.devicetype==0){%>
+                       <span class="device-type pc"></span>
+                       <%}%>
+                       <%if(e.devicetype==1){%>
+                       <span class="device-type andriod"></span>
+                       <%}%>
+                       <%if(e.devicetype==2){%>
+                       <span class="device-type ios"></span>
+                       <%}%>
+                       <%if(e.devicetype==3){%>
+                       <span class="device-type other-device"></span>
+                       <%}%>
+                       <%if(e.ownip==e.ipaddr){%>
+                       <span class="self-tip">本机</span>
+                       <%}%>
+                   </div>
+                   <div class="device-model">
+                       <%if(e.accesstype=='wired'){%>
+                       <span class="model-name"><%=e.staname%><span class="connect-way">有线</span></span>
+                       <%}%>
+                       <%if(e.accesstype=='2.4G'){%>
+                       <span class="model-name"><%=e.staname%><span class="connect-way">2.4G</span></span>
+                       <%}%>
+                       <%if(e.accesstype=='5G'){%>
+                       <span class="model-name"><%=e.staname%><span class="connect-way">5G</span></span>
+                       <%}%>
+                       <div>在线时长：<span class="online-time"><%=e.time%></span></div>
+                   </div>
+               </div>
+               <div class="device-connect-info">
+                   <div>IP：<span class="ipadr"><%=e.ipaddr%></span></div>
+                   <div>MAC：<span class="mac-info"><%=e.macaddr%></span></div>
+               </div>
+               <div class="children-btn">
+                   <button type="button" class="child-btn" onclick="childrenset('<%=e.macaddr%>','<%=e.staname%>')">加入儿童模式</button>
+               </div>
+           </div>
+        <%}%>
+    <%}%>
+    <%})%>
+</script>
+<script type="text/template" id="childListTemplate">
+    <%_.each(obj, function(e,i){%>
+    <%if(e.length==0){%>
+    <tr class="none-info"><td colspan="7">暂无儿童模式设备</td></tr>
+    <%}else{%>
+    <tr class="table-line table-list">
+        <td><%=i+1%></td>
+        <td><%=e.staname%></td>
+        <td class="child-list-mac"><%=e.macaddr%></td>
+        <td class="list-time"><%=e.starttime%></td>
+        <td class="list-time"><%=e.stoptime%></td>
+        <td>
+            <span><%=e.weekdaysCN%></span>
+        </td>
+        <td class="handle-click-three">
+            <%if(e.enabled==1){%>
+            <a class="handle-normal" href="javascript:void(0)" onclick="childStatusChange('0','<%=e.macaddr%>','<%=e.starttime%>','<%=e.stoptime%>','<%=e.weekdays%>')">关闭</a>
+            <%}else{%>
+            <a class="handle-normal" href="javascript:void(0)" onclick="childStatusChange('1','<%=e.macaddr%>','<%=e.starttime%>','<%=e.stoptime%>','<%=e.weekdays%>')">启用</a>
+            <%}%>
+            <a class="handle-normal" href="javascript:void(0)" onclick="childStatusModify('<%=e.macaddr%>','<%=e.starttime%>','<%=e.stoptime%>','<%=e.weekdays%>','<%=e.staname%>')">修改</a>
+            <a class="remove-child-device" href="javascript:void(0)" onclick="childRmoeve('<%=e.macaddr%>')">删除</a>
+        </td>
+    </tr>
+    <%}%>
+    <%})%>
+</script>
+<script type="text/template" id="intervalListTemplate">
+    <%_.each(obj, function(e,i){%>
+    <%if(e.length==0){%>
+    <tr class="none-info"><td colspan="5">暂未添加定时任务</td></tr>
+    <%}else{%>
+    <tr class="table-line table-list">
+        <td><%=i+1%></td>
+        <td><%=e.name%></td>
+        <td><%=e.start_hour%>:<%=e.start_min%>-<%=e.stop_hour%>:<%=e.stop_min%></td>
+        <td><%=e.weekdaysCN%></td>
+        <td>
+            <%if(e.rule_enable==1){%>
+            <a class="handle-normal" href="javascript:void(0)" onclick="closeInterval('<%=e.id%>')">关闭</a>
+            <%}else{%>
+            <a class="handle-normal" href="javascript:void(0)" onclick="openInterval('<%=e.id%>')">启用</a>
+            <%}%>
+            <a class="handle-normal" href="javascript:void(0)" onclick="modifyInterval('<%=e.id%>')">修改</a>
+            <a class="handle-danger" href="javascript:void(0)" onclick="delInterval('<%=e.id%>')">删除</a>
+        </td>
+    </tr>
+    <%}%>
+    <%})%>
+</script>
+<script type="text/template" id="wirelessListTemplate">
+    <%_.each(obj, function(e,i){%>
+    <%if(e.length==0){%>
+    <tr class="none-info"><td colspan="9">暂未扫描到其他wifi</td></tr>
+    <%}else{%>
+    <tr class="table-body" id="show_tab_tr">
+        <td><%=e.index%></td>
+        <td><%=e.ssid%></td>
+        <td><%=e.mac%></td>
+        <td><%=e.channel%></td>
+        <td><%=e.encrypt%></td>
+        <td>
+            <%if(e.power>=75){%>
+            <span>强</span>
+            <%}else{%>
+                <%if(e.power<=50){%>
+                <span>弱</span>
+                <%}else{%>
+                <span>一般</span>
+                <% }%>
+            <%}%>
+        </td>
+        <td>
+            <%if(e.mode==1){%>
+            <span>5 G</span>
+            <%}else{%>
+            <span>2.4G</span>
+            <%}%>
+        </td>
+        <td>
+            <%if(e.status!=1){%>
+            <a class="handle-normal" href="javascript:void(0)" onclick="repeaterConnect('<%=e.ssid%>','<%=e.mac%>','<%=e.mode%>','<%=e.encrypt%>')">连接</a>
+            <%}%>
+        </td>
+        <td class="repeater-status">
+            <%if(e.status==1){%>
+            <span>已连接</span>
+            <%}%>
+            <%if(e.status==0){%>
+            <span>已保存</span>
+            <%}%>
+        </td>
+    </tr>
+    <%}%>
+    <%})%>
+</script>
+<script type="text/template" id="vpnListTemplate">
+    <%_.each(obj, function(e,i){%>
+    <%if(e.length==0){%>
+    <tr class="none-info"><td colspan="8">暂未添加VPN</td></tr>
+    <%}else{%>
+    <tr class="table-body">
+        <td><%=i+1%></td>
+        <td><%=e.description%></td>
+        <td><%=(e.mode).toUpperCase()%></td>
+        <td><%=e.server_ip%></td>
+        <td><%=e.username%></td>
+        <td>********</td>
+        <td>
+            <%if(e.status=='down'){%>
+            <span>未连接</span>
+            <%}%>
+            <%if(e.status=='up'){%>
+            <span>已连接</span>
+            <%}%>
+            <%if(e.status=='0'){%>
+            <span>正在连接</span>
+            <%}%>
+            <%if(e.status=='-1'){%>
+            <span>连接失败</span>
+            <%}%>
+        </td>
+        <td class="handle-click-three">
+            <%if(e.enable==1){%>
+            <a class="handle-normal" href="javascript:void(0)" onclick="vpnDisconnect('<%=e.ifname%>')">关闭</a>
+            <%}else{%>
+            <a class="handle-normal" href="javascript:void(0)" onclick="vpnConnect('<%=e.ifname%>')">启用</a>
+            <%}%>
+            <a class="handle-normal" href="javascript:void(0)" onclick="vpnEdit('<%=e.ifname%>','<%=e.description%>','<%=(e.mode)%>','<%=e.server_ip%>','<%=e.username%>')">编辑</a>
+            <a class="handle-danger" href="javascript:void(0)" onclick="vpnDel('<%=e.ifname%>')">删除</a>
+        </td>
+    </tr>
+    <%}%>
+    <%})%>
+</script>
+<script type="text/template" id="vpsListTemplate">
+    <%_.each(obj, function(e,i){%>
+    <%if(e.length==0){%>
+    <tr class="none-info"><td colspan="7">暂未添加虚拟服务器</td></tr>
+    <%}else{%>
+    <tr class="table-body">
+        <td><%=i+1%></td>
+        <td><%=e.name%></td>
+        <td><%=e.destip%></td>
+        <td><%=e.proto%></td>
+        <td><%=e.srcdport%></td>
+        <td><%=e.destport%></td>
+        <td>
+            <!--<%if(e.enable==1){%>-->
+            <!--<a class="vps-disconnect handle-normal" href="javascript:void(0)">关闭<span class="hide"><%=e.name%></span></a>-->
+            <!--<%}else{%>-->
+            <!--<a class="vps-connect handle-normal" href="javascript:void(0)">启用<span class="hide"><%=e.name%></span></a>-->
+            <!--<%}%>-->
+            <a class="handle-normal" href="javascript:void(0)" onclick="vpsEdit('<%=e.name%>','<%=e.destip%>','<%=e.proto%>','<%=e.srcdport%>','<%=e.destport%>')">编辑</a>
+            <a class="handle-danger" href="javascript:void(0)" onclick="vpsDel('<%=e.name%>','<%=e.destip%>','<%=e.proto%>','<%=e.srcdport%>','<%=e.destport%>')">删除</a>
+        </td>
+    </tr>
+    <%}%>
+    <%})%>
+</script>
+<script src="./public/javascripts/extend.js?v=1.2.2"></script>
+</body>
+</html>

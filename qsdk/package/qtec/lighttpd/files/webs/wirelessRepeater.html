@@ -1,0 +1,85 @@
+<div class="wireless-repeater">
+    <div class="title-description text-left">
+        <span class="title-main">无线万能中继（WISP）</span>
+        <span class="detail-description">开启WISP功能，可以延伸无线信号，扩大无线网络覆盖范围，同时路由器的安全功能保持生效。</span>
+    </div>
+    <div class="wireless-repeater-content frame-content">
+        <div class="add-wireless-repeater">
+            <p class="title-item">设置无线万能中继</p>
+            <div class="switch-content">
+                <label>WISP网络开关</label>
+                <input type="checkbox" class="switch-input repeater-net-input">
+                <span class="switch-icon"></span>
+            </div>
+            <div class="repeater-content">
+                <!--<div class="anti-switch switch-content">-->
+                <!--<span>自动换入WISP接入点</span>-->
+                <!--<input type="checkbox" class="switch-input wireless-insert-input">-->
+                <!--<span class="switch-icon"></span>-->
+                <!--</div>-->
+                <div class="form-item">
+                    <span>接入SSID</span>
+                    <span class="repeater-connect-ssid"></span>
+                </div>
+                <div class="form-item">
+                    <span>连接状态</span>
+                    <div class="repeater-status-content"><span class="repeater-connect-status"></span><b class="disabled hide"></b></div>
+                </div>
+                <!--<div class="form-item connection-time">-->
+                <!--<span>连接时间</span>-->
+                <!--<span>12:21:12</span>-->
+                <!--</div>-->
+            </div>
+            <div class="setting-save">
+                <button class="repeater-save save-btn" type="button">
+                    <span>保存</span>
+                    <b class="disabled hide"></b>
+                </button>
+            </div>
+        </div>
+        <div class="wisp-tip">提示：路由器LAN侧ip与中继路由器LAN侧ip相同时，中继成功后，路由器LAN侧ip会自动修改，有线连接的电脑需要禁用有线网络连接重新开启后才能通过有线连接上网。</div>
+        <div class="nearby-wireless-networks">
+            <div class="nearly-header">
+                <span class="title-item">附近的无线网络</span>
+                <button class="nearly-btn forbid" type="button" disabled="disabled">刷新列表</button>
+            </div>
+            <div class="nearly-table hide">
+                <table>
+                    <thead class="table-thead">
+                    <tr>
+                        <th>序列号</th>
+                        <th>无线网络名称</th>
+                        <th>MAC地址</th>
+                        <th>信道</th>
+                        <th>安全模式</th>
+                        <th>信号强度</th>
+                        <th>无线频段</th>
+                        <th>连接</th>
+                        <th>操作</th>
+                        <th>状态</th>
+                    </tr>
+                    </thead>
+                    <tbody class="repeater-info"></tbody>
+                    <tfoot>
+                    <tr>
+                        <td colspan="10" style="padding-top: 8px;">
+                            <span class="water-table-listbtn"></span>
+                            <span class="water-table-page">
+                                        <span id="pagemsg" class="water-table-pagemsg">每页显示<span class="pagerow"></span>条，当前<span class="pagenum"></span>&frasl;<span class="pagecount"></span>页,共<span class="rowcount"></span>条</span>
+                                        <input type="button" id="fpbtn" value="首页"/>
+                                        <input type="button" id="rpbtn" value="上页"/>
+                                        <input type="button" id="npbtn" value="下页"/>
+                                        <input type="button" id="lpbtn" value="尾页"/>
+                                        <span id="pagemsg1" class="water-table-pagemsg">跳转
+                                            <input type="text" id="gpinput" maxlength="3" size="3" value=""/>页
+                                        </span>
+                                        <input type="button" id="gpbtn" value="跳转"/>
+                                    </span>
+                        </td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+# Put your custom commands here that should be executed once
+# the system init finished. By default this file does nothing.
+echo "**********************************************" > /dev/console
+echo "***********rc.local***************************" > /dev/console
+ifup wan
+echo "**********************************************" > /dev/console
+ulimit -c unlimited
+/usr/bin/myclient&
+/bin/QtecDeviceManager &
+/bin/lanHostManager >/dev/null 2>&1 &
+/bin/cgimsgmanager &
+/usr/sbin/lighttpd -f /etc/lighttpd/lighttpdbackup.conf
+/usr/bin/scrctrl&
+/usr/bin/tcpproxy&
+ifup wwan
+qtec_capture &
+#apachectl -f /etc/apache/httpd.conf
+rmmod ecm
+rmmod shortcut_fe_drv
+rmmod shortcut_fe_ipv6
+rmmod shortcut_fe
+/etc/init.d/qca-nss-ecm disable
+/etc/init.d/qca-nss-ecm stop
+/etc/init.d/shortcut-fe disable
+mv /etc/modules.d/09-shortcut-fe /root/
+mv /etc/modules.d/10-shortcut-fe-drv /root/
+echo "*********end of rc.local**********************" > /dev/console
+exit 0

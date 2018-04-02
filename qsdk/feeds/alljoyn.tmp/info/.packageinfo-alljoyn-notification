@@ -1,0 +1,40 @@
+Source-Makefile: feeds/alljoyn/alljoyn-notification/Makefile
+Package: alljoyn-notification
+Menu: 1
+Version: 15.04.00-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread alljoyn +alljoyn-about
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Title: AllJoyn Notification service library
+Maintainer: AllSeen Alliance <allseen-core@lists.allseenalliance.org>
+Source: alljoyn-services-15.04.00-src.tar.gz
+Type: ipkg
+Description: AllJoyn Notification service library.
+http://www.allseenalliance.org
+AllSeen Alliance <allseen-core@lists.allseenalliance.org>
+@@
+
+Package: alljoyn-notification-samples
+Menu: 0
+Version: 15.04.00-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread alljoyn-notification +alljoyn-services_common
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Title: AllJoyn Notification service library - testing samples
+Maintainer: AllSeen Alliance <allseen-core@lists.allseenalliance.org>
+Source: alljoyn-services-15.04.00-src.tar.gz
+Type: ipkg
+Description: Alljoyn Notification service library samples.  (This is primarily for testing.
+The contents of this package vary according which other alljoyn packages
+are selected.)
+http://www.allseenalliance.org
+AllSeen Alliance <allseen-core@lists.allseenalliance.org>
+@@
+
+

@@ -1,0 +1,57 @@
+Package: kmod-openswan
+Version: 3.14.77+2.6.41-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-ipv6, kmod-crypto-ocf
+Source: qca/feeds/networking/openswan
+Section: kernel
+Architecture: ipq806x
+Installed-Size: 161006
+Filename: kmod-openswan_3.14.77+2.6.41-1_ipq806x.ipk
+Size: 160377
+MD5Sum: 30c9a8f877ba87fba0235a650081d23a
+SHA256sum: 62ba2a226f2f2c3887788b6dadd63d48504f994ecd756688d0660de08040888f
+Description:  Openswan is an IPsec implementation for Linux.
+ This package contains the Openswan kernel module.
+
+Package: lacpd
+Version: g1d65974-dirty-1
+Depends: libc, libubox, libuci, libubus, ubus, ubusd, kmod-qca-ssdk-hnat
+Source: qca/feeds/networking/lacpd
+Section: net
+Maintainer: Xiaoping Fan <xfan@codeaurora.org>
+Architecture: ipq806x
+Installed-Size: 28864
+Filename: lacpd_g1d65974-dirty-1_ipq806x.ipk
+Size: 29629
+MD5Sum: 84656d6e1471c8037cf1271c68aeb9b6
+SHA256sum: 4aadf02b8546d5c66a0ee29dc29e0d4b8c8e6e2a8ccbf58e17d99dc02bfdc78f
+Description:  Link aggregation control protocol Daemon
+
+Package: openswan
+Version: 2.6.41-1
+Depends: libc, libgmp, kmod-openswan
+Source: qca/feeds/networking/openswan
+Section: net
+Architecture: ipq806x
+Installed-Size: 789025
+Filename: openswan_2.6.41-1_ipq806x.ipk
+Size: 784421
+MD5Sum: 01bffb9d0bc4a8dc731927449c7ebfc6
+SHA256sum: aac0653196e8b33251a7daf839f3322569a386a618ddb2cde679101bce80a97d
+Description:  Openswan is an IPsec implementation for Linux.
+ This package contains the Openswan user-land daemon.
+
+Package: rstp
+Version: 2011-10-11-434d24bae108dbb21461a13a4abcf014afa8b029
+Depends: libc, kmod-qca-ssdk-hnat
+Source: qca/feeds/networking/rstp
+License: GPLv2
+Section: net
+Maintainer: Stephen Hemminger <shemminger@vyatta.com>
+Architecture: ipq806x
+Installed-Size: 41040
+Filename: rstp_2011-10-11-434d24bae108dbb21461a13a4abcf014afa8b029_ipq806x.ipk
+Size: 41886
+MD5Sum: 235be6d5389e9ba7ec68e0354c4a7d7d
+SHA256sum: 1a7ad52f589c6663d83b6a3eb78869a903ff462052adba30b38c210ab471278d
+Description:  Rapid Spanning Tree Protocol implement
+

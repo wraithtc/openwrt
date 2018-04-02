@@ -1,0 +1,122 @@
+Source-Makefile: feeds/qca_10_4/net/qca-hostap-10.4/Makefile
+Package: qca-hostap-10.4
+Version: g96b5b9e-dirty-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread @PACKAGE_kmod-qca-wifi-10.4-unified-profile||PACKAGE_kmod-qca-wifi-10.4-akronite-perf||PACKAGE_kmod-qca-wifi-10.4-dakota-perf||PACKAGE_kmod-qca-wifi-10.4-perf||PACKAGE_kmod-qca-wifi-perf||PACKAGE_kmod-qca-wifi-akronite-perf||PACKAGE_kmod-qca-wifi-10.4-unified-perf||PACKAGE_kmod-qca-wifi-10.4-lowmem-profile @(!(PACKAGE_hostapd)) +libnl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: default
+Build-Depends: PACKAGE_kmod-qca-wifi-10.4-unified-profile:qca-wifi-10.4 PACKAGE_kmod-qca-wifi-10.4-akronite-perf:qca-wifi-10.4 PACKAGE_kmod-qca-wifi-10.4-dakota-perf:qca-wifi-10.4 PACKAGE_kmod-qca-wifi-perf:qca-wifi PACKAGE_kmod-qca-wifi-akronite-perf:qca-wifi PACKAGE_kmod-qca-wifi-10.4-perf:qca-wifi-10.4 PACKAGE_kmod-qca-wifi-10.4-unified-perf:qca-wifi-10.4 PACKAGE_kmod-qca-wifi-10.4-lowmem-profile:qca-wifi-10.4
+Section: QCA
+Category: QCA Proprietary software
+Title: Hostap authenticator
+Maintainer: Qualcomm Atheros
+Source: 
+Type: ipkg
+Description:  This package contains the IEEE 802.1x/WPA/EAP/RADIUS Authenticator.
+http://www.qca.qualcomm.com
+Qualcomm Atheros
+@@
+Config:
+	menu "custom source directory"
+		depends on PACKAGE_qca-hostap-10.4
+	config qca-hostap-10.4_USE_CUSTOM_SOURCE_DIR
+		depends on PACKAGE_qca-hostap-10.4
+		bool "Use custom source directory"
+		default n
+	config qca-hostap-10.4_CUSTOM_SOURCE_DIR
+		depends on qca-hostap-10.4_USE_CUSTOM_SOURCE_DIR
+		string "Custom source directory"
+		default ""
+	endmenu
+	menu "overwrite package version"
+		depends on PACKAGE_qca-hostap-10.4
+	config qca-hostap-10.4_USE_CUSTOM_VERSION
+		depends on PACKAGE_qca-hostap-10.4
+		bool "Use custom package version"
+		default n
+
+	config qca-hostap-10.4_CUSTOM_VERSION
+		depends on qca-hostap-10.4_USE_CUSTOM_VERSION
+		string "qca-hostap-10.4 version as string (default version: g96b5b9e-dirty)"
+		default "g96b5b9e-dirty"
+
+	endmenu
+@@
+
+Package: qca-wpa-supplicant-10.4
+Version: g96b5b9e-dirty-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread @PACKAGE_kmod-qca-wifi-10.4-unified-profile||PACKAGE_kmod-qca-wifi-10.4-akronite-perf||PACKAGE_kmod-qca-wifi-10.4-dakota-perf||PACKAGE_kmod-qca-wifi-10.4-perf||PACKAGE_kmod-qca-wifi-perf||PACKAGE_kmod-qca-wifi-akronite-perf||PACKAGE_kmod-qca-wifi-10.4-unified-perf||PACKAGE_kmod-qca-wifi-10.4-lowmem-profile @(!(PACKAGE_wpa-supplicant)) +libopenssl +libnl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: supplicant-default
+Build-Depends: PACKAGE_kmod-qca-wifi-10.4-unified-profile:qca-wifi-10.4 PACKAGE_kmod-qca-wifi-10.4-akronite-perf:qca-wifi-10.4 PACKAGE_kmod-qca-wifi-10.4-dakota-perf:qca-wifi-10.4 PACKAGE_kmod-qca-wifi-perf:qca-wifi PACKAGE_kmod-qca-wifi-akronite-perf:qca-wifi PACKAGE_kmod-qca-wifi-10.4-perf:qca-wifi-10.4 PACKAGE_kmod-qca-wifi-10.4-unified-perf:qca-wifi-10.4 PACKAGE_kmod-qca-wifi-10.4-lowmem-profile:qca-wifi-10.4
+Section: QCA
+Category: QCA Proprietary software
+Title: WPA Supplicant
+Maintainer: Qualcomm Atheros
+Source: 
+Type: ipkg
+Description: WPA Supplicant
+http://www.qca.qualcomm.com
+Qualcomm Atheros
+@@
+
+Package: qca-wpa-supplicant-10.4-macsec
+Version: g96b5b9e-dirty-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread @PACKAGE_kmod-qca-wifi-10.4-unified-profile||PACKAGE_kmod-qca-wifi-10.4-akronite-perf||PACKAGE_kmod-qca-wifi-10.4-dakota-perf||PACKAGE_kmod-qca-wifi-10.4-perf||PACKAGE_kmod-qca-wifi-perf||PACKAGE_kmod-qca-wifi-akronite-perf||PACKAGE_kmod-qca-wifi-10.4-unified-perf||PACKAGE_kmod-qca-wifi-10.4-lowmem-profile @(!(PACKAGE_wpa-supplicant)) +libopenssl +libnl @TARGET_ipq806x +DEFAULT_kmod-qca-nss-macsec:kmod-qca-nss-macsec
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: supplicant-macsec
+Build-Depends: PACKAGE_kmod-qca-wifi-10.4-unified-profile:qca-wifi-10.4 PACKAGE_kmod-qca-wifi-10.4-akronite-perf:qca-wifi-10.4 PACKAGE_kmod-qca-wifi-10.4-dakota-perf:qca-wifi-10.4 PACKAGE_kmod-qca-wifi-perf:qca-wifi PACKAGE_kmod-qca-wifi-akronite-perf:qca-wifi PACKAGE_kmod-qca-wifi-10.4-perf:qca-wifi-10.4 PACKAGE_kmod-qca-wifi-10.4-unified-perf:qca-wifi-10.4 PACKAGE_kmod-qca-wifi-10.4-lowmem-profile:qca-wifi-10.4
+Section: QCA
+Category: QCA Proprietary software
+Title: WPA Supplicant (MACSEC)
+Maintainer: Qualcomm Atheros
+Source: 
+Type: ipkg
+Description: WPA Supplicant (MACSEC)
+http://www.qca.qualcomm.com
+Qualcomm Atheros
+@@
+
+Package: qca-hostapd-cli-10.4
+Version: g96b5b9e-dirty-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread qca-hostap-10.4 +librt
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Depends: PACKAGE_kmod-qca-wifi-10.4-unified-profile:qca-wifi-10.4 PACKAGE_kmod-qca-wifi-10.4-akronite-perf:qca-wifi-10.4 PACKAGE_kmod-qca-wifi-10.4-dakota-perf:qca-wifi-10.4 PACKAGE_kmod-qca-wifi-perf:qca-wifi PACKAGE_kmod-qca-wifi-akronite-perf:qca-wifi PACKAGE_kmod-qca-wifi-10.4-perf:qca-wifi-10.4 PACKAGE_kmod-qca-wifi-10.4-unified-perf:qca-wifi-10.4 PACKAGE_kmod-qca-wifi-10.4-lowmem-profile:qca-wifi-10.4
+Section: QCA
+Category: QCA Proprietary software
+Title: Hostap authenticator command line interface
+Maintainer: Qualcomm Atheros
+Source: 
+Type: ipkg
+Description:  This package contains a command line utility to control the
+ IEEE 802.1x/WPA/EAP/RADIUS Authenticator.
+http://www.qca.qualcomm.com
+Qualcomm Atheros
+@@
+
+Package: qca-wpa-cli-10.4
+Version: g96b5b9e-dirty-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread @PACKAGE_qca-wpa-supplicant-10.4||PACKAGE_qca-wpa-supplicant-10.4-macsec +librt +libopenssl +libnl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Depends: PACKAGE_kmod-qca-wifi-10.4-unified-profile:qca-wifi-10.4 PACKAGE_kmod-qca-wifi-10.4-akronite-perf:qca-wifi-10.4 PACKAGE_kmod-qca-wifi-10.4-dakota-perf:qca-wifi-10.4 PACKAGE_kmod-qca-wifi-perf:qca-wifi PACKAGE_kmod-qca-wifi-akronite-perf:qca-wifi PACKAGE_kmod-qca-wifi-10.4-perf:qca-wifi-10.4 PACKAGE_kmod-qca-wifi-10.4-unified-perf:qca-wifi-10.4 PACKAGE_kmod-qca-wifi-10.4-lowmem-profile:qca-wifi-10.4
+Section: QCA
+Category: QCA Proprietary software
+Title: WPA Supplicant command line interface
+Maintainer: Qualcomm Atheros
+Source: 
+Type: ipkg
+Description: WPA Supplicant command line interface
+http://www.qca.qualcomm.com
+Qualcomm Atheros
+@@
+
+

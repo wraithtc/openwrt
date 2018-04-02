@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/gwsw/S304/!svn/ver/10432/trunk/platform/src/fwk/src/util/linux
+END
+util_passwd_oal.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/gwsw/S304/!svn/ver/1017/trunk/platform/src/fwk/src/util/linux/util_passwd_oal.h
+END
+util_tms_oal.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/gwsw/S304/!svn/ver/1017/trunk/platform/src/fwk/src/util/linux/util_tms_oal.h
+END
+util_prctl_oal.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/gwsw/S304/!svn/ver/1017/trunk/platform/src/fwk/src/util/linux/util_prctl_oal.h
+END
+util_fil_oal.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/gwsw/S304/!svn/ver/7113/trunk/platform/src/fwk/src/util/linux/util_fil_oal.c
+END
+util_pid_oal.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/gwsw/S304/!svn/ver/1017/trunk/platform/src/fwk/src/util/linux/util_pid_oal.c
+END
+util_strconv_oal.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/gwsw/S304/!svn/ver/9100/trunk/platform/src/fwk/src/util/linux/util_strconv_oal.c
+END
+util_fil_oal.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/gwsw/S304/!svn/ver/7113/trunk/platform/src/fwk/src/util/linux/util_fil_oal.h
+END
+util_ifAddr6_oal.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/gwsw/S304/!svn/ver/7551/trunk/platform/src/fwk/src/util/linux/util_ifAddr6_oal.c
+END
+util_passwd_oal.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/gwsw/S304/!svn/ver/1017/trunk/platform/src/fwk/src/util/linux/util_passwd_oal.c
+END
+util_pid_oal.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/gwsw/S304/!svn/ver/1017/trunk/platform/src/fwk/src/util/linux/util_pid_oal.h
+END
+util_strconv_oal.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/gwsw/S304/!svn/ver/1017/trunk/platform/src/fwk/src/util/linux/util_strconv_oal.h
+END
+util_tms_oal.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/gwsw/S304/!svn/ver/1017/trunk/platform/src/fwk/src/util/linux/util_tms_oal.c
+END
+util_ifAddr6_oal.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/gwsw/S304/!svn/ver/3380/trunk/platform/src/fwk/src/util/linux/util_ifAddr6_oal.h
+END
+util_prctl_oal.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/gwsw/S304/!svn/ver/10432/trunk/platform/src/fwk/src/util/linux/util_prctl_oal.c
+END

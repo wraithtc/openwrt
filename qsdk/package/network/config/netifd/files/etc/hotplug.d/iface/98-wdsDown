@@ -1,0 +1,4 @@
+[ "$ACTION" = ifdown ] || exit 0
+[ "$INTERFACE" = wwan ] || exit 0
+echo '##########################wds down!############################' > /dev/console
+wdsctrl

@@ -1,0 +1,19 @@
+Source-Makefile: feeds/nss_host/qca-nss-macsec/Makefile
+Package: kmod-qca-nss-macsec
+Submenu: Network Devices
+Version: <LINUX_VERSION>+gf9e76fb-1
+Depends: @TARGET_ipq806x||TARGET_ipq +kmod-qca-nss-drv +libpthread +libc @!LINUX_3_18
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: kernel
+Category: Kernel modules
+Title: Kernel driver for NSS macsec
+Maintainer: 
+Source: qca-nss-macsec-gf9e76fb.tar.gz
+Type: ipkg
+Description: Kernel driver for NSS macsec
+
+@@
+
+

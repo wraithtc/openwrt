@@ -1,0 +1,20 @@
+Source-Makefile: feeds/nss_host/qca-rfs/Makefile
+Package: kmod-qca-rfs
+Submenu: Network Support
+Version: <LINUX_VERSION>+g94b8a4d-1
+Depends: +kmod-ipt-conntrack
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: kernel
+Category: Kernel modules
+Title: Kernel module for QCA Receiving Flow Steering
+Maintainer: 
+Source: qca-rfs-g94b8a4d.tar.gz
+Type: ipkg
+Kernel-Config: CONFIG_NF_CONNTRACK_EVENTS=y CONFIG_NF_CONNTRACK_CHAIN_EVENTS=y
+Description: Kernel module for QCA Receiving Flow Steering
+
+@@
+
+

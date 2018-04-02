@@ -1,0 +1,127 @@
+Package: luci-whc-lbd-advanced
+Version: 1
+Depends: libc, luci-whc-lbd
+Source: qca/feeds/whc/qca-whc-luci
+Section: QCA
+Maintainer: Qualcomm Atheros
+Architecture: ipq806x
+Installed-Size: 3479
+Filename: luci-whc-lbd-advanced_1_ipq806x.ipk
+Size: 4200
+MD5Sum: 6abf84aa572f4d2f10ab5d65c7157cae
+SHA256sum: 6dc9506ac2c2435512453e9112cf1e0a14b816472efc20eab0b4b7c2ebc4b7c4
+Description:  Luci WebUI for Whole Home Coverage - Load Balancing Daemon Advanced Settings
+
+Package: luci-whc-lbd-diaglog
+Version: 1
+Depends: libc, luci-whc-lbd
+Source: qca/feeds/whc/qca-whc-luci
+Section: QCA
+Maintainer: Qualcomm Atheros
+Architecture: ipq806x
+Installed-Size: 988
+Filename: luci-whc-lbd-diaglog_1_ipq806x.ipk
+Size: 1760
+MD5Sum: d644d58b710eb918d7065f6a170b81c3
+SHA256sum: 8df259f49b0262ecd56eb6cbde0f51c50bd51656ca2c157f1e658a0e5325d9aa
+Description:  Luci WebUI for Whole Home Coverage - Load Balancing Daemon Diagnostic Logging Settings
+
+Package: luci-whc-lbd
+Version: 1
+Depends: libc, luci-whc
+Source: qca/feeds/whc/qca-whc-luci
+Section: QCA
+Maintainer: Qualcomm Atheros
+Architecture: ipq806x
+Installed-Size: 3767
+Filename: luci-whc-lbd_1_ipq806x.ipk
+Size: 4472
+MD5Sum: 7be78a62f9f1cf71c0177d2fa85efffb
+SHA256sum: 2166161a018aef422c19776a58cb58434ac83945e18572729f30d849d15336c4
+Description:  Luci WebUI for Whole Home Coverage - Load Balancing
+
+Package: luci-whc-repacd-advanced
+Version: 1
+Depends: libc, luci-whc-repacd
+Source: qca/feeds/whc/qca-whc-luci
+Section: QCA
+Maintainer: Qualcomm Atheros
+Architecture: ipq806x
+Installed-Size: 1724
+Filename: luci-whc-repacd-advanced_1_ipq806x.ipk
+Size: 2475
+MD5Sum: 661dc3c02986603c1d63f573f1118c33
+SHA256sum: 43aa838fcb108caa08b583dfa61487e2990b4dedde071db0e2557b019e8db1c5
+Description:  Luci WebUI for Whole Home Coverage - RE Placement and Auto-Configuration Daemon Advanced Settings
+
+Package: luci-whc-repacd
+Version: 1
+Depends: libc, luci-whc
+Source: qca/feeds/whc/qca-whc-luci
+Section: QCA
+Maintainer: Qualcomm Atheros
+Architecture: ipq806x
+Installed-Size: 2334
+Filename: luci-whc-repacd_1_ipq806x.ipk
+Size: 3077
+MD5Sum: 6d4c13d234b867d908d77ccd83b69145
+SHA256sum: 52687e92548de75ca1d19dfc17dec8b7bd3bfc56b2b54e313201c5f1a3fd6614
+Description:  Luci WebUI for Whole Home Coverage RE Placement and Auto-Configuration Daemon
+
+Package: luci-whc
+Version: 1
+Depends: libc, luci, luci-mod-admin-core, luci-mod-admin-full
+Source: qca/feeds/whc/qca-whc-luci
+Section: QCA
+Maintainer: Qualcomm Atheros
+Architecture: ipq806x
+Installed-Size: 595
+Filename: luci-whc_1_ipq806x.ipk
+Size: 1332
+MD5Sum: 0474fe9e3cc1916c21682dcf0a2c7e48
+SHA256sum: 40d54390b683059c25b92f5a1fa6d03ca4c82d289bb76d513946377d10e007b0
+Description:  Luci WebUI for Whole Home Coverage
+
+Package: qca-whc-init
+Version: 1
+Depends: libc
+Source: qca/feeds/whc/qca-whc-init
+Section: QCA
+Maintainer: Qualcomm Atheros
+Architecture: ipq806x
+Installed-Size: 1749
+Filename: qca-whc-init_1_ipq806x.ipk
+Size: 2500
+MD5Sum: f735ae84a8c327064d0bb08412ae76af
+SHA256sum: 5e0007e3c0532c6780bf2e7e6e56644fbe3a2feeeafbd5793e5dd719893024c1
+Description:  This Package contains the script helper files for the Whole Home Coverage init scripts
+
+Package: qca-whc-lbd
+Version: g1d65974-dirty-1
+Depends: libc, qca-whc-init, libhyficommon, libpthread, jansson
+Source: qca/feeds/whc/qca-whc-lbd
+Section: QCA
+Maintainer: Qualcomm Atheros
+Architecture: ipq806x
+Installed-Size: 122480
+Filename: qca-whc-lbd_g1d65974-dirty-1_ipq806x.ipk
+Size: 122312
+MD5Sum: c338f3e8b6d2a578f460adc27fe7588e
+SHA256sum: d48fb9e4c7cfc0d4b95f0728ace163e25a4fa00c4244e865585b0486c24f0f50
+Description:  This package installs the Whole Home Coverage Load Balancing daemon
+
+Package: qca-whc-repacd
+Version: g1d65974-dirty-1
+Depends: libc, qca-whc-init, qca-ieee1905-init, qca-wsplcd, openssl-util
+Source: qca/feeds/whc/qca-whc-repacd
+Section: QCA
+Maintainer: Qualcomm Atheros, Inc.
+Architecture: ipq806x
+Installed-Size: 51946
+Filename: qca-whc-repacd_g1d65974-dirty-1_ipq806x.ipk
+Size: 52821
+MD5Sum: 7c57a869ccdfa33889a368a9abc979aa
+SHA256sum: 2bf8dd979452529e5bd76044c30ec02e7ac0eff6c9543bb006ce0f286af98267
+Description:  This package installs the Whole Home Coverage Range Extender Placement and
+ Auto-configuration scripts
+

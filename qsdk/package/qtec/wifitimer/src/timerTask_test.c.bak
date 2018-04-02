@@ -1,0 +1,106 @@
+#include <stdio.h>
+#include <string.h>
+#include "timerTask_set.h"
+#include <sys/select.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <errno.h>
+
+void *g_msgHandle;
+extern void TimerTaskPrintConfig();
+
+int main(int argc, const char *argv[])
+{
+    TIMER_TASK_MNG_STRU *pstTimerTaskMng = TimerTaskGet();
+    int num=pstTimerTaskMng->ulTaskNum;
+    int i =0, ret;
+
+    printf("==========Timer Task Test========\n");
+    
+    if (2 == argc)
+    {
+        printf("==========SPI TEST========\n");
+        int input = strtoul(argv[1], 0, 0);
+        int res;
+        printf("write [0x%x] to spi device\n", input);
+        int fd = open("/dev/spidev1.0", O_WRONLY);
+        if (fd < 0)
+            printf("fail to open spi device\n");:
+        res = write(fd,&input, sizeof(input));
+        if (res < 0)
+            printf("write error, errno [%d]", errno);
+        printf("write %d bytes into spi device\n", res);
+        close(fd);
+        return;
+    }
+
+    if (1 == atoi(argv[1]))
+    {
+        ;
+    }
+    else if (2 == atoi(argv[1]))
+    {
+        printf("==========ADD TWO TASK========\n");
+        printf("3:40 turn on wifi, 3:41 turn off wifi\n");
+        TIMER_TASK_STRU stTaskInfo = {0};
+        TimerTaskLoadConfig();
+        TimerTaskPrintConfig();
+        stTaskInfo.ucTaskType = TASK_TYPE_WIFI_ON;
+        stTaskInfo.ucMinType = TIME_TYPE_NORMAL;
+        stTaskInfo.ucTimerMin = 42;
+        stTaskInfo.ucHourType = TIME_TYPE_NORMAL;
+        stTaskInfo.ucTimerHour = 3;
+        stTaskInfo.usTaskId = 2;
+        TimerTaskAdd(&stTaskInfo);
+        
+        stTaskInfo.ucTaskType = TASK_TYPE_WIFI_OFF;
+        stTaskInfo.ucMinType = TIME_TYPE_NORMAL;
+        stTaskInfo.ucTimerMin = 41;
+        stTaskInfo.ucHourType = TIME_TYPE_NORMAL;
+        stTaskInfo.ucTimerHour = 3;
+        stTaskInfo.usTaskId = 1;
+        TimerTaskAdd(&stTaskInfo);
+        TimerTaskSaveConfig();
+        system("date -s 3:39:40");
+        TimerTaskRun();
+    }
+    else if (3 == atoi(argv[1]))
+    {
+        printf("==========ADD TWO TASK========\n");
+        printf("3:40 turn on wifi, 3:41 turn off wifi\n");
+        TIMER_TASK_STRU stTaskInfo = {0};
+        TimerTaskLoadConfig();
+        TimerTaskPrintConfig();
+        stTaskInfo.ucTaskType = TASK_TYPE_WIFI_ON;
+        stTaskInfo.ucMinType = TIME_TYPE_NORMAL;
+        stTaskInfo.ucTimerMin = 42;
+        stTaskInfo.ucHourType = TIME_TYPE_NORMAL;
+        stTaskInfo.ucTimerHour = 3;
+        stTaskInfo.usTaskId = 2;
+        TimerTaskAdd(&stTaskInfo);
+        
+        stTaskInfo.ucTaskType = TASK_TYPE_WIFI_OFF;
+        stTaskInfo.ucMinType = TIME_TYPE_NORMAL;
+        stTaskInfo.ucTimerMin = 41;
+        stTaskInfo.ucHourType = TIME_TYPE_NORMAL;
+        stTaskInfo.ucTimerHour = 3;
+        stTaskInfo.usTaskId = 1;
+        TimerTaskAdd(&stTaskInfo);
+        
+        system("date -s 3:39:40");
+        TimerTaskRun();
+        
+        printf("==========DEL ONE TASK========\n");
+        stTaskInfo.ucTaskType = TASK_TYPE_WIFI_ON;
+        stTaskInfo.ucMinType = TIME_TYPE_NORMAL;
+        stTaskInfo.ucTimerMin = 40;
+        stTaskInfo.ucHourType = TIME_TYPE_NORMAL;
+        stTaskInfo.usTaskId = 1;
+        TimerTaskDel(&stTaskInfo);
+        TimerTaskSaveConfig();
+        TimerTaskRun();
+    }
+
+}

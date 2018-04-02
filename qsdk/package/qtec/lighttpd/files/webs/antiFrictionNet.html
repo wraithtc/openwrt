@@ -1,0 +1,73 @@
+<div class="anti-friction-net">
+    <div class="title-description">
+        <span class="title-main">防蹭网</span>
+        <span class="detail-description">开启防蹭网模式之后，接入网络的用户需要输入安全问题的答案才可以使用网络</span>
+    </div>
+    <div class="anti-friction-net-content frame-content">
+        <div class="anti-choose"></div>
+        <div class="anti-content">
+            <div class="description-form prevent">
+                <div class="form-item switch-content">
+                    <label>防蹭网开关</label>
+                    <div class="switch">
+                        <input type="checkbox" class="switch-input anti-input">
+                        <span class="switch-icon anti-switch-icon"></span>
+                    </div>
+                </div>
+                <div class="form-item">
+                    <label>验证问题</label>
+                    <select class="question-selector" disabled="disabled">
+                        <option value="0">我的手机号码后六位？</option>
+                        <option value="1">我的微信号？</option>
+                        <option value="2">我的QQ号码？</option>
+                        <option value="3">自定义</option>
+                    </select>
+                </div>
+                <div class="form-item question-item hide">
+                    <label>验证问题</label>
+                    <input class="question-input" type="text" maxlength="64" autocomplete="off" disabled="disabled"/>
+                </div>
+                <div class="form-item">
+                    <label>验证答案</label>
+                    <input class="answer" type="text" maxlength="64" autocomplete="off" disabled="disabled"/>
+                </div>
+                <div class="form-item limit-connect">
+                    <label></label>
+                    <div class="checked-content">
+                        <input type="checkbox" class="limit-connect-router" disabled="disabled">
+                        <label>未认证用户禁止访问路由器</label>
+                    </div>
+                </div>
+                <div class="form-item limit-connect">
+                    <label></label>
+                    <div class="checked-content">
+                        <input type="checkbox" class="limit-connect-checked" disabled="disabled">
+                        <label>未认证用户禁止访问有线电脑</label>
+                    </div>
+                </div>
+                <div class="setting-save">
+                    <button class="anti-save save-btn" type="button">
+                        <span>保存</span>
+                        <b class="disabled hide"></b>
+                    </button>
+                </div>
+            </div>
+            <div class="anti-device-manage hide">
+                <div class="anti-manage-title"><span>防蹭网设备管理</span></div>
+                <table>
+                    <thead class="table-thead">
+                    <tr>
+                        <th>序列号</th>
+                        <th>终端名称</th>
+                        <th>MAC地址</th>
+                        <th>ip地址</th>
+                        <th>认证情况</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody class="anti-device-list"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

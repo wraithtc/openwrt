@@ -1,0 +1,28 @@
+--- ./modules/aaa/mod_auth_basic.c	2006-07-11 20:38:44.000000000 -0700
++++ /mnt/hgfs/share/httpd-2.2.31/modules/aaa/mod_auth_basic.c	2018-01-16 21:30:38.000000000 -0800
+@@ -38,6 +38,16 @@
+     int authoritative;
+ } auth_basic_config_rec;
+ 
++static int qtec_check_password(request_rec *r,const char *sent_user,const char *sent_pwd)
++{
++    ap_log_rerror(APLOG_MARK, APLOG_ERR, 0, r,
++                      "===qtec_check_password====user:%s   pwd:%s   path:%s \n",
++                      sent_user,sent_pwd, r->uri);
++
++    return 0;
++}
++
++
+ static void *create_auth_basic_dir_config(apr_pool_t *p, char *d)
+ {
+     auth_basic_config_rec *conf = apr_pcalloc(p, sizeof(*conf));
+@@ -226,7 +236,7 @@
+             apr_table_setn(r->notes, AUTHN_PROVIDER_NAME_NOTE, current_provider->provider_name);
+         }
+ 
+-
++        qtec_check_password(r,sent_user,sent_pw);
+         auth_result = provider->check_password(r, sent_user, sent_pw);
+ 
+         apr_table_unset(r->notes, AUTHN_PROVIDER_NAME_NOTE);

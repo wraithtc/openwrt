@@ -1,0 +1,44 @@
+--- ./docs/conf/extra/httpd-dav.conf.in	2018-01-15 22:58:26.789994168 -0800
++++ ./httpd-dav.conf	2018-01-15 23:02:34.041397011 -0800
+@@ -12,29 +12,29 @@
+ # on the directory where the DavLockDB is placed and on any directory where
+ # "Dav On" is specified.
+ 
+-DavLockDB "@@ServerRoot@@/var/DavLock"
++DavLockDB "/tmp/DavLock"
+ 
+-Alias /uploads "@@ServerRoot@@/uploads"
++Alias /webdav "/mnt/sda1"
+ 
+-<Directory "@@ServerRoot@@/uploads">
++<Directory "/mnt/sda1">
+     Dav On
+ 
+     Order Allow,Deny
+     Allow from all
+ 
+-    AuthType Digest
+-    AuthName DAV-upload
+-
++    AuthType Basic
++    AuthName "webdav"
++    Require valid-user
+     # You can use the htdigest program to create the password database:
+-    #   htdigest -c "@@ServerRoot@@/user.passwd" DAV-upload admin
+-    AuthUserFile "@@ServerRoot@@/user.passwd"
+-    AuthDigestProvider file
++    #   htdigest -c "/usr/user.passwd" DAV-upload admin
++    AuthUserFile "/etc/webdav.passwd"
++#    AuthDigestProvider file
+ 
+     # Allow universal read-access, but writes are restricted
+     # to the admin user.
+-    <LimitExcept GET OPTIONS>
+-        require user admin
+-    </LimitExcept>
++#    <LimitExcept GET OPTIONS>
++#        require user admin
++#    </LimitExcept>
+ </Directory>
+ 
+ #

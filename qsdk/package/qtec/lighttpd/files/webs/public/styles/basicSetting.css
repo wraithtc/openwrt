@@ -1,0 +1,177 @@
+html,body{
+    background-color: #fff;
+}
+.container{
+    position: relative;
+    margin: 0 auto;
+    padding: 40px 0 20px;
+    background-color: #fff;
+}
+.basic-setting-form{
+    width: 464px;
+    margin: 0 auto;
+    text-align: center;
+}
+.basic-setting-form>h1{
+    padding-bottom: 24px;
+    border-bottom: 1px solid #bdbdbd;
+}
+.basic-setting-form>span{
+    display: inline-block;
+    width: 370px;
+    font-size: 20px;
+    margin: 0;
+    padding: 6px 0 15px 0;
+    border-bottom: 1px solid #BDBDBD;
+}
+.basic-setting-form form{
+    padding: 16px 0;
+    text-align: left;
+    width: 336px;
+    margin: 0 auto;
+}
+.basic-setting-form .form-item label{
+    position: absolute;
+    width: auto;
+    padding: 0 10px;
+    z-index: 10;
+}
+.pwd-content{
+    width: 100%;
+    position: relative;
+    display: inline-block;
+}
+.pwd-content>input{
+    width: 100%;
+    padding-right: 36px;
+}
+.form-item input{
+    width: 100%;
+    height: 40px;
+    line-height: 22px;
+    text-align: left;
+    padding: 4px 10px;
+    padding-left: 80px;
+    border-radius: 2px;
+    border: 1px solid #bdbdbd;
+}
+.pwd-switch,.manage-pwd-switch{
+    position: absolute;
+    right: 8px;
+    top: 12px;
+    width: 26px;
+    height: 16px;
+    background-repeat: no-repeat;
+    background-size: 26px 24px;
+}
+.hidePassword{
+    background-image: url("../images/hide-password.png");
+}
+.showPassword{
+    background-image: url("../images/show-password.png");
+}
+.tip{
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 10px;
+    height: 18px;
+    line-height: 18px;
+    text-align: right;
+    color: #777;
+}
+.form-tip{
+    margin: 10px 0;
+    text-align: left;
+}
+.manage-pwd-set{
+    color: #179cf3;
+    cursor: pointer;
+}
+.form-btn{
+    width: 100%;
+}
+.form-btn button{
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+}
+.back{
+    text-align: center;
+    padding-top: 16px;
+}
+.back>a{
+    color: #333;
+}
+.back>a:hover{
+    text-decoration: underline;
+    opacity: 0.7;
+}
+.setting-success{
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom:0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    z-index: 20;
+}
+
+.success-info-tip{
+    margin-top: 8px;
+}
+.setting-info{
+    width: 400px;
+    height: 360px;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    margin: -240px 0 0 -200px;
+    text-align: center;
+}
+.setting-info .router-logo{
+    margin-top: 40px;
+}
+.setting-wifi-info{
+    margin: 6px auto;
+}
+.success-info-tip div{
+    font-size: 18px;
+    line-height: 28px;
+}
+.setting-wifi-info>div{
+    width: 100%;
+    text-align: left;
+    font-size: 20px;
+    line-height: 32px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.con-tip{
+    font-size: 18px;
+}
+.info-label{
+    display: inline-block;
+    width: 40%;
+    text-align: right;
+    font-size: 18px;
+}
+.setting-wifi-info div>span{
+    color: #179cf3;
+}
+.setting-btn{
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 268px;
+    margin-left: -134px;
+}
+.info-btm{
+    color: #777;
+}
+.setting-btn>button{
+    width: 100%;
+    padding: 10px 0;
+    margin-top: 10px;
+}

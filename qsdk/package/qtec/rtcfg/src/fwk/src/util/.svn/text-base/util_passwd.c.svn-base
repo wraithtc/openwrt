@@ -1,0 +1,56 @@
+#include "fwk.h"
+#include "util_passwd_oal.h"
+#include "util_pid_oal.h"
+#include <time.h>
+
+
+int i64c(int i)
+{
+    if (i <= 0)
+        return ('.');
+    if (i == 1)
+        return ('/');
+    if (i >= 2 && i < 12)
+        return ('0' - 2 + i);
+    if (i >= 12 && i < 38)
+        return ('A' - 12 + i);
+    if (i >= 38 && i < 63)
+        return ('a' - 38 + i);
+    return ('z');
+}
+
+
+char *util_cryptMakeSalt(void)
+{
+    time_t now;
+    static unsigned long x;
+    static char result[3];
+
+    time(&now);
+    x += now + oal_getPid() + clock();
+    result[0] = i64c(((x >> 18) ^ (x >> 6)) & 077);
+    result[1] = i64c(((x >> 12) ^ x) & 077);
+    result[2] = '\0';
+    
+    return result;
+}
+
+
+// function to support passowrd hashing
+char *util_pwEncrypt(const char *clear, const char *salt)
+{
+    static char cipher[BUFLEN_24];
+    char *cp;
+
+    cp = oalPass_crypt(clear, salt);
+    /* if crypt (a nonstandard crypt) returns a string too large,
+       truncate it so we don't overrun buffers and hope there is
+       enough security in what's left */
+    if (strlen(cp) > sizeof(cipher)-1)
+    {
+        cp[sizeof(cipher)-1] = 0;
+    }
+    UTIL_STRNCPY(cipher, cp, sizeof(cipher));
+
+    return cipher;
+}

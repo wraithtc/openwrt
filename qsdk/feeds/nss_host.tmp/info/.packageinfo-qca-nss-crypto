@@ -1,0 +1,19 @@
+Source-Makefile: feeds/nss_host/qca-nss-crypto/Makefile
+Package: kmod-qca-nss-crypto
+Submenu: Network Devices
+Version: <LINUX_VERSION>+g78c0823-1
+Depends: @TARGET_ipq806x||TARGET_ipq807x||TARGET_ipq +kmod-qca-nss-drv @!LINUX_3_18
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: kernel
+Category: Kernel modules
+Title: Kernel driver for NSS crypto driver
+Maintainer: 
+Source: qca-nss-crypto-g78c0823.tar.gz
+Type: ipkg
+Description: Kernel driver for NSS crypto driver
+
+@@
+
+

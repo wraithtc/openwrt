@@ -1,0 +1,61 @@
+<div class="qos">
+    <div class="title-description text-left">
+        <span class="title-main">智能宽带</span>
+        <span class="detail-description">QoS智能分配功能</span>
+    </div>
+    <div class="qos-content frame-content">
+        <div class="QoS-allocation">
+            <div class="switch-content">
+                <label>QoS智能分配开关</label>
+                <div class="switch">
+                    <input type="checkbox" class="qos-switch-input switch-input">
+                    <span class="switch-icon qos-switch"></span>
+                </div>
+            </div>
+            <div class="Qos-btn-group">
+                <div class="Qos-btn">
+                    <button class="" type="button" disabled="disabled">自动模式<b class="disabled-warp"></b></button>
+                </div>
+                <div class="Qos-btn">
+                    <button class="" type="button" disabled="disabled">游戏模式<b class="disabled-warp"></b></button>
+                </div>
+                <div class="Qos-btn">
+                    <button class="" type="button" disabled="disabled">网页模式<b class="disabled-warp"></b></button>
+                </div>
+                <div class="Qos-btn last-btn">
+                    <button class="" type="button" disabled="disabled">视频模式<b class="disabled-warp"></b></button>
+                </div>
+            </div>
+            <p class="qos-tip">系统根据设备需要自动调配网速，当外网下载带宽超过50Mbps时，建议无需开启QoS系统</p>
+        </div>
+        <div class="smart-routing-content">
+            <div class="extranet ma-bot">
+                <div class="extranet-content">
+                    <p class="title-item">手动设置带宽</p>
+                    <div class="left-speed">
+                        <div class="download-speed load-speed">
+                            <label>下行带宽</label>
+                            <input type="text" class="download-boradband" disabled="disabled" maxlength="7" placeholder="" autocomplete="off">
+                            <label class="download-unit">Mbps</label>
+                        </div>
+                        <div class="upload-speed load-speed">
+                            <label>上行带宽</label>
+                            <input type="text" class="upload-boradband" disabled="disabled" maxlength="7" placeholder="" autocomplete="off">
+                            <label class="upload-unit">Mbps</label>
+                        </div>
+                    </div>
+                    <div class="speed-tip">
+                        <span class="speed-tip-info">*0代表不限速,最大值为1000,最多2位小数</span>
+                    </div>
+                    <div class="speed-group">
+                        <button class="qos-save" type="button">
+                            <span>保存</span>
+                            <b class="disabled hide"></b>
+                        </button>
+                    </div>
+                    <a href="javascript:void(0)" class="boradband-test">宽带测速</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

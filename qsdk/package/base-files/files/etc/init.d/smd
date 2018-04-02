@@ -1,0 +1,16 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2014 OpenWrt.org
+
+START=20
+
+start()
+{
+    ulimit -c unlimited
+    smd
+
+}
+
+stop()
+{
+    killall smd
+}

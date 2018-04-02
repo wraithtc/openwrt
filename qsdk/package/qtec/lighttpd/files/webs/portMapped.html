@@ -1,0 +1,100 @@
+<div class="port-mapped">
+    <div class="title-description text-left">
+        <span class="title-main">端口映射</span><!--<br>-->
+        <span class="detail-description">端口映射，主要是为了实现从互联网访问家庭内的指定的电脑的服务和数据。</span>
+    </div>
+    <div class="portmapping-content frame-content">
+        <!--<div class="portmapping-choose">-->
+        <!--<span class="vps-settings active">虚拟服务器设置</span>-->
+        <!--<span class="dmz-settings">DMZ设置</span>-->
+        <!--</div>-->
+        <div class="portmapping-item-content">
+            <div class="vps">
+                <div class="vps-form">
+                    <p>添加虚拟服务器</p>
+                    <div class="form-item">
+                        <label>虚拟服务名称</label>
+                        <input type="text" class="vps-name" maxlength="16" autocomplete="off"/>
+                    </div>
+                    <div class="form-item">
+                        <label>内网主机IP地址</label>
+                        <input type="text" class="vps-ip" maxlength="15" autocomplete="off"/>
+                    </div>
+                    <div class="form-item">
+                        <label class="vps-label">协议</label>
+                        <select class="vps-select">
+                            <option value="TCP">TCP</option>
+                            <option value="UDP">UDP</option>
+                            <option value="TCP UDP">TCP+UDP</option>
+                        </select>
+                    </div>
+                    <div class="form-item">
+                        <label class="vps-label">外部端口</label>
+                        <input type="text" class="vps-input extrnal-port-start" maxlength="5" autocomplete="off"/>
+                        <span class="children-line"></span>
+                        <input type="text" class="vps-input extrnal-port-end" maxlength="5" autocomplete="off"/>
+                    </div>
+                    <div class="form-item">
+                        <label class="vps-label">内部端口</label>
+                        <input type="text" class="vps-input intrnal-port-start" maxlength="5" autocomplete="off" />
+                        <span class="children-line"></span>
+                        <input type="text" class="vps-input intrnal-port-end" maxlength="5" autocomplete="off"/>
+                    </div>
+                    <div class="setting-save vps-btn">
+                        <button class="vps-save save-btn" type="button">
+                            <span>添加</span>
+                            <b class="disabled hide"></b>
+                        </button>
+                        <button class="vps-modify-cancel modify-btn hide" type="button">取消</button>
+                        <button class="vps-modify-update modify-btn hide" type="button">
+                            <span>修改</span>
+                            <b class="disabled hide"></b>
+                        </button>
+                    </div>
+                </div>
+                <div class="vps-list">
+                    <p class="title-item">虚拟服务列表</p>
+                    <div class="vps-table">
+                        <table>
+                            <thead class="table-thead">
+                            <tr>
+                                <th>序列号</th>
+                                <th>虚拟服务器名称</th>
+                                <th>内网主机IP地址</th>
+                                <th>协议类型</th>
+                                <th>外部端口</th>
+                                <th>内部端口</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody class="portmapping-info"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="DMZ-setting hide">-->
+            <!--<div class="DMZ-form">-->
+            <!--<div class="switch-content">-->
+            <!--<label>DMZ开关</label>-->
+            <!--<div class="switch">-->
+            <!--<input type="checkbox" class="switch-input DMZ-input">-->
+            <!--<span class="switch-icon dmz-switch"></span>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="DMZ-form-group">-->
+            <!--<div class="form-item">-->
+            <!--<label>DMZ主机IP地址</label>-->
+            <!--<input type="text" class=" dmz-ip" maxlength="15" autocomplete="off" disabled/>-->
+            <!--</div>-->
+            <!--<div class="setting-save">-->
+            <!--<button class="DMZ-save save-btn" type="button">-->
+            <!--<span>保存</span>-->
+            <!--<b class="disabled hide"></b>-->
+            <!--</button>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+        </div>
+    </div>
+</div>

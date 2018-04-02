@@ -1,0 +1,254 @@
+Source-Makefile: feeds/nss_host/qca-nss-clients/Makefile
+Package: kmod-qca-nss-drv-profile
+Submenu: Network Devices
+Version: <LINUX_VERSION>+g5ee1d29-2
+Depends: @TARGET_ipq806x||TARGET_ipq807x||TARGET_ipq +kmod-qca-nss-drv @!LINUX_3_18
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Depends: PACKAGE_kmod-qca-nss-crypto:kmod-qca-nss-crypto
+Section: kernel
+Category: Kernel modules
+Title: Profiler for QCA NSS driver (IPQ806x)
+Maintainer: 
+Source: qca-nss-clients-g5ee1d29.tar.gz
+Type: ipkg
+Description: Profiler for QCA NSS driver (IPQ806x)
+
+@@
+
+Package: kmod-qca-nss-drv-capwapmgr
+Submenu: Network Devices
+Version: <LINUX_VERSION>+g5ee1d29-2
+Depends: @TARGET_ipq806x||TARGET_ipq807x||TARGET_ipq +kmod-qca-nss-drv @!LINUX_3_18
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Depends: PACKAGE_kmod-qca-nss-crypto:kmod-qca-nss-crypto
+Section: kernel
+Category: Kernel modules
+Title: NSS CAPWAP Manager for QCA NSS driver (IPQ806x)
+Maintainer: 
+Source: qca-nss-clients-g5ee1d29.tar.gz
+Type: ipkg
+Description: NSS CAPWAP Manager for QCA NSS driver (IPQ806x)
+
+@@
+
+Package: kmod-qca-nss-drv-tun6rd
+Submenu: Network Devices
+Version: <LINUX_VERSION>+g5ee1d29-2
+Depends: @TARGET_ipq806x||TARGET_ipq807x||TARGET_ipq +kmod-qca-nss-drv +kmod-sit @!LINUX_3_18
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Depends: PACKAGE_kmod-qca-nss-crypto:kmod-qca-nss-crypto
+Section: kernel
+Category: Kernel modules
+Title: Kernel driver for NSS (connection manager) - tun6rd
+Maintainer: 
+Source: qca-nss-clients-g5ee1d29.tar.gz
+Type: ipkg
+Description: Kernel driver for NSS (connection manager) - tun6rd
+
+@@
+
+Package: kmod-qca-nss-drv-dtlsmgr
+Submenu: Network Devices
+Version: <LINUX_VERSION>+g5ee1d29-2
+Depends: @TARGET_ipq806x +kmod-qca-nss-drv +kmod-qca-nss-crypto @!LINUX_3_18
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Depends: PACKAGE_kmod-qca-nss-crypto:kmod-qca-nss-crypto
+Section: kernel
+Category: Kernel modules
+Title: Kernel driver for NSS (connection manager) - dtlsmgr
+Maintainer: 
+Source: qca-nss-clients-g5ee1d29.tar.gz
+Type: ipkg
+Description: Kernel driver for NSS (connection manager) - dtlsmgr
+
+@@
+
+Package: kmod-qca-nss-drv-l2tpv2
+Submenu: Network Devices
+Version: <LINUX_VERSION>+g5ee1d29-2
+Depends: @TARGET_ipq806x||TARGET_ipq807x||TARGET_ipq +kmod-qca-nss-drv +kmod-l2tp @!LINUX_3_18
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Depends: PACKAGE_kmod-qca-nss-crypto:kmod-qca-nss-crypto
+Section: kernel
+Category: Kernel modules
+Title: Kernel driver for NSS (connection manager) - l2tp
+Maintainer: 
+Source: qca-nss-clients-g5ee1d29.tar.gz
+Type: ipkg
+Description: Kernel driver for NSS (connection manager) - l2tp
+
+@@
+
+Package: kmod-qca-nss-drv-pptp
+Submenu: Network Devices
+Version: <LINUX_VERSION>+g5ee1d29-2
+Depends: @TARGET_ipq806x||TARGET_ipq807x||TARGET_ipq +kmod-qca-nss-drv +kmod-pptp @!LINUX_3_18
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Depends: PACKAGE_kmod-qca-nss-crypto:kmod-qca-nss-crypto
+Section: kernel
+Category: Kernel modules
+Title: Kernel driver for NSS (connection manager) - PPTP
+Maintainer: 
+Source: qca-nss-clients-g5ee1d29.tar.gz
+Type: ipkg
+Description: Kernel driver for NSS (connection manager) - PPTP
+
+@@
+
+Package: kmod-qca-nss-drv-map-t
+Submenu: Network Devices
+Version: <LINUX_VERSION>+g5ee1d29-2
+Depends: @TARGET_ipq806x||TARGET_ipq807x||TARGET_ipq +kmod-qca-nss-drv +kmod-nat46 @!LINUX_3_18
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Depends: PACKAGE_kmod-qca-nss-crypto:kmod-qca-nss-crypto
+Section: kernel
+Category: Kernel modules
+Title: Kernel driver for NSS (connection manager) - MAP-T
+Maintainer: 
+Source: qca-nss-clients-g5ee1d29.tar.gz
+Type: ipkg
+Description: Kernel driver for NSS (connection manager) - MAP-T
+
+@@
+
+Package: kmod-qca-nss-drv-tunipip6
+Submenu: Network Devices
+Version: <LINUX_VERSION>+g5ee1d29-2
+Depends: @TARGET_ipq806x||TARGET_ipq807x||TARGET_ipq +kmod-qca-nss-drv +kmod-iptunnel6 +kmod-ip6-tunnel @!LINUX_3_18
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Depends: PACKAGE_kmod-qca-nss-crypto:kmod-qca-nss-crypto
+Section: kernel
+Category: Kernel modules
+Title: Kernel driver for NSS (connection manager) - DS-lite and ipip6 Tunnel
+Maintainer: 
+Source: qca-nss-clients-g5ee1d29.tar.gz
+Type: ipkg
+Description: Kernel driver for NSS (connection manager) - DS-lite and ipip6 Tunnel
+
+@@
+
+Package: kmod-qca-nss-drv-qdisc
+Submenu: Network Support
+Version: <LINUX_VERSION>+g5ee1d29-2
+Depends: @TARGET_ipq806x||TARGET_ipq807x||TARGET_ipq +kmod-qca-nss-drv @!LINUX_3_18
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Depends: PACKAGE_kmod-qca-nss-crypto:kmod-qca-nss-crypto
+Section: kernel
+Category: Kernel modules
+Title: Qdisc for configuring shapers in NSS
+Maintainer: 
+Source: qca-nss-clients-g5ee1d29.tar.gz
+Type: ipkg
+Description: Qdisc for configuring shapers in NSS
+
+@@
+
+Package: kmod-qca-nss-drv-ipsecmgr
+Submenu: Network Devices
+Version: <LINUX_VERSION>+g5ee1d29-2
+Depends: @TARGET_ipq806x||TARGET_ipq807x||TARGET_ipq +kmod-qca-nss-drv @!LINUX_3_18
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Depends: PACKAGE_kmod-qca-nss-crypto:kmod-qca-nss-crypto
+Section: kernel
+Category: Kernel modules
+Title: Kernel driver for NSS (ipsec manager) - ipsecmgr
+Maintainer: 
+Source: qca-nss-clients-g5ee1d29.tar.gz
+Type: ipkg
+Description: Kernel driver for NSS (ipsec manager) - ipsecmgr
+
+@@
+
+Package: kmod-qca-nss-drv-ppe-qdisc
+Submenu: Network Support
+Version: <LINUX_VERSION>+g5ee1d29-2
+Depends: @TARGET_ipq806x||TARGET_ipq807x||TARGET_ipq +kmod-qca-nss-drv +kmod-qca-nss-drv-qdisc +kmod-qca-ssdk-nohnat @!LINUX_3_18
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Depends: PACKAGE_kmod-qca-nss-crypto:kmod-qca-nss-crypto
+Section: kernel
+Category: Kernel modules
+Title: Qdisc for configuring shapers in PPE
+Maintainer: 
+Source: qca-nss-clients-g5ee1d29.tar.gz
+Type: ipkg
+Description: Qdisc for configuring shapers in PPE
+
+@@
+
+Package: kmod-qca-nss-drv-bridge-mgr
+Submenu: Network Devices
+Version: <LINUX_VERSION>+g5ee1d29-2
+Depends: @TARGET_ipq806x||TARGET_ipq807x||TARGET_ipq_ipq807x||TARGET_ipq_ipq807x_64 +kmod-qca-nss-drv +kmod-bonding +(TARGET_ipq806x_QSDK_Deluxe||TARGET_ipq_ipq807x):kmod-qca-ssdk-nohnat +(TARGET_ipq806x_QSDK_Deluxe||TARGET_ipq_ipq807x):kmod-qca-nss-drv-vlan-mgr @!LINUX_3_18
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Depends: PACKAGE_kmod-qca-nss-crypto:kmod-qca-nss-crypto
+Section: kernel
+Category: Kernel modules
+Title: Kernel driver for NSS bridge manager
+Maintainer: 
+Source: qca-nss-clients-g5ee1d29.tar.gz
+Type: ipkg
+Description: Kernel driver for NSS bridge manager
+
+@@
+
+Package: kmod-qca-nss-drv-vlan-mgr
+Submenu: Network Devices
+Version: <LINUX_VERSION>+g5ee1d29-2
+Depends: @TARGET_ipq806x||TARGET_ipq807x||TARGET_ipq +kmod-qca-nss-drv @!LINUX_3_18
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Depends: PACKAGE_kmod-qca-nss-crypto:kmod-qca-nss-crypto
+Section: kernel
+Category: Kernel modules
+Title: Kernel driver for NSS vlan manager
+Maintainer: 
+Source: qca-nss-clients-g5ee1d29.tar.gz
+Type: ipkg
+Description: Kernel driver for NSS vlan manager
+
+@@
+
+Package: kmod-qca-nss-drv-lag-mgr
+Submenu: Network Devices
+Version: <LINUX_VERSION>+g5ee1d29-2
+Depends: @TARGET_ipq806x||TARGET_ipq807x||TARGET_ipq +kmod-qca-nss-drv @!LINUX_3_18 +kmod-bonding +TARGET_ipq806x_QSDK_Deluxe:kmod-qca-ssdk-nohnat
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Depends: PACKAGE_kmod-qca-nss-crypto:kmod-qca-nss-crypto
+Section: kernel
+Category: Kernel modules
+Title: Kernel driver for NSS LAG manager
+Maintainer: 
+Source: qca-nss-clients-g5ee1d29.tar.gz
+Type: ipkg
+Description: Kernel driver for NSS LAG manager
+
+@@
+
+

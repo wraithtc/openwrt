@@ -1,0 +1,162 @@
+--- ./docs/conf/extra/httpd-ssl.conf.in	2018-01-16 18:52:37.375577038 -0800
++++ /mnt/hgfs/share/httpd-ssl.conf	2018-01-16 01:23:38.000000000 -0800
+@@ -76,46 +76,49 @@
+ #   own preference of either security or performance, therefore this
+ #   must be the prerogative of the web server administrator who manages
+ #   cpu load versus confidentiality, so enforce the server's cipher order.
+-SSLHonorCipherOrder on 
++#SSLHonorCipherOrder on 
+ 
+ #   SSL Protocol support:
+ #   List the protocol versions which clients are allowed to connect with.
+ #   Disable SSLv2 and SSLv3 by default (cf. RFC 7525 3.1.1).  TLSv1 (1.0)
+ #   should be disabled as quickly as practical.  By the end of 2016, only
+ #   the TLSv1.2 protocol or later should remain in use.
+-SSLProtocol all -SSLv2 -SSLv3
+-SSLProxyProtocol all -SSLv2 -SSLv3
++#SSLProtocol all -SSLv2 -SSLv3
++#SSLProxyProtocol all -SSLv2 -SSLv3
+ 
+ #   Pass Phrase Dialog:
+ #   Configure the pass phrase gathering process.
+ #   The filtering dialog program (`builtin' is a internal
+ #   terminal dialog) has to provide the pass phrase on stdout.
+-SSLPassPhraseDialog  builtin
++#SSLPassPhraseDialog  builtin
+ 
+ #   Inter-Process Session Cache:
+ #   Configure the SSL Session Cache: First the mechanism 
+ #   to use and second the expiring timeout (in seconds).
+-#SSLSessionCache         "dbm:@exp_runtimedir@/ssl_scache"
+-SSLSessionCache        "shmcb:@exp_runtimedir@/ssl_scache(512000)"
+-SSLSessionCacheTimeout  300
++#SSLSessionCache         "dbm:/var/log/ssl_scache"
++#SSLSessionCache        "shmcb:/var/log/ssl_scache(512000)"
++#SSLSessionCacheTimeout  300
+ 
+ #   Semaphore:
+ #   Configure the path to the mutual exclusion semaphore the
+ #   SSL engine uses internally for inter-process synchronization. 
+-SSLMutex  "file:@exp_runtimedir@/ssl_mutex"
++#SSLMutex  "file:/var/log/ssl_mutex"
+ 
+ ##
+ ## SSL Virtual Host Context
+ ##
++<VirtualHost *:84>
++SSLEngine off
++</VirtualHost>
+ 
+-<VirtualHost _default_:@@SSLPort@@>
++<VirtualHost *:448>
+ 
+ #   General setup for the virtual host
+-DocumentRoot "@exp_htdocsdir@"
+-ServerName www.example.com:@@SSLPort@@
+-ServerAdmin you@example.com
+-ErrorLog "@exp_logfiledir@/error_log"
+-TransferLog "@exp_logfiledir@/access_log"
++#DocumentRoot "/usr/share/htdocs"
++#ServerName www.example.com:443
++#ServerAdmin you@example.com
++#ErrorLog "/var/log/error_log"
++#TransferLog "/var/log/access_log"
+ 
+ #   SSL Engine Switch:
+ #   Enable/Disable SSL for this virtual host.
+@@ -131,9 +134,9 @@
+ #   Some ECC cipher suites (http://www.ietf.org/rfc/rfc4492.txt)
+ #   require an ECC certificate which can also be configured in
+ #   parallel.
+-SSLCertificateFile "@exp_sysconfdir@/server.crt"
+-#SSLCertificateFile "@exp_sysconfdir@/server-dsa.crt"
+-#SSLCertificateFile "@exp_sysconfdir@/server-ecc.crt"
++SSLCertificateFile "/etc/apache/server.crt"
++#SSLCertificateFile "/etc/apache/server-dsa.crt"
++#SSLCertificateFile "/etc/apache/server-ecc.crt"
+ 
+ #   Server Private Key:
+ #   If the key is not combined with the certificate, use this
+@@ -141,9 +144,9 @@
+ #   you've both a RSA and a DSA private key you can configure
+ #   both in parallel (to also allow the use of DSA ciphers, etc.)
+ #   ECC keys, when in use, can also be configured in parallel
+-SSLCertificateKeyFile "@exp_sysconfdir@/server.key"
+-#SSLCertificateKeyFile "@exp_sysconfdir@/server-dsa.key"
+-#SSLCertificateKeyFile "@exp_sysconfdir@/server-ecc.key"
++SSLCertificateKeyFile "/etc/apache/server.key"
++#SSLCertificateKeyFile "/etc/apache/server-dsa.key"
++#SSLCertificateKeyFile "/etc/apache/server-ecc.key"
+ 
+ #   Server Certificate Chain:
+ #   Point SSLCertificateChainFile at a file containing the
+@@ -152,7 +155,7 @@
+ #   the referenced file can be the same as SSLCertificateFile
+ #   when the CA certificates are directly appended to the server
+ #   certificate for convenience.
+-#SSLCertificateChainFile "@exp_sysconfdir@/server-ca.crt"
++#SSLCertificateChainFile "/etc/apache/server-ca.crt"
+ 
+ #   Certificate Authority (CA):
+ #   Set the CA certificate verification path where to find CA
+@@ -161,8 +164,8 @@
+ #   Note: Inside SSLCACertificatePath you need hash symlinks
+ #         to point to the certificate files. Use the provided
+ #         Makefile to update the hash symlinks after changes.
+-#SSLCACertificatePath "@exp_sysconfdir@/ssl.crt"
+-#SSLCACertificateFile "@exp_sysconfdir@/ssl.crt/ca-bundle.crt"
++#SSLCACertificatePath "/etc/apache/ssl.crt"
++#SSLCACertificateFile "/etc/apache/ssl.crt/ca-bundle.crt"
+ 
+ #   Certificate Revocation Lists (CRL):
+ #   Set the CA revocation path where to find CA CRLs for client
+@@ -171,8 +174,8 @@
+ #   Note: Inside SSLCARevocationPath you need hash symlinks
+ #         to point to the certificate files. Use the provided
+ #         Makefile to update the hash symlinks after changes.
+-#SSLCARevocationPath "@exp_sysconfdir@/ssl.crl"
+-#SSLCARevocationFile "@exp_sysconfdir@/ssl.crl/ca-bundle.crl"
++#SSLCARevocationPath "/etc/apache/ssl.crl"
++#SSLCARevocationFile "/etc/apache/ssl.crl/ca-bundle.crl"
+ 
+ #   Client Authentication (Type):
+ #   Client certificate verification type and depth.  Types are
+@@ -225,12 +228,12 @@
+ #     This enables optimized SSL connection renegotiation handling when SSL
+ #     directives are used in per-directory context. 
+ #SSLOptions +FakeBasicAuth +ExportCertData +StrictRequire
+-<FilesMatch "\.(cgi|shtml|phtml|php)$">
+-    SSLOptions +StdEnvVars
+-</FilesMatch>
+-<Directory "@exp_cgidir@">
+-    SSLOptions +StdEnvVars
+-</Directory>
++#<FilesMatch "\.(cgi|shtml|phtml|php)$">
++#    SSLOptions +StdEnvVars
++#</FilesMatch>
++#<Directory "/usr/share/cgi-bin">
++#    SSLOptions +StdEnvVars
++#</Directory>
+ 
+ #   SSL Protocol Adjustments:
+ #   The safe and default but still SSL/TLS standard compliant shutdown
+@@ -256,14 +259,14 @@
+ #   Similarly, one has to force some clients to use HTTP/1.0 to workaround
+ #   their broken HTTP/1.1 implementation. Use variables "downgrade-1.0" and
+ #   "force-response-1.0" for this.
+-BrowserMatch "MSIE [2-5]" \
+-         nokeepalive ssl-unclean-shutdown \
+-         downgrade-1.0 force-response-1.0
++#BrowserMatch "MSIE [2-5]" \
++#         nokeepalive ssl-unclean-shutdown \
++#         downgrade-1.0 force-response-1.0
+ 
+ #   Per-Server Logging:
+ #   The home of a custom SSL log file. Use this when you want a
+ #   compact non-error SSL logfile on a virtual host basis.
+-CustomLog "@exp_logfiledir@/ssl_request_log" \
+-          "%t %h %{SSL_PROTOCOL}x %{SSL_CIPHER}x \"%r\" %b"
++#CustomLog "/var/log/ssl_request_log" \
++#          "%t %h %{SSL_PROTOCOL}x %{SSL_CIPHER}x \"%r\" %b"
+ 
+ </VirtualHost>                                  

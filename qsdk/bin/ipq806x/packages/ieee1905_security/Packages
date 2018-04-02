@@ -1,0 +1,98 @@
+Package: libieee1905
+Version: g1d65974-dirty-1
+Depends: libc, libhyficommon
+Source: qca/feeds/ieee1905-security/qca-ieee1905-security-config/libieee1905
+Section: QCA
+Maintainer: Qualcomm Atheros, Inc.
+Architecture: ipq806x
+Installed-Size: 6597
+Filename: libieee1905_g1d65974-dirty-1_ipq806x.ipk
+Size: 7341
+MD5Sum: 3e73e28270be46b3f3975b201aa0e54b
+SHA256sum: 82e3b885428613ca8d87f47ca40407c82a5c4cdbde9d8fa103a910b03fae7b80
+Description:  This Package contains the IEEE1905.1 library
+
+Package: libstorage
+Version: g1d65974-dirty-1
+Depends: libc, libhyficommon, libuci
+Source: qca/feeds/ieee1905-security/qca-ieee1905-security-config/libstorage
+Section: QCA
+Maintainer: Qualcomm Atheros, Inc.
+Architecture: ipq806x
+Installed-Size: 10575
+Filename: libstorage_g1d65974-dirty-1_ipq806x.ipk
+Size: 11331
+MD5Sum: 6e45ce7880c3c7e34bce9739e9aaecdf
+SHA256sum: a69be54bba2aa5bde342baec33affc966e363ddab6c09abd4755da97d74fa0b0
+Description:  This Package installs the Storage Abstration Library
+
+Package: libwpa2
+Version: g1d65974-dirty-1
+Depends: libc
+Source: qca/feeds/ieee1905-security/qca-ieee1905-security-config/libwpa2
+Section: QCA
+Maintainer: Qualcomm Atheros, Inc.
+Architecture: ipq806x
+Installed-Size: 35278
+Filename: libwpa2_g1d65974-dirty-1_ipq806x.ipk
+Size: 36030
+MD5Sum: b351de676a664f4be26835853ea30747
+SHA256sum: 154810f357b468120aac4de9ab4d35734d43184eb3c5181e1dc562434ba2dce8
+Description:  This Package contains the wpa2 library
+
+Package: luci-wsplc-advanced
+Version: 1
+Depends: libc, luci, luci-mod-admin-core, luci-mod-admin-full, luci-wsplc
+Source: qca/feeds/ieee1905-security/qca-wsplc-luci
+Section: QCA
+Maintainer: Qualcomm Atheros
+Architecture: ipq806x
+Installed-Size: 1460
+Filename: luci-wsplc-advanced_1_ipq806x.ipk
+Size: 2213
+MD5Sum: fce0dad7604a067fff057f82d338113f
+SHA256sum: 1290fffe45ce2340c70278c584c9a8cdd4f1cf1efb930a19f29c4cdf9edeae4a
+Description:  Luci WebUI for 1905.1 AP Auto Configuration and Security - Advanced
+
+Package: luci-wsplc
+Version: 1
+Depends: libc, luci, luci-mod-admin-core, luci-mod-admin-full
+Source: qca/feeds/ieee1905-security/qca-wsplc-luci
+Section: QCA
+Maintainer: Qualcomm Atheros
+Architecture: ipq806x
+Installed-Size: 2815
+Filename: luci-wsplc_1_ipq806x.ipk
+Size: 3574
+MD5Sum: c7be0beeecd372f0b25f661c302b590f
+SHA256sum: 53f466b71e23f96a6aae226bb8415c7d57507ba490edcaf2e6d227d26f0643f3
+Description:  Luci WebUI for 1905.1 AP Auto Configuration and Security
+
+Package: qca-ieee1905-init
+Version: 1
+Depends: libc
+Source: qca/feeds/ieee1905-security/qca-ieee1905-security-config/qca-ieee1905-init
+Section: QCA
+Maintainer: Qualcomm Atheros
+Architecture: ipq806x
+Installed-Size: 4073
+Filename: qca-ieee1905-init_1_ipq806x.ipk
+Size: 4797
+MD5Sum: 54c8bf66529a120d4d0cd0f2e1c1ed9e
+SHA256sum: b431861a302e947afe59460b9b0f48d916b8a1b62a3bd7dda9bdf7dfb3159ff5
+Description:  This Package contains the script helper files for the IEEE1905.1 init scripts
+
+Package: qca-wsplcd
+Version: g1d65974-dirty-1
+Depends: libc, qca-ieee1905-init, libhyficommon, libstorage, libwpa2, libieee1905, libuci, libpthread
+Source: qca/feeds/ieee1905-security/qca-ieee1905-security-config/qca-wsplcd
+Section: QCA
+Maintainer: Qualcomm Atheros, Inc.
+Architecture: ipq806x
+Installed-Size: 78505
+Filename: qca-wsplcd_g1d65974-dirty-1_ipq806x.ipk
+Size: 79337
+MD5Sum: 138ba901e11357374c4c06cf2f2d5d8f
+SHA256sum: 2294c6f2425735ec9c3c278c057c6d828a8a4488fde8c8965a76101fdbcce7dc
+Description:  This package installs the IEEE 1905.1 AP Auto-Configuration daemon: Wi-Fi credential cloning over backbone network (e.g. HomePlugAV, Ethernet, Wi-Fi)
+

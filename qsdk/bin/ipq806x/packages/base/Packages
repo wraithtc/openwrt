@@ -1,0 +1,4817 @@
+Package: 6rd
+Version: 9-2
+Depends: libc, kmod-ipv6, kmod-sit
+Source: package/network/ipv6/6rd
+License: GPL-2.0
+Section: net
+Maintainer: Steven Barth <cyrus@openwrt.org>
+Architecture: all
+Installed-Size: 2712
+Filename: 6rd_9-2_all.ipk
+Size: 3482
+MD5Sum: 71f804f57b68f915c05c61f6c4651e94
+SHA256sum: ea8887235d8f7a08b6e02ee0f0ca8318f1a57729f66293f5565c1d0689c641c0
+Description:  Provides support for 6rd tunnels in /etc/config/network.
+ Refer to http://wiki.openwrt.org/doc/uci/network for
+ configuration details.
+
+Package: QtecDeviceManager
+Version: 1.0
+Depends: libc, libubus, libubox, ubusd, libuci, libjson-c, libpthread, libwebsockets, librtcfg, libsqlite3, libqtkey
+Source: package/qtec/QtecDeviceManager
+Section: base
+Architecture: ipq806x
+Installed-Size: 22247
+Filename: QtecDeviceManager_1.0_ipq806x.ipk
+Size: 23018
+MD5Sum: f5b7a271c45a58f1ab0d3f6273e6030d
+SHA256sum: 45e83777d267112d6962e8434d376a6974c910c76b72f9627a02a2f3c8a52ab3
+Description:  the duty of QtecDeviceManager can collect smart home device info and communicate to other utilties.
+
+Package: alsa
+Version: 1
+Depends: libc, alsa-utils
+Source: package/utils/alsa
+Section: alsa
+Architecture: all
+Installed-Size: 1025
+Filename: alsa_1_all.ipk
+Size: 1707
+MD5Sum: af2dbd22c17b1bc1bf9f2173cc97a376
+SHA256sum: e00f92aa580a642dfd8583c07bac22e2c0181d634d65acd1a34404af3a0774a1
+Description:  UCI based sound configuration module for OpenWrt
+
+Package: ar
+Version: 2.24-3
+Depends: libc, zlib, libbfd
+Source: package/devel/binutils
+License: GPL-3.0+
+Section: devel
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 20946
+Filename: ar_2.24-3_ipq806x.ipk
+Size: 21661
+MD5Sum: 0728b5005ee5667c359b0ace843216e9
+SHA256sum: 68e8b52450e6096715a90924e74fd342a209a1f5b755dfc8be54a7b812e3c1d8
+Description:  ar
+
+Package: arptables
+Version: 0.0.4-1
+Depends: libc, kmod-arptables
+Source: package/network/utils/arptables
+License: GPL-2.0
+Section: net
+Architecture: ipq806x
+Installed-Size: 19765
+Filename: arptables_0.0.4-1_ipq806x.ipk
+Size: 20452
+MD5Sum: 0744b8d8bcb0af85e7e3351772f7c88c
+SHA256sum: 3a2be44d39f2c0fbbdfa6e549d1915883b97dfce758300123acd880471781239
+Description:  ARP firewalling software
+
+Package: badblocks
+Version: 1.42.12-1
+Depends: libc, e2fsprogs
+Source: package/utils/e2fsprogs
+Section: utils
+Architecture: ipq806x
+Installed-Size: 9770
+Filename: badblocks_1.42.12-1_ipq806x.ipk
+Size: 10412
+MD5Sum: ac5b2a0345f166a75f8d1d58ae4ee57e
+SHA256sum: 0537988330e9c65084e8275f6b679efebb73c74997606a73963710f4b0e9077e
+Description:  Ext2 Filesystem badblocks utility
+
+Package: base-files
+Version: 157.2-unknown
+Depends: libc, netifd, procd, jsonfilter, usign
+Source: package/base-files
+License: GPL-2.0
+Section: base
+Architecture: ipq806x
+Installed-Size: 145937
+Filename: base-files_157.2-unknown_ipq806x.ipk
+Size: 146904
+MD5Sum: 259f23ee602956addceba5e223b8f562
+SHA256sum: ecc790016c5c0f0ae11cb3973321a3a4937c3c2645c1395447fe22d99895d615
+Description:  This package contains a base filesystem and system scripts for OpenWrt.
+
+Package: binutils
+Version: 2.24-3
+Depends: libc, objdump, ar
+Source: package/devel/binutils
+License: GPL-3.0+
+Section: devel
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 891444
+Filename: binutils_2.24-3_ipq806x.ipk
+Size: 887623
+MD5Sum: d2b6a7b9693a21526d15357c6c213d78
+SHA256sum: 72077346be8b811b0281ca0d2e7d3d97d002205b22b96b696d1de1384251e69d
+Description:  The Binutils package contains a linker, an assembler, and other tools for handling object files
+
+Package: blkid
+Version: 2.25.2-4
+Depends: libc, libblkid, libuuid
+Source: package/utils/util-linux
+License: GPL-2.0
+LicenseFiles: COPYING getopt/COPYING libblkid/COPYING libmount/COPYING Documentation/licenses/COPYING.GPLv2 Documentation/licenses/COPYING.LGPLv2.1 libuuid/COPYING Documentation/licenses/COPYING.BSD-3
+Section: utils
+Architecture: ipq806x
+Installed-Size: 24844
+Filename: blkid_2.25.2-4_ipq806x.ipk
+Size: 25548
+MD5Sum: 0a335a54270949d6bde2e36dedd39177
+SHA256sum: c93949ff17343770713094b0f509a058a30cd59dae3ef9bb703549e0701da858
+Description:  The blkid program is the command-line interface to working with the libblkid
+ library.
+
+Package: block-mount
+Version: 2016-01-10-96415afecef35766332067f4205ef3b2c7561d21
+Depends: libc, ubox, libubox, libuci
+Source: package/system/fstools
+License: GPL-2.0
+Section: base
+Maintainer: John Crispin <blogic@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 20350
+Filename: block-mount_2016-01-10-96415afecef35766332067f4205ef3b2c7561d21_ipq806x.ipk
+Size: 21066
+MD5Sum: 739a804d87fd868d4fd7c613d0fe87ba
+SHA256sum: 3123ff5ccff8caf1a16f1eb48ce11e2543d7806a746b0e6c12efa2af6417a1b8
+Description:  Block device mounting and checking
+
+Package: busybox
+Version: 1.25.1-2
+Depends: libc, librpc
+Source: package/utils/busybox
+License: GPL-2.0
+LicenseFiles: LICENSE archival/libarchive/bz/LICENSE
+Section: base
+Essential: yes
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 255620
+Filename: busybox_1.25.1-2_ipq806x.ipk
+Size: 255917
+MD5Sum: 13c0b419bd6b050353f07723aa098144
+SHA256sum: d030f5d8dff2e36f51c6d8b9ad11ff2c59b0f61a3435b0920d4e51e73c5649bf
+Description:  The Swiss Army Knife of embedded Linux.
+ It slices, it dices, it makes Julian Fries.
+
+Package: curl
+Version: 7.40.0-3.2
+Depends: libc, libcurl
+Source: package/network/utils/curl
+License: MIT
+LicenseFiles: COPYING
+Section: net
+Maintainer: Imre Kaloz <kaloz@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 36137
+Filename: curl_7.40.0-3.2_ipq806x.ipk
+Size: 36915
+MD5Sum: e6383f9cafceb7a2427871c230933452
+SHA256sum: a5f7f20d9fea6fcbdd6f4fbedc6cf4703e0259a9c2b68fba9ba1474cdf96ea78
+Description:  A client-side URL transfer utility
+
+Package: dnsmasq-dhcpv6
+Version: 2.73-1
+Depends: libc, kmod-ipv6
+Source: package/network/services/dnsmasq
+License: GPL-2.0
+LicenseFiles: COPYING
+Section: net
+Architecture: ipq806x
+Installed-Size: 114499
+Filename: dnsmasq-dhcpv6_2.73-1_ipq806x.ipk
+Size: 115305
+MD5Sum: 3c39321c4ae0b4b6bb522015b6a2b261
+SHA256sum: daac1cf208d73bd579acb6f311569be3cb0673a48c132d055804d6664711c083
+Description:  It is intended to provide coupled DNS and DHCP service to a LAN.
+ 
+ This is a variant with DHCPv6 support
+
+Package: dropbear
+Version: 2015.67-1
+Depends: libc
+Source: package/network/services/dropbear
+License: MIT
+LicenseFiles: LICENSE libtomcrypt/LICENSE libtommath/LICENSE
+Section: net
+Architecture: ipq806x
+Installed-Size: 77724
+Filename: dropbear_2015.67-1_ipq806x.ipk
+Size: 78497
+MD5Sum: 4233cbff846a471f9a29019c3e5e9e70
+SHA256sum: 8faf741216f1b585dbc8c0b47d48496fc8ca74aa39e26a5e8ca5680c7ba421d0
+Description:  A small SSH2 server/client designed for small memory environments.
+
+Package: ds-lite
+Version: 7-1
+Depends: libc, kmod-ipv6, kmod-ip6-tunnel, resolveip
+Source: package/network/ipv6/ds-lite
+License: GPL-2.0
+Section: net
+Maintainer: Steven Barth <steven@midlink.org>
+Architecture: all
+Installed-Size: 1050
+Filename: ds-lite_7-1_all.ipk
+Size: 1861
+MD5Sum: 8921d5fafe8c3691982acc54e4b500c3
+SHA256sum: 13b79e679cf892c0880de6e08bf96a970e60d58629d25c4ee4e7522a5a496ed0
+Description:  Provides support for Dual-Stack Lite in /etc/config/network.
+ Refer to http://wiki.openwrt.org/doc/uci/network for
+ configuration details.
+
+Package: e2fsprogs
+Version: 1.42.12-1
+Depends: libc, libuuid, libext2fs
+Source: package/utils/e2fsprogs
+Section: utils
+Architecture: ipq806x
+Installed-Size: 210121
+Filename: e2fsprogs_1.42.12-1_ipq806x.ipk
+Size: 210155
+MD5Sum: fab097132afcc1adea40fe020a44f64a
+SHA256sum: 15a30ecb7910134d0f246fca3f9ce238fdeb2e7d0ac6b0a2f56f7b3f45862ea0
+Description:  This package contains essential ext2 filesystem utilities which consists of
+ e2fsck, mke2fs and most of the other core ext2 filesystem utilities.
+
+Package: ebtables-utils
+Version: 2.0.10-4-3
+Depends: libc, kmod-ebtables, ebtables
+Source: package/network/utils/ebtables
+License: GPL-2.0
+Section: net
+Architecture: ipq806x
+Installed-Size: 3059
+Filename: ebtables-utils_2.0.10-4-3_ipq806x.ipk
+Size: 3906
+MD5Sum: 114d1c2f47c2f9e6f67de334d0851c39
+SHA256sum: de9b85397bd287de785fd98e113773c94b4368ee4834cd90d1511902789a9004
+Description:  The ebtables program is a filtering tool for a bridging firewall. The
+ filtering is focussed on the Link Layer Ethernet frame fields. Apart
+ from filtering, it also gives the ability to alter the Ethernet MAC
+ addresses and implement a brouter.
+
+Package: ebtables
+Version: 2.0.10-4-3
+Depends: libc, kmod-ebtables
+Source: package/network/utils/ebtables
+License: GPL-2.0
+Section: net
+Architecture: ipq806x
+Installed-Size: 59787
+Filename: ebtables_2.0.10-4-3_ipq806x.ipk
+Size: 60692
+MD5Sum: e98e2fd468cc2e60440bef2868cdb6ea
+SHA256sum: 14ef9c087f7c2e3f0f20b7f39eb627211357237ae96ef367b3c37069ea8ed22a
+Description:  The ebtables program is a filtering tool for a bridging firewall. The
+ filtering is focussed on the Link Layer Ethernet frame fields. Apart
+ from filtering, it also gives the ability to alter the Ethernet MAC
+ addresses and implement a brouter.
+
+Package: fdisk
+Version: 2.25.2-4
+Depends: libc, libblkid, libsmartcols
+Source: package/utils/util-linux
+License: GPL-2.0
+LicenseFiles: COPYING getopt/COPYING libblkid/COPYING libmount/COPYING Documentation/licenses/COPYING.GPLv2 Documentation/licenses/COPYING.LGPLv2.1 libuuid/COPYING Documentation/licenses/COPYING.BSD-3
+Section: utils
+Architecture: ipq806x
+Installed-Size: 94271
+Filename: fdisk_2.25.2-4_ipq806x.ipk
+Size: 95012
+MD5Sum: 26a20f19392222497ef43b8518493603
+SHA256sum: 222e9ae8321dd7f0d65207ebca8fca9d611b72031e6ab08a0f3efe16d2876ea2
+Description:  a menu-driven program for creation and manipulation of partition tables
+
+Package: firewall
+Version: 2015-07-27
+Depends: libc, libubox, libubus, libuci, libip4tc, libip6tc, libxtables, kmod-ipt-core, kmod-ipt-conntrack, kmod-ipt-nat
+Source: package/network/config/firewall
+License: ISC
+Section: net
+Maintainer: Jo-Philipp Wich <jow@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 38032
+Filename: firewall_2015-07-27_ipq806x.ipk
+Size: 38886
+MD5Sum: 77c7d599da10d66464e1910652ae1472
+SHA256sum: 369c63361aee84a297761be6dd9361d118dc323c2d79da3ae32f64427751b849
+Description:  This package provides a config-compatible C implementation of the UCI firewall.
+
+Package: flock
+Version: 2.25.2-4
+Depends: libc
+Source: package/utils/util-linux
+License: GPL-2.0
+LicenseFiles: COPYING getopt/COPYING libblkid/COPYING libmount/COPYING Documentation/licenses/COPYING.GPLv2 Documentation/licenses/COPYING.LGPLv2.1 libuuid/COPYING Documentation/licenses/COPYING.BSD-3
+Section: utils
+Architecture: ipq806x
+Installed-Size: 6754
+Filename: flock_2.25.2-4_ipq806x.ipk
+Size: 7583
+MD5Sum: 7bea029884bbdfd80e9300600d44e4ed
+SHA256sum: cf7aee8ace52a96782a1b913dc7434c4035e2465b11b020758f3f99751946fee
+Description:  manages flock locks from within shell scripts or the command line
+
+Package: fscrypt
+Version: 1
+Depends: libc, libfuse, libopenssl, spiinit
+Source: package/qtec/filecrypt
+Section: utils
+Architecture: ipq806x
+Installed-Size: 6136
+Filename: fscrypt_1_ipq806x.ipk
+Size: 6794
+MD5Sum: c8308eabf109c0765c582b9beaf37a27
+SHA256sum: 93aea810a36ffa4eedde36126a46df6d351f3626b5a715af9f5e0c8110afb6e1
+Description:  my fscrypt.
+
+Package: fstools
+Version: 2016-01-10-96415afecef35766332067f4205ef3b2c7561d21
+Depends: libc, ubox, ubi-utils
+Source: package/system/fstools
+License: GPL-2.0
+Section: base
+Maintainer: John Crispin <blogic@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 16690
+Filename: fstools_2016-01-10-96415afecef35766332067f4205ef3b2c7561d21_ipq806x.ipk
+Size: 17474
+MD5Sum: b842b0004e78b9980d9f3da48103ea1c
+SHA256sum: 4d522dfe6a55d6eabce5cb4303a8ee8c9bdda7bd69d28d7d97fc91cb6ef61e3c
+Description:  OpenWrt filesystem tools
+
+Package: fuse-utils
+Version: 2.9.3-2
+Depends: libc, libfuse
+Source: package/utils/fuse
+License: LGPLv2.1 GPLv2
+LicenseFiles: COPYING.LIB COPYING
+Section: utils
+Architecture: ipq806x
+Installed-Size: 12797
+Filename: fuse-utils_2.9.3-2_ipq806x.ipk
+Size: 13548
+MD5Sum: fbff005f97493440771dd106486284f4
+SHA256sum: b10e452fa61c75e8f79e646ac9d33fef63c9251123719fe88eb5d7a3bab70f85
+Description:  FUSE (Filesystem in UserSpacE)
+ This package contains the FUSE utilities.
+ - fusermount
+ - ulockmgr_server
+
+Package: gdb
+Version: 7.8-2
+Depends: libc, libthread-db, zlib, libreadline, libncurses, zlib
+Source: package/devel/gdb
+License: GPL-3.0+
+Section: devel
+Architecture: ipq806x
+Installed-Size: 1461585
+Filename: gdb_7.8-2_ipq806x.ipk
+Size: 1458503
+MD5Sum: 48423160bc4b3ba33ecd19d2451a1dbd
+SHA256sum: f1146b26aee9354a8a4023e4a1f10a3f9dafdaca4e9a2013a3ff74a8b56a7a96
+Description:  GDB, the GNU Project debugger, allows you to see what is going on `inside'
+ another program while it executes -- or what another program was doing at the
+ moment it crashed.
+
+Package: hostapd-common
+Version: 2015-09-27-1
+Depends: libc
+Source: package/network/services/hostapd
+License: BSD-3-Clause
+Section: net
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 5269
+Filename: hostapd-common_2015-09-27-1_ipq806x.ipk
+Size: 5995
+MD5Sum: e27c5876b5699a5100f7a739758b7b8d
+SHA256sum: 0a169798961746baa4d580103712100567f61e653c94c22dace1db001b0b7585
+Description:  hostapd/wpa_supplicant common support files
+
+Package: i2c_ctrl
+Version: 1.0
+Depends: libc, libpthread
+Source: package/qtec/i2c_ctrl
+Section: base
+Architecture: ipq806x
+Installed-Size: 2744
+Filename: i2c_ctrl_1.0_ipq806x.ipk
+Size: 3411
+MD5Sum: 28a470c767cbfe2c03bfa97a4f9d45cf
+SHA256sum: cc4493006c106e96b07f99fc2ff6eeb09e90bf308f6762735b3c44400644e52b
+Description:  init spi device(security chip).
+
+Package: ifstat
+Version: 1.1-1
+Depends: libc
+Source: package/ifstat
+Section: net
+Architecture: ipq806x
+Installed-Size: 6884
+Filename: ifstat_1.1-1_ipq806x.ipk
+Size: 7617
+MD5Sum: 428dbfbda7238ac1e035bd5892456032
+SHA256sum: 3a63e2fd6cfd0a19cd1fe3976f920632ab3a2a70c55b31dd7c6c543e3ad6e59b
+Description:  Network interface bandwidth usage, with support for snmp targets
+
+Package: iftop
+Version: 1.0pre2-1
+Depends: libc, libpcap, libncurses, libpthread
+Source: package/network/utils/iftop
+License: GPL-2.0
+Section: net
+Maintainer: Jo-Philipp Wich <jow@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 18454
+Filename: iftop_1.0pre2-1_ipq806x.ipk
+Size: 19306
+MD5Sum: 20a7f869d25a1d54a9aea150c187ef8a
+SHA256sum: 75b36b1884a25b9afe3260f619fe876e23d63b07e2cae373e4ec61df03960edc
+Description:  iftop does for network usage what top(1) does for CPU usage. It 
+ listens to network traffic on a named interface and displays a 
+ table of current bandwidth usage by pairs of hosts. Handy for 
+ answering the question 'why is our ADSL link so slow?'.
+
+Package: ip-full
+Version: 4.0.0-1
+Depends: libc, libnl-tiny
+Source: package/network/utils/iproute2
+License: GPL-2.0
+Section: net
+Maintainer: Russell Senior <russell@personaltelco.net>
+Architecture: ipq806x
+Installed-Size: 118527
+Filename: ip-full_4.0.0-1_ipq806x.ipk
+Size: 119299
+MD5Sum: 658e336d31f8154bc6bd8c1dbcb66fda
+SHA256sum: 561688d9e23ca9aefe4ea7141d942ff6cafd84be09f3662c4ffaa154eed00edc
+Description:  Routing control utility (Full)
+
+Package: ip6tables
+Version: 1.4.21-1
+Depends: libc, kmod-ip6tables, iptables
+Source: package/network/utils/iptables
+License: GPL-2.0
+Section: net
+Architecture: ipq806x
+Installed-Size: 214
+Filename: ip6tables_1.4.21-1_ipq806x.ipk
+Size: 912
+MD5Sum: c27988457102d058e0f808c063367eec
+SHA256sum: 3f8021b6123aa189a213d2d80d460256657c477c14d179864689cd715e597d1e
+Description:  IPv6 firewall administration tool
+
+Package: iperf
+Version: 2.0.5-1
+Depends: libc, uclibcxx
+Source: package/network/utils/iperf
+License: BSD-3-Clause
+Section: net
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 22063
+Filename: iperf_2.0.5-1_ipq806x.ipk
+Size: 22890
+MD5Sum: 14502b6751d7e935faa0d907fe2cd0e5
+SHA256sum: 34eac4f077e76edc654cdb90b824486e70a10d626ff939d9e4f80fdd58dc4c04
+Description:  Iperf is a modern alternative for measuring TCP and UDP bandwidth
+ performance, allowing the tuning of various parameters and
+ characteristics.
+ This package is built with single thread support.
+
+Package: iptables-mod-conntrack-extra
+Version: 1.4.21-1
+Depends: libc, iptables, kmod-ipt-conntrack-extra
+Source: package/network/utils/iptables
+License: GPL-2.0
+Section: net
+Architecture: ipq806x
+Installed-Size: 8870
+Filename: iptables-mod-conntrack-extra_1.4.21-1_ipq806x.ipk
+Size: 9651
+MD5Sum: 04747323ad38a5d8cc4b8786881952c9
+SHA256sum: dbb9978c30a43b7606352f4de0d5f08eab144b8cd3e576e419a0964fd9b48e15
+Description:  Extra iptables extensions for connection tracking.
+ 
+ Matches:
+ - connbytes
+ - connlimit
+ - connmark
+ - recent
+ - helper
+ 
+ Targets:
+ - CONNMARK
+ 
+
+Package: iptables-mod-extra
+Version: 1.4.21-1
+Depends: libc, iptables, kmod-ipt-extra
+Source: package/network/utils/iptables
+License: GPL-2.0
+Section: net
+Architecture: ipq806x
+Installed-Size: 7898
+Filename: iptables-mod-extra_1.4.21-1_ipq806x.ipk
+Size: 8706
+MD5Sum: 7ea83e65eca8af71ad896ecc19ba3506
+SHA256sum: c7bc83069f4c21b98ff51beb537aabc93c0d07da57e82649a19811b6dca2f85b
+Description:  Other extra iptables extensions.
+ 
+ Matches:
+ - addrtype
+ - condition
+ - owner
+ - physdev (if ebtables is enabled)
+ - pkttype
+ - quota
+ 
+
+Package: iptables-mod-filter
+Version: 1.4.21-1
+Depends: libc, iptables, kmod-ipt-filter
+Source: package/network/utils/iptables
+License: GPL-2.0
+Section: net
+Architecture: ipq806x
+Installed-Size: 5897
+Filename: iptables-mod-filter_1.4.21-1_ipq806x.ipk
+Size: 6658
+MD5Sum: fbb3cc92d674d5fb3712161197ba9f62
+SHA256sum: 33867a282dc08501998221321d9690f97c498bb1a3176515f10fff07322f6bb9
+Description:  iptables extensions for packet content inspection.
+ Includes support for:
+ 
+ Matches:
+ - string
+ 
+
+Package: iptables-mod-ipopt
+Version: 1.4.21-1
+Depends: libc, iptables, kmod-ipt-ipopt
+Source: package/network/utils/iptables
+License: GPL-2.0
+Section: net
+Architecture: ipq806x
+Installed-Size: 12564
+Filename: iptables-mod-ipopt_1.4.21-1_ipq806x.ipk
+Size: 13355
+MD5Sum: c7130883300811ae98bf0ee0ce660c70
+SHA256sum: 0763a626f8673a095d1c3b8b0e7680a0a3e4bc53c4c0d3e2a598e094a392035e
+Description:  iptables extensions for matching/changing IP packet options.
+ 
+ Matches:
+ - dscp
+ - ecn
+ - length
+ - statistic
+ - tcpmss
+ - unclean
+ - hl
+ 
+ Targets:
+ - DSCP
+ - CLASSIFY
+ - ECN
+ - HL
+ 
+
+Package: iptables-mod-ipsec
+Version: 1.4.21-1
+Depends: libc, iptables, kmod-ipt-ipsec
+Source: package/network/utils/iptables
+License: GPL-2.0
+Section: net
+Architecture: ipq806x
+Installed-Size: 5140
+Filename: iptables-mod-ipsec_1.4.21-1_ipq806x.ipk
+Size: 5880
+MD5Sum: 2ac698d837753feb15e3cf04a6e6edb7
+SHA256sum: 289cd624ad4deaa8b5ea0c1f8a8636225614eb62dd0dd002d30337db1091a322
+Description:  iptables extensions for matching ipsec traffic.
+ 
+ Matches:
+ - ah
+ - esp
+ - policy
+ 
+
+Package: iptables-mod-nat-extra
+Version: 1.4.21-1
+Depends: libc, iptables, kmod-ipt-nat-extra
+Source: package/network/utils/iptables
+License: GPL-2.0
+Section: net
+Architecture: ipq806x
+Installed-Size: 2132
+Filename: iptables-mod-nat-extra_1.4.21-1_ipq806x.ipk
+Size: 2888
+MD5Sum: 94fd94d91632b877b48218cd15d147dd
+SHA256sum: d7ffbcdc1c81da2400289f6535551bf9b7ecdb2e51813753df04ce64228c91bd
+Description:  iptables extensions for extra NAT targets.
+ 
+ Targets:
+ - MIRROR
+ - NETMAP
+
+Package: iptables
+Version: 1.4.21-1
+Depends: libc, kmod-ipt-core, libip4tc, libip6tc, libxtables
+Source: package/network/utils/iptables
+License: GPL-2.0
+Section: net
+Architecture: ipq806x
+Installed-Size: 23127
+Filename: iptables_1.4.21-1_ipq806x.ipk
+Size: 23907
+MD5Sum: 7c50c79fb4905c88e453a215d806b571
+SHA256sum: d8be602ce90367c0bb1efeb9bb197ab916b93924c445fed885cfccbc7ef1544d
+Description:  IP firewall administration tool.
+ 
+ Matches:
+ - icmp
+ - tcp
+ - udp
+ - comment
+ - conntrack
+ - limit
+ - mac
+ - mark
+ - multiport
+ - set
+ - state
+ - time
+ 
+ Targets:
+ - ACCEPT
+ - CT
+ - DNAT
+ - DROP
+ - REJECT
+ - LOG
+ - MARK
+ - MASQUERADE
+ - REDIRECT
+ - SET
+ - SNAT
+ - TCPMSS
+ 
+ Tables:
+ - filter
+ - mangle
+ - nat
+ - raw
+ 
+
+Package: iputils-ping6
+Version: 20101006-1
+Depends: libc
+Source: package/network/utils/iputils
+License: GPL-2.0+
+Section: net
+Maintainer: Jo-Philipp Wich <jow@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 12678
+Filename: iputils-ping6_20101006-1_ipq806x.ipk
+Size: 13457
+MD5Sum: 1954b090713a302b502f6d7563536e3d
+SHA256sum: 397c9e5fee2b305c45866d4e8eed0781ac8d49dedbde2157dd4d3be5f68a9189
+Description:  Program ping6 from iputils.
+ Sends ICMP ECHO_REQUEST to network hosts (IPv6).
+
+Package: iputils-ping
+Version: 20101006-1
+Depends: libc
+Source: package/network/utils/iputils
+License: GPL-2.0+
+Section: net
+Maintainer: Jo-Philipp Wich <jow@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 14380
+Filename: iputils-ping_20101006-1_ipq806x.ipk
+Size: 15161
+MD5Sum: 992bfd260c6007852dda8b809de86009
+SHA256sum: 16d070bd4331389460f941bd2a5b32ac34553ab71f072c0638655b4fb2b52b39
+Description:  Program ping from iputils.
+ Sends ICMP ECHO_REQUEST to network hosts (IPv4).
+
+Package: iputils-tracepath6
+Version: 20101006-1
+Depends: libc
+Source: package/network/utils/iputils
+License: GPL-2.0+
+Section: net
+Maintainer: Jo-Philipp Wich <jow@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 4302
+Filename: iputils-tracepath6_20101006-1_ipq806x.ipk
+Size: 5054
+MD5Sum: 90231a4beb5429a0832873d14878830f
+SHA256sum: 7b999ea6a4ae1df8a841471e9aafb1b94984a97066ed6982dc9b0c9b4de2908a
+Description:  Program tracepath6 from iputils.
+ Traces path to a network host discovering MTU along this path (IPv6).
+
+Package: iputils-tracepath
+Version: 20101006-1
+Depends: libc
+Source: package/network/utils/iputils
+License: GPL-2.0+
+Section: net
+Maintainer: Jo-Philipp Wich <jow@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 3677
+Filename: iputils-tracepath_20101006-1_ipq806x.ipk
+Size: 4471
+MD5Sum: c3074643b423e30d8b4344f75ec171dd
+SHA256sum: 079f0b6f3edc3560e7df5d43f5a6cba885a2d9ff41953f781c15e5eab3403395
+Description:  Program tracepath from iputils.
+ Traces path to a network host discovering MTU along this path (IPv4).
+
+Package: iw
+Version: 4.3-1
+Depends: libc, libnl-tiny
+Source: package/network/utils/iw
+License: GPL-2.0
+Section: net
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 36044
+Filename: iw_4.3-1_ipq806x.ipk
+Size: 36798
+MD5Sum: 90d77b4b4c5dc3d991a7372a605828cb
+SHA256sum: f293bdef2840608c2395cd55448d195d1189c2bf02040b6acfaf3a3151dc1d6f
+Description:  cfg80211 interface configuration utility
+
+Package: iwinfo
+Version: 2015-06-01-ade8b1b299cbd5748db1acf80dd3e9f567938371
+Depends: libc, libiwinfo
+Source: package/network/utils/iwinfo
+License: GPL-2.0
+Section: utils
+Maintainer: Jo-Philipp Wich <jow@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 6175
+Filename: iwinfo_2015-06-01-ade8b1b299cbd5748db1acf80dd3e9f567938371_ipq806x.ipk
+Size: 6996
+MD5Sum: ece9cf95e0741aacb440333387c2ba66
+SHA256sum: 6a092393904dde0cf98d58431dde2664b5639fd54140970bcc3edd1a476f1c3c
+Description:  Command line frontend for the wireless information library.
+
+Package: jshn
+Version: 2015-11-08-10429bccd0dc5d204635e110a7a8fae7b80d16cb
+Depends: libc, libjson-c, libubox, libblobmsg-json
+Source: package/libs/libubox
+License: ISC
+Section: utils
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 4862
+Filename: jshn_2015-11-08-10429bccd0dc5d204635e110a7a8fae7b80d16cb_ipq806x.ipk
+Size: 5640
+MD5Sum: 3584909f215599690400179833d3698b
+SHA256sum: 72b92febf5853de8559ab19279a7cddf274060dc106147e4b0ab89fef0f82821
+Description:  Library for parsing and generating JSON from shell scripts
+
+Package: jsoncgi
+Version: 1
+Depends: libc, librtcfg, libopenssl, libqtkey, libqtkeymangent, libsqlite3, libstdcpp, libwebsockets, qtec_firewall, spiinit, qtec_ebtables
+Source: package/qtec/jsoncgi
+Section: utils
+Architecture: ipq806x
+Installed-Size: 185335
+Filename: jsoncgi_1_ipq806x.ipk
+Size: 185362
+MD5Sum: 30ed1c3e28f3539cf4afbeb155f53fc8
+SHA256sum: 2343c58d0aea9e8c21fd2642f642d4956011b4722faa6801cd6cb84419e77f46
+Description:  If you can't figure out what this program does, you're probably
+ brain-dead and need immediate medical attention.
+
+Package: jsonfilter
+Version: 2014-06-19-cdc760c58077f44fc40adbbe41e1556a67c1b9a9
+Depends: libc, libubox, libjson-c
+Source: package/utils/jsonfilter
+License: ISC
+Section: base
+Maintainer: Jo-Philipp Wich <jow@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 7097
+Filename: jsonfilter_2014-06-19-cdc760c58077f44fc40adbbe41e1556a67c1b9a9_ipq806x.ipk
+Size: 7893
+MD5Sum: cee40cf92d48eac8b79a202a38b1367f
+SHA256sum: 928ee15f86b58ed8723122704b5788196ebc9d46092e9e610967f0b3e2754751
+Description:  OpenWrt JSON filter utility
+
+Package: kmod-ac97
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-sound-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 105
+Filename: kmod-ac97_3.14.77-1_ipq806x.ipk
+Size: 835
+MD5Sum: 543197de3f438704b3db84f832b151f0
+SHA256sum: 8efea5e4c798871efa6a81bc1a0ba79103b142082423ced469cc3116f06becf0
+Description:  The ac97 controller
+
+Package: kmod-aq_phy
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c)
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 6239
+Filename: kmod-aq_phy_3.14.77-1_ipq806x.ipk
+Size: 7043
+MD5Sum: 34d97a13b175dd4ea59e2d66dfa529dd
+SHA256sum: 6a234439a4428cbe06b552b6c66808e429bcbcfeb22143e7455f42c28677f69d
+Description:  Aquantia PHY Driver
+
+Package: kmod-arptables
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-ipt-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 8327
+Filename: kmod-arptables_3.14.77-1_ipq806x.ipk
+Size: 9191
+MD5Sum: 739b95c00ca99e4abc969f9cad85abdc
+SHA256sum: 08270926b5af8706e658b8ff08b390ff5d472b238e0cd39ca6507d2d35a9d155
+Description:  Kernel modules for ARP firewalling
+
+Package: kmod-ata-ahci-platform
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-ata-core, kmod-ata-ahci
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 1521
+Filename: kmod-ata-ahci-platform_3.14.77-1_ipq806x.ipk
+Size: 2345
+MD5Sum: 9b0deca8bc75bc68f23e63e9738c3b2b
+SHA256sum: 4a362f711423f604e6bcca1e8fce09ac446d77c032159696755197cedc7b210d
+Description:  Platform support for AHCI Serial ATA controllers
+
+Package: kmod-ata-ahci
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-ata-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 239
+Filename: kmod-ata-ahci_3.14.77-1_ipq806x.ipk
+Size: 1060
+MD5Sum: 85784287d02752405a495446b0c8e241
+SHA256sum: 5c33485de08944e1836ed824e6d6f0e06bac787d7ee888bce43f1edbb8f996e2
+Description:  Support for AHCI Serial ATA controllers
+
+Package: kmod-ata-artop
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-ata-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 3037
+Filename: kmod-ata-artop_3.14.77-1_ipq806x.ipk
+Size: 3861
+MD5Sum: 02fde08ce93fb55b32c1a904b67787f1
+SHA256sum: e163145c42db0713bcad859591dc7b0cd88878657f7f5b98b8d9356ac2b26068
+Description:  PATA support for ARTOP 6210/6260 host controllers
+
+Package: kmod-ata-core
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-scsi-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 105
+Filename: kmod-ata-core_3.14.77-1_ipq806x.ipk
+Size: 847
+MD5Sum: 269cae168299fd401a0fa3bd9fd19e53
+SHA256sum: eb1f68d50dd2c55e58e9270765e9be2b701881a3671c58044f13371762f996cf
+Description:  Serial and Parallel ATA support
+
+Package: kmod-ata-marvell-sata
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-ata-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 15169
+Filename: kmod-ata-marvell-sata_3.14.77-1_ipq806x.ipk
+Size: 15975
+MD5Sum: 09c2cab126ef4e64351f9f699e8a8f98
+SHA256sum: 9ff6c01181a94f5bde752936c00b6c81b8c4ff7b44c2ea219e869260ea57b4f3
+Description:  SATA support for marvell chipsets
+
+Package: kmod-ata-nvidia-sata
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-ata-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 10985
+Filename: kmod-ata-nvidia-sata_3.14.77-1_ipq806x.ipk
+Size: 11779
+MD5Sum: dcf897d0ce5f236bfcbe8caf7485033c
+SHA256sum: b0374d277adb81b6195af08fe3ab700975a50dff8f20db40ec3f5968e34b7066
+Description:  Nvidia Serial ATA support
+
+Package: kmod-ata-pdc202xx-old
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-ata-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 2814
+Filename: kmod-ata-pdc202xx-old_3.14.77-1_ipq806x.ipk
+Size: 3660
+MD5Sum: b345e37f39f103209182cc53f9cee769
+SHA256sum: e838ff7c38893a510584dac7178cb3f0b2ce12e8900121f05c46598e24ff133b
+Description:  This option enables support for the Promise 20246, 20262, 20263,
+ 20265 and 20267 adapters
+
+Package: kmod-ata-piix
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-ata-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 6133
+Filename: kmod-ata-piix_3.14.77-1_ipq806x.ipk
+Size: 6970
+MD5Sum: 1d1b42b0809c97d9107689dff06a4356
+SHA256sum: 48fe6c49fa874130040b7fb57ccdbeef659565317fb924593e55df67449e78ea
+Description:  SATA support for Intel ICH5/6/7/8 series host controllers and
+ PATA support for Intel ESB/ICH/PIIX3/PIIX4 series host controllers
+
+Package: kmod-ata-sil24
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-ata-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 6992
+Filename: kmod-ata-sil24_3.14.77-1_ipq806x.ipk
+Size: 7842
+MD5Sum: cbc76006b7bd493e6a88405d6ea27d64
+SHA256sum: f695a61ad8a91a286f305005a2fa65961229470f263dadf741abea3828532bf8
+Description:  Support for Silicon Image 3124/3132 Serial ATA controllers
+
+Package: kmod-ata-sil
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-ata-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 4716
+Filename: kmod-ata-sil_3.14.77-1_ipq806x.ipk
+Size: 5533
+MD5Sum: 7a63a7526340b3240cd6941ab5485653
+SHA256sum: 31204a9a1bda5292c2fa8b7aaa183e5a193e68884f5c88529626d8d1ac2e57aa
+Description:  Support for Silicon Image Serial ATA controllers
+
+Package: kmod-ata-via-sata
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-ata-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 4469
+Filename: kmod-ata-via-sata_3.14.77-1_ipq806x.ipk
+Size: 5300
+MD5Sum: e36b41ad91814e9be56406a2d8c3a902
+SHA256sum: 4507fdf6f1748adb8c6fa4c9f3ac726ac7f2d03f2403a5b679e709707c46e082
+Description:  This option enables support for VIA Serial ATA
+
+Package: kmod-bonding
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c)
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 62679
+Filename: kmod-bonding_3.14.77-1_ipq806x.ipk
+Size: 63325
+MD5Sum: a3928047c2051aad57e233feb54e101b
+SHA256sum: 7a78c7cf4478c6258ed544c1a7ad42804cd4dc7abe4e62f935a339bc67a602a5
+Description:  Kernel module for NIC bonding.
+
+Package: kmod-bootconfig
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c)
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 3314
+Filename: kmod-bootconfig_3.14.77-1_ipq806x.ipk
+Size: 4117
+MD5Sum: 853bb817f164c6a5fab73eb3c73d664d
+SHA256sum: a21e954c5ae075327e14d78790dc35d2d8c39c3481e2cb0515a26a8233fb9748
+Description:  Bootconfig partition for failsafe
+
+Package: kmod-bridge
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-stp
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 188
+Filename: kmod-bridge_3.14.77-1_ipq806x.ipk
+Size: 992
+MD5Sum: 87598a87f25bda67f54d2aceda682d14
+SHA256sum: f0f227b9e911870fd16cfebdc19bb6e63364a95eaee1bac33e1c2f8672af0d3b
+Description:  Kernel module for Ethernet bridging.
+
+Package: kmod-button-hotplug
+Version: 3.14.77-3
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-input-core
+Source: package/kernel/button-hotplug
+Section: kernel
+Architecture: ipq806x
+Installed-Size: 2840
+Filename: kmod-button-hotplug_3.14.77-3_ipq806x.ipk
+Size: 3672
+MD5Sum: 76c559106d5e085bd72d479130771693
+SHA256sum: 57bf902a4c9fa3d3534f1553baa17c470dd204ec24ba2642dc4a67c9f533143b
+Description:  Kernel module to generate button uevent-s from input subsystem events.
+ If your device uses GPIO buttons, see gpio-button-hotplug.
+
+Package: kmod-crypto-aead
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-crypto-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 233
+Filename: kmod-crypto-aead_3.14.77-1_ipq806x.ipk
+Size: 1035
+MD5Sum: ffc91e1e66ca53623d457ef16785d1e2
+SHA256sum: 6d71ed9ba9f481762e60e03d0253d1574c46c4c6228a11d37dcc34c0fe6afb39
+Description:  CryptoAPI AEAD support
+
+Package: kmod-crypto-aes
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-crypto-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 199
+Filename: kmod-crypto-aes_3.14.77-1_ipq806x.ipk
+Size: 1003
+MD5Sum: 820e83a5d9f9fa47077cdb937763517e
+SHA256sum: 8eedd4e8eed02dded08a90d6be78f1feeca98f538ad263c98ddcc9558c47cc47
+Description:  AES cipher CryptoAPI module
+
+Package: kmod-crypto-arc4
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-crypto-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 192
+Filename: kmod-crypto-arc4_3.14.77-1_ipq806x.ipk
+Size: 1005
+MD5Sum: 76e1fb5802ab58c6e5d77137677c3c96
+SHA256sum: 52303c49e245908d0a7068660a78db0f499b2b23f84a79d1efd09422f7f0af33
+Description:  ARC4 (RC4) cipher CryptoAPI module
+
+Package: kmod-crypto-authenc
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-crypto-manager, kmod-crypto-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 4474
+Filename: kmod-crypto-authenc_3.14.77-1_ipq806x.ipk
+Size: 5279
+MD5Sum: cba333b2a44c9b540207da763ede431f
+SHA256sum: c0139301693b3aa5193e176bfd0492d8de198b61cbd5730bb8f5daef1a3e8c86
+Description:  Combined mode wrapper for IPsec
+
+Package: kmod-crypto-cbc
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-crypto-manager, kmod-crypto-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 2203
+Filename: kmod-crypto-cbc_3.14.77-1_ipq806x.ipk
+Size: 3013
+MD5Sum: 42bdf96e6aea76c14ec55773584026ae
+SHA256sum: db5954fa8d0b5a0f0c67e919cdcad3f97679a5a4e664b055a4f16aa62c184482
+Description:  Cipher Block Chaining CryptoAPI module
+
+Package: kmod-crypto-core
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c)
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 106
+Filename: kmod-crypto-core_3.14.77-1_ipq806x.ipk
+Size: 841
+MD5Sum: ddad06b69b57631c36d2002e922c6d63
+SHA256sum: e8f8f4e80ba275c7297e629f6ccaf3aefc40060623d6f5d59257ee3199dcd388
+Description:  Core CryptoAPI modules
+
+Package: kmod-crypto-crc32c
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-crypto-hash, kmod-crypto-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 235
+Filename: kmod-crypto-crc32c_3.14.77-1_ipq806x.ipk
+Size: 1037
+MD5Sum: 1371a9bbf16b3f455cb84b3b211b2519
+SHA256sum: 56491b88780b8849c9ad8e4b3ca5cae52bf7bfe98005a9f329e0740207017201
+Description:  CRC32c CRC module
+
+Package: kmod-crypto-deflate
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-lib-zlib, kmod-crypto-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 193
+Filename: kmod-crypto-deflate_3.14.77-1_ipq806x.ipk
+Size: 1013
+MD5Sum: 7601b27450300ee92991c895b65770ee
+SHA256sum: 183baaa113bf5646152fffc3e63b66141ef9ea2ac63624e739660a66a9ac8aa6
+Description:  Deflate compression CryptoAPI module
+
+Package: kmod-crypto-des
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-crypto-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 7256
+Filename: kmod-crypto-des_3.14.77-1_ipq806x.ipk
+Size: 7834
+MD5Sum: ba3a13752812829b39d1b9c66462560b
+SHA256sum: 89f477eebfcd5ba26caaaf94e10853c99e08bdb16da033964664698dd6413af1
+Description:  DES/3DES cipher CryptoAPI module
+
+Package: kmod-crypto-ecb
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-crypto-manager, kmod-crypto-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 1786
+Filename: kmod-crypto-ecb_3.14.77-1_ipq806x.ipk
+Size: 2629
+MD5Sum: 451636697b9aea24f97e6f4e591e8555
+SHA256sum: 32ad1a82e0f9a4d2812805e24b2fef1be80f6af610548fd39c703ab759527a8e
+Description:  Electronic CodeBook CryptoAPI module
+
+Package: kmod-crypto-hash
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-crypto-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 241
+Filename: kmod-crypto-hash_3.14.77-1_ipq806x.ipk
+Size: 1045
+MD5Sum: 155cbf55d60dfff657d40a97c29539d4
+SHA256sum: 450b3a3291ecf583e5189eec1b31339f91f2817bad0fb921a3f1c29d0bc9b70e
+Description:  CryptoAPI hash support
+
+Package: kmod-crypto-hmac
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-crypto-manager, kmod-crypto-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 2344
+Filename: kmod-crypto-hmac_3.14.77-1_ipq806x.ipk
+Size: 3145
+MD5Sum: 71bf4f46773befec2993df52fe76552e
+SHA256sum: 7f71a2021a3f950b70bc09930a01a7ae1c591633b43240c02fb4b3d218436485
+Description:  HMAC digest CryptoAPI module
+
+Package: kmod-crypto-iv
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-crypto-manager, kmod-crypto-rng, kmod-crypto-wq, kmod-crypto-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 200
+Filename: kmod-crypto-iv_3.14.77-1_ipq806x.ipk
+Size: 1022
+MD5Sum: a81d7ade26f15700d11785bd671c1ac4
+SHA256sum: 8a5b63350cc06519d9cbd37e497b0827458f488b6d1cb6a304406e68b619ec1e
+Description:  CryptoAPI initialization vectors
+
+Package: kmod-crypto-manager
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-crypto-aead, kmod-crypto-hash, kmod-crypto-pcompress, kmod-crypto-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 106
+Filename: kmod-crypto-manager_3.14.77-1_ipq806x.ipk
+Size: 865
+MD5Sum: d53dab40e2b53cd8f425dd1965493a21
+SHA256sum: 9e67564f4ce3380eec8c621e1b36bd32c19616f0bdc9427d3e0ccafdf7c6275f
+Description:  CryptoAPI algorithm manager
+
+Package: kmod-crypto-md5
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-crypto-hash, kmod-crypto-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 1589
+Filename: kmod-crypto-md5_3.14.77-1_ipq806x.ipk
+Size: 2429
+MD5Sum: 877b2b1add787d9591011c85fcf0f249
+SHA256sum: 6a6847b1ba12d3330cc90892c0aaac5a69d335628adcbf7fd33ba4754dc90344
+Description:  MD5 digest CryptoAPI module
+
+Package: kmod-crypto-ocf
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-crypto-manager, kmod-crypto-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 26052
+Filename: kmod-crypto-ocf_3.14.77-1_ipq806x.ipk
+Size: 26813
+MD5Sum: 571e4ee02e233fc2fc39e2c129802f49
+SHA256sum: 87370172bc66cac22d8573129b08b429f38925ebb8f4440215c4708332a74725
+Description:  OCF modules
+
+Package: kmod-crypto-pcompress
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-crypto-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 106
+Filename: kmod-crypto-pcompress_3.14.77-1_ipq806x.ipk
+Size: 856
+MD5Sum: 8071a3028f07914ef8a84b9fddffd466
+SHA256sum: c3ef0c0172e929a9f13ae6042c142271d55d6087430955049d6fad29784d2c59
+Description:  CryptoAPI Partial (de)compression operations
+
+Package: kmod-crypto-qcrypto
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-crypto-manager, kmod-crypto-aes, kmod-crypto-hash, kmod-crypto-des, kmod-crypto-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 29056
+Filename: kmod-crypto-qcrypto_3.14.77-1_ipq806x.ipk
+Size: 29863
+MD5Sum: e77548979c47c57bdf7e8b030a7b9644
+SHA256sum: ba68e864dd81da199ed0428d222abec779fc8b5af790af7f33bed791a9b682d2
+Description:  Qualcomm crypto CE engine
+
+Package: kmod-crypto-rng
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-crypto-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 195
+Filename: kmod-crypto-rng_3.14.77-1_ipq806x.ipk
+Size: 1009
+MD5Sum: 3339179fcf2815704011da28599fc6a2
+SHA256sum: 72295fd556d766d66cc3b4143dfabdb761fae521af1fc340c6b2ebc786acc391
+Description:  CryptoAPI random number generation
+
+Package: kmod-crypto-sha1
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-crypto-hash, kmod-crypto-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 1729
+Filename: kmod-crypto-sha1_3.14.77-1_ipq806x.ipk
+Size: 2565
+MD5Sum: 99342a752fcef63453ae2b7c3970ab39
+SHA256sum: a7906e27789184ed3dc827d5b24c5b66321ba4e264751e5dacc3153cb1119e23
+Description:  SHA1 digest CryptoAPI module
+
+Package: kmod-crypto-wq
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-crypto-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 194
+Filename: kmod-crypto-wq_3.14.77-1_ipq806x.ipk
+Size: 1006
+MD5Sum: 76e4500cf5c509ab308d532e2cc5d61b
+SHA256sum: fd0fabcfed1a1d5ac033a73c980acabb6081c9b8b8fb77fb8cd5cab48632ed9b
+Description:  CryptoAPI work queue handling
+
+Package: kmod-dm
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-crypto-manager
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 66888
+Filename: kmod-dm_3.14.77-1_ipq806x.ipk
+Size: 67660
+MD5Sum: 553d969a970783b93d93a7fbbb096b46
+SHA256sum: c3d6045abbddd7579483c65c09caab1ab8a9a21140e2a7a2e69763532bc3c795
+Description:  Kernel module necessary for LVM2 support
+
+Package: kmod-ebtables-ipv4
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-ebtables
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 4165
+Filename: kmod-ebtables-ipv4_3.14.77-1_ipq806x.ipk
+Size: 5044
+MD5Sum: 1c27d4c1d09042ee5f30c888695c5d4d
+SHA256sum: 5190bb3a7a1861468b252618be150c6491ad47a0b25cb0705cff690219547c43
+Description:  This option adds the IPv4 support to ebtables, which allows basic
+ IPv4 header field filtering, ARP filtering as well as SNAT, DNAT targets.
+
+Package: kmod-ebtables
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-ipt-core, kmod-bridge
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 18075
+Filename: kmod-ebtables_3.14.77-1_ipq806x.ipk
+Size: 19041
+MD5Sum: fe6331ca15b4bfc7651ba17409a18a51
+SHA256sum: 746acf69691e9f8600a87cd7b432fe5e064b30ed64f2c3bd90333108e9adc9c2
+Description:  ebtables is a general, extensible frame/packet identification
+ framework. It provides you to do Ethernet
+ filtering/NAT/brouting on the Ethernet bridge.
+
+Package: kmod-fs-ext4
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-lib-crc16, kmod-crypto-hash
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 243
+Filename: kmod-fs-ext4_3.14.77-1_ipq806x.ipk
+Size: 1073
+MD5Sum: eafa837bf6ebfc5bd798ee75b9ac80b2
+SHA256sum: db121c93fd9fcc2c3dac27b6c9c3ab46bfde18ee34ec008fe9ff8b1e3cdf0ca7
+Description:  Kernel module for EXT4 filesystem support
+
+Package: kmod-fs-msdos
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-fs-vfat, kmod-nls-base
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 4671
+Filename: kmod-fs-msdos_3.14.77-1_ipq806x.ipk
+Size: 5491
+MD5Sum: e73ed933b1972e650ff31626704570a4
+SHA256sum: e70cfa24cecae9a855c650ed277f5ea30081ab10f0db55d6456384388322f1d0
+Description:  Kernel module for MSDOS filesystem support
+
+Package: kmod-fs-ntfs
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-nls-base
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 44124
+Filename: kmod-fs-ntfs_3.14.77-1_ipq806x.ipk
+Size: 44926
+MD5Sum: 1b5b50221a9b582171905b22f916eec4
+SHA256sum: 327380b16a6e8d00f8e28f16777053c37a1f672debfff9ad9989bf1a7f2e7c25
+Description:  Kernel module for NTFS filesystem support
+
+Package: kmod-fs-vfat
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-nls-base
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 34383
+Filename: kmod-fs-vfat_3.14.77-1_ipq806x.ipk
+Size: 35262
+MD5Sum: 469054e18fbbdbc96900f11c2f54aeec
+SHA256sum: 3ad2d0cca6843af81734331ada4c94c9f996f1689fdf01ad9c31d1afa52cb3fc
+Description:  Kernel module for VFAT filesystem support
+
+Package: kmod-fuse
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c)
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 39559
+Filename: kmod-fuse_3.14.77-1_ipq806x.ipk
+Size: 40288
+MD5Sum: 041806d8d3b838297ae09d435fcb9eb7
+SHA256sum: 3b342306e1bc37b5fc735341c7603522cc646f6271aadacb4b18af8acf8a6f3b
+Description:  Kernel module for userspace filesystem support
+
+Package: kmod-fw-auth-test
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c)
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 2223
+Filename: kmod-fw-auth-test_3.14.77-1_ipq806x.ipk
+Size: 3050
+MD5Sum: 7250e4ac31d09275492c8f8958c06cf2
+SHA256sum: 19ef5b877f4e8790ea10cba2bbe01fed90cff84b3ccc652b12b26a1cbbee5a49
+Description:  This test module provides sysfs interface to provide data to test
+ the FW authentication API and display the results.
+
+Package: kmod-gobinet
+Version: 3.14.77+g1d65974-dirty-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-usb-net
+Source: package/charlietalk
+Section: kernel
+Architecture: ipq806x
+Installed-Size: 21641
+Filename: kmod-gobinet_3.14.77+g1d65974-dirty-1_ipq806x.ipk
+Size: 22453
+MD5Sum: 79bd2f4c73f262453e1c148b50842de5
+SHA256sum: e7689d0461fd1f9c9b1f49edea92d2ece7a12f8446b97c3e157c12cd564d8e9f
+Description:  This package contains the QCA gobinet source
+
+Package: kmod-gpio-button-hotplug
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c)
+Source: package/kernel/gpio-button-hotplug
+Section: kernel
+Architecture: ipq806x
+Installed-Size: 5142
+Filename: kmod-gpio-button-hotplug_3.14.77-1_ipq806x.ipk
+Size: 6100
+MD5Sum: c6b9d8846fd4e85fa34923d1002ad9af
+SHA256sum: fb33caf39d5a6f6bbd230ba34f5a81cb604ae59ee512b7b5b9914f40d7ab378b
+Description:  This is a replacement for the following in-kernel drivers:
+ 1) gpio_keys (KEYBOARD_GPIO)
+ 2) gpio_keys_polled (KEYBOARD_GPIO_POLLED)
+ 
+ Instead of generating input events (like in-kernel drivers do) it generates
+ uevent-s and broadcasts them. This allows disabling input subsystem which is
+ an overkill for OpenWrt simple needs.
+
+Package: kmod-gpio-dev
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c)
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 105
+Filename: kmod-gpio-dev_3.14.77-1_ipq806x.ipk
+Size: 863
+MD5Sum: 63758b8af2a1837d823008b983a5646b
+SHA256sum: 45ba29c0eb0433a518506623157abbb81b8954b321c4d32ce716d7199082e680
+Description:  Kernel module to allows control of GPIO pins using a character device.
+
+Package: kmod-gre
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-iptunnel
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 7742
+Filename: kmod-gre_3.14.77-1_ipq806x.ipk
+Size: 8585
+MD5Sum: 58bf88dfbfc73266c5580e7cf6af6e04
+SHA256sum: 1894e86754822699969a4a98e4a5c405279ef4458d038b0e96cd93654c642e55
+Description:  Generic Routing Encapsulation support
+
+Package: kmod-i2c-core
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c)
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 193
+Filename: kmod-i2c-core_3.14.77-1_ipq806x.ipk
+Size: 988
+MD5Sum: 361776722a62a844d2d9f1e0e68ddc1f
+SHA256sum: 2a9cef13d32b49ad96283e8bc93f2b48ac9a5ef228797d717e741d7f8440ae53
+Description:  Kernel modules for I2C support
+
+Package: kmod-ifb
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c)
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 3180
+Filename: kmod-ifb_3.14.77-1_ipq806x.ipk
+Size: 3968
+MD5Sum: 32e4aef28389dc7fde14185d54651d61
+SHA256sum: 0904b807a1f073ff2b1c24b651564004d0ad203b31c3d98de463b34988b20a45
+Description:  The Intermediate Functional Block
+
+Package: kmod-input-core
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c)
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 16800
+Filename: kmod-input-core_3.14.77-1_ipq806x.ipk
+Size: 17500
+MD5Sum: 6ecb8337bd308af0cd289d9cdd7ecb93
+SHA256sum: bc0f96b1b2808611da996ebe0b556c14facb89ccdb23c46ff9fb6bb931e1bb51
+Description:  Kernel modules for support of input device
+
+Package: kmod-ip6-tunnel
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-iptunnel6
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 11301
+Filename: kmod-ip6-tunnel_3.14.77-1_ipq806x.ipk
+Size: 12145
+MD5Sum: 31d4e1881534d11aa3824b96e96ffb13
+SHA256sum: 8c14d81b67db2b7f93328b3ab487c7cfeee3b6da6b1814f3bc573e57c966ae69
+Description:  Kernel modules for IPv6-in-IPv6 and IPv4-in-IPv6 tunnelling
+
+Package: kmod-ip6tables
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-nf-ipt6, kmod-ipt-core, kmod-ipt-conntrack
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 5539
+Filename: kmod-ip6tables_3.14.77-1_ipq806x.ipk
+Size: 6339
+MD5Sum: cde141f28cacd7a8a0f53601dfbb0751
+SHA256sum: 4d98a8a5dec51f2337d2a44bcd85d352073de85cbd95201ad955d43dc739a349
+Description:  Netfilter IPv6 firewalling support
+
+Package: kmod-ipsec4
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-ipsec, kmod-iptunnel4
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 13439
+Filename: kmod-ipsec4_3.14.77-1_ipq806x.ipk
+Size: 14321
+MD5Sum: 3bfd92420d971b2e80b1114c33825189
+SHA256sum: 58a7cecb6da3551cb9c8db98620beeaeaa9ffa11df94cc75729a95aa21b67c56
+Description:  Kernel modules for IPsec support in IPv4.
+ Includes:
+ - ah4
+ - esp4
+ - ipcomp4
+ - xfrm4_mode_beet
+ - xfrm4_mode_transport
+ - xfrm4_mode_tunnel
+ - xfrm4_tunnel
+
+Package: kmod-ipsec6
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-ipsec, kmod-iptunnel6
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 14565
+Filename: kmod-ipsec6_3.14.77-1_ipq806x.ipk
+Size: 15416
+MD5Sum: 0682a848e8808286c03af0c62c031f3d
+SHA256sum: 5e7387088dad5b646871b95e39944911844a09f3e4dbc4d26618a64c722325f2
+Description:  Kernel modules for IPsec support in IPv6.
+ Includes:
+ - ah6
+ - esp6
+ - ipcomp6
+ - xfrm6_mode_beet
+ - xfrm6_mode_transport
+ - xfrm6_mode_tunnel
+ - xfrm6_tunnel
+
+Package: kmod-ipsec
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-crypto-authenc, kmod-crypto-iv, kmod-crypto-des, kmod-crypto-hmac, kmod-crypto-md5, kmod-crypto-sha1, kmod-crypto-deflate, kmod-crypto-cbc
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 30698
+Filename: kmod-ipsec_3.14.77-1_ipq806x.ipk
+Size: 31610
+MD5Sum: e2578928da545bc1270897952aede8e3
+SHA256sum: c4f1087ec1760dd9ae25b46a9ef61db868ebc5cf62ff9ce4c17e4077d75d8e39
+Description:  Kernel modules for IPsec support in both IPv4 and IPv6.
+ Includes:
+ - af_key
+ - xfrm_ipcomp
+ - xfrm_user
+
+Package: kmod-ipt-conntrack-extra
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-ipt-core, kmod-ipt-conntrack
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 10190
+Filename: kmod-ipt-conntrack-extra_3.14.77-1_ipq806x.ipk
+Size: 11104
+MD5Sum: d4c5c784939d173e3a4dff524c6e7afd
+SHA256sum: 2674423c22866d37a89a336b78b693ba832a2a2160ba389902b0e1e9a1c25a6c
+Description:  Netfilter (IPv4) extra kernel modules for connection tracking
+ Includes:
+ - connbytes
+ - connmark/CONNMARK
+ - conntrack
+ - helper
+ - recent
+
+Package: kmod-ipt-conntrack
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-ipt-core, kmod-nf-conntrack
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 5607
+Filename: kmod-ipt-conntrack_3.14.77-1_ipq806x.ipk
+Size: 6481
+MD5Sum: 8b43d58c8ee284b744c7bba8c006fce8
+SHA256sum: 644e10d96f578a6fa0122d3ecdb4f7bce2fdcc702cf7387c5f172f363e99de7a
+Description:  Netfilter (IPv4) kernel modules for connection tracking
+ Includes:
+ - conntrack
+ - defrag
+ - iptables_raw
+ - NOTRACK
+ - state
+
+Package: kmod-ipt-core
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-nf-ipt
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 18091
+Filename: kmod-ipt-core_3.14.77-1_ipq806x.ipk
+Size: 18985
+MD5Sum: 74362fb3f6ba852fe9d36b96d13b04a6
+SHA256sum: 2c020d98a3840166c8c106e79a833b71d1770ee44d71085c60cf02d381ef2098
+Description:  Netfilter core kernel modules
+ Includes:
+ - comment
+ - limit
+ - LOG
+ - mac
+ - multiport
+ - REJECT
+ - TCPMSS
+
+Package: kmod-ipt-ct-sctp
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-ipt-core, kmod-ipt-conntrack
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 5392
+Filename: kmod-ipt-ct-sctp_3.14.77-1_ipq806x.ipk
+Size: 6213
+MD5Sum: 3e2b399fc33fd87b0fa1e0c8a006337c
+SHA256sum: 41acbf81860e81a7c9582ba5703e81d9b53b8497aa9b37f7189d77e790f8e222
+Description:  Kernel modules for sctp conntrack
+
+Package: kmod-ipt-extra
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-ipt-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 5025
+Filename: kmod-ipt-extra_3.14.77-1_ipq806x.ipk
+Size: 5918
+MD5Sum: 82d8525a001f9b4454948c814888cd6a
+SHA256sum: d3b9f61a06b9cc1c75526ccc2b9ac62ebb8b8424479710e3352149a997eb182b
+Description:  Other Netfilter (IPv4) kernel modules
+ Includes:
+ - addrtype
+ - owner
+ - physdev (if bridge support was enabled in kernel)
+ - pkttype
+ - quota
+
+Package: kmod-ipt-filter
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-ipt-core, kmod-lib-textsearch, kmod-ipt-conntrack
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 7453
+Filename: kmod-ipt-filter_3.14.77-1_ipq806x.ipk
+Size: 8323
+MD5Sum: 4cfbc00e99d2ab8003d0c49a5c668778
+SHA256sum: f6b25732d4e014477d5c9c4172c39c8f942705d0ed927792ab579b01cda2f036
+Description:  Netfilter (IPv4) kernel modules for packet content inspection
+ Includes:
+ - layer7
+ - string
+
+Package: kmod-ipt-ipopt
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-ipt-core, kmod-ipt-conntrack
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 7450
+Filename: kmod-ipt-ipopt_3.14.77-1_ipq806x.ipk
+Size: 8427
+MD5Sum: 7aa8073e26f1b1329c84304fe10f3a8c
+SHA256sum: 2c288c58a2159e3f6748dc5b82f9552d18e9e179bd0345b9414effe255e81c29
+Description:  Netfilter (IPv4) modules for matching/changing IP packet options
+ Includes:
+ - CLASSIFY
+ - dscp/DSCP
+ - ecn/ECN
+ - hl/HL
+ - length
+ - mark/MARK
+ - statistic
+ - tcpmss
+ - time
+ - ttl/TTL
+ - unclean
+
+Package: kmod-ipt-ipsec
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-ipt-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 3586
+Filename: kmod-ipt-ipsec_3.14.77-1_ipq806x.ipk
+Size: 4457
+MD5Sum: 2803ba3bfcd0df59c9751326b19dec65
+SHA256sum: 9b532fb60951ab3952e5e8a27381881011456610601359b0cb108d88a149c52e
+Description:  Netfilter (IPv4) modules for matching IPSec packets
+ Includes:
+ - ah
+ - esp
+ - policy
+
+Package: kmod-ipt-nat-extra
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-ipt-core, kmod-ipt-nat
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 1910
+Filename: kmod-ipt-nat-extra_3.14.77-1_ipq806x.ipk
+Size: 2794
+MD5Sum: 39e60b24284ab6ad008a5a3750a4ec76
+SHA256sum: 490162c0459f2583a3fdd7126bcc3058985549c5c5bcbbd4fb98736af833114f
+Description:  Netfilter (IPv4) kernel modules for extra NAT targets
+ Includes:
+ - NETMAP
+ - REDIRECT
+
+Package: kmod-ipt-nat
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-ipt-core, kmod-nf-nat
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 3892
+Filename: kmod-ipt-nat_3.14.77-1_ipq806x.ipk
+Size: 4774
+MD5Sum: 75609bd2ed4c9deca1cb1df287a797e7
+SHA256sum: d27655c4b66309015c6a969386176add63cac824790c6ed53ebade9706d20977
+Description:  Netfilter (IPv4) kernel modules for basic NAT targets
+ Includes:
+ - MASQUERADE
+
+Package: kmod-ipt-nathelper-rtsp
+Version: 3.14.77+2.10-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-ipt-core, kmod-ipt-conntrack-extra, kmod-ipt-nat
+Source: package/network/utils/xtables-addons
+License: GPL-2.0
+Section: kernel
+Maintainer: Jo-Philipp Wich <jow@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 8801
+Filename: kmod-ipt-nathelper-rtsp_3.14.77+2.10-1_ipq806x.ipk
+Size: 9700
+MD5Sum: 9faf7893a47581d4c00ec0c472c9dd58
+SHA256sum: cb79b591f00aa707709fff152bc674b6fa5186af8f8b8ca543b7240183b5a57f
+Description:  RTSP Conntrack and NAT netfilter module
+
+Package: kmod-iptunnel4
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c)
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 1990
+Filename: kmod-iptunnel4_3.14.77-1_ipq806x.ipk
+Size: 2781
+MD5Sum: 6e944d487e86a69fc87e0b34bbddd30a
+SHA256sum: 89b955ed21765ff0736d8b3c9167081a96b9d5aa9c422caeb7a933e7a87e5f30
+Description:  Kernel modules for IPv4 tunneling
+
+Package: kmod-iptunnel6
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c)
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 2008
+Filename: kmod-iptunnel6_3.14.77-1_ipq806x.ipk
+Size: 2800
+MD5Sum: 549b76e032043327e1e1e372a4052da9
+SHA256sum: e91abd530fedd86b07b9a0b08534c0788b3ad33ceee27e437c57f7f2d0f40e4a
+Description:  Kernel modules for IPv6 tunneling
+
+Package: kmod-iptunnel
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c)
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 7971
+Filename: kmod-iptunnel_3.14.77-1_ipq806x.ipk
+Size: 8794
+MD5Sum: c4b9531dfbc524f10c45e3124df266ed
+SHA256sum: 0fc5d1e8d97422ad4f01e88ac1416662552a5ce2ca5b43e0143913333017281e
+Description:  Kernel module for generic IP tunnel support
+
+Package: kmod-ipv6
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c)
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 104
+Filename: kmod-ipv6_3.14.77-1_ipq806x.ipk
+Size: 834
+MD5Sum: 14ee52e07a0f66ff247332371550f759
+SHA256sum: 2482c5e8663359cd7474859d476649cf4eba185a5d48c893c5360969669fa93a
+Description:  Kernel modules for IPv6 support
+
+Package: kmod-l2tp
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-udptunnel4, kmod-udptunnel6
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 16129
+Filename: kmod-l2tp_3.14.77-1_ipq806x.ipk
+Size: 16870
+MD5Sum: cd35f75786fe723a5078ba3f9d65e4ab
+SHA256sum: 49c8789c110d75e7e74d6cb813a2c015993b7a5104b20162ee3c805ac9df423d
+Description:  Kernel modules for L2TP V3 Support
+
+Package: kmod-leds-gpio
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c)
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 2771
+Filename: kmod-leds-gpio_3.14.77-1_ipq806x.ipk
+Size: 3571
+MD5Sum: 9e70f2dde986a37bb0684acc2bcc2e12
+SHA256sum: bd1e23de8ce5f97a9405f019534d13d5afa65665e83322b3bf39b2a472ca9cfe
+Description:  Kernel module for LEDs on GPIO lines
+
+Package: kmod-lib-crc-ccitt
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c)
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 1474
+Filename: kmod-lib-crc-ccitt_3.14.77-1_ipq806x.ipk
+Size: 2300
+MD5Sum: 1c613e5eb7b56c0a05983d69a9ec3d15
+SHA256sum: 841511b7f38e54d6d7b63669976f6b8cc56a0618329bffea3a03abd1cd9c1cfc
+Description:  Kernel module for CRC-CCITT support
+
+Package: kmod-lib-crc16
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c)
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 231
+Filename: kmod-lib-crc16_3.14.77-1_ipq806x.ipk
+Size: 1031
+MD5Sum: 235c974eb437ac49e7f0b2ff12738940
+SHA256sum: 9eb8e3631aee1aa8c9ee46023bcda0dea35d9bd0ae1253faf044e1ac5c6bfa2e
+Description:  Kernel module for CRC16 support
+
+Package: kmod-lib-crc32c
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-crypto-crc32c
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 1321
+Filename: kmod-lib-crc32c_3.14.77-1_ipq806x.ipk
+Size: 2159
+MD5Sum: c2c415f86f880e688b89cb11f86907e4
+SHA256sum: cdaeaffab6c179d4c80198fc11802f08d4d86ff20144f4dfe03ff20b8a5f4360
+Description:  Kernel module for CRC32 support
+
+Package: kmod-lib-lzo
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c)
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 200
+Filename: kmod-lib-lzo_3.14.77-1_ipq806x.ipk
+Size: 1011
+MD5Sum: edff6d3183caa6d00d03f630dd8b319f
+SHA256sum: 4deb69a40cd22dfa01bbfe8691325c8cb2615f6358abb75c09bc8ac71cb283b6
+Description:  Kernel module for LZO compression/decompression support
+
+Package: kmod-lib-textsearch
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c)
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 3652
+Filename: kmod-lib-textsearch_3.14.77-1_ipq806x.ipk
+Size: 4478
+MD5Sum: fd774b8e922431d5564b44b8acfe4bb8
+SHA256sum: 858cbc1b62c2db33cd41bf2509eebd0a07dc4888bcb6d4d2ea2e18bd160a93e6
+Description:  Textsearch support
+
+Package: kmod-lib-zlib
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c)
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 199
+Filename: kmod-lib-zlib_3.14.77-1_ipq806x.ipk
+Size: 992
+MD5Sum: 3adef16cac3de451de31290eb3b43551
+SHA256sum: b38b771845ac92b2f2fae8663acc20a9e828154d3a67fedf3bcf1f0a414063d8
+Description:  Zlib support
+
+Package: kmod-llc
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c)
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 192
+Filename: kmod-llc_3.14.77-1_ipq806x.ipk
+Size: 1000
+MD5Sum: 337416d908aa71ef8cc0694091d372b3
+SHA256sum: e6bdf6f3a93b969490916b414661847be9380f70c8a61951b886b64057afee19
+Description:  Kernel module for ANSI/IEEE 802.2 LLC support.
+
+Package: kmod-mii
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c)
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 2789
+Filename: kmod-mii_3.14.77-1_ipq806x.ipk
+Size: 3569
+MD5Sum: 505a80b2a88da94d4a6681f8b5db6b19
+SHA256sum: 2557c057d1ff59aa24a96d1d4ff6dea5c8e17d71a2aad18878d13edfe10aad16
+Description:  MII library
+
+Package: kmod-mppe
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-ppp, kmod-crypto-core, kmod-crypto-arc4, kmod-crypto-sha1, kmod-crypto-ecb
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 4273
+Filename: kmod-mppe_3.14.77-1_ipq806x.ipk
+Size: 5109
+MD5Sum: 2d9ac53658f67e348f06c837b29e19c5
+SHA256sum: 97f59134d350a0c32144095cfed9b0c21fdb1bc636a3217eefe3ca5c1d395ec5
+Description:  Kernel modules for Microsoft PPP compression/encryption
+
+Package: kmod-nat-sctp
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-ipt-core, kmod-ipt-ct-sctp, kmod-ipt-nat, kmod-lib-crc32c
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 1525
+Filename: kmod-nat-sctp_3.14.77-1_ipq806x.ipk
+Size: 2370
+MD5Sum: 521eb079ec15c99934356b24ca0889e7
+SHA256sum: c709cc016ce8c29f0e689fc1eefbc498d91b18875e7ade55e49ca7ead6439eba
+Description:  Kernel modules for sctp nat
+
+Package: kmod-nf-conntrack6
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-ipv6, kmod-nf-conntrack
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 11003
+Filename: kmod-nf-conntrack6_3.14.77-1_ipq806x.ipk
+Size: 11791
+MD5Sum: c4cae86ce8de175fa4f8cc0928d7e12c
+SHA256sum: 1bd4defb12affa0c8166a17bd185c73f6c6d5fc4b18fa8867e983b982e58553b
+Description:  Netfilter IPv6 connection tracking
+
+Package: kmod-nf-conntrack
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c)
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 38422
+Filename: kmod-nf-conntrack_3.14.77-1_ipq806x.ipk
+Size: 39342
+MD5Sum: b1d5a5edd9d68dffb440b3b8b30dfd01
+SHA256sum: 7523af66b5eecc896c1fd6626047bf1e0c5900c88f5933cb1cf76d7ceccf741b
+Description:  Netfilter connection tracking
+
+Package: kmod-nf-ipt6
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-nf-ipt, kmod-nf-conntrack6
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 7497
+Filename: kmod-nf-ipt6_3.14.77-1_ipq806x.ipk
+Size: 8321
+MD5Sum: b3de5551f2d287aecdeb22ca9af2934c
+SHA256sum: df9684949d77ba21175f64cc57c1083dfb47ad80d1923820020cdff85553f9bf
+Description:  Ip6tables core
+
+Package: kmod-nf-ipt
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c)
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 14988
+Filename: kmod-nf-ipt_3.14.77-1_ipq806x.ipk
+Size: 15762
+MD5Sum: b384615edb03b15dee4b0e6b5d13dede
+SHA256sum: f45bb65f97cbf1fdc1ded4cbf3a3995a0fa817fae11b624ab39039ea3b5dc82f
+Description:  Iptables core
+
+Package: kmod-nf-nat
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-nf-conntrack, kmod-nf-ipt
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 12350
+Filename: kmod-nf-nat_3.14.77-1_ipq806x.ipk
+Size: 13186
+MD5Sum: 3b65c5699e1b05e3cba060f48a3db43f
+SHA256sum: 067b5da14bfd0e6c7646fdc7e3b74301208ceef1264b518eaa700bcb0f6a8c5a
+Description:  Netfilter NAT
+
+Package: kmod-nf-nathelper-extra
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-nf-nat, kmod-lib-textsearch
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 61291
+Filename: kmod-nf-nathelper-extra_3.14.77-1_ipq806x.ipk
+Size: 62334
+MD5Sum: d82f91b5560daef8148fca12e84995d7
+SHA256sum: 8ce7c47233032e8a20b5cf7c3d971027736f97f541de0fec8e5b7d4aac0d7652
+Description:  Extra Netfilter (IPv4) Conntrack and NAT helpers
+ Includes:
+ - amanda
+ - h323
+ - mms
+ - pptp
+ - proto_gre
+ - sip
+ - snmp_basic
+ - broadcast
+
+Package: kmod-nf-nathelper
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-nf-nat
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 7244
+Filename: kmod-nf-nathelper_3.14.77-1_ipq806x.ipk
+Size: 8127
+MD5Sum: 72b794cdb33f336548096560a9fdbf73
+SHA256sum: 5b909403125bac8c2b0b00945bd6536e785f2029f126c29ddd73d299e174b384
+Description:  Default Netfilter (IPv4) Conntrack and NAT helpers
+ Includes:
+ - ftp
+ - irc
+ - tftp
+
+Package: kmod-nls-base
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c)
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 3281
+Filename: kmod-nls-base_3.14.77-1_ipq806x.ipk
+Size: 4034
+MD5Sum: 9075670ac0739109d9bd5c7f191d867c
+SHA256sum: 057c9ed8a716b6d113912fffbf96d087105a433974accdae8b35ed17801d8b2e
+Description:  Kernel module for NLS (Native Language Support)
+
+Package: kmod-nls-cp437
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-nls-base
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 2318
+Filename: kmod-nls-cp437_3.14.77-1_ipq806x.ipk
+Size: 3147
+MD5Sum: d93ebd773f211583b105d88706b81ef5
+SHA256sum: 7d54dcad85e51b2f180b936ffeae0224485dd2a54cb24d6b4220e122b517b6c1
+Description:  Kernel module for NLS Codepage 437 (United States, Canada)
+
+Package: kmod-nls-iso8859-1
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-nls-base
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 1997
+Filename: kmod-nls-iso8859-1_3.14.77-1_ipq806x.ipk
+Size: 2822
+MD5Sum: ca37588b9b5de9c74cd8e48e71d49782
+SHA256sum: d0444353efbea69a05099f6b6bf30b82f42c212e52c2fc9371329a74dae74b77
+Description:  Kernel module for NLS ISO 8859-1 (Latin 1)
+
+Package: kmod-nls-utf8
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-nls-base
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 1233
+Filename: kmod-nls-utf8_3.14.77-1_ipq806x.ipk
+Size: 2063
+MD5Sum: 8b9beef748204d2d0be81cd03b9dea25
+SHA256sum: cd944c6a35ef91792751542064c86ef12e0e85ac8bc41fde963a424cd4fcf0a3
+Description:  Kernel module for NLS UTF-8
+
+Package: kmod-ppp
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-lib-crc-ccitt, kmod-slhc
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 20460
+Filename: kmod-ppp_3.14.77-1_ipq806x.ipk
+Size: 21265
+MD5Sum: 4f237da2a8ff0b4b4fbe8cb9f0dedd01
+SHA256sum: 6da52bedb4880005a6ac63ce8c0c3686ac65b7b736545d092312e5842bd41b06
+Description:  Kernel modules for PPP support
+
+Package: kmod-pppoe
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-ppp, kmod-pppox
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 7796
+Filename: kmod-pppoe_3.14.77-1_ipq806x.ipk
+Size: 8631
+MD5Sum: 8a8bf68c421863baab1eeb217820a622
+SHA256sum: e556b3e35dfa22e06a0b55c511ab37b04418a1c3107f44ec0f699fe87c4210c7
+Description:  Kernel module for PPPoE (PPP over Ethernet) support
+
+Package: kmod-pppol2tp
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-ppp, kmod-pppox, kmod-l2tp
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 9878
+Filename: kmod-pppol2tp_3.14.77-1_ipq806x.ipk
+Size: 10695
+MD5Sum: 84fbdc3fb7ce052d2c54782f263e3508
+SHA256sum: de43b1ddeb1302cda6c9de1e1316b17b0bdcbd8a632040da1ece203dfb351520
+Description:  Kernel modules for PPPoL2TP (PPP over L2TP) support
+
+Package: kmod-pppox
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-ppp
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 1697
+Filename: kmod-pppox_3.14.77-1_ipq806x.ipk
+Size: 2474
+MD5Sum: 138c991231b9b507041fd1a356218efb
+SHA256sum: 237f46b4fa36e421f855a8de9e41b039ed52924f0781d219ad6f9800b753e9a2
+Description:  Kernel helper module for PPPoE and PPTP support
+
+Package: kmod-pptp
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-ppp, kmod-gre, kmod-pppox
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 6280
+Filename: kmod-pptp_3.14.77-1_ipq806x.ipk
+Size: 7120
+MD5Sum: e648ffde173e1e5acb13239105bd327e
+SHA256sum: 29468d99ed321d1c90f5801a7b0f5e448bf5e7f65c6471edfeb3af40f2f8bab5
+Description:  PPtP support
+
+Package: kmod-qca_85xx_sw
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c)
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 9257
+Filename: kmod-qca_85xx_sw_3.14.77-1_ipq806x.ipk
+Size: 10075
+MD5Sum: 0c4a2804fcbcbf4f9c50515d7026ce3b
+SHA256sum: eb3ce9afb8c6fcee93bb4c2b3e9288d55884fdfa2f5d90cb6698f011663e92cd
+Description:  QCA 85xx Switch Driver
+
+Package: kmod-qpic_panel_ertft
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c)
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 1561
+Filename: kmod-qpic_panel_ertft_3.14.77-1_ipq806x.ipk
+Size: 2327
+MD5Sum: 6c8072ce4624ac4b183d8288783da838
+SHA256sum: 7ba9839f6559077131af97bc37b9250140bd2fce3449ffd8d08c3c7cca55c24f
+Description:  Kernel support for qpic_panel_ertft  lcd panel
+
+Package: kmod-regmap
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-lib-lzo, kmod-i2c-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 200
+Filename: kmod-regmap_3.14.77-1_ipq806x.ipk
+Size: 1011
+MD5Sum: c3a7b2d6094a27001160309c374f5ec5
+SHA256sum: 41ae27b1f16e1271f3fef9b4dcaa3535527b4a3f5a4e6a3e4d1d01a160fbe637
+Description:  Generic register map support
+
+Package: kmod-sched-connmark
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-sched-core, kmod-ipt-core, kmod-ipt-conntrack-extra
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 1567
+Filename: kmod-sched-connmark_3.14.77-1_ipq806x.ipk
+Size: 2421
+MD5Sum: df3e1c24d75b10b4a94989e233601b7b
+SHA256sum: 7a017c98ca71a9113221a8a2e0e10fc01983c5c260a961bf46d5f6b6de1c59b6
+Description:  Traffic shaper conntrack mark support
+
+Package: kmod-sched-core
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c)
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 28733
+Filename: kmod-sched-core_3.14.77-1_ipq806x.ipk
+Size: 29568
+MD5Sum: 1a70b41380c9dfe887b48c34e71fc0ee
+SHA256sum: 60dd232c9cc4b13cb44b725b69c3a1c0a87a9918a8c9946441f9d6610620931c
+Description:  Core kernel scheduler support for IP traffic
+
+Package: kmod-sched
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-sched-core, kmod-ipt-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 54596
+Filename: kmod-sched_3.14.77-1_ipq806x.ipk
+Size: 55466
+MD5Sum: 5c162208f1cc0dda517c12f58c309577
+SHA256sum: c43d007f4f0fc776d1611635c82505ceeb7ff827c7b0d68a0989a2abcd3e01f4
+Description:  Extra kernel schedulers modules for IP traffic
+
+Package: kmod-scsi-core
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c)
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 16910
+Filename: kmod-scsi-core_3.14.77-1_ipq806x.ipk
+Size: 17735
+MD5Sum: 57094fff31e422a71b35dc33102f6571
+SHA256sum: 138d275abd78a31321225b1b4aefe90891a464ce3c8d257d6c78cf0ebe994216
+Description:  SCSI device support
+
+Package: kmod-scsi-generic
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-scsi-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 14169
+Filename: kmod-scsi-generic_3.14.77-1_ipq806x.ipk
+Size: 14964
+MD5Sum: e7aeb3a3c500eba28ffcaeb1626dd71f
+SHA256sum: b7d6b3c76a490420a73d5678d4829fcd720a2c1e826a3639499a55258008fe11
+Description:  Kernel support for SCSI generic
+
+Package: kmod-sit
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-iptunnel, kmod-iptunnel4
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 10882
+Filename: kmod-sit_3.14.77-1_ipq806x.ipk
+Size: 11729
+MD5Sum: c49a8834a0e14878f1674af9663ba19b
+SHA256sum: 9b5f9a7e2bd6b2f3a4d28cfe8bb7eea2ded6d2a2c898bda807f3f547f6006ec7
+Description:  Kernel modules for IPv6-in-IPv4 tunnelling
+
+Package: kmod-slhc
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-lib-crc-ccitt
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 3351
+Filename: kmod-slhc_3.14.77-1_ipq806x.ipk
+Size: 4125
+MD5Sum: 036a05895b831f3f088863400726eef7
+SHA256sum: 5afa5016b246d0def1ac992bc609c267e1f4570f0409ad1b39bfd4b0e29a4d9f
+Description:  Serial Line Header Compression
+
+Package: kmod-sound-core
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-input-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 42669
+Filename: kmod-sound-core_3.14.77-1_ipq806x.ipk
+Size: 43554
+MD5Sum: 6136b6aebc284659d208e025ce0049a7
+SHA256sum: f3b67f90a68457b62207601cc2cd81a425977bca7723f9eef1469ff362eee79f
+Description:  Kernel modules for sound support
+
+Package: kmod-sound-soc-core
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-regmap, kmod-ac97, kmod-sound-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 193
+Filename: kmod-sound-soc-core_3.14.77-1_ipq806x.ipk
+Size: 1000
+MD5Sum: 371093b04a29990211f792d90e467833
+SHA256sum: c3f00c75d17cdaf6b2d1bc72a5e9035e1f7f2285bbe22681e16003c034705caf
+Description:  SoC sound support
+
+Package: kmod-sound-soc-ipq
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-sound-soc-core, kmod-sound-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 2599
+Filename: kmod-sound-soc-ipq_3.14.77-1_ipq806x.ipk
+Size: 3373
+MD5Sum: 06627cb3d572d791479bfd85c72b07f0
+SHA256sum: 0a250d2a68c31b87083d3599ad3a695e9d14196f21a5b54aaecc06a5b418a40c
+Description:  This enables sound card support for Qualcomm-Atheros IPQ board
+
+Package: kmod-spi-dev
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c)
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 186
+Filename: kmod-spi-dev_3.14.77-1_ipq806x.ipk
+Size: 997
+MD5Sum: ad24e09fbffc122642d1b21963b703da
+SHA256sum: 03bf8795b9ac02d0e49e61927e72af4336c7bc4449893b355f0d31e17b19aeea
+Description:  This package contains the user mode SPI device driver
+
+Package: kmod-stp
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-llc
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 182
+Filename: kmod-stp_3.14.77-1_ipq806x.ipk
+Size: 1002
+MD5Sum: 6f064ab28c632e7a89d88198e4a808db
+SHA256sum: 607f6323cca1143e0017f219a3f2062c6da9fef348b5f0b46ea6b3534107142d
+Description:  Kernel module for Ethernet Spanning Tree Protocol support.
+
+Package: kmod-tun
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c)
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 12080
+Filename: kmod-tun_3.14.77-1_ipq806x.ipk
+Size: 12891
+MD5Sum: 4e9059efd27d6ce0780a326c5c76a66d
+SHA256sum: 49cb8c5398a548b864427263060d27783b2983aa043d30f8f7f696bd8d086b6c
+Description:  Kernel support for the TUN/TAP tunneling device
+
+Package: kmod-udptunnel4
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c)
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 106
+Filename: kmod-udptunnel4_3.14.77-1_ipq806x.ipk
+Size: 842
+MD5Sum: f5c1eb1a3be7cef18ea22a4dfc6ff7dd
+SHA256sum: 6aa33b7fd1efd9b4f039dbd681fb744ced8ecd0daf2037b5ce992dd929d09b86
+Description:  IPv4 UDP tunneling support
+
+Package: kmod-udptunnel6
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c)
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 106
+Filename: kmod-udptunnel6_3.14.77-1_ipq806x.ipk
+Size: 843
+MD5Sum: 8aa82172b1c3df820134e4c48f73a581
+SHA256sum: 72a862acf8e7be68c906ab4fc66e3b7d917a21b4d031e226227ddd49d54ea359
+Description:  IPv6 UDP tunneling support
+
+Package: kmod-usb-core
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-nls-base
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 87319
+Filename: kmod-usb-core_3.14.77-1_ipq806x.ipk
+Size: 87635
+MD5Sum: fda8d849c8a79b6fb5f289bfe165527c
+SHA256sum: 78fcc025ae5f4a0f74a51d50185615e81607bc170ae0c6e813717ba043674645
+Description:  Kernel support for USB
+
+Package: kmod-usb-dwc3-ipq40xx
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-usb-dwc3, kmod-usb-phy-dwc3-ipq40xx, kmod-usb-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 2346
+Filename: kmod-usb-dwc3-ipq40xx_3.14.77-1_ipq806x.ipk
+Size: 3214
+MD5Sum: 2631dd0a3ea00a3cd8579c5ec9e0b692
+SHA256sum: b97db919c7bee86a63462c16550f15f33a6b6bb960151010ab8e3829d782ec8f
+Description:  This driver provides support for the integrated DesignWare
+ USB3 IP Core within the IPQ40xx SoCs.
+
+Package: kmod-usb-dwc3-of-simple
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-usb-dwc3, kmod-usb-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 105
+Filename: kmod-usb-dwc3-of-simple_3.14.77-1_ipq806x.ipk
+Size: 905
+MD5Sum: 4adc099997f0b78b87613e821e790552
+SHA256sum: e5f69b455891223364fa85b375f319ee5207d3023a1fa380d1eaa943b2e288c6
+Description:  This driver provides generic platform glue for the integrated DesignWare USB3 IP Core.
+
+Package: kmod-usb-dwc3-qcom
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-usb-dwc3, kmod-usb-phy-dwc3-qcom, kmod-usb-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 2477
+Filename: kmod-usb-dwc3-qcom_3.14.77-1_ipq806x.ipk
+Size: 3334
+MD5Sum: 5f35c39e550d2d07da46ee56e709c8be
+SHA256sum: 0f349c134aa69ab80c5a37fc9f9a63516f1e2f50d384b6549972efce7822ba4d
+Description:  This driver provides support for the integrated DesignWare
+ USB3 IP Core within the QCOM SoCs.
+
+Package: kmod-usb-dwc3
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-usb-gadget, kmod-usb-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 22488
+Filename: kmod-usb-dwc3_3.14.77-1_ipq806x.ipk
+Size: 23063
+MD5Sum: 4f5852c4179c2c298ecbae3fb47fc03b
+SHA256sum: 3f42f82182daa8a91ddf1d6b7f473058675e45e3f8b4a03da22b050414b04d2a
+Description:  This driver provides support for the Dual Role SuperSpeed
+ USB Controller based on the Synopsys DesignWare USB3 IP Core
+
+Package: kmod-usb-gadget
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-usb-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 4872
+Filename: kmod-usb-gadget_3.14.77-1_ipq806x.ipk
+Size: 5682
+MD5Sum: 79664af585856d19595ce3c1ecdd929d
+SHA256sum: 552224c2de11665ed1d46413f06c7eaa3054e1070ef5915a44d0186992141866
+Description:  Kernel support for USB Gadget mode
+
+Package: kmod-usb-net
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-mii, kmod-usb-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 14955
+Filename: kmod-usb-net_3.14.77-1_ipq806x.ipk
+Size: 15777
+MD5Sum: c5684f3ab6cf13df3a7fa9e4a1eb2327
+SHA256sum: 666123c8879a3225d6fe9e449616cb12b46828cb6866de0a513f4cfb38d02f3f
+Description:  Kernel modules for USB-to-Ethernet convertors
+
+Package: kmod-usb-phy-dwc3-ipq4019
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-usb-dwc3-of-simple, kmod-usb-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 106
+Filename: kmod-usb-phy-dwc3-ipq4019_3.14.77-1_ipq806x.ipk
+Size: 917
+MD5Sum: 46dc6cad14ec6f4f2f1312fe93dcae28
+SHA256sum: d360dad9541a083d0ba9a6d623ab37dac0920942502a58e95018d0053417e209
+Description:  This driver provides support for the integrated DesignWare
+ USB3 IP Core within the IPQ4019 SoCs.
+
+Package: kmod-usb-phy-dwc3-ipq40xx
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-usb-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 4559
+Filename: kmod-usb-phy-dwc3-ipq40xx_3.14.77-1_ipq806x.ipk
+Size: 5401
+MD5Sum: f6e52f08b66c58f558c70d82f2ab6f3d
+SHA256sum: e59fd3e0482515030d673b70b98704b2203e3c41bb00481c37cc60e8ca89afd6
+Description:  This driver provides support for the integrated DesignWare
+ USB3 IP Core within the IPQ40xx SoCs.
+
+Package: kmod-usb-phy-dwc3-qcom
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-usb-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 5561
+Filename: kmod-usb-phy-dwc3-qcom_3.14.77-1_ipq806x.ipk
+Size: 6388
+MD5Sum: 072d9a50dd31bbb272aa22f773a62b57
+SHA256sum: e7cf32ce1d0521eed644c8a4b69159107de101280696b95dc2dea52ad78c6263
+Description:  This driver provides support for the integrated DesignWare
+ USB3 IP Core within the QCOM SoCs.
+
+Package: kmod-usb-phy-ipq807x
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-usb-dwc3-of-simple, kmod-usb-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 106
+Filename: kmod-usb-phy-ipq807x_3.14.77-1_ipq806x.ipk
+Size: 900
+MD5Sum: d72cd924e17849135699cdbafe022436
+SHA256sum: e12464cd1def50a1af497f6a571fb3d8b7cfe9137994b85b1feab6c56b0d50a8
+Description:  This driver provides support for the USB PHY drivers
+ within the IPQ807x SoCs.
+
+Package: kmod-usb-phy-qcom-dwc3
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-usb-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 105
+Filename: kmod-usb-phy-qcom-dwc3_3.14.77-1_ipq806x.ipk
+Size: 907
+MD5Sum: fa143b394af8b390b3e833b65bbd4afd
+SHA256sum: 0b722b1dd2af0a5423b87dbbbef53dbe92f54cc0e9a05af2f04da184bd449a02
+Description:  This driver provides support for the integrated DesignWare
+ USB3 IP Core within the QCOM SoCs.
+
+Package: kmod-usb-printer
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-usb-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 7768
+Filename: kmod-usb-printer_3.14.77-1_ipq806x.ipk
+Size: 8589
+MD5Sum: 14e8b606f9a88e7e8ae695b57198e833
+SHA256sum: 319869dcf6707aac229dbac4b49dc2d35e980d3d5992ded810a06570f43877ad
+Description:  Kernel support for USB printers
+
+Package: kmod-usb-storage-extras
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-usb-storage
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 29695
+Filename: kmod-usb-storage-extras_3.14.77-1_ipq806x.ipk
+Size: 30599
+MD5Sum: a9f47bae98c42ee96b13e45088611566
+SHA256sum: 9587a822d53b71a8552cf8ef9c04120bbbfdccd0652ffe44b20e8ddb6c938b48
+Description:  Say Y here if you want to have some more drivers,
+ such as for SmartMedia card readers
+
+Package: kmod-usb-storage
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-scsi-core, kmod-usb-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 21187
+Filename: kmod-usb-storage_3.14.77-1_ipq806x.ipk
+Size: 21637
+MD5Sum: a3a09f9729c5a99f70c72a02fde5886c
+SHA256sum: e15ace1f2a970e2fc2f90baa54f62612be118ed7874f10940b98a56fe658e8dd
+Description:  Kernel support for USB Mass Storage devices
+
+Package: kmod-usb2
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-usb-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 35602
+Filename: kmod-usb2_3.14.77-1_ipq806x.ipk
+Size: 36322
+MD5Sum: ee0ef941892191bbdb2a8275977aa4f1
+SHA256sum: 274795eee12bcf40df077b3b014fdf7e6eed7b85392307e8d11a93113ff5bb86
+Description:  Kernel support for USB2 (EHCI) controllers
+
+Package: kmod-usb3
+Version: 3.14.77-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-usb-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ipq806x
+Installed-Size: 64744
+Filename: kmod-usb3_3.14.77-1_ipq806x.ipk
+Size: 65112
+MD5Sum: a41de2048bcc4ce82934eaacc7712fff
+SHA256sum: de5ef443dcd8a5da9ada1d8dd969d687d1d8fcf0a6132b913aaa2ad758176db4
+Description:  Kernel support for USB3 (XHCI) controllers
+
+Package: lanHostManager
+Version: 1.0
+Depends: libc, libubus, libubox, ubusd, libuci, libjson-c, libpthread, librtcfg, qtec_firewall
+Source: package/qtec/lanHostManager
+Section: base
+Architecture: ipq806x
+Installed-Size: 19186
+Filename: lanHostManager_1.0_ipq806x.ipk
+Size: 19949
+MD5Sum: 50f2e18a550ed1d86b91556818cfe714
+SHA256sum: ccb322490329a10142f6156030cd70dfb5b69c3a088aba30c5716e3bfb46e524
+Description:  the duty of lanHostManager is collect lan host info and return these info to other utilties.
+
+Package: libbfd
+Version: 2.24-3
+Depends: libc, zlib
+Source: package/devel/binutils
+License: GPL-3.0+
+Section: libs
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 269580
+Filename: libbfd_2.24-3_ipq806x.ipk
+Size: 267244
+MD5Sum: ed4019168cae8a8e4e089c99bed3e480
+SHA256sum: 242535630fc7ee52989091cd3887812ed5b01d4119b4c75a18a8e27e50fc815f
+Description:  libbfd
+
+Package: libblkid
+Version: 2.25.2-4
+Depends: libc, libuuid
+Source: package/utils/util-linux
+License: GPL-2.0
+LicenseFiles: COPYING getopt/COPYING libblkid/COPYING libmount/COPYING Documentation/licenses/COPYING.GPLv2 Documentation/licenses/COPYING.LGPLv2.1 libuuid/COPYING Documentation/licenses/COPYING.BSD-3
+Section: libs
+Architecture: ipq806x
+Installed-Size: 92227
+Filename: libblkid_2.25.2-4_ipq806x.ipk
+Size: 92880
+MD5Sum: a941050ef2da411f22e688dfe670684c
+SHA256sum: 97588a5c0c11b198bcc36b431949d2f28f465f3c9ab4da6b469536a82f87b4ac
+Description:  The libblkid library is used to identify block devices (disks) as to their
+ content (e.g. filesystem type, partitions) as well as extracting additional
+ information such as filesystem labels/volume names, partitions, unique
+ identifiers/serial numbers...
+
+Package: libblobmsg-json
+Version: 2015-11-08-10429bccd0dc5d204635e110a7a8fae7b80d16cb
+Depends: libc, libjson-c, libubox
+Source: package/libs/libubox
+License: ISC
+Section: libs
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 3027
+Filename: libblobmsg-json_2015-11-08-10429bccd0dc5d204635e110a7a8fae7b80d16cb_ipq806x.ipk
+Size: 3814
+MD5Sum: 061528b2b1ea3aeb8b940a71b124e688
+SHA256sum: 647974b0f8a527ceb8ee5bb116422e2db3140d5293ddafcea7da00b031018f8e
+Description:  blobmsg <-> json conversion library
+
+Package: libbz2
+Version: 1.0.6-2
+Depends: libc
+Source: package/utils/bzip2
+License: BZIP2
+LicenseFiles: LICENSE
+Section: libs
+Maintainer: Steven Barth <cyrus@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 24416
+Filename: libbz2_1.0.6-2_ipq806x.ipk
+Size: 25038
+MD5Sum: 1c5cc86db51e1dfe2385d394201391e2
+SHA256sum: ed875b3f3fed3d6a0c5c15b43d4e871ed73180f697cd75812524ac9288752634
+Description:  bzip2 is a freely available, patent free, high-quality
+ data compressor. This packages provides libbz2 library.
+
+Package: libcurl
+Version: 7.40.0-3.2
+Depends: libc, libpolarssl
+Source: package/network/utils/curl
+License: MIT
+LicenseFiles: COPYING
+Section: libs
+Maintainer: Imre Kaloz <kaloz@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 98311
+Filename: libcurl_7.40.0-3.2_ipq806x.ipk
+Size: 99066
+MD5Sum: 1cc8365d2101100a1590fb0b0d8aaa81
+SHA256sum: ef53eb040a607edb4a9da5d2b411ab212b050be2bdd784a23774e9daca77f075
+Description:  A client-side URL transfer library
+
+Package: libcyassl
+Version: 3.8.0-2
+Depends: libc
+Source: package/libs/cyassl
+License: GPL-2.0+
+Section: libs
+Architecture: ipq806x
+Installed-Size: 119354
+Filename: libcyassl_3.8.0-2_ipq806x.ipk
+Size: 119154
+MD5Sum: 73fcf70db0ffca731f73dbb649ecd58e
+SHA256sum: 109a23f3531134c48644693a26a2d21680756c25780e84f584cd523fe09d2f06
+Description:  CyaSSL is an SSL library optimized for small footprint, both on disk and for
+ memory use.
+
+Package: libdw
+Version: 0.161-1
+Depends: libc, libelf1, zlib, libbz2
+Source: package/libs/elfutils
+License: GPL-3.0+
+LicenseFiles: COPYING COPYING-GPLV2 COPYING-LGPLV3
+Section: libs
+Maintainer: Luiz Angelo Daros de Luca <luizluca@gmail.com>
+Architecture: ipq806x
+Installed-Size: 109302
+Filename: libdw_0.161-1_ipq806x.ipk
+Size: 109947
+MD5Sum: 561c828fcca6bef5a10f65a994fb0c8a
+SHA256sum: 3621c45a58e459c4d199cd4c923a0c9f19ed817acf9e105981d9ec7f807646ee
+Description:  ELF manipulation libraries (libdw)
+
+Package: libelf1
+Version: 0.161-1
+Depends: libc
+Source: package/libs/elfutils
+License: GPL-3.0+
+LicenseFiles: COPYING COPYING-GPLV2 COPYING-LGPLV3
+Section: libs
+Maintainer: Luiz Angelo Daros de Luca <luizluca@gmail.com>
+Architecture: ipq806x
+Installed-Size: 32217
+Filename: libelf1_0.161-1_ipq806x.ipk
+Size: 32950
+MD5Sum: 9395f84b279c7c2ae6e57402c7653b3b
+SHA256sum: d7a9749d75be49504de79567687ecd2a980bcf5e86ee55177313719046e2d009
+Description:  ELF manipulation libraries (libelf)
+
+Package: libevent2
+Version: 2.0.22-1
+Depends: libc
+Source: package/libs/libevent2
+License: BSD-3-Clause
+Section: libs
+Maintainer: Jo-Philipp Wich <jow@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 95346
+Filename: libevent2_2.0.22-1_ipq806x.ipk
+Size: 95933
+MD5Sum: 6db17a1972439e0d1ba89b952fa5a492
+SHA256sum: 380bebe15780e387fb2c97259cfd42e297c34f8f6548f1a4754f103309596117
+Description:  The libevent API provides a mechanism to execute a callback function
+ when a specific event occurs on a file descriptor or after a timeout
+ has been reached. Furthermore, libevent also support callbacks due
+ to signals or regular timeouts.
+ 
+ libevent is meant to replace the event loop found in event driven
+ network servers. An application just needs to call event_dispatch()
+ and then add or remove events dynamically without having to change
+ the event loop.
+ 
+ This package contains the libevent shared library historically
+ containing both the core & extra libraries.
+
+Package: libext2fs
+Version: 1.42.12-1
+Depends: libc
+Source: package/utils/e2fsprogs
+Section: libs
+Architecture: ipq806x
+Installed-Size: 109714
+Filename: libext2fs_1.42.12-1_ipq806x.ipk
+Size: 110058
+MD5Sum: 7252ff976001f453e4ff0e38d350d59e
+SHA256sum: a0c4dc7e4cc856ca6a8c4cb243fccc7b5c6ebd0f3632f0120a4b1e65b98ac59b
+Description:  libext2fs is a library which can access ext2, ext3 and ext4 filesystems.
+
+Package: libfuse
+Version: 2.9.3-2
+Depends: libc, kmod-fuse, libpthread
+Source: package/utils/fuse
+License: LGPLv2.1 GPLv2
+LicenseFiles: COPYING.LIB COPYING
+Section: libs
+Architecture: ipq806x
+Installed-Size: 55513
+Filename: libfuse_2.9.3-2_ipq806x.ipk
+Size: 55624
+MD5Sum: dcc262ff1cd75e3c4c256ffa0fbec23f
+SHA256sum: 7c467f55e2e86fe26ba5242862c5e473f68afadfda35129ac850ca5c1eb867dc
+Description:  FUSE (Filesystem in UserSpacE)
+ This package contains the FUSE shared libraries, needed by other programs.
+ - libfuse
+ - libulockmgr
+
+Package: libgcc
+Version: 4.8-linaro-1
+Source: package/libs/toolchain
+License: GPL-3.0-with-GCC-exception
+Section: libs
+Status: unknown hold not-installed
+Essential: yes
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 20659
+Filename: libgcc_4.8-linaro-1_ipq806x.ipk
+Size: 21397
+MD5Sum: 5339fe58a16c1c7961a0fe37cb40341d
+SHA256sum: 733431eabb42c410f4c712a616ec1e4acdf17dc6ebd7effb629705d4223c93be
+Description:  GCC support library
+
+Package: libgmp
+Version: 6.0.0-1
+Depends: libc
+Source: package/libs/gmp
+License: GPL-2.0+
+Section: libs
+Architecture: ipq806x
+Installed-Size: 179387
+Filename: libgmp_6.0.0-1_ipq806x.ipk
+Size: 179641
+MD5Sum: c53e46381d96f35581cfe05d9d5f5565
+SHA256sum: 393c0f63b0a6145d79b5c469c6d0be21089f1392b27401d2b97080db2599e532
+Description:  GMP is a free library for arbitrary precision arithmetic, operating on
+ signed integers, rational numbers, and floating point numbers.
+
+Package: libiconv
+Version: 7
+Depends: libc
+Source: package/libs/libiconv
+License: LGPL-2.1
+LicenseFiles: LICENSE
+Section: libs
+Maintainer: Jo-Philipp Wich <jow@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 168
+Filename: libiconv_7_ipq806x.ipk
+Size: 914
+MD5Sum: 4b100a882b4588f1426b561391b51941
+SHA256sum: ea5f846cf2ae680c9e0c2f60247a1fae494faf9fffebf9fa8d655717b0fac46f
+Description:  Tiny drop-in replacement for the GNU Character set conversion library
+
+Package: libintl
+Version: 2
+Depends: libc
+Source: package/libs/gettext
+License: FSFULLR
+LicenseFiles: LICENSE
+Section: libs
+Maintainer: Jo-Philipp Wich <jow@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 167
+Filename: libintl_2_ipq806x.ipk
+Size: 902
+MD5Sum: 4a4b7451c81072c3e73c5dd73e56af69
+SHA256sum: 0ce9dfcafc31e61ab943d57c22f2bf89709dcd482969a14fd3a9360f2d6e99b9
+Description:  Stub header for the GNU Internationalization library
+
+Package: libip4tc
+Version: 1.4.21-1
+Depends: libc, libxtables
+Source: package/network/utils/iptables
+License: GPL-2.0
+Section: libs
+Architecture: ipq806x
+Installed-Size: 17049
+Filename: libip4tc_1.4.21-1_ipq806x.ipk
+Size: 17754
+MD5Sum: 3eb88aad445be8c517f58148c8c4cf5c
+SHA256sum: 38883da13cb51b90b58df90ede80e0ebd805dd9608ce962439dae50e8f91bbd2
+Description:  IPv4 firewall - shared libiptc library
+
+Package: libip6tc
+Version: 1.4.21-1
+Depends: libc, libxtables
+Source: package/network/utils/iptables
+License: GPL-2.0
+Section: libs
+Architecture: ipq806x
+Installed-Size: 16797
+Filename: libip6tc_1.4.21-1_ipq806x.ipk
+Size: 17454
+MD5Sum: a77abab8b39ce2539c2bf546f7a3a89f
+SHA256sum: b2cb26eb9e6f6307cf5b2277760d6a87cf200de7d84f9df72b801a1cbc488f07
+Description:  IPv6 firewall - shared libiptc library
+
+Package: libiwinfo-lua
+Version: 2015-06-01-ade8b1b299cbd5748db1acf80dd3e9f567938371
+Depends: libc, libiwinfo, liblua
+Source: package/network/utils/iwinfo
+License: GPL-2.0
+Section: lang
+Maintainer: Jo-Philipp Wich <jow@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 6761
+Filename: libiwinfo-lua_2015-06-01-ade8b1b299cbd5748db1acf80dd3e9f567938371_ipq806x.ipk
+Size: 7552
+MD5Sum: 4f717c2ee03ccf77c330e329a5c0753f
+SHA256sum: 15a5cecd7e587e719634da55fc191b1ec14f3654925f98f2de6ac53d0aff9e86
+Description:  This is the Lua binding for the iwinfo library. It provides access to all enabled
+ backends.
+
+Package: libiwinfo
+Version: 2015-06-01-ade8b1b299cbd5748db1acf80dd3e9f567938371
+Depends: libc, libnl-tiny, libuci
+Source: package/network/utils/iwinfo
+License: GPL-2.0
+Section: libs
+Maintainer: Jo-Philipp Wich <jow@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 25712
+Filename: libiwinfo_2015-06-01-ade8b1b299cbd5748db1acf80dd3e9f567938371_ipq806x.ipk
+Size: 26454
+MD5Sum: b60f364bffe3d865e4b3d8b21028b27e
+SHA256sum: 60c54887602ee6811df012c5f902b3f89a9ac574b8b41bd7108b0144fdbbabc1
+Description:  Wireless information library with consistent interface for proprietary Broadcom,
+ madwifi, nl80211 and wext driver interfaces.
+
+Package: libjson-c
+Version: 0.12-1
+Depends: libc
+Source: package/libs/libjson-c
+License: MIT
+LicenseFiles: COPYING
+Section: libs
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 13394
+Filename: libjson-c_0.12-1_ipq806x.ipk
+Size: 14118
+MD5Sum: 23111a438737ca8eef03e3056c638de0
+SHA256sum: a3425b40a3a9f2ff0c34d2ba8e4029b42f1475e5ff262d9feed5f788493397bf
+Description:  This package contains a library for javascript object notation backends.
+
+Package: libjson-script
+Version: 2015-11-08-10429bccd0dc5d204635e110a7a8fae7b80d16cb
+Depends: libc, libubox
+Source: package/libs/libubox
+License: ISC
+Section: utils
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 4168
+Filename: libjson-script_2015-11-08-10429bccd0dc5d204635e110a7a8fae7b80d16cb_ipq806x.ipk
+Size: 4905
+MD5Sum: 41908f5e34d60d0a952bc3c076981aed
+SHA256sum: 85f1607712f5a32c0a4ecd58c9ba364002d0a3942ebe1b457c21d7cf9c5c6a91
+Description:  Minimalistic JSON based scripting engine
+
+Package: libltdl
+Version: 2.4-1
+Depends: libc
+Source: package/libs/libtool
+License: GPL-2.0+
+LicenseFiles: COPYING
+Section: libs
+Architecture: ipq806x
+Installed-Size: 13050
+Filename: libltdl_2.4-1_ipq806x.ipk
+Size: 13782
+MD5Sum: 5c37f85ee603280b2a2fea3fec7bd3b9
+SHA256sum: 6115641eeeec2867067d3b16ef10211a2aab8f22709ba273d0e35ce16d8d547f
+Description:  A generic dynamic object loading library
+
+Package: liblua
+Version: 5.1.5-1
+Depends: libc
+Source: package/utils/lua
+License: MIT
+LicenseFiles: COPYRIGHT
+Section: libs
+Maintainer: Jo-Philipp Wich <jow@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 59857
+Filename: liblua_5.1.5-1_ipq806x.ipk
+Size: 60412
+MD5Sum: 4e0f6db753c22966512ab1da2032774c
+SHA256sum: e90ddae2e153d5b6a197a5c5d8f9cfae1aaa86042c7775fec19d8492fdd994ba
+Description:  Lua is a powerful light-weight programming language designed for extending 
+ applications. Lua is also frequently used as a general-purpose, stand-alone 
+ language. Lua is free software.
+ This package contains the Lua shared libraries, needed by other programs.
+
+Package: liblzo
+Version: 2.08-1
+Depends: libc
+Source: package/libs/lzo
+License: GPL-2.0+
+Section: libs
+Architecture: ipq806x
+Installed-Size: 33567
+Filename: liblzo_2.08-1_ipq806x.ipk
+Size: 34415
+MD5Sum: 600bd62def7d4ea9d60552773cafe887
+SHA256sum: b04c97f9ea4e4ce58822e91f089222146bb445607b13ba8803f4b965e4317063
+Description:  LZO is a data compression library which is suitable for data de-/compression
+ in real-time. This means it favours speed over compression ratio.
+
+Package: libncurses
+Version: 5.9-2
+Depends: libc, terminfo
+Source: package/libs/ncurses
+License: MIT
+LicenseFiles: README
+Section: libs
+Architecture: ipq806x
+Installed-Size: 113318
+Filename: libncurses_5.9-2_ipq806x.ipk
+Size: 111931
+MD5Sum: 8dabaa402facebcb9ec9bfc9bcc447e2
+SHA256sum: b040fe1f81df0d8aca1f87fc1ac41c3fff63ce71fcba38a64128d8ca1ad428ce
+Description:  Terminal handling library
+
+Package: libnettle
+Version: 3.1.1-1
+Depends: libc, libgmp
+Source: package/libs/nettle
+License: GPL-2.0+
+LicenseFiles: COPYING
+Section: libs
+Architecture: ipq806x
+Installed-Size: 234695
+Filename: libnettle_3.1.1-1_ipq806x.ipk
+Size: 234715
+MD5Sum: c9b0b686a15de84389e2ef6ce85e3973
+SHA256sum: f3088dc535f09b71d24790bc0ffd1a631c948fd93fd55021b3ad7ccc7653baea
+Description:  GNU crypto library
+
+Package: libnl-tiny
+Version: 0.1-4
+Depends: libc
+Source: package/libs/libnl-tiny
+License: LGPL-2.1
+Section: libs
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 11606
+Filename: libnl-tiny_0.1-4_ipq806x.ipk
+Size: 12337
+MD5Sum: d4b616b1613dec4843dcaef13ee0cdc6
+SHA256sum: 61c1a856394bed890b511f7aba64242c184be5a45ce33dc7916768d860d45cc8
+Description:  This package contains a stripped down version of libnl
+
+Package: libnl
+Version: 3.2.21-1
+Depends: libc, libpthread
+Source: package/libs/libnl
+License: LGPL-2.1
+Section: libs
+Architecture: ipq806x
+Installed-Size: 156802
+Filename: libnl_3.2.21-1_ipq806x.ipk
+Size: 156595
+MD5Sum: 630fc790fac46f236b86d2774d7945f6
+SHA256sum: 9ee2c144c0da683cbe1a716540fe90d615281f9959f88f59cb0616f8303414e4
+Description:  This package contains a library for applications dealing with netlink sockets
+
+Package: libopcodes
+Version: 2.24-3
+Depends: libc, libbfd
+Source: package/devel/binutils
+License: GPL-3.0+
+Section: libs
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 35829
+Filename: libopcodes_2.24-3_ipq806x.ipk
+Size: 35614
+MD5Sum: d964354b4b0a3d89d9c17101c4a333bc
+SHA256sum: 78495f3d43d72094229733775f96c0f078529c159792b27b0c045283b24291e5
+Description:  libbfd
+
+Package: libopenssl
+Version: 1.0.2h-1
+Depends: libc, zlib
+Source: package/libs/openssl
+License: OpenSSL
+LicenseFiles: LICENSE
+Section: libs
+Architecture: ipq806x
+Installed-Size: 635752
+Filename: libopenssl_1.0.2h-1_ipq806x.ipk
+Size: 630003
+MD5Sum: 8a7fd3efefe9e44819889a84b7f1ff9c
+SHA256sum: 7dbd1e47fd185e42e4487d104020aa5243becb1a9da655f051876d259c28b31c
+Description:  The OpenSSL Project is a collaborative effort to develop a robust,
+ commercial-grade, full-featured, and Open Source toolkit implementing the Secure
+ Sockets Layer (SSL v2/v3) and Transport Layer Security (TLS v1) protocols as well
+ as a full-strength general purpose cryptography library.
+ This package contains the OpenSSL shared libraries, needed by other programs.
+
+Package: libpcap
+Version: 1.5.3-1
+Depends: libc
+Source: package/libs/libpcap
+License: BSD-3-Clause
+Section: libs
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 83037
+Filename: libpcap_1.5.3-1_ipq806x.ipk
+Size: 83523
+MD5Sum: ba08bbef8a78d3d470cc69637bfedd8e
+SHA256sum: 5e37bc7cfc30dfd865f87585083e9ec707e3eeaca6c58e39bee12e4f28b43841
+Description:  This package contains a system-independent library for user-level network packet
+ capture.
+
+Package: libpolarssl
+Version: 1.3.15-1
+Depends: libc
+Source: package/libs/polarssl
+License: GPL-2.0+
+Section: libs
+Architecture: ipq806x
+Installed-Size: 116310
+Filename: libpolarssl_1.3.15-1_ipq806x.ipk
+Size: 117050
+MD5Sum: dc52336e64d091de9161373988051a89
+SHA256sum: 096f98faf866b1efdcdfeb89babf04300c27f65220a798e6a182beb409644966
+Description:  The aim of the PolarSSL project is to provide a quality, open-source
+ cryptographic library written in C and targeted at embedded systems.
+ This package contains the PolarSSL library.
+
+Package: libpopt
+Version: 1.16-1
+Depends: libc
+Source: package/libs/popt
+License: MIT
+Section: libs
+Architecture: ipq806x
+Installed-Size: 16672
+Filename: libpopt_1.16-1_ipq806x.ipk
+Size: 17255
+MD5Sum: 056dd7b695ba0bb254392c32487b3749
+SHA256sum: 4cac3abaf72f8ca2fa12507d7ae22f5f2be1bbd324adf791dd84562d2cc47e16
+Description:  A command line option parsing library
+
+Package: libpthread
+Version: 1.0.14-1
+Depends: libgcc
+Source: package/libs/toolchain
+License: GPL-3.0-with-GCC-exception
+Section: libs
+Status: unknown hold not-installed
+Essential: yes
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 27408
+Filename: libpthread_1.0.14-1_ipq806x.ipk
+Size: 28152
+MD5Sum: aa8433082cc882eedee7207ef399518d
+SHA256sum: e3688bf0733a10042bed8b1a8977a766c209bb064637e478edb89220f4123701
+Description:  POSIX thread library
+
+Package: libqtkey
+Version: 1
+Depends: libc
+Source: package/qtec/QtKey_utilpack
+Section: libs
+Architecture: ipq806x
+Installed-Size: 88425
+Filename: libqtkey_1_ipq806x.ipk
+Size: 89166
+MD5Sum: c3e178de53d91dd23e9782e4f80b31d6
+SHA256sum: 6785b5bcadfeb1f5ededd806474afd177287139185eccf6af122d704809743fc
+Description:  libqtkey library
+
+Package: libqtkeymangent
+Version: 1
+Depends: libc, libqtkey
+Source: package/qtec/QtKey_pro
+Section: libs
+Architecture: ipq806x
+Installed-Size: 24110
+Filename: libqtkeymangent_1_ipq806x.ipk
+Size: 24769
+MD5Sum: 3625e7741a6c45fb500448fbae1c2de3
+SHA256sum: d80b384f6577c400d915197d509e694a924235335b9759f922ae1c5351d52cca
+Description:  libqtkeymangent library
+
+Package: libreadline
+Version: 6.3-1
+Depends: libc
+Source: package/libs/libreadline
+License: GPL-3.0
+LicenseFiles: COPYING
+Section: libs
+Architecture: ipq806x
+Installed-Size: 105247
+Filename: libreadline_6.3-1_ipq806x.ipk
+Size: 105086
+MD5Sum: 28d99273f0ea7c80ad02daf9c467e06e
+SHA256sum: dfbf5f8e405e4ff095e69c7179a11c43f31db056f6a3050d1893605ba3b6b356
+Description:  The Readline library provides a set of functions for use by applications 
+ that allow users to edit command lines as they are typed in. Both Emacs 
+ and vi editing modes are available. The Readline library includes 
+ additional functions to maintain a list of previously-entered command 
+ lines, to recall and perhaps reedit those lines, and perform csh-like 
+ history expansion on previous commands.
+
+Package: librpc
+Version: 2015-11-04-a921e3ded051746f9f7cd5e5a312fb6771716aac
+Depends: libc
+Source: package/libs/librpc
+License: LGPL-2.1
+Section: libs
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 28875
+Filename: librpc_2015-11-04-a921e3ded051746f9f7cd5e5a312fb6771716aac_ipq806x.ipk
+Size: 29541
+MD5Sum: a6ce222b11780d9883a50b9a4edf0a2a
+SHA256sum: 51cacd0a54310c8b3e7c51d0473ecdb2eaa34449bbd0c5d01250639dfb206689
+Description:  uClibc RPC library
+
+Package: librt
+Version: 1.0.14-1
+Depends: libpthread
+Source: package/libs/toolchain
+License: GPL-3.0-with-GCC-exception
+Section: libs
+Status: unknown hold not-installed
+Essential: yes
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 5856
+Filename: librt_1.0.14-1_ipq806x.ipk
+Size: 6621
+MD5Sum: c71b5e8031e35d72246dba3d0b5bc803
+SHA256sum: 5092ac07b4f940d5b28771c85ee0fa823a4d4a3395dc367098ecc9147b992564
+Description:  POSIX.1b RealTime extension library
+
+Package: librtcfg
+Version: 1
+Depends: libc, libuci, spiinit
+Source: package/qtec/rtcfg
+Section: libs
+Architecture: ipq806x
+Installed-Size: 92516
+Filename: librtcfg_1_ipq806x.ipk
+Size: 93156
+MD5Sum: 81f8401615d6edde23f9e07d37c79987
+SHA256sum: 8ed014e76b54b8fe4928072d3782f6f028b644623b21bafb26c93dc6a2ac4296
+Description:  librtcfg library
+
+Package: libsmartcols
+Version: 2.25.2-4
+Depends: libc
+Source: package/utils/util-linux
+License: GPL-2.0
+LicenseFiles: COPYING getopt/COPYING libblkid/COPYING libmount/COPYING Documentation/licenses/COPYING.GPLv2 Documentation/licenses/COPYING.LGPLv2.1 libuuid/COPYING Documentation/licenses/COPYING.BSD-3
+Section: libs
+Architecture: ipq806x
+Installed-Size: 48658
+Filename: libsmartcols_2.25.2-4_ipq806x.ipk
+Size: 49398
+MD5Sum: 84f932d4dbe4e89d2ed158a0f9c842a5
+SHA256sum: 01100b8395467e10e506484f377b5505b81a37a54ba0a672d9ce99e9e4e2d0c7
+Description:  The smartcols library is used to print tables and trees in a pretty way.
+
+Package: libstdcpp
+Version: 4.8-linaro-1
+Source: package/libs/toolchain
+License: GPL-3.0-with-GCC-exception
+Section: libs
+Status: unknown hold not-installed
+Essential: yes
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 210763
+Filename: libstdcpp_4.8-linaro-1_ipq806x.ipk
+Size: 209460
+MD5Sum: fcece1ff950908e0aa5d20d9e0e3204c
+SHA256sum: d500ebf9d22dc5b9c8001b47f39b7dea47ef6b2ecccbd960beca419325e439d1
+Description:  GNU Standard C++ Library v3
+
+Package: libthread-db
+Version: 1.0.14-1
+Source: package/libs/toolchain
+License: GPL-3.0-with-GCC-exception
+Section: libs
+Status: unknown hold not-installed
+Essential: yes
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 7045
+Filename: libthread-db_1.0.14-1_ipq806x.ipk
+Size: 7863
+MD5Sum: a2486bb6cfbfa460adc6ba591fcd5d97
+SHA256sum: 53552c55a46b93eb9920d61c2db5213d9e6a68874459c35e018dfbf630ebb7c7
+Description:  POSIX thread library debugging support
+
+Package: libubox
+Version: 2015-11-08-10429bccd0dc5d204635e110a7a8fae7b80d16cb
+Depends: libc
+Source: package/libs/libubox
+License: ISC
+Section: libs
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 15784
+Filename: libubox_2015-11-08-10429bccd0dc5d204635e110a7a8fae7b80d16cb_ipq806x.ipk
+Size: 16492
+MD5Sum: 8cf582277927e0f89f3251b06e78d723
+SHA256sum: 8b6e89e4556d52d22a72dd720b0864f93f153cb0620dc9d4d496e232adec4527
+Description:  Basic utility library
+
+Package: libubus-lua
+Version: 2015-05-25-f361bfa5fcb2daadf3b160583ce665024f8d108e
+Depends: libc, libubus, liblua
+Source: package/system/ubus
+License: LGPL-2.1
+Section: libs
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 5014
+Filename: libubus-lua_2015-05-25-f361bfa5fcb2daadf3b160583ce665024f8d108e_ipq806x.ipk
+Size: 5763
+MD5Sum: 4aeff3eb8f318e6a84b17a5dfa952c14
+SHA256sum: 3a6133fedd5eb545112688e7cba34b9b51e73e840bff7405c38f00c37e50ed5e
+Description:  Lua binding for the OpenWrt RPC client
+
+Package: libubus
+Version: 2015-05-25-f361bfa5fcb2daadf3b160583ce665024f8d108e
+Depends: libc, libubox
+Source: package/system/ubus
+License: LGPL-2.1
+Section: libs
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 7936
+Filename: libubus_2015-05-25-f361bfa5fcb2daadf3b160583ce665024f8d108e_ipq806x.ipk
+Size: 8737
+MD5Sum: 1e9cdb13254e954cb3f7607647945182
+SHA256sum: 9749674ca76cd407ad3915ae2e9098d236be6cdf0f09bf69580935734926727a
+Description:  OpenWrt RPC client library
+
+Package: libuci-lua
+Version: 2015-08-27.1-1
+Depends: libc, libuci, liblua
+Source: package/system/uci
+License: LGPL-2.1
+Section: libs
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 5480
+Filename: libuci-lua_2015-08-27.1-1_ipq806x.ipk
+Size: 6198
+MD5Sum: 35fe82a5391a757ca4fe0036213318fa
+SHA256sum: ad8db3744fc924aac8e31361bf4003f63ca4b855510227ea9a78819921e47be2
+Description:  Lua plugin for UCI
+
+Package: libuci
+Version: 2015-08-27.1-1
+Depends: libc, libubox
+Source: package/system/uci
+License: LGPL-2.1
+Section: libs
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 14648
+Filename: libuci_2015-08-27.1-1_ipq806x.ipk
+Size: 15357
+MD5Sum: 627aa65bf21360932df80e7bc92d73e0
+SHA256sum: cefb47923a65a6c536205e3ec46973fe79635b9d1649671b616a277068b82be6
+Description:  C library for the Unified Configuration Interface (UCI)
+
+Package: libusb-1.0
+Version: 1.0.19-1
+Depends: libc, libpthread, librt
+Source: package/libs/libusb
+License: LGPL-2.1
+Section: libs
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 23868
+Filename: libusb-1.0_1.0.19-1_ipq806x.ipk
+Size: 24645
+MD5Sum: 5fdda6cce625da0541263087a5b4ccfa
+SHA256sum: 985bc6b5059a99921e88254d00c9c3977f77c25fe5c216e51554c45cd9638fb3
+Description:  libusb is a C library that gives applications easy access to USB devices on
+ many different operating systems.
+
+Package: libuuid
+Version: 2.25.2-4
+Depends: libc
+Source: package/utils/util-linux
+License: GPL-2.0
+LicenseFiles: COPYING getopt/COPYING libblkid/COPYING libmount/COPYING Documentation/licenses/COPYING.GPLv2 Documentation/licenses/COPYING.LGPLv2.1 libuuid/COPYING Documentation/licenses/COPYING.BSD-3
+Section: libs
+Architecture: ipq806x
+Installed-Size: 4951
+Filename: libuuid_2.25.2-4_ipq806x.ipk
+Size: 5837
+MD5Sum: 91d5bff8092b9f486f56f8ac1125a502
+SHA256sum: ea88f18dc1e7bfcb536d8247df63a724a1bbfa4965f39c0803000c8261641d7d
+Description:  The UUID library is used to generate unique identifiers for objects
+ that may be accessible beyond the local system. This library
+ generates UUIDs compatible with those created by the Open Software
+ Foundation (OSF) Distributed Computing Environment (DCE) utility.
+
+Package: libwebsockets
+Version: 1
+Depends: libc, zlib, libopenssl, libpthread
+Source: package/qtec/libwebsockets
+Section: libs
+Architecture: ipq806x
+Installed-Size: 107441
+Filename: libwebsockets_1_ipq806x.ipk
+Size: 108035
+MD5Sum: 5e561f83e024a0c32223711c7351ae35
+SHA256sum: 75d54e8a3885612fbbf2130280e315ed3f60bdd196e00cad39909f1b3aaf05f7
+Description:  libwebsockets
+ This package contains libwebsocket libraries
+
+Package: libxtables
+Version: 1.4.21-1
+Depends: libc
+Source: package/network/utils/iptables
+License: GPL-2.0
+Section: libs
+Architecture: ipq806x
+Installed-Size: 36500
+Filename: libxtables_1.4.21-1_ipq806x.ipk
+Size: 37201
+MD5Sum: f5b6bca57e2610c78d2db749960c4b34
+SHA256sum: 698352b9e3180b2879138e962905829781e94d8f27ba4964f316643074737814
+Description:  IPv4/IPv6 firewall - shared xtables library
+
+Package: lighttpd-mod-auth
+Version: 1.4.35-2
+Depends: libc, lighttpd
+Source: package/qtec/lighttpd
+Section: net
+Maintainer: W. Michael Petullo <mike@flyn.org>
+Architecture: ipq806x
+Installed-Size: 10328
+Filename: lighttpd-mod-auth_1.4.35-2_ipq806x.ipk
+Size: 11048
+MD5Sum: b66142fafb05070ca6bd29a5f60db547
+SHA256sum: 6f83b8de35b70cdc1b1d49873c2a46d7155d6a6aed735531c3655d2f02b5bcca
+Description:  Authentication module
+
+Package: lighttpd-mod-cgi
+Version: 1.4.35-2
+Depends: libc, lighttpd
+Source: package/qtec/lighttpd
+Section: net
+Maintainer: W. Michael Petullo <mike@flyn.org>
+Architecture: ipq806x
+Installed-Size: 8356
+Filename: lighttpd-mod-cgi_1.4.35-2_ipq806x.ipk
+Size: 9034
+MD5Sum: 65b60838c3247a4ada7b33455c224d5f
+SHA256sum: 607a8102a9510019c50472686ef45afeb4abfb78e4d40426336bed39fe09a7f8
+Description:  CGI module
+
+Package: lighttpd-mod-setenv
+Version: 1.4.35-2
+Depends: libc, lighttpd
+Source: package/qtec/lighttpd
+Section: net
+Maintainer: W. Michael Petullo <mike@flyn.org>
+Architecture: ipq806x
+Installed-Size: 2132
+Filename: lighttpd-mod-setenv_1.4.35-2_ipq806x.ipk
+Size: 2879
+MD5Sum: 45e52d6cdc75e7891c01d5f3bff527e4
+SHA256sum: 30e0d9d5da6594f2a43d02ac635a189c5cdba892f35acca97caddf8a44142b8a
+Description:  Environment variable setting module
+
+Package: lighttpd-mod-webdav
+Version: 1.4.35-2
+Depends: libc, lighttpd, libsqlite3, libuuid, libxml2
+Source: package/qtec/lighttpd
+Section: net
+Maintainer: W. Michael Petullo <mike@flyn.org>
+Architecture: ipq806x
+Installed-Size: 13848
+Filename: lighttpd-mod-webdav_1.4.35-2_ipq806x.ipk
+Size: 14514
+MD5Sum: dde313012cd7e93f73ebb676c4a18c5d
+SHA256sum: 6acf0751fdc99ec275f12e429d0fd1a47dd178f7284c9cfd245c976336ebae7b
+Description:  WebDAV module
+
+Package: lighttpd
+Version: 1.4.35-2
+Depends: libc, libopenssl, libpcre, libpthread
+Source: package/qtec/lighttpd
+Section: net
+Maintainer: W. Michael Petullo <mike@flyn.org>
+Architecture: ipq806x
+Installed-Size: 5326169
+Filename: lighttpd_1.4.35-2_ipq806x.ipk
+Size: 5326956
+MD5Sum: 6fe526fb6682098417c03b072b67a395
+SHA256sum: 9c0b4eb5d42dfc8a43f2d89f5e907e3d21e7fd3c2406c8b4006e324f2a73e106
+Description:  A flexible and lightweight web server
+
+Package: lk-ipq40xx
+Version: g1d65974-dirty-1
+Depends: libc
+Source: package/boot/lk-qca
+Section: boot
+Architecture: ipq806x
+Installed-Size: 104
+Filename: lk-ipq40xx_g1d65974-dirty-1_ipq806x.ipk
+Size: 781
+MD5Sum: 3d40333ae3016347262adfcdd192a07f
+SHA256sum: 34161da548edba72c25712af24aa19883d2dc2e7f59cff37d2748cb3a3492303
+Description:  lk bootloader for IPQ40xx based platforms
+
+Package: lk-ipq806x
+Version: g1d65974-dirty-1
+Depends: libc
+Source: package/boot/lk-qca
+Section: boot
+Architecture: ipq806x
+Installed-Size: 106
+Filename: lk-ipq806x_g1d65974-dirty-1_ipq806x.ipk
+Size: 782
+MD5Sum: 8fc441755b4ac5e73a7af2a3a9a0f766
+SHA256sum: c6df7db39acf7905d9e25ef85963b5e6a6f1d8438a47345c38a87eb90f3ea552
+Description:  lk bootloader for IPQ806x based platforms
+
+Package: lldpd
+Version: 0.7.15-1
+Depends: libc, libevent2
+Source: package/network/services/lldpd
+License: ISC
+Section: net
+Require-User: lldp=121:lldp=129
+Maintainer: Jo-Philipp Wich <jow@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 105054
+Filename: lldpd_0.7.15-1_ipq806x.ipk
+Size: 106026
+MD5Sum: 27f6503d56b821794e0ba58937231271
+SHA256sum: 85a2c9531953a93a70f4d1d0ee15aa8be5513bae72f14d7d2ce75932590839bc
+Description:  LLDP (Link Layer Discovery Protocol) is an industry standard protocol designed
+ to supplant proprietary Link-Layer protocols such as
+ Extreme's EDP (Extreme Discovery Protocol) and
+ CDP (Cisco Discovery Protocol).
+ The goal of LLDP is to provide an inter-vendor compatible mechanism to deliver
+ Link-Layer notifications to adjacent network devices.
+
+Package: logd
+Version: 2015-11-22-c086167a0154745c677f8730a336ea9cf7d71031
+Depends: libc, libubox, libubus, libblobmsg-json
+Source: package/system/ubox
+License: GPL-2.0
+Section: base
+Maintainer: John Crispin <blogic@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 8714
+Filename: logd_2015-11-22-c086167a0154745c677f8730a336ea9cf7d71031_ipq806x.ipk
+Size: 9503
+MD5Sum: d3c7fa2ac2b43e83ecbe8b83984c3416
+SHA256sum: ec9799b12cc46dc759b72fb443c9cd21bf66b397c2cedb8ca3b9747b31b2a9d5
+Description:  OpenWrt system log implementation
+
+Package: lrzsz
+Version: 0.12.20-1
+Depends: libc
+Source: package/utils/lrzsz
+Section: utils
+Architecture: ipq806x
+Installed-Size: 49819
+Filename: lrzsz_0.12.20-1_ipq806x.ipk
+Size: 48589
+MD5Sum: 11f0b61ab5493e2e700d55df02772658
+SHA256sum: b222b9fccd4e1d7f51b298774edab7f3165106894c16a7920666a675613df746
+Description:  Modem Managment Utilities
+
+Package: lua
+Version: 5.1.5-1
+Depends: libc, liblua
+Source: package/utils/lua
+License: MIT
+LicenseFiles: COPYRIGHT
+Section: lang
+Maintainer: Jo-Philipp Wich <jow@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 4140
+Filename: lua_5.1.5-1_ipq806x.ipk
+Size: 4965
+MD5Sum: d05d831d35c5bc95b1f5154c4785bf01
+SHA256sum: 6727cf61e4329e99802c681cdb71493844936e76bac6b0c091c430b567022e12
+Description:  Lua is a powerful light-weight programming language designed for extending 
+ applications. Lua is also frequently used as a general-purpose, stand-alone 
+ language. Lua is free software.
+ This package contains the Lua language interpreter.
+
+Package: map
+Version: 4-2
+Depends: libc, kmod-ipv6, kmod-ip6-tunnel, libubox, libubus, iptables-mod-conntrack-extra
+Source: package/network/ipv6/map
+License: GPL-2.0
+Section: net
+Maintainer: Steven Barth <steven@midlink.org>
+Architecture: ipq806x
+Installed-Size: 6321
+Filename: map_4-2_ipq806x.ipk
+Size: 7238
+MD5Sum: 289cfbf472eed0ea8326ce51dbe168a2
+SHA256sum: fbdd4f758149976e43257f4f6aca9f35141fdb7e448a2ab03084a3c4688b7ffc
+Description:  Provides support for MAP-E (draft-ietf-softwire-map) and
+ Lightweight 4over6 (draft-ietf-softwire-lw4over6) in /etc/config/network.
+ Refer to http://wiki.openwrt.org/doc/uci/network for
+ configuration details.
+
+Package: mdadm
+Version: 3.2.5-1
+Depends: libc
+Source: package/utils/mdadm
+Section: utils
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 125754
+Filename: mdadm_3.2.5-1_ipq806x.ipk
+Size: 126359
+MD5Sum: 24e995810dccf96f8c4268b1fb7d1a5d
+SHA256sum: 38edfe6b5e92abab1d9717f9951a29f4d03f162b2cd5db67359d992be27a14f9
+Description:  A tool for managing Linux Software RAID arrays.
+
+Package: mtd
+Version: 21
+Depends: libc, libubox
+Source: package/system/mtd
+License: GPL-2.0+
+Section: utils
+Architecture: ipq806x
+Installed-Size: 11106
+Filename: mtd_21_ipq806x.ipk
+Size: 11838
+MD5Sum: 20996969f4ebad834f6c7b2a903f77c6
+SHA256sum: da6be815fffdd33508b5c654513ebf9be87c340643fe0a5d069742de4446d2f6
+Description:  This package contains an utility useful to upgrade from other firmware or 
+ older OpenWrt releases.
+
+Package: myclient
+Version: 1
+Depends: libc, librtcfg, libwebsockets, libpthread, libuci, libsqlite3, jsoncgi, spiinit
+Source: package/qtec/mywebsocket
+Section: utils
+Architecture: ipq806x
+Installed-Size: 180195
+Filename: myclient_1_ipq806x.ipk
+Size: 180889
+MD5Sum: 5b0deb7a4965f5ac489fec7f0efe88c0
+SHA256sum: 6d074e15e8faa52054f5888b9632b344b091430c0033600799f7a392f2355d75
+Description:  my websocket client.
+
+Package: netifd
+Version: 2015-12-16-245527193e90906451be35c2b8e972b8712ea6ab
+Depends: libc, libuci, libnl-tiny, libubus, ubus, ubusd, jshn, libubox
+Source: package/network/config/netifd
+License: GPL-2.0
+Section: base
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 62383
+Filename: netifd_2015-12-16-245527193e90906451be35c2b8e972b8712ea6ab_ipq806x.ipk
+Size: 63219
+MD5Sum: 54f699eb6315b6b4bfbaaed79675d915
+SHA256sum: 407710a621a310997e6c987523de51082e4f132328b1816eac33a3729c5550b9
+Description:  OpenWrt Network Interface Configuration Daemon
+
+Package: objdump
+Version: 2.24-3
+Depends: libc, libopcodes
+Source: package/devel/binutils
+License: GPL-3.0+
+Section: devel
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 124011
+Filename: objdump_2.24-3_ipq806x.ipk
+Size: 124490
+MD5Sum: a588ed77367552c76e2bec2ea2f02984
+SHA256sum: d90d70ddafa73f2c5db6d82c41c036101f23a4eb6c21ea7445b348147ac2093a
+Description:  objdump
+
+Package: odhcp6c
+Version: 2015-07-29-dc186d6d2b0dd4ad23ca5fc69c00e81f796ff6d9
+Depends: libc, kmod-ipv6
+Source: package/network/ipv6/odhcp6c
+License: GPL-2.0
+Section: net
+Maintainer: Steven Barth <steven@midlink.org>
+Architecture: ipq806x
+Installed-Size: 22466
+Filename: odhcp6c_2015-07-29-dc186d6d2b0dd4ad23ca5fc69c00e81f796ff6d9_ipq806x.ipk
+Size: 23266
+MD5Sum: c97603c04f00c78d90b6cd30738fb24c
+SHA256sum: 6138dcd37e80acaeaf66b6a7c861af6959faad0f1ce74d438c620219f1d6201b
+Description:  Embedded DHCPv6-client for OpenWrt
+
+Package: odhcpd
+Version: 2015-11-19-01d3f9d64486ac1daa144848944e877e7f0cb762
+Depends: libc, libubox, libuci, libubus
+Source: package/network/services/odhcpd
+License: GPL-2.0
+Section: net
+Maintainer: Steven Barth <steven@midlink.org>
+Architecture: ipq806x
+Installed-Size: 29114
+Filename: odhcpd_2015-11-19-01d3f9d64486ac1daa144848944e877e7f0cb762_ipq806x.ipk
+Size: 30044
+MD5Sum: 4a9aa2be2f12c5fdad26c1c8fc71c150
+SHA256sum: 8a9a5aac0f5cfa848295ff9618108b112b812ae5143f6c92d5c2a89f414a6f75
+Description:  odhcpd is a daemon for serving and relaying IP management protocols to
+ configure clients and downstream routers. It tries to follow the RFC 6204
+ requirements for IPv6 home routers.
+ 
+ odhcpd provides server services for DHCP, RA, stateless and stateful DHCPv6,
+ prefix delegation and can be used to relay RA, DHCPv6 and NDP between routed
+ (non-bridged) interfaces in case no delegated prefixes are available.
+
+Package: onekeyswitch
+Version: 1
+Depends: libc, librtcfg, libpthread
+Source: package/qtec/onekeyswitch
+Section: utils
+Architecture: ipq806x
+Installed-Size: 1698
+Filename: onekeyswitch_1_ipq806x.ipk
+Size: 2382
+MD5Sum: 96bd6f6806b4f8a5b351efbd1c718025
+SHA256sum: 59bc69c2c3faf3a75a99b9aa4383b0ed1710e2cc9ce80ccd984dd5be6bb580db
+Description:  one key switch router
+
+Package: openssl-util
+Version: 1.0.2h-1
+Depends: libc, libopenssl
+Source: package/libs/openssl
+License: OpenSSL
+LicenseFiles: LICENSE
+Section: utils
+Architecture: ipq806x
+Installed-Size: 210234
+Filename: openssl-util_1.0.2h-1_ipq806x.ipk
+Size: 208200
+MD5Sum: af64337f92d505269d80061254105246
+SHA256sum: a584094ddebbcfbea337a00df8e40deba8a1a3426d53741d04f21465f73a2880
+Description:  The OpenSSL Project is a collaborative effort to develop a robust,
+ commercial-grade, full-featured, and Open Source toolkit implementing the Secure
+ Sockets Layer (SSL v2/v3) and Transport Layer Security (TLS v1) protocols as well
+ as a full-strength general purpose cryptography library.
+ This package contains the OpenSSL command-line utility.
+
+Package: opkg
+Version: 9c97d5ecd795709c8584e972bfdf3aee3a5b846d-9
+Depends: libc
+Source: package/system/opkg
+License: GPL-2.0
+LicenseFiles: COPYING
+Section: base
+Maintainer: Jo-Philipp Wich <xm@subsignal.org>
+Architecture: ipq806x
+Installed-Size: 57693
+Filename: opkg_9c97d5ecd795709c8584e972bfdf3aee3a5b846d-9_ipq806x.ipk
+Size: 58724
+MD5Sum: 76cd475c818cd6d95ad8906648e69024
+SHA256sum: da06979f8b3269e76afa0695ead877576250d5fc4e2ff763f0568a5c2080fe1c
+Description:  Lightweight package management system
+ opkg is the opkg Package Management System, for handling
+ installation and removal of packages on a system. It can
+ recursively follow dependencies and download all packages
+ necessary to install a particular package.
+ 
+ opkg knows how to install both .ipk and .deb packages.
+
+Package: pm-utils
+Version: 1.4.1-1
+Depends: libc, flock
+Source: package/utils/pm-utils
+Section: utils
+Architecture: ipq806x
+Installed-Size: 10384
+Filename: pm-utils_1.4.1-1_ipq806x.ipk
+Size: 11168
+MD5Sum: 61a2a73dbe37b93bb1fe2030860ce7b5
+SHA256sum: d649bb6a937ae208a76f0617955fbcb841df60d8c4aaf6ec7e9a5eae73c8f753
+Description:  Power Managment Utilities is a small collection of scripts to
+ suspend/hibernate system that can be used to run user supplied
+ scripts on suspend and resume
+
+Package: ppp-mod-pppoe
+Version: 2.4.7-6
+Depends: libc, kmod-pppoe
+Source: package/network/services/ppp
+License: BSD-4-Clause
+Section: net
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 9740
+Filename: ppp-mod-pppoe_2.4.7-6_ipq806x.ipk
+Size: 10492
+MD5Sum: a8d7790f3cd9628c64e198e7c5a5d515
+SHA256sum: 45683dc4f4dfcb1bb03be9893b314c88e6dfb529df8d6cfeafcb0536ccedcb8d
+Description:  This package contains a PPPoE (PPP over Ethernet) plugin for ppp.
+
+Package: ppp-mod-pppol2tp
+Version: 2.4.7-6
+Depends: libc, kmod-pppol2tp
+Source: package/network/services/ppp
+License: BSD-4-Clause
+Section: net
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 4714
+Filename: ppp-mod-pppol2tp_2.4.7-6_ipq806x.ipk
+Size: 5458
+MD5Sum: aed9156a1e334b6e366f5cf0483f6cc1
+SHA256sum: 251e925f425e10bf06060cb14a7f08589bf5c1fe092b4a546184736bc5abe20d
+Description:  This package contains a PPPoL2TP (PPP over L2TP) plugin for ppp.
+
+Package: ppp-mod-pptp
+Version: 2.4.7-6
+Depends: libc, kmod-pptp, kmod-mppe, resolveip
+Source: package/network/services/ppp
+License: BSD-4-Clause
+Section: net
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 16076
+Filename: ppp-mod-pptp_2.4.7-6_ipq806x.ipk
+Size: 16746
+MD5Sum: 401a0ceb423a20ff0742d7978dcfba1c
+SHA256sum: 235a8b01026a7875427afcc135b9e083e9836701dc187779574529d1ab13907f
+Description:  This package contains a PPtP plugin for ppp.
+
+Package: ppp
+Version: 2.4.7-6
+Depends: libc, kmod-ppp
+Source: package/network/services/ppp
+License: BSD-4-Clause
+Section: net
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 104224
+Filename: ppp_2.4.7-6_ipq806x.ipk
+Size: 104980
+MD5Sum: 50222cabbd3202d8d7738c3643f2cc25
+SHA256sum: ffa701e2fb91412c98bcb6e3ca8dc3753c6ac26b2c779706dc774adc1b1bd539
+Description:  This package contains the PPP (Point-to-Point Protocol) daemon.
+
+Package: procd-nand
+Version: 2015-10-29.1-d5fddd91b966424bb63e943e789704d52382cc18
+Depends: libc, ubi-utils
+Source: package/system/procd
+License: GPL-2.0
+Section: utils
+Maintainer: John Crispin <blogic@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 38632
+Filename: procd-nand_2015-10-29.1-d5fddd91b966424bb63e943e789704d52382cc18_ipq806x.ipk
+Size: 39482
+MD5Sum: cb6ee084363334d93f177d6ebe6f2519
+SHA256sum: 5ba58df5d4bd0979bcf2c1ea6d18d5b81a82afff1a83e15f6df41562524f577a
+Description:  OpenWrt sysupgrade nand helper
+
+Package: procd
+Version: 2015-10-29.1-d5fddd91b966424bb63e943e789704d52382cc18
+Depends: libc, ubusd, ubus, libjson-script, ubox, libubox, libubus, procd-nand
+Source: package/system/procd
+License: GPL-2.0
+Section: base
+Maintainer: John Crispin <blogic@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 33779
+Filename: procd_2015-10-29.1-d5fddd91b966424bb63e943e789704d52382cc18_ipq806x.ipk
+Size: 34504
+MD5Sum: cd2fd818647f2f53e2f449092ed8e40e
+SHA256sum: ef78e8812302ff554797c14f872e867971fc219d115a6de573a114b8d1f6a352
+Description:  OpenWrt system process manager
+
+Package: qos-scripts
+Version: 1.2.1-7
+Depends: libc, tc, kmod-sched-core, kmod-sched-connmark, kmod-ifb, iptables, iptables-mod-ipopt, iptables-mod-conntrack-extra
+Source: package/network/config/qos-scripts
+Section: utils
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: all
+Installed-Size: 6442
+Filename: qos-scripts_1.2.1-7_all.ipk
+Size: 7329
+MD5Sum: b11d0feddafce3dee28c45e6641a43e1
+SHA256sum: 529f8e47f61039344e0b6ce6d722209634e216b08d6799b739b42a7a24e8a675
+Description:  A set of scripts that abstract QoS configuration into a simple 
+ configuration file supporting stanzas that specify any number of QoS 
+ entries.
+
+Package: qtec_capture
+Version: 2018-1-3-1.0.0
+Depends: libc, libubox, libuci, librtcfg, libpcap, libopenssl
+Source: package/qtec/qtec_capture
+License: GPL
+Section: base
+Maintainer: wjianjia
+Architecture: ipq806x
+Installed-Size: 4334
+Filename: qtec_capture_2018-1-3-1.0.0_ipq806x.ipk
+Size: 5067
+MD5Sum: b6ee17652a549cac240dfe372356a51d
+SHA256sum: 6775b226770dd47b35bb8fe157ba14526d9715a090c11a4a799af22bb7caef81
+Description:  This package provides one tool to capture lan client's system type  
+
+Package: qtec_cli
+Version: 1.0
+Depends: libc, libpthread, librtcfg
+Source: package/qtec/qtec_cli
+Section: base
+Architecture: ipq806x
+Installed-Size: 21658
+Filename: qtec_cli_1.0_ipq806x.ipk
+Size: 22229
+MD5Sum: 85fa935b61c7c90ee25760c164859918
+SHA256sum: a208723776983fa0d833e7cf619f73a0f557032fb9c829508a66a75a400f6cdf
+Description:  cli lib.
+
+Package: qtec_consoled
+Version: 1.0
+Depends: libc, libpthread, librtcfg, qtec_cli
+Source: package/qtec/qtec_consoled
+Section: base
+Architecture: ipq806x
+Installed-Size: 2000
+Filename: qtec_consoled_1.0_ipq806x.ipk
+Size: 2696
+MD5Sum: 176bfc4c9beeaf8df743c0036dd633d0
+SHA256sum: f5325267a0b164f5cf3b644a7120caf527152016e94d481dfbc2a08572a115bb
+Description:  cli lib.
+
+Package: qtec_disk
+Version: 2017-12-05-1.0.0
+Depends: libc, libubox, libuci, librtcfg, spiinit, libopenssl
+Source: package/qtec/qtec_disk
+License: GPL
+Section: base
+Maintainer: wjianjia
+Architecture: ipq806x
+Installed-Size: 5104
+Filename: qtec_disk_2017-12-05-1.0.0_ipq806x.ipk
+Size: 5851
+MD5Sum: 80b0751400b6c1a5b0c686d333a65845
+SHA256sum: 1ab96a58f33db7bcd3fff446b3d6c289754947a31d65f2ff61ad31fc5d2eaea4
+Description:  This package provides a qtec disk that handle disk-crypt 
+
+Package: qtec_ebtables
+Version: 2017-09-30-1.0.0
+Depends: libc, libubox, libuci, librtcfg
+Source: package/qtec/qtec_ebtables
+License: GPL
+Section: base
+Maintainer: wjianjia
+Architecture: ipq806x
+Installed-Size: 9196
+Filename: qtec_ebtables_2017-09-30-1.0.0_ipq806x.ipk
+Size: 9991
+MD5Sum: 4d0e87b5a829f6aab7e5266ba01f7bf1
+SHA256sum: b2fb5c2cb54b206e9edcb7b9c32d6b79d2114ea246d2138a2728e3aa6738471d
+Description:  This package provides a config-compatible C implementation of the UCI management to control ebtables rule.
+
+Package: qtec_firewall
+Version: 1.0
+Depends: libc, libubox, libubus, libuci, librtcfg
+Source: package/qtec/qtec_firewall
+Section: base
+Architecture: ipq806x
+Installed-Size: 26057
+Filename: qtec_firewall_1.0_ipq806x.ipk
+Size: 26788
+MD5Sum: c8220d0359f4c4353d31b3b3be607960
+SHA256sum: 1e674b2b0a13cb1e560d60949f3436026802e4136504a42c5e75485775990ae1
+Description:  If you can't figure out what this program does, you're probably  
+ brain-dead and need immediate medical attention.
+
+Package: qtec_tcpproxy
+Version: 1.0
+Depends: libc, libpthread, librtcfg, spiinit
+Source: package/qtec/qtec_tcpproxy
+Section: base
+Architecture: ipq806x
+Installed-Size: 11185
+Filename: qtec_tcpproxy_1.0_ipq806x.ipk
+Size: 11902
+MD5Sum: af628aae82a968b57eb5ae1f5a5d50c0
+SHA256sum: e7ddd6506cc1c5af33763af035cdb31f644fe685ab5eac2f92d04e4dcc519e24
+Description:  Display things on led screen.
+
+Package: qtec_telnetd
+Version: 1.0
+Depends: libc, libpthread, librtcfg, qtec_cli
+Source: package/qtec/qtec_telnetd
+Section: base
+Architecture: ipq806x
+Installed-Size: 4697
+Filename: qtec_telnetd_1.0_ipq806x.ipk
+Size: 5355
+MD5Sum: 793da2129aef83ea700c29789faf18a7
+SHA256sum: 97a4fa3e58d4a0ad0b77532173730bcea1de30cb9e574c0c3003511c08fbfec8
+Description:  cli lib.
+
+Package: resolveip
+Version: 2
+Depends: libc
+Source: package/network/utils/resolveip
+License: GPL-2.0
+Section: utils
+Maintainer: Jo-Philipp Wich <jow@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 1517
+Filename: resolveip_2_ipq806x.ipk
+Size: 2393
+MD5Sum: 33839ddf383fbbe324511a3062df20fb
+SHA256sum: af253bf540df6ee017c0ba1a0b35cf4ad9f7468d36aac80f276f8f0dcbdaece5
+Description:  This package contains the small resolveip utility which
+ can be used by scripts to turn host names into numeric
+ IP addresses. It supports IPv4 and IPv6 resolving and
+ has a configurable timeout to guarantee a certain maximum
+ runtime in case of slow or defunct DNS servers.
+
+Package: rpcd
+Version: 2016-04-13-73aea9b8b621a1ce034bc6ee00c9d058a40c8a3d
+Depends: libc, libubus, libubox, libuci, libblobmsg-json
+Source: package/system/rpcd
+License: ISC
+Section: utils
+Maintainer: Jo-Philipp Wich <jow@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 17214
+Filename: rpcd_2016-04-13-73aea9b8b621a1ce034bc6ee00c9d058a40c8a3d_ipq806x.ipk
+Size: 18015
+MD5Sum: 3748d32d898f99a70ac20940db849a02
+SHA256sum: 4225b616bf0727136e1b14cc563230c3f33fc85378312c68a1951c38dee9386a
+Description:  This package provides the UBUS RPC backend server to expose various
+ functionality to frontend programs via JSON-RPC.
+
+Package: samba36-server
+Version: 3.6.25-5
+Depends: libc, libuuid
+Source: package/network/services/samba36
+License: GPL-3.0
+LicenseFiles: COPYING
+Section: net
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 896892
+Filename: samba36-server_3.6.25-5_ipq806x.ipk
+Size: 878908
+MD5Sum: 649c4bc2c22d9a8c715d284fea348dd9
+SHA256sum: 2aa86b87aabbc5d494c296e2e1f259a2c176230e062b816b7342e536a69d98f5
+Description:  The Samba software suite is a collection of programs that implements the
+ SMB protocol for UNIX systems, allowing you to serve files and printers to
+ Windows, NT, OS/2 and DOS clients. This protocol is sometimes also referred
+ to as the LanManager or Netbios protocol.
+
+Package: scrctrl
+Version: 1.0
+Depends: libc, libpthread, librtcfg
+Source: package/qtec/scrctrl
+Section: base
+Architecture: ipq806x
+Installed-Size: 8546
+Filename: scrctrl_1.0_ipq806x.ipk
+Size: 9274
+MD5Sum: 037c4dc05ffd27910020d40ffac3d418
+SHA256sum: 93694611522071c6356267fd978f0c7c468ad6f0277b8eee23d9e2a585a46568
+Description:  Display things on led screen.
+
+Package: smbinit
+Version: 1.0
+Depends: libc, libpthread, spiinit, librtcfg
+Source: package/qtec/smbinit
+Section: base
+Architecture: ipq806x
+Installed-Size: 2139
+Filename: smbinit_1.0_ipq806x.ipk
+Size: 2840
+MD5Sum: cb567acb5bfb34d888bc0a0094078037
+SHA256sum: f10a3e26beb920632f371f34376c2fb8f776656e5115966732f8582f7aedd162
+Description:  init samba config.
+
+Package: spiinit
+Version: 1.0
+Depends: libc, libpthread
+Source: package/qtec/spiInit
+Section: base
+Architecture: ipq806x
+Installed-Size: 7235
+Filename: spiinit_1.0_ipq806x.ipk
+Size: 7930
+MD5Sum: 65458d90f3b6d643f34cf5ec3b015594
+SHA256sum: a1ef922517e1f55bea865e356586395b8aa9b01ee2376302d342a1adac2eff0b
+Description:  init spi device(security chip).
+
+Package: swconfig
+Version: 10
+Depends: libc, libuci, libnl-tiny
+Source: package/network/config/swconfig
+License: GPL-2.0
+Section: base
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 7358
+Filename: swconfig_10_ipq806x.ipk
+Size: 8133
+MD5Sum: e687e7546a6b42ae0e9589a792b099e7
+SHA256sum: 69d5bf6fdf0f5c41a853d5693819a0fd9e2b9177bfe02cc862d7f9e04e9ce7cb
+Description:  Switch configuration utility
+
+Package: tc
+Version: 4.0.0-1
+Depends: libc, kmod-sched-core
+Source: package/network/utils/iproute2
+License: GPL-2.0
+Section: net
+Maintainer: Russell Senior <russell@personaltelco.net>
+Architecture: ipq806x
+Installed-Size: 103646
+Filename: tc_4.0.0-1_ipq806x.ipk
+Size: 104334
+MD5Sum: 503b234bbd993d61392841d81baa5390
+SHA256sum: def2cebe3d9dbeb9cf2090a2cb0eb2ae7b4efc3f24ff0cd6c116cf3a5a7b2f80
+Description:  Traffic control utility
+
+Package: tcpdump
+Version: 4.5.1-4
+Depends: libc, libpcap
+Source: package/network/utils/tcpdump
+License: BSD-3-Clause
+Section: net
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 290316
+Filename: tcpdump_4.5.1-4_ipq806x.ipk
+Size: 290730
+MD5Sum: 9fe38c3c4986e67d827314ce654767f0
+SHA256sum: 45bbe862465aad491dd029b1f691a0f27e700126664eafab58befc77934a300f
+Description:  Network monitoring and data acquisition tool
+
+Package: terminfo
+Version: 5.9-2
+Depends: libc
+Source: package/libs/ncurses
+License: MIT
+LicenseFiles: README
+Section: libs
+Architecture: ipq806x
+Installed-Size: 5819
+Filename: terminfo_5.9-2_ipq806x.ipk
+Size: 6488
+MD5Sum: 308045b91f49cb37df8150eaba7da735
+SHA256sum: 2839fbec33bb65bed891f7bfa3bab3d862aaf169e08ffc16de56368bfac82a7a
+Description:  Terminal Info Database (ncurses)
+
+Package: timertask
+Version: 1.0
+Depends: libc, libubus, libubox, libpthread, libuci, librtcfg, libstdcpp
+Source: package/qtec/timertask
+Section: base
+Architecture: ipq806x
+Installed-Size: 15663
+Filename: timertask_1.0_ipq806x.ipk
+Size: 16327
+MD5Sum: 2340443fa540253e9d667ae54d8c9828
+SHA256sum: 65326320508c77baf105feea05f139f759e2faef4fb3af4ce086334f9e7a715d
+Description:  timertask.
+
+Package: trace-cmd
+Version: v2.4.2-1
+Depends: libc
+Source: package/devel/trace-cmd
+License: GPL-2.0
+Section: devel
+Architecture: ipq806x
+Installed-Size: 95264
+Filename: trace-cmd_v2.4.2-1_ipq806x.ipk
+Size: 95917
+MD5Sum: 4672dbb957a7245e83047250fea38124
+SHA256sum: bb012b073226f399500a4e66e4f12a9717dd2a8ce1eeaf4743205d4013a84d05
+Description:  Linux trace command line utility
+
+Package: ubi-utils
+Version: 1.5.1-2
+Depends: libc
+Source: package/utils/ubi-utils
+License: GPLv2
+Section: utils
+Maintainer: John Crispin <blogic@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 72806
+Filename: ubi-utils_1.5.1-2_ipq806x.ipk
+Size: 73392
+MD5Sum: 48c81e3ebabb933357b0307582c8a429
+SHA256sum: 66ae2047f3d10025b5fc3ac4d2001390590930f805e97b65bce4d98f8a24f19b
+Description:  Utilities for manipulating memory technology devices.
+
+Package: uboot-envtools
+Version: 2014.10-2
+Depends: libc
+Source: package/boot/uboot-envtools
+License: GPL-2.0 GPL-2.0+
+LicenseFiles: Licenses/README
+Section: utils
+Architecture: ipq806x
+Installed-Size: 11104
+Filename: uboot-envtools_2014.10-2_ipq806x.ipk
+Size: 11878
+MD5Sum: b4873e26f57c3d8a683b81545d72b9f4
+SHA256sum: ada46771950399efff2377e2d302e6e5fe1a85054872991aa8a65376658c6e4a
+Description:  This package includes tools to read and modify U-Boot bootloader environment.
+
+Package: uboot-ipq40xx
+Version: g1d65974-dirty-1
+Depends: libc
+Source: package/boot/uboot-ipq40xx
+Section: boot
+Architecture: ipq806x
+Installed-Size: 105
+Filename: uboot-ipq40xx_g1d65974-dirty-1_ipq806x.ipk
+Size: 774
+MD5Sum: 89620bae487af52025295c3e4df5e101
+SHA256sum: ece657fb234c0561c3c0e17e846b91b4c4807be677293317f380e83d6fd4a230
+Description:  U-boot for ipq40xx  based platforms
+
+Package: uboot-ipq806x-fwupgrade-tools
+Version: g1d65974-dirty-1
+Depends: libc
+Source: package/boot/uboot-ipq806x
+Section: boot
+Architecture: ipq806x
+Installed-Size: 61596
+Filename: uboot-ipq806x-fwupgrade-tools_g1d65974-dirty-1_ipq806x.ipk
+Size: 61758
+MD5Sum: ac9d90a18f2d7ac331e3b4f87da5eb32
+SHA256sum: aff149854661bbef4c9c5adbc064cea31f9e130667379a23d225898d321ddbd5
+Description:  U-boot images tools (dumpimage, mkimage)
+
+Package: uboot-ipq806x
+Version: g1d65974-dirty-1
+Depends: libc
+Source: package/boot/uboot-ipq806x
+Section: boot
+Architecture: ipq806x
+Installed-Size: 105
+Filename: uboot-ipq806x_g1d65974-dirty-1_ipq806x.ipk
+Size: 780
+MD5Sum: eb5620b6f93bfc78cd92a3ceff5e05dd
+SHA256sum: 26e68e699c3aae4187a502396f7fd3a45bc56754fd2e67d4c313b436fd15e22f
+Description:  U-boot for IPQ806x based platforms
+
+Package: ubox
+Version: 2015-11-22-c086167a0154745c677f8730a336ea9cf7d71031
+Depends: libc, libubox, ubusd, ubus, libubus, libuci
+Source: package/system/ubox
+License: GPL-2.0
+Section: base
+Maintainer: John Crispin <blogic@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 12894
+Filename: ubox_2015-11-22-c086167a0154745c677f8730a336ea9cf7d71031_ipq806x.ipk
+Size: 13676
+MD5Sum: b885a14034ce4ae07c15639db4140dff
+SHA256sum: b865099e4c9bae1ce859bad7fb4821553ec702fb0b6ea62a0e76fb6ba416e3e4
+Description:  OpenWrt system helper toolbox
+
+Package: ubus
+Version: 2015-05-25-f361bfa5fcb2daadf3b160583ce665024f8d108e
+Depends: libc, libubus, libblobmsg-json, ubusd
+Source: package/system/ubus
+License: LGPL-2.1
+Section: base
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 3573
+Filename: ubus_2015-05-25-f361bfa5fcb2daadf3b160583ce665024f8d108e_ipq806x.ipk
+Size: 4365
+MD5Sum: ec2a3d1c10926e4a44e1b2131dc9aff2
+SHA256sum: 46bd2c9cd3b476e43545281890131f0eec820fdfbdab2e8784dc5532680c179f
+Description:  OpenWrt RPC client utility
+
+Package: ubusd
+Version: 2015-05-25-f361bfa5fcb2daadf3b160583ce665024f8d108e
+Depends: libc, libubox
+Source: package/system/ubus
+License: LGPL-2.1
+Section: base
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 6714
+Filename: ubusd_2015-05-25-f361bfa5fcb2daadf3b160583ce665024f8d108e_ipq806x.ipk
+Size: 7501
+MD5Sum: 33d730494e90d2e9e8e59a02a1b6e3f9
+SHA256sum: 13bc1d2d77bdb99d588cac13b98ff50c9141b1dfeda3a2e4fef7ab74e6f7c6df
+Description:  OpenWrt RPC daemon
+
+Package: uci
+Version: 2015-08-27.1-1
+Depends: libc, libuci
+Source: package/system/uci
+License: LGPL-2.1
+Section: base
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 6480
+Filename: uci_2015-08-27.1-1_ipq806x.ipk
+Size: 7234
+MD5Sum: e8e223afbfe399e0a12d756f5645c9bd
+SHA256sum: 4856f4dfde05742fddf04e0444d8b134d838234412a7aad6a845f6cedab28b58
+Description:  Utility for the Unified Configuration Interface (UCI)
+
+Package: uclibcxx
+Version: 0.2.4-1
+Depends: libc
+Source: package/libs/uclibc++
+License: LGPL-2.1+
+Section: libs
+Architecture: ipq806x
+Installed-Size: 55058
+Filename: uclibcxx_0.2.4-1_ipq806x.ipk
+Size: 55558
+MD5Sum: 14ed9b3e3e1a9f1f7f750cf97c639532
+SHA256sum: eaf17248bc3d7421e5de7ef9731dca1d0634b2373d10b76164f5ecf8dbae2937
+Description:  C++ library for embedded systems
+
+Package: uhttpd-mod-ubus
+Version: 2015-11-08-fe01ef3f52adae9da38ef47926cd50974af5d6b7
+Depends: libc, uhttpd, libubus, libblobmsg-json
+Source: package/network/services/uhttpd
+License: ISC
+Section: net
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 5539
+Filename: uhttpd-mod-ubus_2015-11-08-fe01ef3f52adae9da38ef47926cd50974af5d6b7_ipq806x.ipk
+Size: 6371
+MD5Sum: ce0ba73e9c5675b6740bc83515ac4a49
+SHA256sum: 96bf1958f2009cb3b6d8ea17866141c8855fbecca70194298d44d61a69f0a3a2
+Description:  The ubus plugin adds a HTTP/JSON RPC proxy for ubus and publishes the
+ session.* namespace and procedures.
+
+Package: uhttpd
+Version: 2015-11-08-fe01ef3f52adae9da38ef47926cd50974af5d6b7
+Depends: libc, libubox, libblobmsg-json, libjson-script
+Source: package/network/services/uhttpd
+License: ISC
+Section: net
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 21715
+Filename: uhttpd_2015-11-08-fe01ef3f52adae9da38ef47926cd50974af5d6b7_ipq806x.ipk
+Size: 22563
+MD5Sum: 79a994254009270da263def296353780
+SHA256sum: 63552dc16c0a3c9c214b1104307991e18a4b156f691af35570c19a3483db1674
+Description:  uHTTPd is a tiny single threaded HTTP server with TLS, CGI and Lua
+ support. It is intended as a drop-in replacement for the Busybox
+ HTTP daemon.
+
+Package: usbutils
+Version: 007-1
+Depends: libc, libusb-1.0, zlib, librt, libpthread
+Source: package/utils/usbutils
+Section: utils
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 207098
+Filename: usbutils_007-1_ipq806x.ipk
+Size: 207985
+MD5Sum: 80915b415b2db436968d0856a19d6806
+SHA256sum: 01f2eb518a22499f8982972102c0bfbc6a8ccae21070175d409fb7e8d33bd057
+Description:  USB devices listing utilities
+
+Package: usign
+Version: 2015-05-08-cf8dcdb8a4e874c77f3e9a8e9b643e8c17b19131
+Depends: libc, libubox
+Source: package/system/usign
+License: ISC
+Section: base
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 9592
+Filename: usign_2015-05-08-cf8dcdb8a4e874c77f3e9a8e9b643e8c17b19131_ipq806x.ipk
+Size: 10404
+MD5Sum: d133a17d83c72df68a97b1f789a94be8
+SHA256sum: 377fef389027ad1d91acd23b10809049071f8b9585a2685eb08d4629a4a06e0d
+Description:  OpenWrt signature verification utility
+
+Package: wdsctrl
+Version: 1.0
+Depends: libc, libpthread, librtcfg
+Source: package/qtec/wdsCtrl
+Section: base
+Architecture: ipq806x
+Installed-Size: 1474
+Filename: wdsctrl_1.0_ipq806x.ipk
+Size: 2176
+MD5Sum: fd9b3aa0896a2c35986565748391123a
+SHA256sum: f80deffe2b984b95158605cf65b2c6b27a0c06036e71cdfd0c21f80feb2b71fe
+Description:  Display things on led screen.
+
+Package: wireless-tools
+Version: 29-5
+Depends: libc
+Source: package/network/utils/wireless-tools
+License: GPL-2.0
+Section: net
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 22112
+Filename: wireless-tools_29-5_ipq806x.ipk
+Size: 22900
+MD5Sum: 7edb48611d55423ab23c22e1652ec68d
+SHA256sum: 3ed3c7bd75d4cd5ae2ea1b8d49e5061e9586fc2c41c98db274dbe584811f06ca
+Description:  This package contains a collection of tools for configuring wireless
+ adapters implementing the "Linux Wireless Extensions".
+
+Package: zlib
+Version: 1.2.8-1
+Depends: libc
+Source: package/libs/zlib
+License: Zlib
+LicenseFiles: README
+Section: libs
+Architecture: ipq806x
+Installed-Size: 38278
+Filename: zlib_1.2.8-1_ipq806x.ipk
+Size: 39088
+MD5Sum: 887b95538ab005199ad22a408751c05a
+SHA256sum: 5a04789bf2e9cea99c5626e8d3ac0d7957d8dd8ed09d8897535485cd349eb187
+Description:  Library implementing the deflate compression method
+

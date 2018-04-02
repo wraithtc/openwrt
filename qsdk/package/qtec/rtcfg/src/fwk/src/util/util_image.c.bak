@@ -1,0 +1,158 @@
+#include "fwk.h"
+
+
+#define UTIL_CFG_FILENAME_MAX_LEN  (128)
+#define UTIL_ETC_PATH          "/usr/S304/etc/"
+#define UTIL_VAR_ETC_PATH      "/var/config/etc/"
+#define UTIL_DESKTOP_ROOT_PATH "../../../"
+#define UTIL_SOFT_FEATURE_CFG  "soft_feature.cfg"
+#define UTIL_DEFAULT_CFG       "default.cfg"
+#define UTIL_FACTORY_CFG       "factory.cfg"
+
+//judge the process running or not 
+UBOOL8 vosImg_isAppRunning(void *msgHandle, VosEntityId eid)
+{
+    VOS_RET_E ret = VOS_RET_SUCCESS;
+
+    vosLog_debug("Enter>, eid = %u", eid);
+
+    ret = UTIL_sendRequestToSmd(msgHandle,
+                             VOS_MSG_IS_APP_RUNNING,
+                             eid,
+                             NULL,
+                             0);
+    return (VOS_RET_SUCCESS == ret ? TRUE : FALSE);
+}
+
+VOS_RET_E cmc_sysSaveIfNameFromSocket(SINT32 socketfd, char *connIfName)
+{
+    return VOS_RET_SUCCESS;
+}
+
+
+void vosImg_sendLoadStartingMsg(void *msgHandle, const char *connIfName)
+{
+	return;
+}
+
+void vosImg_sendLoadDoneMsg(void *msgHandle)
+{
+    return;
+}
+
+
+/* timestamp.c*/
+
+/** OS independent timestamp structure.
+ */
+typedef struct
+{
+    UINT32 sec;   /**< Number of seconds since some arbitrary point. */
+    UINT32 nsec;  /**< Number of nanoseconds since some arbitrary point. */
+} VosTimestamp;
+
+void cmsTms_get(VosTimestamp *tms)
+{
+   //oalTms_get(tms);
+}
+
+
+UINT32 cmsTms_deltaInMilliSeconds(const VosTimestamp *newTms,
+                                  const VosTimestamp *oldTms)
+{
+    return 0;
+}                                  
+/* end*/
+
+
+void util_saveLogToFlash(void *msgHandle)
+{
+    if (vosImg_isAppRunning(msgHandle, EID_SYSLOGD))//whether syslog is running or not
+    {
+        VosMsgHeader msg = EMPTY_MSG_HEADER;
+        msg.type = VOS_MSG_SET_LOG_SAVETOFLASH;
+        msg.src = vosMsg_getHandleEid(msgHandle);
+        msg.dst = EID_SYSLOGD;
+        msg.flags_request = 1;
+        vosMsg_send(msgHandle, &msg);
+    }
+}
+
+
+UBOOL8 vosImg_isConfigFileLikely(const char *buf)
+{
+    return TRUE;
+}
+
+
+const char *vosImg_getSoftFeatureCfg(void)
+{
+    static char filename[UTIL_CFG_FILENAME_MAX_LEN];
+
+    UTIL_SNPRINTF(filename, sizeof(filename), 
+#ifdef DESKTOP_LINUX
+        UTIL_DESKTOP_ROOT_PATH
+#endif
+        UTIL_ETC_PATH "/%s/" UTIL_SOFT_FEATURE_CFG,
+        SF_GetFeatureStr(SF_FEATURE_ID_SF_CFG_NAME));
+
+    return filename;
+}
+
+
+const char *vosImg_getVarSoftFeatureCfg(void)
+{
+    static char filename[UTIL_CFG_FILENAME_MAX_LEN];
+
+    UTIL_SNPRINTF(filename, sizeof(filename), 
+#ifdef DESKTOP_LINUX
+        UTIL_DESKTOP_ROOT_PATH
+#endif
+        UTIL_VAR_ETC_PATH UTIL_SOFT_FEATURE_CFG);
+
+    return filename;
+}
+
+
+const char *vosImg_getFactoryCfg(void)
+{
+    static char filename[UTIL_CFG_FILENAME_MAX_LEN];
+
+    UTIL_SNPRINTF(filename, sizeof(filename),
+#ifdef DESKTOP_LINUX
+        UTIL_DESKTOP_ROOT_PATH
+#endif
+        UTIL_ETC_PATH "/" UTIL_FACTORY_CFG);
+
+   return filename;
+}
+
+
+const char *vosImg_getDefaultCfg(void)
+{
+    static char filename[UTIL_CFG_FILENAME_MAX_LEN];
+
+    UTIL_SNPRINTF(filename, sizeof(filename),
+#ifdef DESKTOP_LINUX
+        UTIL_DESKTOP_ROOT_PATH
+#endif
+        UTIL_ETC_PATH "/%s/" UTIL_DEFAULT_CFG,
+        SF_GetFeatureStr(SF_FEATURE_ID_SF_CFG_NAME));
+
+    return filename;
+}
+
+
+const char *vosImg_getVarDefaultCfg(void)
+{
+    static char filename[UTIL_CFG_FILENAME_MAX_LEN];
+
+    UTIL_SNPRINTF(filename, sizeof(filename),
+#ifdef DESKTOP_LINUX
+        UTIL_DESKTOP_ROOT_PATH
+#endif
+        UTIL_VAR_ETC_PATH UTIL_DEFAULT_CFG);
+
+    return filename;
+}
+

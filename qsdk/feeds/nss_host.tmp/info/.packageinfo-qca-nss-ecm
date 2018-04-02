@@ -1,0 +1,91 @@
+Source-Makefile: feeds/nss_host/qca-nss-ecm/Makefile
+Package: kmod-qca-nss-ecm-noload
+Menu: 1
+Submenu: Network Support
+Version: <LINUX_VERSION>+g40faf72-1
+Depends: @TARGET_ipq806x||TARGET_ipq807x||TARGET_ipq +kmod-qca-nss-drv +iptables-mod-extra +kmod-ipt-conntrack +kmod-ipv6 +kmod-shortcut-fe-drv +kmod-l2tp +kmod-pppol2tp +kmod-bonding +kmod-pptp @!LINUX_3_18
+Conflicts: 
+Menu-Depends: 
+Provides: kmod-qca-nss-ecm
+Section: kernel
+Category: Kernel modules
+Title: QCA NSS Enhanced Connection Manager (ECM)
+Maintainer: 
+Source: qca-nss-ecm-g40faf72.tar.gz
+Type: ipkg
+Kernel-Config: CONFIG_BRIDGE_NETFILTER=y
+Description: QCA NSS Enhanced Connection Manager (ECM)
+
+@@
+
+Package: kmod-qca-nss-ecm
+Menu: 1
+Submenu: Network Support
+Version: <LINUX_VERSION>+g40faf72-1
+Depends: @TARGET_ipq806x||TARGET_ipq807x||TARGET_ipq +kmod-qca-nss-drv +iptables-mod-extra +kmod-ipt-conntrack +kmod-ipv6 +kmod-shortcut-fe-drv +kmod-l2tp +kmod-pppol2tp +kmod-bonding +kmod-pptp @!LINUX_3_18
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: kernel
+Category: Kernel modules
+Title: QCA NSS Enhanced Connection Manager (ECM)
+Maintainer: 
+Source: qca-nss-ecm-g40faf72.tar.gz
+Type: ipkg
+Kernel-Config: CONFIG_BRIDGE_NETFILTER=y
+Description: QCA NSS Enhanced Connection Manager (ECM)
+
+@@
+Config:
+
+
+menu "ECM Configuration"
+	config QCA_NSS_ECM_EXAMPLES_PCC
+		bool "Build PCC usage example"
+		help
+			Selecting this will build the PCC classifier usage example module.
+		default n
+endmenu
+@@
+
+Package: kmod-qca-nss-ecm-premium-noload
+Menu: 1
+Submenu: Network Support
+Version: <LINUX_VERSION>+g40faf72-1
+Depends: @TARGET_ipq806x||TARGET_ipq807x||TARGET_ipq +kmod-qca-nss-drv +iptables-mod-extra +kmod-ipt-conntrack +kmod-ipv6 +kmod-shortcut-fe-drv +kmod-l2tp +kmod-pppol2tp +kmod-bonding +kmod-pptp @!LINUX_3_18 +kmod-qca-hyfi-bridge +kmod-qca-mcs +kmod-nat46
+Conflicts: 
+Menu-Depends: 
+Provides: kmod-qca-nss-ecm-premium
+Build-Variant: premium
+Section: kernel
+Category: Kernel modules
+Title: QCA NSS Enhanced Connection Manager (ECM) (with premium features)
+Maintainer: 
+Source: qca-nss-ecm-g40faf72.tar.gz
+Type: ipkg
+Kernel-Config: CONFIG_BRIDGE_NETFILTER=y
+Description: QCA NSS Enhanced Connection Manager (ECM) (with premium features)
+
+@@
+
+Package: kmod-qca-nss-ecm-premium
+Menu: 1
+Submenu: Network Support
+Version: <LINUX_VERSION>+g40faf72-1
+Depends: @TARGET_ipq806x||TARGET_ipq807x||TARGET_ipq +kmod-qca-nss-drv +iptables-mod-extra +kmod-ipt-conntrack +kmod-ipv6 +kmod-shortcut-fe-drv +kmod-l2tp +kmod-pppol2tp +kmod-bonding +kmod-pptp @!LINUX_3_18 +kmod-qca-hyfi-bridge +kmod-qca-mcs +kmod-nat46
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: premium
+Section: kernel
+Category: Kernel modules
+Title: QCA NSS Enhanced Connection Manager (ECM) (with premium features)
+Maintainer: 
+Source: qca-nss-ecm-g40faf72.tar.gz
+Type: ipkg
+Kernel-Config: CONFIG_BRIDGE_NETFILTER=y
+Description: QCA NSS Enhanced Connection Manager (ECM) (with premium features)
+
+@@
+
+

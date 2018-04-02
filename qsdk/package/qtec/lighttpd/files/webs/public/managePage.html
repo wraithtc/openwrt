@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--[if lt IE 9 ]>
+<html class="ie" lang="zh-cn"><![endif]-->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" >
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="./public/styles/normalize.css">
+    <link rel="stylesheet" type="text/css" href="./public/styles/common.css?v=1.01.1">
+    <link rel="stylesheet" type="text/css" href="./public/styles/home.css?v=1.01.1">
+    <link rel="stylesheet" type="text/css" href="./public/styles/settings.css?v=1.01.1">
+    <link rel="stylesheet" type="text/css" href="./public/styles/extend.css?v=1.01.1">
+    <script src="./public/javascripts/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<header>
+    <div class="header">
+        <div class="nav">
+            <div class="logo"><span>量子云管家</span></div>
+            <div class="menu">
+                <ul>
+                    <li><a class="active" href="javascript:void(0)">首页</a></li>
+                    <li><a href="javascript:void(0)">路由设置</a></li>
+                    <li><a href="javascript:void(0)">功能扩展</a></li>
+                    <!--<li><a href="./#">智能存储</a></li>-->
+                </ul>
+            </div>
+        </div>
+        <div class="logout-content"><a class="logout" href="javascript:void(0)">注销</a></div>
+    </div>
+</header>
+<div class="container"></div>
+<div class="tipshow" style="display: none;">
+    <div class="result-content">
+        <div class="failed-icon hide"><img src="./public/images/failed.png" alt="failed..."></div>
+        <div class="success-icon hide"><img src="./public/images/succees.png" alt="succees..."></div>
+        <span class="result-tip"></span>
+    </div>
+</div>
+<div class="loading shadow" style="display: none;">
+    <div class="loading-content">
+        <div class="loading-img">
+            <img src="./public/images/spinner.gif" alt="loading...">
+        </div>
+        <span class="loading-tip">正在保存，请稍候...</span>
+    </div>
+</div>
+<script src="./public/javascripts/error.js?v=1.01.1"></script>
+<script src="./public/javascripts/interceptor.js?v=1.01.1"></script>
+</body>
+</html>

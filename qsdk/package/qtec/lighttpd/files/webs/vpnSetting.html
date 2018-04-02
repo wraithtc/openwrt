@@ -1,0 +1,69 @@
+<div class="vpn-setting">
+    <div class="title-description text-left">
+        <span class="title-main">VPN设置</span><!--<br>-->
+        <span class="detail-description">通过本页面的设置，能将路由器连上VPN</span>
+    </div>
+    <div class="vpn-setting-content frame-content">
+        <div class="vpn-set-form">
+            <p class="title-item">VPN添加</p>
+            <div class="form-item">
+                <label>名称</label>
+                <input type="text" class="vpn-name" maxlength="16" autocomplete="off"/>
+            </div>
+            <div class="form-item">
+                <label>协议类型</label>
+                <select class="vpn-tpye">
+                    <option value="L2TP">L2TP</option>
+                    <option value="PPTP">PPTP</option>
+                </select>
+            </div>
+            <div class="form-item">
+                <label>服务器地址</label>
+                <input type="text" class="vpn-server-ip" maxlength="63" autocomplete="off"/>
+            </div>
+            <div class="form-item">
+                <label>用户名</label>
+                <input type="text" class="vpn-username" maxlength="32" autocomplete="off"/>
+            </div>
+            <div class="form-item">
+                <label>密码</label>
+                <input class="vpn-pwd" type="password" maxlength="32" placeholder="" autocomplete="off" >
+                <!--<div class="pwd-item">-->
+                <!--<input class="vpn-pwd" type="password" maxlength="128" placeholder="" autocomplete="off" >-->
+                <!--<span class="pwd-switch hidePassword"></span>-->
+                <!--</div>-->
+            </div>
+            <div class="setting-save vpn-btn">
+                <button class="vpn-setting-save save-btn" type="button">
+                    <span>添加</span>
+                    <b class="disabled hide"></b>
+                </button>
+                <button class="vpn-modify-cancel modify-btn hide" type="button">取消</button>
+                <button class="vpn-setting-modify modify-btn hide" type="button">
+                    <span>修改</span>
+                    <b class="disabled hide"></b>
+                </button>
+            </div>
+        </div>
+        <div class="vpn-addlist">
+            <p class="title-item">VPN服务列表</p>
+            <div class="vpn-table">
+                <table>
+                    <thead class="table-thead">
+                    <tr>
+                        <th>序列号</th>
+                        <th>名称</th>
+                        <th>协议类型</th>
+                        <th>服务器地址</th>
+                        <th>用户名</th>
+                        <th>密码</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody class="vpn-info"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

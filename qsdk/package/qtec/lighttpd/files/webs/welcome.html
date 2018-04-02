@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!--[if lt IE 9 ]>
+<html class="ie" lang="zh-cn"><![endif]-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>欢迎使用</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" >
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="./public/styles/common.css?v=1.01.4a">
+    <link rel="stylesheet" type="text/css" href="./public/styles/welcome.css?v=1.01.4a">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="router-logo"><img src="./public/images/smart_home.png" alt="smart_home-logo"></div>
+            <div class="welcome">
+                <span class="welcome-info">欢迎使用九州量子路由器</span>
+            </div>
+            <div class="protocol"><span class="">请先阅读《<a href="javascript:protocol()">用户许可协议</a>》后选择是否同意</span></div>
+            <div class="agree"><button class="agree-btn" id="continue" type="submit" >同意，继续</button></div>
+            <!--<div class="join-plan">-->
+                <!--<label><input class="planChecked" type="checkbox" checked><span>加入《<a href="javascript:void(0)" onclick="plan()">用户体验改进计划</a>》</span></label>-->
+            <!--</div>-->
+            <div class="protocol-content">
+                <div class="protocol-box">
+                    <h2>用户许可协议</h2>
+                    <span>一、用户许可协议</span>
+                    <span></span>
+                    <button class="protocol-btn" type="button">确认</button>
+                </div>
+            </div>
+            <!--<div class="plan-content">-->
+                <!--<div class="plan-box">-->
+                    <!--<h2>用户体验计划</h2>-->
+                    <!--<span>一、用户体验计划</span>-->
+                    <!--<span></span>-->
+                    <!--<button class="plan-btn" type="button">确认</button>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="tip hide">-->
+                <!--<div class="tip-content">-->
+                    <!--<div class="tip-header"><span>提示</span></div>-->
+                    <!--<div class="tip-main"><span>确认不参加用户体验计划？</span></div>-->
+                    <!--<div class="tip-btn">-->
+                        <!--<button class="continue" type="button">不参加</button>-->
+                        <!--<button class="aggree" type="button">同意并继续</button>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+    </div>
+    <script src="./public/javascripts/jquery-3.2.1.min.js"></script>
+    <script>
+        function reloading() {
+            var data={
+                "requestUrl": "get_systemconfigure_cfg",
+                "method": "get"
+            };
+            $.ajax({
+                type:'POST',
+                url:'/cgi-bin/web.cgi/',
+                data:JSON.stringify(data),
+                dataType:'json',
+                success:function (res) {
+                    if(res.errorcode==0) {
+                        if (res.data.configured == 1) {
+                            location.href = './login.html';
+                        }else {
+                            console.log(res.msg)
+                        }
+                    }
+                },
+                error:function () {
+                    setTimeout(function () {
+                        reloading();
+                    },3000)
+                }
+            })
+        }
+        reloading();
+        function protocol() {
+            $('.protocol-content').fadeIn();
+        }
+//        function plan() {
+//            var evt = evt || window.event; //获取event对象
+//            if (evt.preventDefault) {
+//                evt.preventDefault(); //非IE浏览器
+//            } else {
+//                evt.returnValue = false; //在早期的IE版本中
+//            }
+//            event.stopPropagation ? event.stopPropagation() : (event.cancelBubble = true); //阻止事件冒泡
+//            $('.plan-content').fadeIn();
+//        }
+        $('.protocol-btn').click(function () {
+            $('.protocol-content').fadeOut();
+        })
+//        $('.plan-btn').click(function () {
+//            $('.plan-content').fadeOut();
+//        })
+        $('.agree-btn').click(function () {
+//            if($('.planChecked').is(':checked')){
+                location.href='connectWays.html';
+//            }else {
+//                $('.tip').removeClass('hide');
+//            }
+        })
+//        $('.aggree').click(function () {
+//            $('.planChecked').attr('checked',true);
+//            location.href='./connectWays.html';
+//        })
+//        $('.continue').click(function () {
+//            location.href='./connectWays.html';
+//        })
+    </script>
+</body>
+</html>

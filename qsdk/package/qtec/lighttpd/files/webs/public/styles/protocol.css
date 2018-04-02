@@ -1,0 +1,155 @@
+html,body{
+    background-color: #fff;
+}
+button,.button:focus{
+    background: #179CF3;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    border: 1px solid #179CF3;
+    border-radius: 5px;
+}
+button:hover{
+    background: #39AAF5;
+    border-color: #39AAF5;
+    opacity: 0.95;
+    transition: all 0.3s ease;
+}
+.container span{
+    color: #424242;
+}
+.container a{
+    color: #424242;
+    text-decoration: none;
+    opacity: .8;
+}
+.row{
+    width: 496px;
+    margin: 0 auto;
+    margin-top: 80px;
+}
+.router-logo{
+    margin-bottom: 40px;
+}
+.welcome{
+    margin-bottom: 24px;
+}
+.welcome-info {
+    width: 468px;
+    margin: 0 auto;
+    font-size: 24px;
+    padding-bottom: 26px;
+    border-bottom: 1px solid #D6D4D4;
+    display: block;
+    text-align: center;
+}
+.protocol{
+    font-size: 16px;
+    text-align: center;
+}
+.protocol a {
+    font-size: 16px;
+}
+.agree{
+    margin-top: 14px;
+    text-align: center;
+}
+.agree-btn {
+    width: 324px;
+    padding: 10px 0;
+}
+.join-plan{
+    font-size: 18px;
+    padding-top: 6px;
+    text-align: center;
+}
+.join-plan input{
+    vertical-align: text-top;
+    margin: 3px 3px 0 4px;
+}
+.ie [type="checkbox"]{
+    padding: 0;
+}
+[type="checkbox"]{
+    padding: 0\0
+}
+.protocol-content,.plan-content{
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 20;
+    background-color: rgba(0,0,0,0.5);
+}
+.protocol-box,.plan-box{
+    width: 400px;
+    height: 520px;
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    margin-left: -200px;
+    background-color: #fff;
+    border-radius: 3px;
+    overflow: hidden;
+}
+.protocol-box h2,.plan-box h2{
+    font-size: 18px;
+    text-align: center;
+}
+.protocol-box span,.plan-box span{
+    text-align: left;
+    padding: 10px 30px;
+}
+.protocol-box button,.plan-box button{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 0;
+    border: none;
+    border-top: 1px solid #bdbdbd;
+    background-color: #fff;
+    color: #179CF3;
+}
+.tip{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.5);
+    text-align: center;
+}
+.tip-content{
+    position: absolute;
+    width: 360px;
+    height: 180px;
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    top:50%;
+    left: 50%;
+    margin-top: -90px;
+    margin-left: -180px;
+}
+.tip-header{
+    padding: 8px 0;
+    font-size: 16px;
+}
+.tip-main{
+    font-size: 16px;
+    padding: 22px 0;
+}
+.tip-btn{
+    padding-top: 10px;
+}
+.tip-btn button{
+    display: inline-block;
+    text-align: center;
+    padding: 6px 0;
+    width: 100px;
+    margin: 0 10px;
+}

@@ -1,0 +1,77 @@
+<div class="wifi-interval">
+    <div class="title-description">
+        <span class="title-main">wifi定时</span>
+        <span class="detail-description">工作上班关闭wifi省时省电</span>
+    </div>
+    <div class="wifi-interval-content frame-content">
+        <div class="add-wifi-interval">
+            <div class="interval-content">
+                <div class="interval-description-content">
+                    <label class="left-label">描述</label>
+                    <input class="interval-description" type="text" maxlength="16" placeholder="请输入描述" autocomplete="off">
+                </div>
+                <div class="timelist">
+                    <span class="lable-title left-label">时间段</span>
+                    <input type="text" maxlength="2" value="00" class="interval-hour-start hour" autocomplete="off"/>
+                    <label>时</label>
+                    <input type="text" maxlength="2" value="00" class="interval-minute-start minute" autocomplete="off"/>
+                    <label>分</label>
+                    <span class="children-line"></span>
+                    <input type="text" maxlength="2" value="00" class="interval-hour-end hour" autocomplete="off"/>
+                    <label>时</label>
+                    <input type="text" maxlength="2" value="00" class="interval-minute-end minute" autocomplete="off"/>
+                    <label>分</label>
+                </div>
+                <div class="date-list">
+                    <span class="repeat left-label">重复周期</span>
+                    <div class="data-choose add-interval-time">
+                        <div class="monday">
+                            <input type="checkbox" class="checkhide" checked="checked"/>
+                            <span>星期一</span>
+                        </div>
+                        <div class="tuesday">
+                            <input type="checkbox" class="checkhide" checked="checked"/>
+                            <span>星期二</span>
+                        </div>
+                        <div class="wednesday">
+                            <input type="checkbox" class="checkhide" checked="checked"/>
+                            <span>星期三</span>
+                        </div>
+                        <div class="thursday">
+                            <input type="checkbox" class="checkhide" checked="checked"/>
+                            <span>星期四</span>
+                        </div>
+                        <div class="friday">
+                            <input type="checkbox" class="checkhide" checked="checked"/>
+                            <span>星期五</span>
+                        </div>
+                        <div class="saturday">
+                            <input type="checkbox" class="checkhide" checked="checked"/>
+                            <span>星期六</span>
+                        </div>
+                        <div class="sunday">
+                            <input type="checkbox" class="checkhide" checked="checked"/>
+                            <span>星期日</span>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="effect-immediate"><span>是否立即生效：</span><input type="checkbox" checked><label>立即生效</label></div>-->
+                <div class="effect-tip"><span>如果设置的开始时间<b><</b>当前时间，则当前配置时段在下一个周期才能生效</span></div>
+                <div class="setting-save text-center" >
+                    <button class="interval-add save-btn" type="button">
+                        <span>添加</span>
+                        <b class="disabled hide"></b>
+                    </button>
+                </div>
+                <div class="interval-modify-btn text-center font-clear hide">
+                    <button class="modify-cancel btn">取消</button>
+                    <button class="wifi-interval-modify btn" type="button">
+                        <span>修改</span>
+                        <b class="disabled hide"></b>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="wifi-interval-table list-table"></div>
+    </div>
+</div>

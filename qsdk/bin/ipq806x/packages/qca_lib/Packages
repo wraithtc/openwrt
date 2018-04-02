@@ -1,0 +1,28 @@
+Package: libhyficommon
+Version: g1d65974-dirty-1
+Depends: libc
+Source: qca/feeds/qca-lib/libqcacommon
+Section: QCA
+Maintainer: Qualcomm Atheros, Inc.
+Architecture: ipq806x
+Installed-Size: 24050
+Filename: libhyficommon_g1d65974-dirty-1_ipq806x.ipk
+Size: 24727
+MD5Sum: 71ecf822beda7ce722886e3b9f8c614b
+SHA256sum: 171f602c4d225cf735b07b33c7f7f52706461f5721a632d25b37e565c2116fce
+Description:  This Package contains the Hy-Fi Common Functionality Library
+
+Package: qca-wifison-ext-lib
+Version: g1d65974-dirty-1
+Depends: libc
+Source: qca/feeds/qca-lib/qca-wifison-ext-lib
+Section: QCA
+Maintainer: Qualcomm Atheros, Inc.
+Architecture: ipq806x
+Installed-Size: 3464
+Filename: qca-wifison-ext-lib_g1d65974-dirty-1_ipq806x.ipk
+Size: 4183
+MD5Sum: 3c4bd0df1d48689fd7db82f545184015
+SHA256sum: e7d68046e9e31dcd2c8fcbc384ec8b26376294c5e83fc3937abf0b549851dd69
+Description:  This Package contains the Wifison Event Functionality Library
+

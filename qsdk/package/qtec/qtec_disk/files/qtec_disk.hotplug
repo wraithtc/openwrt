@@ -1,0 +1,17 @@
+#!/bin/ash  
+  
+case "$ACTION" in  
+    add)
+#        result=`cryptsetup status qtec_disk | grep "is active"`
+#       if [[ -z $result ]]
+#        then
+            qtec_disk.sh >/dev/console & 
+#        fi
+        exit
+        ;;  
+    remove)  
+	    qtec_disk.sh >/dev/console &
+        exit
+        ;;  
+esac 
+#/sbin/block hotplug

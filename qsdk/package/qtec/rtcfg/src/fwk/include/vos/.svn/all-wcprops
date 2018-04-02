@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/gwsw/S304/!svn/ver/24305/trunk/platform/src/fwk/include/vos
+END
+vos_msg.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/gwsw/S304/!svn/ver/24305/trunk/platform/src/fwk/include/vos/vos_msg.h
+END
+vos_log_security.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/gwsw/S304/!svn/ver/1017/trunk/platform/src/fwk/include/vos/vos_log_security.h
+END
+vos_mem.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/gwsw/S304/!svn/ver/13055/trunk/platform/src/fwk/include/vos/vos_mem.h
+END
+vos_defs.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/gwsw/S304/!svn/ver/24102/trunk/platform/src/fwk/include/vos/vos_defs.h
+END
+vos_eid.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/gwsw/S304/!svn/ver/24102/trunk/platform/src/fwk/include/vos/vos_eid.h
+END
+vos_log.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/gwsw/S304/!svn/ver/16157/trunk/platform/src/fwk/include/vos/vos_log.h
+END

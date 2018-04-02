@@ -1,0 +1,48 @@
+<div class="firmware-update">
+    <div class="title-description">
+        <span class="title-main">固件升级</span>
+    </div>
+    <div class="firmware-update-content">
+        <div class="version-check">
+            <div><span>当前固件版本：</span><span class="version">--</span></div>
+            <span class="newest-version"></span>
+            <div class="firmware-version" style="display: none;">
+                <div class="tip"><span>是否保存当前配置信息？</span></div>
+                <div class="config-checked"><input type="checkbox" checked="checked"><label class="config-tip">已选择保存配置</label></div>
+            </div>
+            <div class="update-btn setting-save">
+                <button class="check-again save-btn" type="button"><span>重新检测</span><b class="disabled hide"></b></button>
+                <!--<button class="upload-btn" type="button">手动升级<input class="manual-update" type="file"></button>-->
+            </div>
+            <div class="setting-save firmware-update-version" style="display: none;">
+                <button class="update-just save-btn" type="button">立即升级</button>
+            </div>
+        </div>
+        <!--<div class="firmware-update-version hide" style="display: none;">-->
+        <!--<div><span>检测到新版固件：</span><span class="update-version"></span></div>-->
+        <!--<div class="firmware-update-info">-->
+        <!--<span>更新内容：</span>-->
+        <!--<span class="firmware-update-detail"></span>-->
+        <!--</div>-->
+        <!--<div class="setting-save"><button class="update-just save-btn" type="button">立即升级</button></div>-->
+        <!--</div>-->
+        <div class="upgrade-progress" style="display: none;">
+            <span>升级进度：<span class="upgrade-status"></span></span>
+            <div class="am-progress am-progress-striped am-progress-sm am-active"><div class="am-progress-bar am-progress-bar-secondary"></div></div>
+            <span>正在升级，请勿关闭路由器或断开电源！</span>
+        </div>
+    </div>
+    <div class="upgrade-loading " style="display: none;">
+        <div class="waitting-box">
+            <span>正在升级请稍候,升级过程中路由器将会重启！</span>
+            <div class="am-progress am-progress-striped am-progress-sm am-active"><div class="am-progress-bar am-progress-bar-secondary"></div></div>
+            <span class="waitting-time">预计剩余时间<span class="upgrade-cutdown"></span>s</span>
+        </div>
+    </div>
+    <div class="update-failed" style="display: none;">
+        <div class="failed-info"><span></span></div>
+        <div class="setting-save">
+            <button class="failed-confirm save-btn" type="button">确定</button>
+        </div>
+    </div>
+</div>

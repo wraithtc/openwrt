@@ -1,0 +1,19 @@
+Source-Makefile: feeds/nss_host/qca-nss-drv/Makefile
+Package: kmod-qca-nss-drv
+Submenu: Network Devices
+Version: <LINUX_VERSION>+ge8a99a1-2
+Depends: +TARGET_ipq806x_QSDK_Deluxe:kmod-qca-nss-dp +TARGET_ipq807x:kmod-qca-nss-dp +TARGET_ipq_ipq807x:kmod-qca-nss-dp +TARGET_ipq_ipq807x_64:kmod-qca-nss-dp +TARGET_ipq806x_QSDK_Premium:kmod-qca-nss-gmac +TARGET_ipq806x_QSDK_Deluxe_Temp:kmod-qca-nss-gmac +TARGET_ipq_ipq806x:kmod-qca-nss-gmac +TARGET_ipq_ipq40xx:kmod-qca-nss-gmac +kmod-ppp +kmod-pppoe @!LINUX_3_18
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: kernel
+Category: Kernel modules
+Title: Kernel driver for NSS (core driver)
+Maintainer: 
+Source: qca-nss-drv-ge8a99a1.tar.gz
+Type: ipkg
+Description: Kernel driver for NSS (core driver)
+
+@@
+
+

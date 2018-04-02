@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/gwsw/S304/!svn/ver/24102/trunk/platform/src/fwk/src/vos
+END
+vos_mem.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/gwsw/S304/!svn/ver/16225/trunk/platform/src/fwk/src/vos/vos_mem.c
+END
+vos_eid.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/gwsw/S304/!svn/ver/24102/trunk/platform/src/fwk/src/vos/vos_eid.c
+END
+vos_log.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/gwsw/S304/!svn/ver/16157/trunk/platform/src/fwk/src/vos/vos_log.c
+END
+vos_msg.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/gwsw/S304/!svn/ver/9844/trunk/platform/src/fwk/src/vos/vos_msg.c
+END

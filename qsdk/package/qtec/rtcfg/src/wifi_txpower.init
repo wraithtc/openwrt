@@ -1,0 +1,14 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2006-2011 OpenWrt.org
+
+SERVICE_USE_PID=1
+
+START=90
+
+start() {
+	wifi_txpower_init
+}
+
+stop() {
+	wifi_txpower_init
+}

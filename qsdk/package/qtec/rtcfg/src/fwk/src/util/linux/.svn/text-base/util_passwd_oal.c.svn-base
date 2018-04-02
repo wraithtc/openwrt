@@ -1,0 +1,8 @@
+#include <crypt.h>
+
+#include "fwk.h"
+
+char * oalPass_crypt(const char *clear, const char *salt)
+{
+   return( crypt(clear, salt) );
+}

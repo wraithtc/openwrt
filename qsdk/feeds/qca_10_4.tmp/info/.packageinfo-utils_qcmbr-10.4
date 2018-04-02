@@ -1,0 +1,89 @@
+Source-Makefile: feeds/qca_10_4/utils/qcmbr-10.4/Makefile
+Package: qcmbr-10.4
+Version: g96b5b9e-dirty-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libpthread +librt
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: QCA
+Category: QCA Proprietary software
+Title: - QCA ART Driver & tools
+Maintainer: Qualcomm Atheros
+Source: qcmbr-g96b5b9e-dirty.tar.gz
+Type: ipkg
+Description: - QCA ART Driver & tools
+http://www.qca.qualcomm.com
+Qualcomm Atheros
+@@
+Config:
+	menu "custom source directory"
+		depends on PACKAGE_qcmbr
+	config qcmbr-10.4_USE_CUSTOM_SOURCE_DIR
+		depends on PACKAGE_qcmbr
+		bool "Use custom source directory"
+		default n
+	config qcmbr-10.4_CUSTOM_SOURCE_DIR
+		depends on qcmbr-10.4_USE_CUSTOM_SOURCE_DIR
+		string "Custom source directory"
+		default ""
+	endmenu
+	menu "overwrite package version"
+		depends on PACKAGE_qcmbr
+	config qcmbr-10.4_USE_CUSTOM_VERSION
+		depends on PACKAGE_qcmbr
+		bool "Use custom package version"
+		default n
+
+	config qcmbr-10.4_CUSTOM_VERSION
+		depends on qcmbr-10.4_USE_CUSTOM_VERSION
+		string "qcmbr-10.4 version as string (default version: g96b5b9e-dirty)"
+		default "g96b5b9e-dirty"
+
+	endmenu
+@@
+
+Package: qcmbr-10.4-netlink
+Version: g96b5b9e-dirty-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libpthread +librt +libnl-tiny
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: netlink
+Section: QCA
+Category: QCA Proprietary software
+Title: netlink - QCA ART Driver & tools
+Maintainer: Qualcomm Atheros
+Source: qcmbr-g96b5b9e-dirty.tar.gz
+Type: ipkg
+Description: netlink - QCA ART Driver & tools
+http://www.qca.qualcomm.com
+Qualcomm Atheros
+@@
+Config:
+  	menu "custom source directory"
+		depends on PACKAGE_qcmbr
+	config qcmbr-10.4_USE_CUSTOM_SOURCE_DIR
+		depends on PACKAGE_qcmbr
+		bool "Use custom source directory"
+		default n
+	config qcmbr-10.4_CUSTOM_SOURCE_DIR
+		depends on qcmbr-10.4_USE_CUSTOM_SOURCE_DIR
+		string "Custom source directory"
+		default ""
+	endmenu
+	menu "overwrite package version"
+		depends on PACKAGE_qcmbr
+	config qcmbr-10.4_USE_CUSTOM_VERSION
+		depends on PACKAGE_qcmbr
+		bool "Use custom package version"
+		default n
+
+	config qcmbr-10.4_CUSTOM_VERSION
+		depends on qcmbr-10.4_USE_CUSTOM_VERSION
+		string "qcmbr-10.4 version as string (default version: g96b5b9e-dirty)"
+		default "g96b5b9e-dirty"
+
+	endmenu
+@@
+
+

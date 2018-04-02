@@ -1,0 +1,22 @@
+--- ./docs/conf/httpd.conf.in	2018-01-15 02:52:50.390618294 -0800
++++ httpd-qtec.conf.in	2018-01-15 22:33:43.523120476 -0800
+@@ -38,7 +38,7 @@
+ # prevent Apache from glomming onto all bound IP addresses.
+ #
+ #Listen 12.34.56.78:80
+-Listen @@Port@@
++Listen 84
+ 
+ #
+ # Dynamic Shared Object (DSO) Support
+@@ -399,7 +399,9 @@
+ #Include @rel_sysconfdir@/extra/httpd-manual.conf
+ 
+ # Distributed authoring and versioning (WebDAV)
+-#Include @rel_sysconfdir@/extra/httpd-dav.conf
++
++
++Include @rel_sysconfdir@/extra/httpd-dav.conf
+ 
+ # Various default settings
+ #Include @rel_sysconfdir@/extra/httpd-default.conf

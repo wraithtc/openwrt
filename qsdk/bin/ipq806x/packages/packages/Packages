@@ -1,0 +1,1236 @@
+Package: alsa-lib
+Version: 1.0.28-1
+Depends: libc, kmod-sound-core, libpthread, librt
+Source: qca/feeds/packages/libs/alsa-lib
+License: LGPLv2.1 GPLv2
+LicenseFiles: COPYING aserver/COPYING
+Section: libs
+Maintainer: Peter Wagner <tripolar@gmx.at>
+Architecture: ipq806x
+Installed-Size: 279166
+Filename: alsa-lib_1.0.28-1_ipq806x.ipk
+Size: 275721
+MD5Sum: 0e8cf916263ed32f8642c5ae7f1c48bf
+SHA256sum: 0e2b0d28a6ca3047d1da4b250026c4db338263ee6b597981ff37154c9bc08317
+Description:  This is the library package for alsa, needed by some userspace programs.
+ You must have enabled the ALSA support in the kernel.
+
+Package: alsa-utils
+Version: 1.0.28-2
+Depends: libc, alsa-lib, libncurses, libpthread
+Source: qca/feeds/packages/utils/alsa-utils
+Section: utils
+Maintainer: Ted Hess <thess@kitschensync.net>
+Architecture: ipq806x
+Installed-Size: 118913
+Filename: alsa-utils_1.0.28-2_ipq806x.ipk
+Size: 117812
+MD5Sum: b71a8a28c3dd31bfbd6418f36e510120
+SHA256sum: ddbfa9d227353b931d10fb7ab4a54217bc01287be980a11d9de77eec415e5cba
+Description:  ALSA (Advanced Linux Sound Architecture) utilities
+
+Package: apache
+Version: 2.2.31-1
+Depends: libc, libapr, libaprutil, libpcre, libopenssl, unixodbc
+Source: qca/feeds/packages/net/apache
+License: Apache License
+Section: net
+Maintainer: Thomas Heil <heil@terminal-consulting.de>
+Architecture: ipq806x
+Installed-Size: 496967
+Filename: apache_2.2.31-1_ipq806x.ipk
+Size: 495660
+MD5Sum: b0c14a3d73940c08acdc23c22bcdcf92
+SHA256sum: 490a223add20cfc66cdc077fbbc586eecd16e53619c82ca50c6f49bb85bfffca
+Description:  The Apache Web Server is a powerful and flexible HTTP/1.1 compliant
+ web server.  Originally designed as a replacement for the NCSA HTTP
+ Server, it has grown to be the most popular web server on the Internet.
+ .
+ This package contains the Apache web server and utility programs.
+ .
+ Take care that you don't include apache at the moment into your image
+ please select it only as module because busybox will override
+ /usr/sbin/httpd. It'll be solved soon. If you need to include this
+ package in the image anyway, remove httpd from busybox
+ (Base system --> Configuration --> Networking Utilities --> httpd).
+ Also you should take care for the initscripts, apache's httpd isn't
+ compatible with the one from busybox, so if you want to use apache
+ for running your webif, you'll need to change the parameters in the
+ scripts and configure the rest in /etc/httpd.conf.
+
+Package: bridge
+Version: 1.5-3
+Depends: libc
+Source: qca/feeds/packages/net/bridge-utils
+License: GPL-2.0+
+LicenseFiles: COPYING
+Section: net
+Architecture: ipq806x
+Installed-Size: 8566
+Filename: bridge_1.5-3_ipq806x.ipk
+Size: 9385
+MD5Sum: 1dd864b123542f4390824ca6b38e39d4
+SHA256sum: 0293681f00a5e69d088e758e89941d4ccc33971a70ed9cc8627a7cc8b138f9d2
+Description:  Manage ethernet bridging: a way to connect networks together to
+ form a larger network.
+
+Package: coreutils-stty
+Version: 8.23-1
+Depends: libc, coreutils
+Source: qca/feeds/packages/utils/coreutils
+Section: utils
+Maintainer: Jo-Philipp Wich <jow@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 25045
+Filename: coreutils-stty_8.23-1_ipq806x.ipk
+Size: 25790
+MD5Sum: 2662f50ed81e102f5e5302aa640b3f38
+SHA256sum: 3a47828464917a8bde7807cba467c6082ab9850e0d9bb16368b17592a0ee9562
+Description:  Full version of standard GNU stty utility. Normally, you would not use this
+ package, since the functionality in BusyBox is more than sufficient.
+
+Package: coreutils
+Version: 8.23-1
+Depends: libc
+Source: qca/feeds/packages/utils/coreutils
+Section: utils
+Maintainer: Jo-Philipp Wich <jow@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 105
+Filename: coreutils_8.23-1_ipq806x.ipk
+Size: 883
+MD5Sum: 5cd23e7930a60fd7bd02acae656240ee
+SHA256sum: 97007a2be5433d0f57c9a37e0794e73c09e0d957ad16e3c2acf1cfbbd38da0c1
+Description:  Full versions of standard GNU utilities. Normally, you would not use this
+ package, since the functionality in BusyBox is more than sufficient and
+ smaller.
+
+Package: cryptsetup-openssl
+Version: 1.6.7-1
+Depends: libc, libblkid, libuuid, libpopt, lvm2, libdevmapper, libopenssl
+Source: qca/feeds/packages/utils/cryptsetup
+License: GPL-2.0+ LGPL-2.1+
+LicenseFiles: COPYING COPYING.LGPL
+Section: utils
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Architecture: ipq806x
+Installed-Size: 76924
+Filename: cryptsetup-openssl_1.6.7-1_ipq806x.ipk
+Size: 77503
+MD5Sum: 4fc7b6d95fe932ca5022881d5ed8434c
+SHA256sum: ddd78e0f4c2c42cdc1e554a2cc3947ee3c13f400daf378c435c31ec53c998572
+Description:  Cryptsetup-luks
+ linked against openssl
+
+Package: cryptsetup
+Version: 1.6.7-1
+Depends: libc, libblkid, libuuid, libpopt, lvm2, libdevmapper, libgcrypt
+Source: qca/feeds/packages/utils/cryptsetup
+License: GPL-2.0+ LGPL-2.1+
+LicenseFiles: COPYING COPYING.LGPL
+Section: utils
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Architecture: ipq806x
+Installed-Size: 77314
+Filename: cryptsetup_1.6.7-1_ipq806x.ipk
+Size: 77913
+MD5Sum: 747e762b6f228d6bae551cd90ad182a3
+SHA256sum: e864421bc5c5a3a9bcb04f08b3460414766d818758dc31825769e4cbfbfbd8ba
+Description:  Cryptsetup-luks
+ linked against libgcrypt
+
+Package: davfs2
+Version: 1.5.2-1
+Depends: libc, libopenssl, libneon, libiconv, libintl, libexpat, kmod-fuse, libfuse
+Source: qca/feeds/packages/net/davfs2
+Section: net
+Maintainer: Federico Di Marco <fededim@gmail.com>
+Architecture: ipq806x
+Installed-Size: 45718
+Filename: davfs2_1.5.2-1_ipq806x.ipk
+Size: 46691
+MD5Sum: e0480334bc47365ced772aaf5ec4b882
+SHA256sum: a38731bb56e031d6906f9f32e3125e6688694cbdd7c456cba2d47944733cf5a5
+Description:  Web Distributed Authoring and Versioning (WebDAV), an extension to the HTTP-protocol,
+ allows authoring of resources on a remote web server.davfs2 provides the ability to
+ access such resources like a typical filesystem, allowing for use by standard
+ applications with no built-in support for WebDAV.
+ 
+ davfs2 is designed to fully integrate into the filesystem semantics of Unix-like
+ systems (mount, umount, etc.). davfs2 makes mounting by unprivileged users as easy
+ and secure as possible.
+ 
+ davfs2 does extensive caching to make the file system responsive, to avoid
+ unnecessary network traffic and to prevent data loss, and to cope for slow or
+ unreliable connections.
+ 
+ davfs2 will work with most WebDAV servers needing little or no configuration.
+
+Package: ddns-scripts
+Version: 2.4.3-2
+Source: qca/feeds/packages/net/ddns-scripts
+License: GPL-2.0
+Section: net
+Maintainer: Christian Schoenebeck <christian.schoenebeck@gmail.com>
+Architecture: all
+Installed-Size: 10108
+Filename: ddns-scripts_2.4.3-2_all.ipk
+Size: 11248
+MD5Sum: 3bfdd5c6d354cb1a8cc91a441a3efd20
+SHA256sum: f6aa26ea13e7ee786f5372be8eaf23cbfb1907f6b0715bc65c16f9e123742c66
+Description:  Dynamic DNS Client scripts (with IPv6 support) - Info: http://wiki.openwrt.org/doc/howto/ddns.client
+
+Package: ethtool
+Version: 3.18-1
+Depends: libc
+Source: qca/feeds/packages/net/ethtool
+License: GPL-2.0
+LicenseFiles: COPYING
+Section: net
+Maintainer: Matthias Schiffer <mschiffer@universe-factory.net>
+Architecture: ipq806x
+Installed-Size: 82874
+Filename: ethtool_3.18-1_ipq806x.ipk
+Size: 83472
+MD5Sum: d90c88207ea18c8d00d7a7c02ddacecb
+SHA256sum: 22c4d69d7df88b73b6f6e7453fb185981b494e621bfe7d7fb0874c6976410e32
+Description:  ethtool is a small utility for examining and tuning your ethernet-based
+ network interface
+
+Package: ffmpeg
+Version: 2.6.2-1
+Depends: libc, libpthread, libffmpeg-full
+Source: qca/feeds/packages/multimedia/ffmpeg
+License: LGPL-2.1+ GPL-2+ LGPL-3
+LicenseFiles: COPYING.GPLv2 COPYING.GPLv3 COPYING.LGPLv2.1 COPYING.LGPLv3
+Section: multimedia
+Maintainer: Ted Hess <thess@kitschensync.net>
+Architecture: ipq806x
+Installed-Size: 81404
+Filename: ffmpeg_2.6.2-1_ipq806x.ipk
+Size: 81774
+MD5Sum: 510c06fa02e874ab5398ec465e8b6891
+SHA256sum: 642f9b4977f12a1c4974a7c358251f15190ca96eb117808aa3862e46d12341cf
+Description:  FFmpeg is a a software package that can record, convert and stream digital
+ audio and video in numerous formats.
+ .
+ This package contains the FFmpeg command line tool.
+
+Package: file
+Version: 5.25-1
+Depends: libc, libmagic
+Source: qca/feeds/packages/libs/file
+License: BSD-2c
+LicenseFiles: COPYING
+Section: utils
+Architecture: ipq806x
+Installed-Size: 127297
+Filename: file_5.25-1_ipq806x.ipk
+Size: 128058
+MD5Sum: 655d400d0aabafeb8347877eabe1598f
+SHA256sum: e9ffd715d612831357bbebb77693cd7b2350e140c6e3b2ddd8b362737566ae03
+Description:  utility
+
+Package: gpioctl-sysfs
+Version: 0.0.6-1
+Depends: libc, libugpio
+Source: qca/feeds/packages/libs/libugpio
+License: LGPL-2.1+
+LicenseFiles: COPYING.LESSER
+Section: utils
+Maintainer: Michael Heimpold <mhei@heimpold.de>
+Architecture: ipq806x
+Installed-Size: 1654
+Filename: gpioctl-sysfs_0.0.6-1_ipq806x.ipk
+Size: 2453
+MD5Sum: dd53931cb64afe3799d89c3df20f1552
+SHA256sum: e76eb36c186f1a7b2bf0897125b9c67864beaae47d4c5831dfcd2008cb04c6b4
+Description:  Tool for controlling gpio pins using the sysfs api provided by the kernel.
+
+Package: i2c-tools
+Version: 3.1.2-1
+Depends: libc
+Source: qca/feeds/packages/utils/i2c-tools
+License: GPLv2
+LicenseFiles: COPYING
+Section: utils
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Architecture: ipq806x
+Installed-Size: 15435
+Filename: i2c-tools_3.1.2-1_ipq806x.ipk
+Size: 16183
+MD5Sum: 49db5b0280f720b5e5c9b5f9e23d0222
+SHA256sum: 7af2b2ec4365c112d6aeab17c35074b847ece53df3b954dfa268aa7bba19c7a6
+Description:  This package contains an heterogeneous set of I2C tools for Linux. These tools
+ were originally part of the lm-sensors package.
+
+Package: iozone
+Version: 420-1
+Depends: libc, librt, libpthread
+Source: qca/feeds/packages/utils/iozone
+Section: utils
+Architecture: ipq806x
+Installed-Size: 146831
+Filename: iozone_420-1_ipq806x.ipk
+Size: 147447
+MD5Sum: ea2126f897ad5bdcc3304fa506ae03dc
+SHA256sum: cea1ec7fc950ab4f9731c53dd481d33ea0a7cfaf87b84e1ec6b2ee3c5187911f
+Description:  IOzone is a filesystem benchmark tool. The benchmark generates and measures a variety of file operations. The benchmark tests file, I/O performance for the operations like Read, write, re-read, re-write, read backwards, read strided, fread, fwrite, random read, pread ,mmap, aio_read, aio_write.
+
+Package: isc-dhcp-relay-ipv4
+Version: 4.2.4-3
+Depends: libc
+Source: qca/feeds/packages/net/isc-dhcp
+Section: net
+Architecture: ipq806x
+Installed-Size: 438358
+Filename: isc-dhcp-relay-ipv4_4.2.4-3_ipq806x.ipk
+Size: 438742
+MD5Sum: 1b6ff117f5b72873d3751b3913ca66e3
+SHA256sum: 89eb170232e702e38f560e107ce524a0a80729266dfaaf4073f38e38353a256f
+Description:  provides a means for relaying DHCP and BOOTP requests from a subnet to which
+ no DHCP server is directly connected to one or more DHCP servers on other
+ subnets.
+ This package is compiled with IPv4 and IPv6 support.
+ This package is compiled with IPv4 support only.
+
+Package: isc-dhcp-relay-ipv6
+Version: 4.2.4-3
+Depends: libc
+Source: qca/feeds/packages/net/isc-dhcp
+Section: net
+Architecture: ipq806x
+Installed-Size: 514216
+Filename: isc-dhcp-relay-ipv6_4.2.4-3_ipq806x.ipk
+Size: 514084
+MD5Sum: f13f317ad9d9becd7bc286dd4a3fb294
+SHA256sum: fe206b290d77bb7a2b7f0b81679befc4a0b664562fd609a92340497a18bb0b4f
+Description:  provides a means for relaying DHCP and BOOTP requests from a subnet to which
+ no DHCP server is directly connected to one or more DHCP servers on other
+ subnets.
+ This package is compiled with IPv4 and IPv6 support.
+
+Package: jansson
+Version: 2.7-1
+Depends: libc
+Source: qca/feeds/packages/libs/jansson
+License: MIT
+Section: libs
+Maintainer: Gergely Kiss <mail.gery@gmail.com>
+Architecture: ipq806x
+Installed-Size: 16373
+Filename: jansson_2.7-1_ipq806x.ipk
+Size: 17102
+MD5Sum: b6d53a8cb62346d9cc8b2b06787ecb2c
+SHA256sum: 8714d7f727616e170b21e782358ad5263c66755e3195cf7220c4d427d80e2130
+Description:  Jansson is a C library for encoding, decoding and manipulating JSON data
+
+Package: kmod-fs-exfat
+Version: 3.14.77+git-20150301-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-nls-base
+Source: qca/feeds/packages/kernel/exfat-nofuse
+License: GPL-2.0
+LicenseFiles: LICENSE
+Section: kernel
+Maintainer: Bruno Randolf <br1@einfach.org>
+Architecture: ipq806x
+Installed-Size: 42937
+Filename: kmod-fs-exfat_3.14.77+git-20150301-1_ipq806x.ipk
+Size: 43670
+MD5Sum: ebb48c04a5429d1e671faa5cf23b1051
+SHA256sum: 3a0cdfc608554533d76edf2f88b47fd9c219077a7755c865b11445519cab2d92
+Description:  Kernel module for ExFAT Filesytems
+
+Package: l7-protocols
+Version: 2009-05-28-2
+Depends: libc, iptables-mod-filter
+Source: qca/feeds/packages/net/l7-protocols
+License: GPL-2.0
+Section: net
+Maintainer: Lim Guo Wei <limguowei@gmail.com>
+Architecture: ipq806x
+Installed-Size: 46753
+Filename: l7-protocols_2009-05-28-2_ipq806x.ipk
+Size: 47287
+MD5Sum: 07777546e71dba7ac80fd63c1b498840
+SHA256sum: 7892f0322d7ec6b29e959dbd294db47b2c7229a40c92450abbd6b0bfea4365ef
+Description:  l7-filter classifies packets based on patterns in application
+ layer data. This allows correct classification of P2P traffic that
+ uses unpredictable ports as well as standard protocols running on
+ non-standard ports.
+
+Package: libacl
+Version: 20140812-1
+Depends: libc, libattr
+Source: qca/feeds/packages/utils/acl
+License: LGPL-2.1 GPL-2.0
+LicenseFiles: doc/COPYING doc/COPYING.LGPL
+Section: libs
+Maintainer: Maxim Storchak <m.storchak@gmail.com>
+Architecture: ipq806x
+Installed-Size: 10619
+Filename: libacl_20140812-1_ipq806x.ipk
+Size: 11396
+MD5Sum: 1200e4fdc6f7482c1a40229bbe3b8438
+SHA256sum: 4cd5e912abba4d5ff13adfee546036229b7c3813981a446553f2b40b68d46efc
+Description:  Access control list support
+ This package provides libacl
+
+Package: libaio
+Version: 0.3.110-1
+Depends: libc
+Source: qca/feeds/packages/libs/libaio
+License: LGPL-2.1
+Section: libs
+Maintainer: Steven Barth <cyrus@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 1055
+Filename: libaio_0.3.110-1_ipq806x.ipk
+Size: 1793
+MD5Sum: 08da947885f4a5ca714c469251c3bdfc
+SHA256sum: 437e9812f8f8a9c37621e2b908f5165dc59fb17468d397fe938f97f6b37688c7
+Description:  Linux kernel AIO interface access library
+
+Package: libapr
+Version: 1.5.2-1
+Depends: libc, libpthread, librt, libuuid
+Source: qca/feeds/packages/libs/apr
+License: Apache License
+Section: libs
+Maintainer: Thomas Heil <heil@terminal-consulting.de>
+Architecture: ipq806x
+Installed-Size: 63325
+Filename: libapr_1.5.2-1_ipq806x.ipk
+Size: 63713
+MD5Sum: 1042aee86951abf540e0bc7d984de0a3
+SHA256sum: 3e1f818b1b51c1d6cc7cdc7084e9d7904453a8ae511bb56ef9cffd94eb609dfe
+Description:  Apache Portable Runtime Library
+
+Package: libaprutil
+Version: 1.5.4-1
+Depends: libc, libapr, libexpat, libsqlite3, libuuid
+Source: qca/feeds/packages/libs/apr-util
+License: Apache License
+Section: libs
+Maintainer: Thomas Heil <heil@terminal-consulting.de>
+Architecture: ipq806x
+Installed-Size: 66786
+Filename: libaprutil_1.5.4-1_ipq806x.ipk
+Size: 67346
+MD5Sum: a22640c942a24e6b61d3d5c89b722f9b
+SHA256sum: 014f6288a5f94fa610b920155071250c472c4efaa13a6c015c42e50becab1159
+Description:  Apache Portable Runtime Utility Library
+
+Package: libattr
+Version: 20150220-1
+Depends: libc
+Source: qca/feeds/packages/utils/attr
+License: LGPL-2.1 GPL-2.0
+LicenseFiles: doc/COPYING doc/COPYING.LGPL
+Section: libs
+Maintainer: Maxim Storchak <m.storchak@gmail.com>
+Architecture: ipq806x
+Installed-Size: 5783
+Filename: libattr_20150220-1_ipq806x.ipk
+Size: 6558
+MD5Sum: 46e8786722cce9efc78e6120e9a99105
+SHA256sum: 772371c29d4f453bc154bc202406488105b14a82cb7ebda132249bfb341f756c
+Description:  Extended attributes support
+ This package provides libattr
+
+Package: libdevmapper
+Version: 2.02.119-2
+Depends: libc, kmod-dm, libpthread
+Source: qca/feeds/packages/utils/lvm2
+License: GPL-2.0 LGPL-2.1
+Section: libs
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Architecture: ipq806x
+Installed-Size: 117250
+Filename: libdevmapper_2.02.119-2_ipq806x.ipk
+Size: 117894
+MD5Sum: 3b05781185e12daa2994fa64a6179f2b
+SHA256sum: e62421bb359e8fcadef79ed9e9c4f95b10f35fffb2b826b10ced02753dbfab0f
+Description:  The device-mapper is a component of the 2.6 linux kernel that supports logical
+ volume management. It is required by LVM2 and EVMS.
+
+Package: libexpat
+Version: 2.1.0-3
+Depends: libc
+Source: qca/feeds/packages/libs/expat
+License: MIT
+LicenseFiles: COPYING
+Section: libs
+Maintainer: Steven Barth <cyrus@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 44230
+Filename: libexpat_2.1.0-3_ipq806x.ipk
+Size: 45005
+MD5Sum: 5e90503ed78c65a4d694e46031151707
+SHA256sum: fa3ef22ec2933517313cffa93b92dc442339750fe953f4deca4269479641a8c6
+Description:  A fast, non-validating, stream-oriented XML parsing library.
+
+Package: libffmpeg-full
+Version: 2.6.2-1
+Depends: libc, libpthread, zlib, libbz2, alsa-lib
+Provides: libffmpeg
+Source: qca/feeds/packages/multimedia/ffmpeg
+License: LGPL-2.1+ GPL-2+ LGPL-3
+LicenseFiles: COPYING.GPLv2 COPYING.GPLv3 COPYING.LGPLv2.1 COPYING.LGPLv3
+Section: libs
+Maintainer: Ted Hess <thess@kitschensync.net>
+Architecture: ipq806x
+Installed-Size: 4439515
+Filename: libffmpeg-full_2.6.2-1_ipq806x.ipk
+Size: 4420998
+MD5Sum: 1374556861a327918003a22b8213adff
+SHA256sum: 12fd9bd34221deb156dcb02d9af2ccb6b85bb857ffae60d0ae349496d00ab949
+Description:  FFmpeg is a a software package that can record, convert and stream digital
+ audio and video in numerous formats.
+ .
+ This package contains full-featured FFmpeg shared libraries.
+
+Package: libgcrypt
+Version: 1.6.1-1
+Depends: libc, libgpg-error
+Source: qca/feeds/packages/libs/libgcrypt
+Section: libs
+Maintainer: W. Michael Petullo <mike@flyn.org>
+Architecture: ipq806x
+Installed-Size: 274997
+Filename: libgcrypt_1.6.1-1_ipq806x.ipk
+Size: 274641
+MD5Sum: 6d3345dec5b0aa774f4e07d0781fca34
+SHA256sum: 0e15296899c518c6af23aa33dcd4f39da3ef871b47c7fd66686a9fe4772ed719
+Description:  This is a general purpose cryptographic library based on the code from
+ GnuPG. It provides functions for all cryptograhic building blocks:
+ symmetric ciphers (AES, DES, Arcfour, CAST5), hash algorithms (MD5, SHA-1,
+ RIPE-MD160, SHA-224/256, SHA-384/512), MACs (HMAC for all hash
+ algorithms), public key algorithms (RSA, DSA), large integer functions,
+ random numbers and a lot of supporting functions. Some algorithms have
+ been disabled to reduce size (Blowfish, Twofish, Serpent,
+ RC2, SEED, Camellia, CRC, MD4, TIGER-192, Whirlpool, ElGamal, ECC).
+
+Package: libgnutls
+Version: 3.4.12-1
+Depends: libc, libnettle, libgmp
+Source: qca/feeds/packages/libs/gnutls
+License: LGPLv2.1+
+Section: libs
+Maintainer: Nikos Mavrogiannopoulos <nmav@gnutls.org>
+Architecture: ipq806x
+Installed-Size: 344665
+Filename: libgnutls_3.4.12-1_ipq806x.ipk
+Size: 343659
+MD5Sum: 2ad910d7655d0c2225364c111f0b2496
+SHA256sum: ecdb7abd90b3aea1c85e3a8efa318c9a137b756238a8f67fb1ba410167359ab8
+Description:  GnuTLS is a secure communications library implementing the SSL, TLS
+ and DTLS protocols and technologies around them. It provides a simple
+ C language application programming interface (API) to access the secure
+ communications protocols as well as APIs to parse and write X.509, PKCS12,
+ OpenPGP and other required structures. It is aimed to be portable and
+ efficient with focus on security and interoperability.
+ This package contains the GnuTLS shared library, needed by other programs.
+
+Package: libgpg-error
+Version: 1.12-1
+Depends: libc
+Source: qca/feeds/packages/libs/libgpg-error
+Section: libs
+Maintainer: W. Michael Petullo <mike@flyn.org>
+Architecture: ipq806x
+Installed-Size: 5199
+Filename: libgpg-error_1.12-1_ipq806x.ipk
+Size: 6041
+MD5Sum: 97d44fd9fdb945d3fde4e8420ff865e4
+SHA256sum: aeeacc24a799f383dd82fcfb15b4bc1569edbd3ece4e700b4acd370173cb3e97
+Description:  An helper library for common error codes and descriptions.
+ This is a library that defines common error values for all GnuPG
+ components. Among these are GPG, GPGSM, GPGME, GPG-Agent, libgcrypt,
+ Libksba, DirMngr, Pinentry, SmartCard Daemon and possibly more in the
+ future.
+
+Package: libjpeg
+Version: 9a-1
+Depends: libc
+Source: qca/feeds/packages/libs/libjpeg
+License: IJG
+LicenseFiles: README
+Section: libs
+Maintainer: Jo-Philipp Wich <jow@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 92354
+Filename: libjpeg_9a-1_ipq806x.ipk
+Size: 93060
+MD5Sum: 90a67c3b7be50c46392d43d0906985e3
+SHA256sum: 305c175ea982fb871143175ba71b2cebb25a545ef3e39f57b8159f8b98a2b0b5
+Description:  The Independent JPEG Group's JPEG runtime library
+
+Package: libmad
+Version: 0.15.1b-3
+Depends: libc
+Source: qca/feeds/packages/libs/libmad
+License: GPLv2
+LicenseFiles: COPYING
+Section: libs
+Maintainer: Ted Hess <thess@kitschensync.net>
+Architecture: ipq806x
+Installed-Size: 59536
+Filename: libmad_0.15.1b-3_ipq806x.ipk
+Size: 60530
+MD5Sum: 4f4ca3fc7d05c045fa523ba885b8abb1
+SHA256sum: 36ae644201ba06756e39fefadc1db8e02202555270582b5f43932181d93d4d24
+Description:  MAD is a high-quality MPEG audio decoder. It currently supports
+ MPEG-1 and the MPEG-2 extension to lower sampling frequencies,
+ as well as the de facto MPEG 2.5 format. All three audio layers -
+ Layer I, Layer II, and Layer III (i.e. MP3) - are fully implemented.
+
+Package: libmagic
+Version: 5.25-1
+Depends: libc, zlib
+Source: qca/feeds/packages/libs/file
+License: BSD-2c
+LicenseFiles: COPYING
+Section: libs
+Architecture: ipq806x
+Installed-Size: 101627
+Filename: libmagic_5.25-1_ipq806x.ipk
+Size: 102090
+MD5Sum: 90b246f40243e7c4e14e71e96abfad7c
+SHA256sum: 77153d0d7dae78b2ee25e0ecf84a9934245c7f94c98be926b9b1c27b0328a507
+Description:  library
+
+Package: libneon
+Version: 0.30.0-1
+Depends: libc, libopenssl, libexpat
+Source: qca/feeds/packages/libs/neon
+Section: libs
+Maintainer: Federico Di Marco <fededim@gmail.com>
+Architecture: ipq806x
+Installed-Size: 54118
+Filename: libneon_0.30.0-1_ipq806x.ipk
+Size: 54814
+MD5Sum: 5380a457fdb6e64163cae23481950261
+SHA256sum: f24e729d64b756d36806562382578b1cf80776499db884ef4e29b19ebed95708
+Description:  neon is an HTTP and WebDAV client library, with a C interface. Features:
+ 
+ - High-level wrappers for common HTTP and WebDAV operations (GET, MOVE, DELETE, etc)
+ - Low-level interface to the HTTP request/response engine, allowing the use of arbitrary HTTP methods, headers, etc.
+ - Authentication support including Basic and Digest support, along with GSSAPI-based Negotiate on Unix, and
+ SSPI-based Negotiate/NTLM on Win32
+ - SSL/TLS support using OpenSSL or GnuTLS; exposing an abstraction layer for verifying server certificates, handling client
+ certificates, and examining certificate properties. Smartcard-based client certificates are also supported via a
+ PKCS11 wrapper interface.
+ - Abstract interface to parsing XML using libxml2 or expat, and wrappers for simplifying handling XML HTTP response bodies
+ - WebDAV metadata support; wrappers for PROPFIND and PROPPATCH to simplify property manipulation.
+
+Package: libogg
+Version: 1.3.2-2
+Depends: libc
+Source: qca/feeds/packages/libs/libogg
+License: BSD-3-Clause
+LicenseFiles: COPYING
+Section: libs
+Maintainer: Ted Hess <thess@kitschensync.net>
+Architecture: ipq806x
+Installed-Size: 8261
+Filename: libogg_1.3.2-2_ipq806x.ipk
+Size: 9185
+MD5Sum: d3404c127d2f0da74148a1609c517fe9
+SHA256sum: 52766b4a19158649b3ab054643915060af3985143757e64a347cae8423ed1db9
+Description:  Ogg project codecs use the Ogg bitstream format to arrange the raw,
+ compressed bitstream into a more robust, useful form.  For example,
+ the Ogg bitstream makes seeking, time stamping and error recovery
+ possible, as well as mixing several sepearate, concurrent media
+ streams into a single physical bitstream.
+
+Package: libpcre
+Version: 8.38-2
+Depends: libc
+Source: qca/feeds/packages/libs/pcre
+License: BSD-3-Clause
+LicenseFiles: LICENCE
+Section: libs
+Maintainer: Thomas Heil <heil@terminal-consulting.de>
+Architecture: ipq806x
+Installed-Size: 81138
+Filename: libpcre_8.38-2_ipq806x.ipk
+Size: 81940
+MD5Sum: fd2a2cc6ec5d2e4f366c1dfd545d4da7
+SHA256sum: 690a308f7b658a103b9385d3824677ad75231928bd59489e1cc14130588552e5
+Description:  A Perl Compatible Regular Expression library
+
+Package: libspeex
+Version: 1.2rc1-1
+Depends: libc
+Source: qca/feeds/packages/libs/speex
+Section: libs
+Maintainer: Peter Wagner <tripolar@gmx.at>
+Architecture: ipq806x
+Installed-Size: 41393
+Filename: libspeex_1.2rc1-1_ipq806x.ipk
+Size: 42499
+MD5Sum: 813cadba1d1fb0388de7efa270f9ea4f
+SHA256sum: c3b55aa5be71d169b8052b0550f644f2aa91c64b6a5e0020863336632ac2d621
+Description:  Open source patent-free speech compression codec library.
+ Speex is an Open Source/Free Software patent-free audio compression
+ format designed for speech. The Speex Project aims to lower the
+ barrier of entry for voice applications by providing a free
+ alternative to expensive proprietary speech codecs. Moreover, Speex
+ is well-adapted to Internet applications and provides useful features
+ that are not present in most other codecs.
+ 
+ This package contains the shared codec library, needed by other programs.
+
+Package: libsqlite3
+Version: 3081101-1
+Depends: libc, libpthread
+Source: qca/feeds/packages/libs/sqlite3
+License: PUBLICDOMAIN
+Section: libs
+Maintainer: Etienne CHAMPETIER <champetier.etienne@gmail.com>
+Architecture: ipq806x
+Installed-Size: 318542
+Filename: libsqlite3_3081101-1_ipq806x.ipk
+Size: 318822
+MD5Sum: 8686bb8247428652232c12a4555dae89
+SHA256sum: 8a4c68f6b880105839755d2379fcec3af285e96e19364ed36dac7b6a0378fa54
+Description:  SQLite is a small C library that implements a self-contained, embeddable,
+ zero-configuration SQL database engine.
+ This package contains the SQLite (v3.x) shared library, used by other
+ programs.
+
+Package: libtheora
+Version: 1.1.1-1
+Depends: libc, libogg
+Source: qca/feeds/packages/libs/libtheora
+License: BSD-3-Clause
+LicenseFiles: COPYING LICENSE
+Section: libs
+Maintainer: W. Michael Petullo <mike@flyn.org>
+Architecture: ipq806x
+Installed-Size: 215305
+Filename: libtheora_1.1.1-1_ipq806x.ipk
+Size: 214439
+MD5Sum: f1cbb777f21efc64668b3641e8673138
+SHA256sum: 1d09979812b71aadba495b29ebabb985701076f34ccd86ac4e3fc97233d32804
+Description:  Theora is Xiph.Org's first publicly released video codec, intended
+ for use within the Foundation's Ogg multimedia streaming system.
+ Theora is derived directly from On2's VP3 codec; Currently the
+ encoders are nearly identical, but Theora will make use of new
+ features supported by the decoder to improve over what is
+ is possible with VP3.
+
+Package: libugpio
+Version: 0.0.6-1
+Depends: libc
+Source: qca/feeds/packages/libs/libugpio
+License: LGPL-2.1+
+LicenseFiles: COPYING.LESSER
+Section: libs
+Maintainer: Michael Heimpold <mhei@heimpold.de>
+Architecture: ipq806x
+Installed-Size: 3861
+Filename: libugpio_0.0.6-1_ipq806x.ipk
+Size: 4639
+MD5Sum: 20d8936bcb2582d3d5f039c15c2464d8
+SHA256sum: 06b43957039a1dda7b23f60d5025825400f5bebbf5d2ac254b395bb03183dfbf
+Description:  libugpio is a library to ease the use of linux kernel's sysfs
+ gpio interface from C programs and/or other libraries.
+
+Package: libxml2
+Version: 2.9.2-3
+Depends: libc, libpthread, zlib
+Source: qca/feeds/packages/libs/libxml2
+License: MIT
+LicenseFiles: COPYING
+Section: libs
+Maintainer: Michael Heimpold <mhei@heimpold.de>
+Architecture: ipq806x
+Installed-Size: 458169
+Filename: libxml2_2.9.2-3_ipq806x.ipk
+Size: 455894
+MD5Sum: 1e05a23449c76d749374156c1281b2e2
+SHA256sum: 1a5b8bdd9aa90c5c944877c90a19e8a7b054cf2ffa424497e769b757dd01f3a4
+Description:  A library for manipulating XML and HTML resources.
+
+Package: lvm2
+Version: 2.02.119-2
+Depends: libc, libdevmapper, libblkid, libreadline, libncurses
+Source: qca/feeds/packages/utils/lvm2
+License: GPL-2.0 LGPL-2.1
+Section: utils
+Maintainer: Daniel Golle <daniel@makrotopia.org>
+Architecture: ipq806x
+Installed-Size: 503455
+Filename: lvm2_2.02.119-2_ipq806x.ipk
+Size: 502644
+MD5Sum: 45c4679fe35227d4bf34dc4f49d739d5
+SHA256sum: f87183a0480bbd85a96b22df606f092b27c3625b37c32bb022664f5bae6bda0c
+Description:  LVM2 refers to a new userspace toolset that provide logical volume management
+ facilities on linux. It is reasonably backwards-compatible with the original
+ LVM toolset.
+
+Package: minicom
+Version: 2.7-2
+Depends: libc, libncurses
+Source: qca/feeds/packages/utils/minicom
+License: GPL-2.0
+LicenseFiles: COPYING
+Section: utils
+Maintainer: Álvaro Fernández Rojas <noltari@gmail.com>
+Architecture: ipq806x
+Installed-Size: 69208
+Filename: minicom_2.7-2_ipq806x.ipk
+Size: 70053
+MD5Sum: e83d98abdf83237e47508a742a058e8f
+SHA256sum: 9ce8e0671d94ff7387e9c0a242e57d653a9bad7f7f3311fd93fb351362cecb76
+Description:  Terminal emulation program
+
+Package: mkdosfs
+Version: 3.0.28-1
+Depends: libc
+Source: qca/feeds/packages/utils/dosfstools
+License: GPL-3.0+
+LicenseFiles: COPYING
+Section: utils
+Maintainer: David Bonnes <david.bonnes@gmail.com>
+Architecture: ipq806x
+Installed-Size: 11788
+Filename: mkdosfs_3.0.28-1_ipq806x.ipk
+Size: 12598
+MD5Sum: b1879c40fb8853db4fcc9b8ab608687d
+SHA256sum: 5a133bb306b2aa4f88f0c05b3e7cbb2c822f94caa702cad9025827cee9580e69
+Description:  Utilities to create and check MS-DOS FAT filesystems.
+ (mkfs.vfat and mkfs.fat for creating FAT volumes)
+
+Package: motion
+Version: 3.4.0-20141018-9479d910f2149b5558788bb86f97f26522794212-1
+Depends: libc, libjpeg, libpthread
+Source: qca/feeds/packages/multimedia/motion
+License: GPLv2
+LicenseFiles: COPYING
+Section: multimedia
+Maintainer: Roger D <rogerdammit@gmail.com>
+Architecture: ipq806x
+Installed-Size: 94098
+Filename: motion_3.4.0-20141018-9479d910f2149b5558788bb86f97f26522794212-1_ipq806x.ipk
+Size: 94718
+MD5Sum: cdcda1d1f3cfc65298ae6a69987c375c
+SHA256sum: 6848109bcd3a217ac77ad09db1aa55e4a336016682e8401919a0d8e567e50eca
+Description:  webcam motion sensing and logging
+
+Package: mplayer
+Version: 1.1.1-1
+Depends: libc, libbz2, libpthread, libncurses, libmad, libmpg123, libltdl, alsa-lib, liblzo, libSDL, libogg, libtheora, zlib, opencore-amr, libffmpeg-full, libspeex
+Source: qca/feeds/packages/multimedia/mplayer
+Section: sound
+Architecture: ipq806x
+Installed-Size: 3138890
+Filename: mplayer_1.1.1-1_ipq806x.ipk
+Size: 3131748
+MD5Sum: 12d14ec4998a072eff38dc0590eef1ac
+SHA256sum: 8a2f4090e726b3f0acb3e002fa8f709169ab8063482674f417e00528f8711505
+Description:  MPlayer can play most standard video formats out of the box
+ and almost all others with the help of external codecs.
+
+Package: multiwan
+Version: 1.0.22-2
+Depends: libc, iptables, kmod-ipt-conntrack, iptables-mod-conntrack-extra, iptables-mod-ipopt
+Source: qca/feeds/packages/net/multiwan
+Section: net
+Maintainer: Craig M. Coffee <craigc@netlab7.com>
+Architecture: ipq806x
+Installed-Size: 7695
+Filename: multiwan_1.0.22-2_ipq806x.ipk
+Size: 8652
+MD5Sum: 68ac5c9c036cafd9450a3c48e8d78e01
+SHA256sum: f837ba6ff8403071b939e6f7037138e86fe451ec1406c1bcda97d64977f397b0
+Description:  An agent script that makes Multi-WAN configuration simple,
+ easy and manageable. Complete with load balancing, failover and an easy
+ to manage traffic ruleset.
+
+Package: ntfs-3g
+Version: 2014.2.15-1-fuseint
+Depends: libc, kmod-fuse, libpthread
+Source: qca/feeds/packages/utils/ntfs-3g
+License: GPL-2.0 LGPL-2.0
+LicenseFiles: COPYING COPYING.LIB
+Section: utils
+Maintainer: Bud <wrt_buddhay@gmx.net>
+Architecture: ipq806x
+Installed-Size: 171073
+Filename: ntfs-3g_2014.2.15-1-fuseint_ipq806x.ipk
+Size: 171876
+MD5Sum: 674db72f2f75c2f179d5f3cc42ab71a4
+SHA256sum: 1832e9ca2723d749f1a931fbfb01e73959d36cabdf3c9c12294c88719ba2905b
+Description:  Ntfs-3g is a NTFS driver, which can create, remove, rename,
+ move files, directories, hard links, and streams. It can read
+ and write files, including streams and sparse files. It can
+ handle special files like symbolic links, devices, and FIFOs.
+ Moreover it can also read transparently compressed files.
+ 
+ Contains:
+ - ntfs-3g
+ - ntfs-3g.probe
+ - mount.ntfs-3g (symlink to ntfs-3g)
+ 
+
+Package: ntfsprogs_ntfs-3g
+Version: 2014.2.15-1-fuseint
+Depends: libc, ntfs-3g, libgcrypt, libuuid
+Source: qca/feeds/packages/utils/ntfs-3g
+License: GPL-2.0 LGPL-2.0
+LicenseFiles: COPYING COPYING.LIB
+Section: utils
+Maintainer: Bud <wrt_buddhay@gmx.net>
+Architecture: ipq806x
+Installed-Size: 170224
+Filename: ntfsprogs_ntfs-3g_2014.2.15-1-fuseint_ipq806x.ipk
+Size: 170504
+MD5Sum: 68533d84e13b40d32a3043880b098e8e
+SHA256sum: 8d9ff16336ea40363be376aff93cce8f55b8f94c270dcf9ca658e8421725949c
+Description:  ntfsprogs (ntfs-3g)
+
+Package: opencore-amr
+Version: 0.1.3-1
+Depends: libc, uclibcxx
+Source: qca/feeds/packages/libs/opencore-amr
+Section: libs
+Maintainer: Matthew McClintock <mmcclint@qca.qualcomm.com>
+Architecture: ipq806x
+Installed-Size: 283319
+Filename: opencore-amr_0.1.3-1_ipq806x.ipk
+Size: 284191
+MD5Sum: a66cd44b0e383772586f91fc41016dda
+SHA256sum: 251e86e71cff1b73e23343fed8e291b1a015d8031cc6b95c0c7da789f44d4db5
+Description:  Audio codecs extracted from Android Open Source Project
+
+Package: p910nd
+Version: 0.97-4
+Depends: libc
+Source: qca/feeds/packages/net/p910nd
+License: GPLv2
+LicenseFiles: COPYING
+Section: net
+Maintainer: Philipp Kerling <pkerling@casix.org>
+Architecture: ipq806x
+Installed-Size: 5194
+Filename: p910nd_0.97-4_ipq806x.ipk
+Size: 6141
+MD5Sum: ba0878325ff1cdc4c32ee57cb0a6f26d
+SHA256sum: acbcc4429a8a3d009f2fc52497cd969c0ca347680b85eab4ad09b8bde701b50c
+Description:  p910nd is a small daemon that copies any data received on
+ the port it is listening on to the corresponding printer
+ port. It is primarily intended for diskless Linux hosts
+ running as printer drivers but there is no reason why it
+ could not be used on diskful hosts. Port 9100 is copied
+ to /dev/lp0, 9101 to /dev/lp1 and 9102 to /dev/lp2. The
+ default is port 9100 to /dev/lp0.
+
+Package: perl
+Version: 5.20.2-1
+Depends: libc, libpthread
+Source: qca/feeds/packages/lang/perl
+License: GPL-1.0+ Artistic-1.0-Perl
+LicenseFiles: Copying Artistic README
+Section: lang
+Maintainer: Marcel Denia <naoir@gmx.net>
+Architecture: ipq806x
+Installed-Size: 738305
+Filename: perl_5.20.2-1_ipq806x.ipk
+Size: 735116
+MD5Sum: 8e82f50986d4d624e946f2b18709e7a7
+SHA256sum: c884cb93045f65f784c6b559f890b7f166d803aedac5aa12d7353d02e5dcd49a
+Description:  Perl is a stable, cross platform programming language.
+ It is used for mission critical projects in the public and private sectors
+ and is widely used to program web applications of all needs.
+
+Package: perlbase-base
+Version: 5.20.2-1
+Depends: libc, perl, perlbase-essential
+Source: qca/feeds/packages/lang/perl
+License: GPL-1.0+ Artistic-1.0-Perl
+LicenseFiles: Copying Artistic README
+Section: lang
+Maintainer: Marcel Denia <naoir@gmx.net>
+Architecture: ipq806x
+Installed-Size: 2270
+Filename: perlbase-base_5.20.2-1_ipq806x.ipk
+Size: 3060
+MD5Sum: 1bcf43157880895d9d0ea01e5ce7a245
+SHA256sum: 10fd1be99819f8589d8785c61c1448aaf38705b5ca952442ef7a0774b752e577
+Description:  base perl module
+
+Package: perlbase-config
+Version: 5.20.2-1
+Depends: libc, perl, perlbase-essential
+Source: qca/feeds/packages/lang/perl
+License: GPL-1.0+ Artistic-1.0-Perl
+LicenseFiles: Copying Artistic README
+Section: lang
+Maintainer: Marcel Denia <naoir@gmx.net>
+Architecture: ipq806x
+Installed-Size: 16111
+Filename: perlbase-config_5.20.2-1_ipq806x.ipk
+Size: 16807
+MD5Sum: 10bb682e4417686ec297b6e55fdabf41
+SHA256sum: fc4cce03b99ecba563bcbc2efbdb8cfc518e3751d7d15662b0d3884e03839e50
+Description:  Config perl module
+
+Package: perlbase-essential
+Version: 5.20.2-1
+Depends: libc, perl
+Source: qca/feeds/packages/lang/perl
+License: GPL-1.0+ Artistic-1.0-Perl
+LicenseFiles: Copying Artistic README
+Section: lang
+Maintainer: Marcel Denia <naoir@gmx.net>
+Architecture: ipq806x
+Installed-Size: 18251
+Filename: perlbase-essential_5.20.2-1_ipq806x.ipk
+Size: 19049
+MD5Sum: 4973efd1acb580421f93df3ae5dbacb5
+SHA256sum: d76b171992a5fcb0943674354acd25ddd367b006c0eb6633193594dbbcc0305e
+Description:  essential perl module
+
+Package: perlbase-getopt
+Version: 5.20.2-1
+Depends: libc, perl, perlbase-essential
+Source: qca/feeds/packages/lang/perl
+License: GPL-1.0+ Artistic-1.0-Perl
+LicenseFiles: Copying Artistic README
+Section: lang
+Maintainer: Marcel Denia <naoir@gmx.net>
+Architecture: ipq806x
+Installed-Size: 12690
+Filename: perlbase-getopt_5.20.2-1_ipq806x.ipk
+Size: 13488
+MD5Sum: 99b75bf8906ae5b520fca20f12845e61
+SHA256sum: a8c403452dd1177f7688f683f91484dfba5f53ddfeff981a3c4d0dafd9e54a9f
+Description:  Getopt perl module
+
+Package: pptpd
+Version: 1.4.0-2
+Depends: libc, kmod-ppp, kmod-gre, kmod-mppe, ppp
+Source: qca/feeds/packages/net/pptpd
+Section: net
+Maintainer: Luka Perkov <luka@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 26670
+Filename: pptpd_1.4.0-2_ipq806x.ipk
+Size: 27455
+MD5Sum: 8cd2ed523b7570269a7bf784614c02b2
+SHA256sum: db5174a25fe5e2737beb19ab71210b6b292d8aa3d846f41e501f59f51625091d
+Description:  PopTop pptp server
+
+Package: remserial
+Version: 1.4-1
+Depends: libc
+Source: qca/feeds/packages/net/remserial
+License: GPL-2.0+
+Section: net
+Maintainer: Nuno Goncalves <nunojpg@gmail.com>
+Architecture: ipq806x
+Installed-Size: 5102
+Filename: remserial_1.4-1_ipq806x.ipk
+Size: 5808
+MD5Sum: 847e2ab8590d31ac9287d1d0a227e292
+SHA256sum: 38c7337fc5f26882d4aa9954c2a0837e125689b1bc93a4f1826b124acd3bd850
+Description:  Bridge TCP/IP port with a device
+
+Package: rng-tools
+Version: 5-1
+Depends: libc
+Source: qca/feeds/packages/utils/rng-tools
+License: GPLv2
+Section: utils
+Maintainer: Hannu Nyman <hannu.nyman@iki.fi>
+Architecture: ipq806x
+Installed-Size: 22737
+Filename: rng-tools_5-1_ipq806x.ipk
+Size: 23396
+MD5Sum: b469c5ed4a2add83fad1d0bfd9bd0947
+SHA256sum: 07f7b5370ff54949483b7bf9a4635aa06f1ae759325d6a97c746aebcb9312b74
+Description:  Daemon for adding entropy to kernel entropy pool
+
+Package: rp-pppoe-relay
+Version: 3.11-1
+Depends: libc, ppp
+Source: qca/feeds/packages/net/rp-pppoe
+Section: net
+Architecture: ipq806x
+Installed-Size: 11454
+Filename: rp-pppoe-relay_3.11-1_ipq806x.ipk
+Size: 12215
+MD5Sum: 12309ec493568b7a095a5c8d36a34cab
+SHA256sum: b1b0ce127490012b1adffabc8ed5c5b4ca57fde6516508790b6f416bd899bd0b
+Description:  Dubbed RP-PPPoE, this open-source product is ideal for Linux users with
+ a DSL "modem" whose Internet service provider uses PPPoE.
+ .
+ This package contains pppoe-relay.
+
+Package: rp-pppoe-server
+Version: 3.11-1
+Depends: libc, ppp
+Source: qca/feeds/packages/net/rp-pppoe
+Section: net
+Architecture: ipq806x
+Installed-Size: 30194
+Filename: rp-pppoe-server_3.11-1_ipq806x.ipk
+Size: 31042
+MD5Sum: 93fd776afb9bc598515cedf167f741a1
+SHA256sum: 2ac9c1b5c9b67689b61efadd08bd9fd313a806ff134dd44ece3f49d2329df35d
+Description:  Dubbed RP-PPPoE, this open-source product is ideal for Linux users with
+ a DSL "modem" whose Internet service provider uses PPPoE.
+ .
+ This package contains pppoe-server.
+
+Package: shadow-common
+Version: 4.2.1-4
+Depends: libc
+Source: qca/feeds/packages/utils/shadow
+License: BSD-3-Clause
+Section: utils
+Maintainer: Steven Barth <cyrus@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 4732
+Filename: shadow-common_4.2.1-4_ipq806x.ipk
+Size: 5504
+MD5Sum: 0baa0ff0b4a7e53dbd70f4c26e9e9ed3
+SHA256sum: af43a8b7601b75f550aea339788f0b5395b299acb3a8862e0175a5c0472a06d5
+Description:  Shared definitions for the PLD Linux shadow utilities
+
+Package: shadow-useradd
+Version: 4.2.1-4
+Depends: libc, shadow-common
+Source: qca/feeds/packages/utils/shadow
+License: BSD-3-Clause
+Section: utils
+Maintainer: Steven Barth <cyrus@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 27071
+Filename: shadow-useradd_4.2.1-4_ipq806x.ipk
+Size: 27864
+MD5Sum: 0aa1d34633a2f91cefa30ac172350ac3
+SHA256sum: e74706e205f50923be5ef6bebc410398938a767510ead223a8dd50296c615525
+Description:  Full version of standard useradd utility. Normally, you would not use this
+ package, since the functionality in BusyBox is more than sufficient.
+
+Package: shadow-userdel
+Version: 4.2.1-4
+Depends: libc, shadow-common
+Source: qca/feeds/packages/utils/shadow
+License: BSD-3-Clause
+Section: utils
+Maintainer: Steven Barth <cyrus@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 16144
+Filename: shadow-userdel_4.2.1-4_ipq806x.ipk
+Size: 16895
+MD5Sum: a703609b3b23752e3f5764283c0aeb4a
+SHA256sum: f847d4f10df073947350a55d1a826759a7393589b84a833af1bd8fb993aa794b
+Description:  Full version of standard userdel utility. Normally, you would not use this
+ package, since the functionality in BusyBox is more than sufficient.
+
+Package: shadow-utils
+Version: 4.2.1-4
+Depends: libc
+Source: qca/feeds/packages/utils/shadow
+License: BSD-3-Clause
+Section: utils
+Maintainer: Steven Barth <cyrus@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 106
+Filename: shadow-utils_4.2.1-4_ipq806x.ipk
+Size: 907
+MD5Sum: 0a21a529abd7bcd8f6a790eeba17b610
+SHA256sum: a6ae7edbfb8f4ced2ab0718b6a91c4af73cf647594581b2dc2a7e28e5e054682
+Description:  Full versions of standard shadow utilities. Normally, you would not
+ use this package, since the functionality in BusyBox is more than
+ sufficient and much smaller.
+
+Package: sqlite3-cli
+Version: 3081101-1
+Depends: libc, libsqlite3, libncurses, libreadline
+Source: qca/feeds/packages/libs/sqlite3
+License: PUBLICDOMAIN
+Section: utils
+Maintainer: Etienne CHAMPETIER <champetier.etienne@gmail.com>
+Architecture: ipq806x
+Installed-Size: 340106
+Filename: sqlite3-cli_3081101-1_ipq806x.ipk
+Size: 341066
+MD5Sum: 3b77df47b7ea73b48cf834d3c35ffb41
+SHA256sum: 9af917d799fc382effb5a96f0908e78cfc973c297cd48047fea6d636d2662d9f
+Description:  SQLite is a small C library that implements a self-contained, embeddable,
+ zero-configuration SQL database engine.
+ This package contains a terminal-based front-end to the SQLite (v3.x) library
+ that can evaluate queries interactively and display the results in multiple
+ formats.
+
+Package: sysstat
+Version: 11.0.4-2
+Depends: libc
+Source: qca/feeds/packages/utils/sysstat
+License: GPL-2.0
+Section: utils
+Maintainer: Marko Ratkaj <marko.ratkaj@sartura.hr>
+Architecture: ipq806x
+Installed-Size: 150227
+Filename: sysstat_11.0.4-2_ipq806x.ipk
+Size: 150782
+MD5Sum: a30456f74520d4196af9e82deab07577
+SHA256sum: 046798ef9c15b67cc935de11e5dc68c8d624178ecff7772c221f42cb0ef05c9f
+Description:  The sysstat utilities are a collection of performance monitoring tools for
+ Linux. These include sar, sadf, mpstat, iostat, pidstat and sa tools.
+
+Package: unixodbc
+Version: 2.3.4-2
+Depends: libc, libltdl, libpthread
+Source: qca/feeds/packages/libs/unixodbc
+License: prog GPL libs LGPL
+Section: libs
+Maintainer: Thomas Heil <heil@terminal-consulting.de>
+Architecture: ipq806x
+Installed-Size: 195716
+Filename: unixodbc_2.3.4-2_ipq806x.ipk
+Size: 196108
+MD5Sum: dfc042d3750c4721fc1a97e49de6d576
+SHA256sum: 1050db2d5a78f19b9281cc42edf67e02d34d3d900df3c5e1412ec2dbd8fdea11
+Description:  unixODBC is an Open Source ODBC sub-system and an ODBC SDK for Linux,
+ Mac OSX, and UNIX.
+
+Package: vpnc-scripts
+Version: 20151220-1
+Depends: libc
+Source: qca/feeds/packages/net/vpnc-scripts
+Section: net
+Maintainer: Nikos Mavrogiannopoulos <n.mavrogiannopoulos@gmail.com>
+Architecture: ipq806x
+Installed-Size: 2283
+Filename: vpnc-scripts_20151220-1_ipq806x.ipk
+Size: 3071
+MD5Sum: f5aa279a8832c0cc7f246a5a77209424
+SHA256sum: 813d39e09ef3308fb24020127e16e566d7544ee8b7802061f047cc13aa95d6e1
+Description:  This package contains the vpnc-script which is used by vpnc
+ and OpenConnect to configure the tunnel interface.
+
+Package: xl2tpd
+Version: devel-20150930-1
+Depends: libc, ppp-mod-pppol2tp, resolveip
+Source: qca/feeds/packages/net/xl2tpd
+License: GPL-2.0
+LicenseFiles: LICENSE
+Section: net
+Maintainer: Yousong Zhou <yszhou4tech@gmail.com>
+Architecture: ipq806x
+Installed-Size: 45577
+Filename: xl2tpd_devel-20150930-1_ipq806x.ipk
+Size: 46617
+MD5Sum: cf4c419dec5223849a0acb6218fba548
+SHA256sum: f76c28db66c83bd59699ffdc106d51530b2cc8d9ad984ca4b3a76b055a8da853
+Description:  l2tpd is the open source implementation of the L2TP tunneling protocol (RFC2661).
+ It does implement both LAC and LNS role in a L2TP networking architecture. The
+ main goal of this protocol is to tunnel PPP frame trough an IP network.
+

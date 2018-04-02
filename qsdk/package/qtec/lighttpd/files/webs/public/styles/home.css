@@ -1,0 +1,803 @@
+body{
+    padding-top: 86px;
+}
+header{
+    position: fixed;
+    top:0;
+    left: 0;
+    z-index: 88;
+    width: 100%;
+    min-width: 1000px;
+    background: -webkit-linear-gradient(#43a5f3, #2196f3); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(#43a5f3, #2196f3); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(#43a5f3, #2196f3); /* Firefox 3.6 - 15 */
+    background: -ms-linear-gradient(#43a5f3, #2196f3);
+    background: linear-gradient(#43a5f3, #2196f3); /* 标准的语法 */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#43a5f3', endColorstr='#2196f3',GradientType=0 );
+}
+:root .gradient{filter:none;}
+.header{
+    position: relative;
+    width: 1160px;
+    margin: 0 auto;
+    padding: 0 28px;
+    padding-right: 96px;
+    height: 64px;
+    line-height: 64px;
+    overflow: hidden;
+}
+.logo,.nav,.user{
+    height: 100%;
+}
+.logo{
+    position: relative;
+    left: -202px;
+    float: left;
+}
+.logo img{
+    width: 178px;
+    height: 24px;
+    line-height: 24px;
+    margin-top: 20px;
+}
+.nav{
+    position: relative;
+    width: 100%;
+    padding-left: 202px;
+    margin-right: -96px;
+    float: left;
+}
+.menu{
+    width: 100%;
+    height: 100%;
+    float: left;
+    padding: 0 33px;
+    margin-left: -202px;
+}
+.menu ul{
+    font-size: 0;
+    height: 100%;
+}
+.menu ul li{
+    float: left;
+    font-size: 0;
+    height: 100%;
+}
+.menu ul li:hover{
+    border-radius: 3px;
+    background: #86C9FF;
+    -webkit-transition:  background 0.3s ease-in;
+    -moz-transition: background 0.3s ease-in ;
+    -ms-transition: background 0.3s ease-in ;
+    -o-transition:  background 0.3s ease-in;
+    transition: background 0.3s ease-in ;
+}
+.menu ul li a{
+    display: inline-block;
+    color: #a3d2fb;
+    padding: 0 36px;
+    font-size: 16px;
+}
+.menu ul li .active{
+    color: #fff;
+    font-size: 18px;
+}
+.menu ul li a:hover{
+    color: #fff;
+}
+.logout-content{
+    position: relative;
+    right: -64px;
+    height: 100%;
+    float: right;
+}
+.logout{
+    color: #fff;
+    font-size: 16px;
+}
+.container{
+    position: relative;
+    width: 1160px;
+    margin: 0 auto;
+    border-radius: 5px;
+    padding: 0;
+    background-color: inherit;
+}
+.row{
+    padding: 20px 0 0;
+}
+.manage-choose{
+    width: 880px;
+    margin: 0 auto;
+    overflow: hidden;
+    text-align: center;
+}
+.manage-choose{
+    width: 880px;
+}
+.device-icon,.router-icon,.internet-icon{
+    display: inline-block;
+    cursor: pointer;
+    height: 168px;
+}
+.device-icon{
+    width: 108px;
+    float: left;
+}
+.router-icon{
+    width: 320px;
+}
+.internet-icon{
+    width: 120px;
+    float: right;
+}
+.manage-choose img{
+    margin-bottom: 18px;
+}
+.device-icon>img{
+    width: 108px;
+    height: 81px;
+}
+.router-icon>img{
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 18px;
+    width: 64px;
+    height: 84px;
+}
+.internet-icon>img{
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 18px;
+    width: 81px;
+    height: 81px;
+}
+.router-ssid{
+    padding: 4px 2px;
+    font-size: 0;
+    overflow: hidden;
+}
+.router-ssid span{
+    float: left;
+    width: 50%;
+    line-height: 18px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+.normal-name{
+    text-align: right;
+}
+.speed-name{
+    text-align: left;
+}
+.device-icon span,.router-icon span,.internet-icon span{
+    font-size: 14px;
+    color: #999;
+    display: inline-block;
+}
+.connect-num,.speed-num{
+    padding: 4px 2px;
+    width: 100%;
+}
+.normal-name{
+    padding-right: 10px;
+    border-right: 1px solid #707071;
+}
+.speed-name{
+    padding-left: 10px;
+}
+.content{
+    min-height: 300px;
+    padding: 0 20px 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.router-content,.device-content,.connect-content{
+    width: 100%;
+    margin: 0 auto;
+    /*position: relative;*/
+    padding: 32px 0;
+}
+.manage-choose>div.active{
+    background-image: url('../images/bg_nav_on.png');
+    background-repeat: no-repeat;
+    background-position: bottom center;
+}
+.manage-choose>div.active span{
+    color: #424242;
+}
+/*.row div.active:before{*/
+    /*content: '';*/
+    /*border-left: 12px solid transparent;!*方框上部分背景颜色为透明*!*/
+    /*border-right: 12px solid transparent;!*方框下部分背景为透明*!*/
+    /*border-bottom: 14px solid #313131;!*箭头背景颜色*!*/
+    /*position: absolute;!*绝对定位1*!*/
+    /*top: -14px;!*距离顶部位置偏移量2*!*/
+    /*left: 459px;!*距离左边位置偏移量3*! !*123都是控制显示位置的*!*/
+/*}*/
+/*.row .device-content.active:before{*/
+    /*left:77px;*/
+/*}*/
+/*.row .connect-content.active:before{*/
+    /*left:867px;*/
+/*}*/
+/*.row div.active:after{*/
+    /*content: '';*/
+    /*border-left: 11px solid transparent;*/
+    /*border-right: 11px solid transparent;*/
+    /*border-bottom: 13px solid #fff;!*箭头背景颜色，覆盖前面的#eee颜色，使其颜色与整体颜色一致*!*/
+    /*position: absolute;*/
+    /*top: -13px;*/
+    /*left: 460px;*/
+/*}*/
+/*.row .device-content.active:after{*/
+    /*left:78px;*/
+/*}*/
+/*.row .connect-content.active:after{*/
+    /*left:868px;*/
+/*}*/
+
+.router-info{
+    text-align: left;
+}
+.content-title{
+    color: #2196F3;
+}
+.router-status{
+    font-size: 18px;
+   text-align: left;
+    padding: 2px 0 16px 0;
+}
+.router-info-content{
+    width: 100%;
+    height: 80px;
+    padding: 18px 0;
+    font-size: 0;
+    border-top: 1px solid #F3F3F3;
+    overflow: hidden;
+}
+.router-info-content>div{
+    width: 50%;
+    float: left;
+    overflow: hidden;
+    padding: 0 32px;
+}
+.model,.rom,.mac,.sn,.model span,.rom span,.mac span,.sn span{
+    display: inline-block;
+}
+.model span,.rom span,.mac span,.sn span{
+    width: 100%;
+}
+.model,.rom,.mac,.sn{
+    float: left;
+    width: 50%;
+}
+.model span,.rom span,.mac span,.sn span{
+    padding: 2px 0;
+    font-size: 14px;
+}
+.model .model-info,.rom .rom-info,.mac .router-mac,.sn .sn-info{
+    font-size: 18px;
+}
+.other-status{
+    margin-top: 32px;
+    width: 100%;
+    overflow: hidden;
+}
+.status-upper,.status-lower{
+    width: 100%;
+    overflow: hidden;
+}
+.download-status,.upload-status,.cpu-status,.memory-status{
+    width: 50%;
+    float: left;
+}
+.download-status,.cpu-status{
+    padding-right: 10px;
+}
+.upload-status,.memory-status{
+    padding-left: 10px;
+}
+.speed-status-header,.cpu-status-header,.memory-status-header{
+    height: 28px;
+    padding-right: 8px;
+}
+.speed-status-header span,.cpu-status-header span,.memory-status-header span{
+    float: right;
+    font-size: 14px;
+}
+.speed-status-header .device-download-speed,.speed-status-header .device-upload-speed{
+    float: none;
+}
+.speed-status-header .speed-status-title,.cpu-status-header .cpu-status-title,.memory-status-header .memory-status-title{
+    float: left;
+    font-size: 18px;
+}
+.speed-status-description,.cpu-status-description,.memory-status-description{
+    width: 100%;
+    height: 275px;
+    margin-bottom: 20px;
+    padding: 0 0 38px 10px;
+}
+.speed-status-statistics,.cpu-status-statistics,.memory-status-statistics{
+    margin-top: 8px;
+    padding-left: 16px;
+    text-align: left;
+    line-height: 30px;
+    background-color: #f8faff;
+}
+.speed-status-img,.cpu-status-img,.memory-status-img{
+    width: 100%;
+    height: 100%;
+}
+.speed-line-chart,.cpu-line-chart,.memory-line-chart{
+    width: 100%;
+    height: 100%;
+    background-color: #fff !important;
+}
+.speed-status-statistics span,.cpu-status-statistics span,.memory-status-statistics span{
+    font-size: 14px;
+}
+.interval{
+    margin: 0 4px;
+}
+.normal{
+    overflow: hidden;
+    border-radius: 8px;
+}
+.normal>li{
+    width: 50%;
+    text-align: center;
+    cursor: pointer;
+    padding: 12px 0;
+    background-color: #f2f2f2;
+}
+.normal>li.active{
+    color: #fff;
+    background-color: #179CF3;
+}
+.normal-header,.blacklist-header{
+    display: inline-block;
+}
+.list{
+    padding: 18px 10px;
+    font-size: 0;
+    overflow: visible;
+}
+.device-list{
+    margin-top: 8px;
+}
+.device-list-detail{
+    margin-bottom: 28px;
+}
+.device-info{
+    overflow: hidden;
+    padding: 8px 0 0;
+}
+.device-info>div{
+    float: left;
+    width: 23%;
+    height: 48px;
+    line-height: 24px;
+}
+.device-info .point-info{
+    overflow: hidden;
+    width: 31%;
+    font-size: 0;
+    padding-left: 18px;
+}
+.device-list span
+{
+    display: inline-block;
+    line-height: 24px;
+}
+.point-info,.device-connect-info,.device-speed,.device-control{
+    display: inline-block;
+    vertical-align: bottom;
+}
+.device-logo{
+    /*float: left;*/
+    position: relative;
+    width: 48px;
+    height: 48px;
+    margin-right: 14px;
+}
+.device-type{
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 48px 48px;
+}
+.pc{
+    background-image: url("../images/pc.png");
+}
+.andriod{
+    background-image: url("../images/android.png");
+}
+.ios{
+    background-image: url("../images/ios.png");
+}
+.other-device{
+    background-image: url("../images/unknown.png");
+}
+.device-list .self-tip{
+    font-size: 13px;
+    position: absolute;
+    top: 0;
+    left: -18px;
+    border-radius: 3px;
+    padding: 2px 4px;
+    line-height: 20px;
+    color: #fff;
+    background-color: #179CF3;
+}
+.black-list-content{
+    font-size: 0;
+}
+.black-device-none{
+    text-align: center;
+    font-size: 16px;
+}
+.black-list{
+    font-size: 0;
+    padding: 8px 20px;
+    margin-bottom: 16px;
+    overflow: hidden;
+}
+.black-list>div{
+    float: left;
+}
+.black-list span{
+    font-size: 14px;
+}
+.terminal-name,.device-mac,.black-list-del{
+    display: inline-block;
+    line-height: 30px;
+    width: 33.3333%;
+}
+.device-mac{
+    text-align: center;
+}
+.black-list-del{
+    text-align: right;
+}
+.black-list-del>button{
+    width: 106px;
+    padding: 6px 0;
+}
+.device-model{
+
+}
+.device-logo,.device-model{
+    display: inline-block;
+    vertical-align: middle;
+    height: 48px;
+}
+.device-model .connect-way{
+    border: 1px solid #2196F3;
+    color: #2196F3;
+    font-size: 14px;
+    line-height: 14px;
+    margin-left: 4px;
+    padding: 1px 3px;
+}
+.device-connect-info{
+    width: 186px;
+    /*padding-top:8px;*/
+}
+.device-speed{
+    width: 158px;
+    /*padding-top:5px;*/
+}
+
+.device-info .device-control{
+    font-size: 0;
+    line-height: 48px;
+    text-align: center;
+}
+.speed-limit{
+    margin-right: 9px;
+}
+.device-control button{
+    display: inline-block;
+    width: 96px;
+    padding: 4px 0;
+    vertical-align: middle;
+}
+.speed-limit>span,.confirm>span{
+    line-height: inherit;
+}
+.manual-setting span,.speed-testing-results span{
+    font-size: 15px;
+}
+.popup-header{
+    text-align: center;
+    padding: 14px 0;
+    background-color: #eee;
+}
+.manual-setting-content{
+    padding-top: 12px;
+}
+.popup-header span{
+    font-size: 16px;
+}
+.black-device-content,.manual-setting-content,.tip-content{
+    /*font-size:16px;*/
+   padding: 24px 0;
+}
+.black-remove{
+    padding-bottom: 0;
+}
+.limit-setting{
+    padding: 16px 6px;
+    margin: 0 18px;
+    background-color: #f8faff;
+}
+.limit-setting>div{
+    display: inline-block;
+}
+.limit-speed{
+    width: 240px;
+}
+.limit-setting input{
+    width: 96px;
+    height: 24px;
+    padding: 2px;
+    line-height: 18px;
+}
+.limit-speed-btn{
+    font-size: 0;
+    float: right;
+}
+.limit-speed-btn button{
+    padding: 4px 0;
+    width: 96px;
+}
+.limit-speed-btn .limit-cancel{
+    margin-right: 9px;
+}
+.limit-speed-content{
+    font-size: 0;
+    width: 460px;
+    margin: 0 auto;
+    padding: 16px 32px;
+    text-align: left;
+}
+.limit-speed-content>div{
+    display: inline-block;
+    line-height: 32px;
+    width: 100%;
+}
+.limit-speed-content>.limit-info{
+    width: 50%;
+}
+.limit-speed-content>.limit-line{
+    width: 100%;
+}
+.limit-tip{
+    text-align: center;
+}
+.limit-label{
+    display: inline-block;
+}
+.limit-speed-content .form-item{
+    /*margin-right: 16px;*/
+}
+.limit-speed-content .form-item label{
+    width: 64px;
+    height:32px;
+    line-height: 32px;
+    padding-right: 6px;
+}
+.limit-speed-content .form-item input{
+    width: 90px;
+    height:32px;
+    line-height: 32px;
+    margin-right: 8px;
+    padding: 0 6px;
+}
+.limit-form{
+    font-size: 0;
+}
+.limit-form .form-item{
+    display: inline-block;
+    margin: 0;
+    width: 50%;
+}
+.limit-speed-content .form-btn{
+    width: 100%;
+    font-size: 0;
+}
+.limit-speed-content .form-btn>button{
+    width: 106px;
+    padding: 10px 0;
+}
+.form-btn .cancel{
+    margin-right: 8px;
+}
+.tip-span{
+    padding-bottom: 10px;
+}
+.tip-span>span{
+    display: block;
+    text-align: center;
+    line-height: 32px;
+    font-size: 16px;
+}
+
+.black-device-info>div{
+    line-height: 22px;
+}
+.manual-setting-content .form-item label{
+    font-size: 15px;
+    width: 96px;
+}
+.manual-setting-content .form-item input{
+    width: 240px;
+    text-align: right;
+    margin-right: 8px;
+}
+.manual-setting-content .form-btn,.speed-testing-results-btn{
+    text-align: center;
+    padding-top: 6px;
+    font-size: 0;
+}
+.form-btn button{
+    padding: 10px 0;
+    width: 160px;
+    font-size: 14px;
+}
+.speed-testing-results-btn button{
+    padding: 10px 0;
+    width: 160px;
+    font-size: 14px;
+}
+.form-btn .cancel,.form-btn .black-cancel,.restart-testing{
+     margin-right: 16px;
+ }
+.form-btn .manual-setting-confirm,.result-confirm{
+    margin-left: 16px;
+}
+.red{
+    color: #ff0000;
+}
+.speed-testing-results-footer{
+    padding: 12px 0;
+}
+.black-device-tip-box{
+    position: absolute;
+    z-index: 11;
+    letter-spacing: 0px;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    margin-top: -90px;
+    margin-left: -190px;
+    width: 380px;
+    min-height: 60px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.black-device-tip-box span{
+    font-size: 15px;
+}
+.tip-main{
+    font-size: 16px;
+    color: #ff0000;
+    padding: 20px 0;
+    display: block;
+}
+.black-device-tip .form-item{
+    padding: 10px 6px;
+}
+.black-device-tip .form-item label{
+    font-size: 15px;
+}
+.black-device-tip .form-item input{
+    width: 80px;
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.black-device-tip .form-btn{
+    text-align: center;
+    padding-top: 10px;
+    font-size: 0;
+}
+.connect-content{
+    font-size:0;
+}
+.extranet-status,.boradband-status{
+}
+.extranet-status-header,.boradband-status-header{
+    display: inline-block;
+    margin-bottom: 18px;
+    font-size: 18px;
+}
+.extranet-info,.boradband-status-row{
+    border-top: 1px solid #ddd;
+    font-size: 0;
+    padding: 30px 10px;
+    overflow: hidden;
+}
+.extranet-info-row,.boradband-status-info,.boradband-status-control{
+    float: left;
+    overflow: hidden;
+    font-size:0;
+    display: inline-block;
+    width: 50%;
+}
+.extranet-info-row>div,.boradband-status-info>div,.boradband-status-control>div{
+    float: left;
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+    padding-bottom: 20px;
+}
+.extranet-info-row>div>span,.boradband-status-info>div>span{
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    width: 100%;
+    font-size: 14px;
+}
+.extranet-info-row .extranet-info-item,.boradband-status-info .boradband-info-item{
+    font-size: 18px;
+}
+.boradband-test{
+    padding: 10px 0;
+    width: 140px;
+}
+.boradband-setting,.qos-link{
+    line-height: 38px;
+    color: #179cf3;
+    text-decoration: underline;
+}
+/*.qos-link+*/
+.speed-testing{
+    margin-top: -197px;
+    margin-left: -197px;
+    width: 384px;
+    height: 384px;
+    text-align: center;
+}
+.speed-testing-canvas{
+    width: 384px;
+    height:324px;
+    margin-top: -20px;
+    overflow: hidden;
+}
+.speed-test-bottom{
+    margin-top: -40px;
+}
+.current-speed,.speed-testing-tip{
+    padding: 4px 0;
+}
+.form-btn{
+    text-align: center;
+    padding-top: 10px;
+    font-size: 0;
+}
+.speed-result{
+    font-size: 0;
+}
+.speed-result{
+    display: inline-block;
+    width: 100%;
+    padding: 28px 0;
+    line-height: 28px;
+}
+.speed-result span{
+    display: inline-block;
+    line-height: 28px;
+    font-size: 20px;
+}
+.speed-result .result-label{
+    padding-right: 10px;
+}
+.speed-testing-results-footer>a{
+    font-size: 15px;
+    text-decoration: underline;
+}

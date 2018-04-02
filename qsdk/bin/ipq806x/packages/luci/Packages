@@ -1,0 +1,197 @@
+Package: luci-app-ddns
+Version: 2.2.4-1
+Depends: libc, luci-mod-admin-full, ddns-scripts
+Source: qca/feeds/luci/applications/luci-app-ddns
+License: Apache-2.0
+Section: luci
+Maintainer: Christian Schoenebeck <christian.schoenebeck@gmail.com>
+Architecture: all
+Installed-Size: 23600
+Filename: luci-app-ddns_2.2.4-1_all.ipk
+Size: 24469
+MD5Sum: b2afadb53bd6d319c66e9507a9ba5578
+SHA256sum: af3c945abf921e8e512d5a7c4e87dc6a002063f34ae47afbeb346c95f1995c85
+Description:  LuCI Support for Dynamic DNS Client (ddns-scripts)
+
+Package: luci-app-firewall
+Version: git-18.089.39607-1d65974-1
+Depends: libc, firewall
+Source: qca/feeds/luci/applications/luci-app-firewall
+Section: luci
+Architecture: all
+Installed-Size: 10532
+Filename: luci-app-firewall_git-18.089.39607-1d65974-1_all.ipk
+Size: 11255
+MD5Sum: c18378d8936b2e30219494673834ae49
+SHA256sum: e72fc3b3ce383cf3527fec22536a36d4d24330fb75b83037472299c3f200366e
+Description:  Firewall and Portforwarding application
+
+Package: luci-app-multiwan
+Version: git-18.089.39607-1d65974-1
+Depends: libc, multiwan
+Source: qca/feeds/luci/applications/luci-app-multiwan
+Section: luci
+Architecture: all
+Installed-Size: 3147
+Filename: luci-app-multiwan_git-18.089.39607-1d65974-1_all.ipk
+Size: 3855
+MD5Sum: 96388f6582a2dfa7559560e918f52940
+SHA256sum: d4eec54367b0aede252d0ec888920227ea0c27d45b307487d8ca42ce3fefad48
+Description:  LuCI Support for the OpenWrt MultiWAN agent
+
+Package: luci-app-qos
+Version: git-18.089.39607-1d65974-1
+Depends: libc, qos-scripts
+Source: qca/feeds/luci/applications/luci-app-qos
+Section: luci
+Architecture: all
+Installed-Size: 1436
+Filename: luci-app-qos_git-18.089.39607-1d65974-1_all.ipk
+Size: 2163
+MD5Sum: a91ad8745cac5add4b5b6184008b5917
+SHA256sum: 536151927131baf09cdea236bbb52b0728fffcdf793b07242954ad6dc173c51d
+Description:  Quality of Service configuration module
+
+Package: luci-app-radvd
+Version: git-18.089.39607-1d65974-1
+Depends: libc, radvd
+Source: qca/feeds/luci/applications/luci-app-radvd
+Section: luci
+Architecture: all
+Installed-Size: 4623
+Filename: luci-app-radvd_git-18.089.39607-1d65974-1_all.ipk
+Size: 5414
+MD5Sum: df64c1ad94009d8c458014d48f8a14e7
+SHA256sum: 987ec42dd252aa79385456f29107ec77ee0c9adef9786a35e4e33be8f5f6438c
+Description:  LuCI Support for Radvd
+
+Package: luci-app-samba
+Version: git-18.089.39607-1d65974-1
+Depends: libc, samba36-server
+Source: qca/feeds/luci/applications/luci-app-samba
+Section: luci
+Architecture: all
+Installed-Size: 1361
+Filename: luci-app-samba_git-18.089.39607-1d65974-1_all.ipk
+Size: 2103
+MD5Sum: c0b51fbaac0e0d2790d9d8a70ab739d4
+SHA256sum: 4640b8403e3549e47a2b58e7f23bb81da4ae3a29c48116f886cf59ef7c604ad4
+Description:  Network Shares - Samba SMB/CIFS module
+
+Package: luci-app-upnp
+Version: git-18.089.39607-1d65974-1
+Depends: libc, miniupnpd
+Source: qca/feeds/luci/applications/luci-app-upnp
+Section: luci
+Architecture: all
+Installed-Size: 3238
+Filename: luci-app-upnp_git-18.089.39607-1d65974-1_all.ipk
+Size: 3974
+MD5Sum: 27ea3541a70d19d7691edd09b06228d9
+SHA256sum: 406015356e5310f8fb27b186d8ba99ca33f8f7cf3b3cba32cab13ec0d3f42286
+Description:  Universal Plug & Play configuration module
+
+Package: luci-base
+Version: git-18.089.39607-1d65974-1
+Depends: libc, lua, libuci-lua, luci-lib-nixio, luci-lib-ip, rpcd, libubus-lua
+Source: qca/feeds/luci/modules/luci-base
+Section: luci
+Architecture: ipq806x
+Installed-Size: 123365
+Filename: luci-base_git-18.089.39607-1d65974-1_ipq806x.ipk
+Size: 124209
+MD5Sum: bf381fec0c6e98b0ef8384de9e959691
+SHA256sum: 123294f60116c66f396143bc2ffea803f7876bd953beb7d7e72d08fbdb5ec98d
+Description:  LuCI core libraries
+
+Package: luci-lib-ip
+Version: git-18.089.39607-1d65974-1
+Depends: libc, liblua, libnl-tiny
+Source: qca/feeds/luci/libs/luci-lib-ip
+Section: luci
+Architecture: ipq806x
+Installed-Size: 8453
+Filename: luci-lib-ip_git-18.089.39607-1d65974-1_ipq806x.ipk
+Size: 9177
+MD5Sum: 706fe20dc59134bebe662e885996aca7
+SHA256sum: 71064e395b2a750c5792c3ea792df7d7403719f670d573cb36318b76901bc7ee
+Description:  Lua library for IP calculation and routing information
+
+Package: luci-lib-nixio
+Version: git-18.089.39607-1d65974-1
+Depends: libc, liblua
+Source: qca/feeds/luci/libs/luci-lib-nixio
+Section: luci
+Architecture: ipq806x
+Installed-Size: 28591
+Filename: luci-lib-nixio_git-18.089.39607-1d65974-1_ipq806x.ipk
+Size: 29067
+MD5Sum: ac73831e2e445b6ce12da63b5ef086b5
+SHA256sum: c018806abf10f72e8aa9664de9fe4d5f4953f1977b7a4d7189706fc5736e7eca
+Description:  NIXIO POSIX library
+
+Package: luci-mod-admin-full
+Version: git-18.089.39607-1d65974-1
+Depends: libc, luci-base
+Source: qca/feeds/luci/modules/luci-mod-admin-full
+Section: luci
+Architecture: ipq806x
+Installed-Size: 70065
+Filename: luci-mod-admin-full_git-18.089.39607-1d65974-1_ipq806x.ipk
+Size: 70925
+MD5Sum: 014890cba2cffe416191294cd4017b10
+SHA256sum: 8119ce7f3c3d5a7ac2ae8fc3166afe98b562bad2a8fbf9b7b2eadf9fa4130405
+Description:  LuCI Administration - full-featured for full control
+
+Package: luci-proto-ipv6
+Version: git-18.089.39607-1d65974-1
+Depends: libc
+Source: qca/feeds/luci/protocols/luci-proto-ipv6
+Section: luci
+Architecture: all
+Installed-Size: 4384
+Filename: luci-proto-ipv6_git-18.089.39607-1d65974-1_all.ipk
+Size: 5080
+MD5Sum: ed3a38e89e1f9323b10a56f83adf319f
+SHA256sum: 815ac1ea56bb68230b29ec4d73cf821326af28a2be7db6852b408a779caa1146
+Description:  Support for DHCPv6/6in4/6to4/6rd/DS-Lite/aiccu
+
+Package: luci-proto-ppp
+Version: git-18.089.39607-1d65974-1
+Depends: libc
+Source: qca/feeds/luci/protocols/luci-proto-ppp
+Section: luci
+Architecture: all
+Installed-Size: 2627
+Filename: luci-proto-ppp_git-18.089.39607-1d65974-1_all.ipk
+Size: 3339
+MD5Sum: 38c98d256d2cdbb0cb9c0800b31773da
+SHA256sum: 4557d9abaa39f055e8a38afa2d93d41a5d0353a2870d716a6c58795b517ec96c
+Description:  Support for PPP/PPPoE/PPPoA/PPtP
+
+Package: luci-theme-bootstrap
+Version: git-18.089.39607-1d65974-1
+Depends: libc
+Source: qca/feeds/luci/themes/luci-theme-bootstrap
+Section: luci
+Architecture: all
+Installed-Size: 12862
+Filename: luci-theme-bootstrap_git-18.089.39607-1d65974-1_all.ipk
+Size: 13610
+MD5Sum: 685e94754a16e9025097b0aabe203c0e
+SHA256sum: 998a463c16031a8139240e715f3f4d61a652a95be74d98a8f2863c36d903e216
+Description:  Bootstrap Theme (default)
+
+Package: luci
+Version: git-18.089.39607-1d65974-1
+Depends: libc, uhttpd, uhttpd-mod-ubus, luci-mod-admin-full, luci-theme-bootstrap, luci-app-firewall, luci-proto-ppp, libiwinfo-lua, luci-proto-ipv6
+Source: qca/feeds/luci/collections/luci
+Section: luci
+Architecture: all
+Installed-Size: 105
+Filename: luci_git-18.089.39607-1d65974-1_all.ipk
+Size: 887
+MD5Sum: 5d3d3e195ade440f9be51e8e60219c9d
+SHA256sum: 46ba285346e7bde645bf5313d3014eeb377254bcef34c5034359dc2b4521d02b
+Description:  Standard OpenWrt set including full admin with ppp support and the default Bootstrap theme
+

@@ -1,0 +1,275 @@
+Source-Makefile: feeds/alljoyn/alljoyn/Makefile
+Package: alljoyn
+Menu: 1
+Version: 15.04b-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libopenssl +libpthread +librt +libstdcpp +libcap
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Title: AllJoyn Peer-to-Peer networking
+Maintainer: AllSeen Alliance <allseen-core@lists.allseenalliance.org>
+Source: alljoyn-15.04.00b-src.tar.gz
+Type: ipkg
+Description: AllJoyn is a daemon and application framework for developing
+ad hoc peer-to-peer applications.  This includes the run-time
+daemon and C++ library.
+http://www.allseenalliance.org
+AllSeen Alliance <allseen-core@lists.allseenalliance.org>
+@@
+
+Package: alljoyn-non-gw-config
+Version: 15.04b-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread alljoyn
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Title: AllJoyn - alternate non-Gateway Config
+Maintainer: AllSeen Alliance <allseen-core@lists.allseenalliance.org>
+Source: alljoyn-15.04.00b-src.tar.gz
+Type: ipkg
+Description: Alternate AllJoyn configuration with defaults suitable for
+non-Gateway devices.  Do not install this on devices with a
+network interface connected to an insecure network such as
+the Internet.
+http://www.allseenalliance.org
+AllSeen Alliance <allseen-core@lists.allseenalliance.org>
+@@
+
+Package: alljoyn-c
+Version: 15.04b-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread alljoyn
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Title: AllJoyn - C binding
+Maintainer: AllSeen Alliance <allseen-core@lists.allseenalliance.org>
+Source: alljoyn-15.04.00b-src.tar.gz
+Type: ipkg
+Description: AllJoyn C binding.  This provides a C library for building
+AllJoyn programs in C.  This is just a C callable wrapper
+to the C++ library.
+http://www.allseenalliance.org
+AllSeen Alliance <allseen-core@lists.allseenalliance.org>
+@@
+
+Package: alljoyn-about
+Version: 15.04b-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread alljoyn
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Title: AllJoyn - About service library (deprecated)
+Maintainer: AllSeen Alliance <allseen-core@lists.allseenalliance.org>
+Source: alljoyn-15.04.00b-src.tar.gz
+Type: ipkg
+Description: AllJoyn About services library.  This library is deprecated.  The functionality
+provided by About has been integrated into liballjoyn with a simpler API.  This
+library will continue to be supported into 2015 and will be removed in 2016.
+http://www.allseenalliance.org
+AllSeen Alliance <allseen-core@lists.allseenalliance.org>
+@@
+
+Package: alljoyn-samples
+Version: 15.04b-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread alljoyn +PACKAGE_alljoyn-about:alljoyn-about
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Title: AllJoyn - testing samples
+Maintainer: AllSeen Alliance <allseen-core@lists.allseenalliance.org>
+Source: alljoyn-15.04.00b-src.tar.gz
+Type: ipkg
+Description: Alljoyn samples.  (This is primarily for testing.  The contents of this
+package vary according which other alljoyn packages are selected.)
+http://www.allseenalliance.org
+AllSeen Alliance <allseen-core@lists.allseenalliance.org>
+@@
+
+
+Source-Makefile: feeds/alljoyn/alljoyn-config/Makefile
+Package: alljoyn-config
+Menu: 1
+Version: 15.04.00-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread alljoyn +alljoyn-about
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Title: AllJoyn Config service library
+Maintainer: AllSeen Alliance <allseen-core@lists.allseenalliance.org>
+Source: alljoyn-services-15.04.00-src.tar.gz
+Type: ipkg
+Description: AllJoyn Config service library.
+http://www.allseenalliance.org
+AllSeen Alliance <allseen-core@lists.allseenalliance.org>
+@@
+
+Package: alljoyn-config-samples
+Menu: 0
+Version: 15.04.00-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread alljoyn-config +alljoyn-services_common
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Title: AllJoyn Config service library - testing samples
+Maintainer: AllSeen Alliance <allseen-core@lists.allseenalliance.org>
+Source: alljoyn-services-15.04.00-src.tar.gz
+Type: ipkg
+Description: Alljoyn Config service library samples.  (This is primarily for testing.
+The contents of this package vary according which other alljoyn packages
+are selected.)
+http://www.allseenalliance.org
+AllSeen Alliance <allseen-core@lists.allseenalliance.org>
+@@
+
+
+Source-Makefile: feeds/alljoyn/alljoyn-controlpanel/Makefile
+Package: alljoyn-controlpanel
+Menu: 1
+Version: 15.04.00-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread alljoyn
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Title: AllJoyn ControlPanel service library
+Maintainer: AllSeen Alliance <allseen-core@lists.allseenalliance.org>
+Source: alljoyn-services-15.04.00-src.tar.gz
+Type: ipkg
+Description: AllJoyn ControlPanel service library.
+http://www.allseenalliance.org
+AllSeen Alliance <allseen-core@lists.allseenalliance.org>
+@@
+
+Package: alljoyn-controlpanel-samples
+Menu: 0
+Version: 15.04.00-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread alljoyn-controlpanel +alljoyn-about +alljoyn-notification +alljoyn-services_common
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Title: AllJoyn ControlPanel service library - testing samples
+Maintainer: AllSeen Alliance <allseen-core@lists.allseenalliance.org>
+Source: alljoyn-services-15.04.00-src.tar.gz
+Type: ipkg
+Description: Alljoyn ControlPanel service library samples.  (This is primarily for testing.
+The contents of this package vary according which other alljoyn packages
+are selected.)
+http://www.allseenalliance.org
+AllSeen Alliance <allseen-core@lists.allseenalliance.org>
+@@
+
+
+Source-Makefile: feeds/alljoyn/alljoyn-notification/Makefile
+Package: alljoyn-notification
+Menu: 1
+Version: 15.04.00-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread alljoyn +alljoyn-about
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Title: AllJoyn Notification service library
+Maintainer: AllSeen Alliance <allseen-core@lists.allseenalliance.org>
+Source: alljoyn-services-15.04.00-src.tar.gz
+Type: ipkg
+Description: AllJoyn Notification service library.
+http://www.allseenalliance.org
+AllSeen Alliance <allseen-core@lists.allseenalliance.org>
+@@
+
+Package: alljoyn-notification-samples
+Menu: 0
+Version: 15.04.00-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread alljoyn-notification +alljoyn-services_common
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Title: AllJoyn Notification service library - testing samples
+Maintainer: AllSeen Alliance <allseen-core@lists.allseenalliance.org>
+Source: alljoyn-services-15.04.00-src.tar.gz
+Type: ipkg
+Description: Alljoyn Notification service library samples.  (This is primarily for testing.
+The contents of this package vary according which other alljoyn packages
+are selected.)
+http://www.allseenalliance.org
+AllSeen Alliance <allseen-core@lists.allseenalliance.org>
+@@
+
+
+Source-Makefile: feeds/alljoyn/alljoyn-onboarding/Makefile
+Package: alljoyn-onboarding
+Version: 15.04.00-2
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread alljoyn wpa-supplicant +alljoyn-about +alljoyn-config +alljoyn-services_common +hostapd +wpa-cli
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Title: AllJoyn onboarding service library
+Maintainer: AllSeen Alliance <allseen-core@lists.allseenalliance.org>
+Source: alljoyn-services-15.04.00-src.tar.gz
+Type: ipkg
+Description: AllJoyn onboarding service.
+http://www.allseenalliance.org
+AllSeen Alliance <allseen-core@lists.allseenalliance.org>
+@@
+
+
+Source-Makefile: feeds/alljoyn/alljoyn-sample_apps/Makefile
+Package: alljoyn-sample_apps
+Version: 15.04.00-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread alljoyn +alljoyn-about +alljoyn-config +alljoyn-controlpanel +alljoyn-notification +alljoyn-services_common
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Title: AllJoyn services sample_apps - sample applications
+Maintainer: AllSeen Alliance <allseen-core@lists.allseenalliance.org>
+Source: alljoyn-services-15.04.00-src.tar.gz
+Type: ipkg
+Description: AllJoyn services sample_apps sample applications - includes ServerSample and ACServerSample.
+http://www.allseenalliance.org
+AllSeen Alliance <allseen-core@lists.allseenalliance.org>
+@@
+
+
+Source-Makefile: feeds/alljoyn/alljoyn-services_common/Makefile
+Package: alljoyn-services_common
+Version: 15.04.00-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread alljoyn
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Title: AllJoyn Services Common service library
+Maintainer: AllSeen Alliance <allseen-core@lists.allseenalliance.org>
+Source: alljoyn-services-15.04.00-src.tar.gz
+Type: ipkg
+Description: AllJoyn Services Common service library.
+http://www.allseenalliance.org
+AllSeen Alliance <allseen-core@lists.allseenalliance.org>
+@@
+
+

@@ -1,0 +1,334 @@
+*{
+    box-sizing:border-box;
+    font-size: 14px;
+    color: #424242;
+    font-family: PingFangSC-Regular,Microsoft Yahei,Helvetica Neue,Tahoma,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+}
+html,body,div,img,p,ul,li,span,a,button{
+    margin:0;
+    padding: 0;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    background-color: #f8faff;
+}
+a{
+    text-decoration: none;
+}
+ul,li{
+    list-style: none;
+    padding: 0;
+}
+span{
+    font-size: inherit;
+ }
+em{
+    font-style: normal;
+}
+::-ms-clear, ::-ms-reveal{display: none;}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #A9A9A9; opacity:1;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #A9A9A9;opacity:1;
+}
+
+input:-ms-input-placeholder{
+    color: #A9A9A9;opacity:1;
+}
+
+input::-webkit-input-placeholder{
+    color: #A9A9A9;opacity:1;
+}
+.txt-center{
+    text-align: center;
+}
+.form-item{
+    font-size: 0;
+    margin-bottom: 16px;
+}
+.form-item>label,.switch-content>label{
+    width: 40%;
+    height: 40px;
+    line-height: 40px;
+    text-align: right;
+    margin-right: -13px;
+    padding-right: 29px;
+    display: inline-block;
+}
+.switch-content,.switch-content>label{
+    height: 22px;
+    line-height: 22px;
+    vertical-align: top;
+}
+input,select{
+    line-height: 22px;
+    height: 40px;
+    padding: 8px;
+    border-radius: 3px;
+    border: 1px solid #E0E0E0;
+    font-size: 14px;
+}
+/*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+select::-ms-expand { display: none; }
+select{
+    background-color: #fff;
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    background: url("../images/arrow.png") no-repeat scroll transparent;
+    background-position: 216px center;
+    background-size: 16px auto;
+    padding-right: 24px;
+}
+select{
+[;line-height:34px;]
+}
+.ie select{
+    appearance: normal;
+    -moz-appearance:normal;
+    -webkit-appearance: normal;
+    background-image: none;
+    background-position: 0;
+    background-size: 0;
+    padding-right: 8px;
+}
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    background-color: #fff;
+    color: #424242;
+}
+[type="checkbox"]{
+    width: 14px;
+    height: 14px;
+    outline: 0;
+    vertical-align:middle;
+    margin-top:0;
+    margin-right: 4px;
+    background-color: #fff;
+    border-color: #E0E0E0;
+}
+.ie [type="checkbox"]{
+    padding: 0;
+}
+[type="checkbox"]{
+    padding: 0\0
+}
+[type="radio"]{
+    height: auto;
+    line-height: inherit;
+}
+button,.button:focus{
+    position: relative;
+    background: #179CF3;
+    font-size: 14px;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    border: 1px solid #179CF3;
+    border-radius: 5px;
+}
+button:hover{
+    background: #39AAF5;
+    border-color: #39AAF5;
+    opacity: 0.68;
+    transition: all 0.3s ease;
+}
+.nearly-btn:disabled,.black-device-btn:disabled,.list-refresh-btn:disabled{
+    background-color: #ccc;
+    border-color: #ccc;
+}
+button.disabled>span{
+    opacity:0;
+}
+button>span{
+    color: #fff;
+}
+button .disabled{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    margin-top: -8px;
+    margin-left: -8px;
+    background-image: url("../images/button-rect-spinner.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 16px 16px;
+    color: #fff;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.row h1{
+    font-size: 24px;
+    margin: 20px 0;
+}
+.tip-header{
+    padding: 16px 0;
+    font-size: 18px;
+}
+.hide{
+    display: none;
+}
+.font-clear{
+    font-size: 0;
+}
+.font-clear>button{
+    margin: 0 6px;
+}
+.container{
+    width: 1000px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+.router-logo{
+    width: 172px;
+    height: 152px;
+    margin: 0 auto;
+    text-align: center;
+}
+.router-logo img{
+    width: 100%;
+    height: 100%;
+}
+.text-center{
+    text-align: center;
+}
+.text-left{
+    text-align: left;
+}
+.form-tip {
+    height: 16px;
+    line-height: 16px;
+    margin-bottom: 4px;
+    font-size: 14px;
+    text-align: center;
+}
+.switch{
+    width: 240px;
+    display: inline-block;
+    height: 22px;
+}
+.shadow,.popup,.tipshow{
+    position: fixed;
+    z-index: 299;
+    left: 0;
+    right: 0;
+    top:0;
+    bottom:0;
+    background: rgba(0,0,0,0.5);
+    text-align: center;
+}
+.popup-content{
+    display: none;
+    position: fixed;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -260px;
+    width: 520px;
+    min-height: 220px;
+    border-radius: 5px;
+    font-size: 0;
+    overflow: hidden;
+    text-align: center;
+    z-index: 999;
+}
+.close-icon{
+    background-image: url('../images/ic_close.png');
+    background-repeat: no-repeat;
+    font-style: normal;
+    position: absolute;
+    right: 16px;
+    top: 15px;
+    width: 16px;
+    height: 16px;
+    background-size: 16px 16px;
+    cursor: pointer;
+}
+.result-content,.loading-content{
+    position: fixed;
+    z-index: 310;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    border-radius: 5px;
+    font-size: 0;
+    overflow: hidden;
+    margin-top: -44px;
+    margin-left: -140px;
+    padding: 6px 10px;
+    width: 280px;
+    text-align: center;
+}
+.failed-icon{
+    background-image: url("../images/failed.png");
+}
+.success-icon{
+    background-image: url("../images/success.png");
+}
+.loading-img{
+    background-image: url("../images/spinner.gif");
+}
+.failed-icon,.success-icon,.loading-img{
+    margin: 12px 0;
+    height: 42px;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: center;
+}
+.result-tip,.loading-tip{
+    font-size: 16px;
+    line-height: 22px;
+}
+.result-content a{
+    font-size: 16px;
+    color: #179cf3;
+    text-decoration: underline;
+}
+.tip-header{
+    text-align: center;
+    padding: 12px 0;
+    background-color: #eee;
+    font-size: 16px;
+}
+.tip-content-info{
+    padding: 18px 0;
+    font-size: 16px;
+}
+.tip-btn{
+    padding-top: 18px;
+    text-align: center;
+}
+.tip-btn>button{
+    font-size: 15px;
+    padding: 8px 0;
+}
+.error-tip{
+    position: absolute;
+    visibility: hidden;
+}
+.error-color{
+    color: rgba(255,0,0,1);
+}
+.progress-loading{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0);
+    z-index: 120;
+}
+footer{
+    padding: 28px 0;
+}

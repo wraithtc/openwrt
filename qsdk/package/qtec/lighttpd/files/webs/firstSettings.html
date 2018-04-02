@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首次配置</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" >
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="./public/styles/normalize.css">
+    <link rel="stylesheet" type="text/css" href="./public/styles/common.css?v=1.2.2">
+    <link rel="stylesheet" type="text/css" href="public/styles/firstSettings.css?v=1.2.2">
+    <script src="./public/javascripts/jquery-3.2.1.min.js"></script>
+    <script src="./public/javascripts/error.js?v=1.2.2"></script>
+    <script>
+        window.onload=function loading() {
+            var data={
+                "requestUrl": "get_systemconfigure_cfg",
+                "method": "get"
+            };
+            $.ajax({
+                type:'POST',
+                url:'/cgi-bin/web.cgi/',
+                data:JSON.stringify(data),
+                dataType:'json',
+                success:function (res) {
+                    if(res.data.configured==1){
+                        window.location.href='./login.html?t='+Math.random();
+                    }else {
+                        $('.loading').hide()
+                        $('.welcome').fadeIn()
+                    }
+                },
+                error:function () {
+                    setTimeout(function () {
+                        resultTipshow(-1,-1);
+                    },3000)
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="router-logo"><img src="./public/images/logo.png" alt="=logo"></div>
+        <div class="row loading">
+            <h1 class="text-center">欢迎使用三点安全网关</h1>
+            <div class="decription">
+                <h2>您连接的网关还未初始化完成</h2>
+                <span>稍后会自动进入引导页面...</span>
+                <span>如果未能跳转，请<a href=javascript:reset('welcome')>点击此处</a>继续访问</span>
+            </div>
+            <div class="am-progress am-progress-striped am-progress-sm am-active">
+                <div class="am-progress-bar am-progress-bar-secondary"></div>
+            </div>
+        </div>
+        <div class="row welcome" style="display: none">
+            <h1 class="text-center">欢迎使用三点安全网关</h1>
+            <div class="protocol"><span class="">请先阅读<a href="javascript:protocol()">《用户许可协议》</a>后选择是否同意</span></div>
+            <div class="agree"><button class="agree-btn" id="continue" type="submit" >同意，继续</button></div>
+            <div class="protocol-content">
+                <div class="protocol-box">
+                    <h2>用户许可协议</h2>
+                    <span>一、用户许可协议</span>
+                    <span></span>
+                    <button class="protocol-btn" type="button">确认</button>
+                </div>
+            </div>
+        </div>
+        <div class="row connectWays" style="display: none">
+            <h1 class="text-center">设置网关上网方式</h1>
+            <div class="connect-way-list">
+                <ul class="nav-tabs">
+                    <li class="pppoe active">宽带拨号(PPPoE)</li>
+                    <li class="dhcp">动态IP连接</li>
+                    <li class="static">静态IP连接</li>
+                </ul>
+                <div class="form-tabs">
+                    <div class="pppoe-form">
+                        <span>请输入网络运营商提供的帐号与密码</span>
+                        <form>
+                            <div class="form-item account-item">
+                                <label>宽带帐号</label>
+                                <input class="account" type="text"  maxlength="20" placeholder="请输入4-20位宽带帐号" autocomplete="off">
+                            </div>
+                            <div class="form-item pwd-item">
+                                <label>宽带密码</label>
+                                <div class="pwd-content">
+                                    <input class="pppoe-pwd" type="password" maxlength="20" placeholder="请输入4-20位宽带密码" autocomplete="off">
+                                    <span class="pwd-switch hidePassword"></span>
+                                </div>
+                            </div>
+                            <div class="skip"><a href="javascript:void(0)" class="skip-btn">跳过此步骤</a></div>
+                            <div class="form-btn">
+                                <button class="pppoebtn"  type="button"><span>下一步</span><b class="disabled hide"></b></button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="dhcp-main" style="display: none">
+                        <span>动态IP上网方式，无需设置参数，直接点击下一步即可</span>
+                        <div class="skip"><a href="javascript:void(0)" class="skip-btn">跳过此步骤</a></div>
+                        <div class="dhcp-btn">
+                            <button class="dhcpbtn" type="button"><span>下一步</span><b class="disabled hide"></b></button>
+                        </div>
+                    </div>
+                    <div class="static-form" style="display: none">
+                        <form>
+                            <div class="form-item ip-item">
+                                <label>IP地址</label>
+                                <input class="ip" type="text" maxlength="15" autocomplete="off" placeholder="请输入IP地址">
+                            </div>
+                            <div class="form-item mask-item">
+                                <label>子网掩码</label>
+                                <input class="mask" type="text" maxlength="15" autocomplete="off" placeholder="请输入子网掩码">
+                            </div>
+                            <div class="form-item gateway-item">
+                                <label>默认网关</label>
+                                <input class="gateway" type="text" maxlength="15" autocomplete="off" placeholder="请输入默认网关">
+                            </div>
+                            <div class="form-item preferreddns-item">
+                                <label>首选DNS</label>
+                                <input class="preferreddns" type="text" maxlength="15" autocomplete="off" placeholder="请输入首选DNS">
+                            </div>
+                            <div class="form-item sparedns-item">
+                                <label>备用DNS</label>
+                                <input class="sparedns" type="text" maxlength="15" autocomplete="off" placeholder="请输入备用DNS">
+                            </div>
+                            <div class="skip"><a href="javascript:void(0)" class="skip-btn">跳过此步骤</a></div>
+                            <div class="form-btn">
+                                <button class="staticbtn" type="button"><span>下一步</span><b class="disabled hide"></b></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="error-tip"><span class="error-info"></span></div>
+            </div>
+        </div>
+        <div class="row basicSetting" style="display: none;">
+            <h1 class="text-center">设置wifi名称和密码</h1>
+            <div class="basic-setting-form">
+                <form>
+                    <div class="form-item ssid-item">
+                        <label>wifi名称</label>
+                        <input class="ssid" type="text" maxlength="32" placeholder="请设置1-32位wifi名称">
+                    </div>
+                    <div class="form-item">
+                        <label>wifi密码</label>
+                        <div class="pwd-content wifi-pwd-item">
+                            <input class="wifi-pwd" type="password" maxlength="63" placeholder="请设置8-63位wifi和管理密码">
+                            <span class="pwd-switch hidePassword"></span>
+                        </div>
+                    </div>
+                    <div class="form-item hide">
+                        <label>管理密码</label>
+                        <div class="pwd-content manage-pwd-item">
+                            <input class="manage-pwd" type="password" maxlength="63" placeholder="请设置4-63位管理密码">
+                            <span class="pwd-switch hidePassword"></span>
+                        </div>
+                    </div>
+                    <div class="form-tip">
+                        <span class="manage-pwd-set">点击单独设置管理密码</span>
+                        <span class="form-tip-content">管理密码与wifi密码相同</span>
+                    </div>
+                    <div class="form-btn">
+                        <button class="btn"  type="button"><span>完成配置</span><b class="disabled hide"></b></button>
+                    </div>
+                    <!--<div class="back"><a class="setback" href="javascript:void(0)">返回</a></div>-->
+                </form>
+            </div>
+            <div class="error-tip"><span class="error-info"></span></div>
+        </div>
+        <div class="setting-success">
+            <div class="setting-info">
+                <div class="success-icon"></div>
+                <div class="success-info-tip">
+                    <div><span>配置成功，可以开始管理您的网关</span></div>
+                    <div><span class="con-tip">（请连接网关，如果已连接请忽略）</span></div>
+                </div>
+                <div class="setting-wifi-info">
+                    <div class="setting-ssid-normal list-item"><div class="info-label">2.4G wifi名称：</div><span class="text-overflow"></span></div>
+                    <div class="setting-ssid-speed list-item"><div class="info-label">5G wifi名称：</div><span class="text-overflow"></span></div>
+                    <div class="setting-pwd list-item"><div class="info-label">wifi密码：</div><span class="text-overflow"></span></div>
+                    <div class="setting-managepwd list-item"><div class="info-label">管理密码：</div><span class="text-overflow"></span></div>
+                </div>
+                <div class="setting-btn">
+                    <span class="info-btm">点击确认进入登录页面</span>
+                    <button type="button">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tipshow" style="display: none;">
+        <div class="result-content">
+            <div class="result-icon hide"></div>
+            <div class="result-tip"></div>
+        </div>
+    </div>
+    <script src="./public/javascripts/jsencrypt.min.js"></script>
+    <script src="./public/javascripts/common.js?v=1.2.2"></script>
+    <script>
+        function reloading() {
+            var data={
+                "requestUrl": "get_systemconfigure_cfg",
+                "method": "get"
+            };
+            $.ajax({
+                type:'POST',
+                url:'/cgi-bin/web.cgi/',
+                data:JSON.stringify(data),
+                dataType:'json',
+                success:function (res) {
+                    if(res.data.configured==1){
+                        window.location.href='./login.html?t='+Math.random();
+                    }
+                },
+                error:function () {
+                    setTimeout(function () {
+                        reloading();
+                    },3000)
+                }
+            })
+        }
+        function reset(hash) {
+            $('input').val('');
+            errorhide();
+            $('.row').hide();
+            switch (hash){
+                case"welcome":
+                    $('.loading').hide();
+                    $('.welcome').fadeIn();
+                    break;
+                case 'connectWays':
+                    $('.connectWays').fadeIn();
+                    break;
+                case 'basicSetting':
+                    $('.ssid').val('3Care-gateway')
+                    $('.basicSetting').fadeIn();
+                    break;
+                default:
+                    break;
+            }
+            reloading();
+        }
+        function protocol() {
+            $('.protocol-content').fadeIn();
+        }
+        $('.protocol-btn').on('click',function () {
+            $('.protocol-content').fadeOut();
+        })
+        $('.agree-btn').on('click',function () {
+//            hashChange(0);
+            reset('connectWays')
+        })
+        function resultShowIn(icon) {
+            $('.result-icon').addClass(icon);
+            $('.result-icon').removeClass('hide');
+            $('.tipshow').fadeIn();
+        }
+        function first_set_resultTipshow(m,n) {
+            if(n==-1){
+                $('.result-tip').html('正在保存，请稍候...');
+            }else {
+                $('.result-tip').html(n);
+            }
+            if(m==-1){
+                var icon='loading-img';
+                resultShowIn(icon)
+            }else {
+                $('.result-icon').removeClass('loading-img');
+                if(m==0){
+                    var icon='failed-icon';
+                }
+                if(m==1){
+                    var icon='success-icon';
+                }
+                resultShowIn(icon)
+                setTimeout(function () {
+                    $('.tipshow').fadeOut();
+                    $('.result-tip').html();
+                    setTimeout(function () {
+                        $(icon).addClass('hide')
+                        $('.result-icon').removeClass(icon);
+                    },500)
+                },2000)
+            }
+        }
+        $('.pwd-switch').on('click',function () {
+            $(this).toggleClass('hidePassword');
+            $(this).toggleClass('showPassword');
+            if($(this).prev().attr('type')=='password'){
+                $(this).prev().attr('type','text')
+            }else {
+                $(this).prev().attr('type','password')
+            }
+        })
+        function first_set_loading(e) {
+            $(e).attr('disabled','disabled');
+            $(e).addClass('disabled');
+            $(e).find('.disabled').removeClass('hide')
+//            $('.loading').fadeIn();
+        }
+        function first_set_disLoading(e) {
+            $(e).removeAttr('disabled');
+            $(e).removeClass('disabled');
+            $(e).find('.disabled').addClass('hide')
+//            $('.loading').fadeOut();
+        }
+        $('.nav-tabs li').on('click',function () {
+            if(!($(this).hasClass('active'))){
+                var i=$('.nav-tabs li.active').index();
+                $('.nav-tabs li.active').removeClass('active');
+                $('.form-tabs>div').eq(i).attr('style','display:none;')
+                $('.form-tabs>div').eq(i).addClass('hide');
+                var j=$(this).index();
+                $(this).addClass('active');
+                $('.form-tabs>div').eq(j).fadeIn()
+                $('.form-tabs>div').eq(j).removeClass('hide');
+            }
+            if($('.error-info').html().length>0){
+                errorhide();
+            }
+        })
+        $('.pppoebtn').on('click',function () {
+            var account=$('.account').val();
+            var pass=$('.pppoe-pwd').val();
+            var check_err=pppoe_check(account,pass,'.account','.pwd-content');
+            if(check_err==-1){
+                return;
+            }
+            var self=this;
+            first_set_loading(this);
+            var i=0;
+            pppoegetkey(pass,account,self,i)
+        })
+        function pppoegetkey(pass,account,self,i) {
+            var data={
+                "requestUrl": "getkeycfg",
+                "method": "get"
+            }
+            $.ajax({
+                type:'POST',
+                url:'/cgi-bin/web.cgi/',
+                data:JSON.stringify(data),
+                dataType:'json',
+                success:function (res) {
+                    if(res.errorcode==0)
+                    {
+                        var publickey=res.data.rand_key;
+                        if(publickey.length==0){
+                            if(i<3){
+                                pppoegetkey(pass,account,self,i++)
+                            }else {
+                                first_set_disLoading(self);
+                                $('.pppoe-pwd').val(pass);
+                                first_set_resultTipshow(0,'网关异常请检查后重试');
+                            }
+                        }else {
+                            var encrypt = new JSEncrypt();
+                            encrypt.setPublicKey(publickey);
+                            var encrypted = encrypt.encrypt(pass);
+                            pppoesubmit(encrypted,account,self);
+                        }
+                    }else{
+                        first_set_disLoading(self);
+                        $('.pppoe-pwd').val(pass);
+                        first_set_resultTipshow(res.msg);
+                    }
+                },
+                error:function () {
+                    first_set_disLoading(self);
+                    $('.pppoe-pwd').val(pass);
+                    first_set_resultTipshow(0,'已超时，请检查网络连接状态');
+                }
+            })
+        }
+        function pppoesubmit(encrypted,account,self) {
+            var data={"data":{"connectiontype": "pppoe",
+                "username": account,
+                "password": encrypted
+            },
+                "requestUrl": "set_basicwan_cfg",
+                "method": "put"}
+            $.ajax({
+                type:'POST',
+                url:'/cgi-bin/web.cgi/',
+                data:JSON.stringify(data),
+                dataType:'json',
+                success:function (res) {
+                    first_set_disLoading(self);
+                    if(res.errorcode==0)
+                    {
+//                        hashChange(1);
+                        reset('basicSetting')
+                    }else{
+                        error.error_msg(res);
+                    }
+                },
+                error:function () {
+                    first_set_disLoading(self);
+                    first_set_resultTipshow(0,'已超时，请检查网络连接状态');
+                }
+            })
+        }
+        $('.dhcpbtn').on('click',function () {
+            first_set_loading(this);
+            var data = {
+                "data": {"connectiontype": "dhcp"},
+                "requestUrl": "set_basicwan_cfg",
+                "method": "put"
+            }
+            var self=this;
+            $.ajax({
+                type:'POST',
+                url:'/cgi-bin/web.cgi/',
+                data:JSON.stringify(data),
+                dataType:'json',
+                success:function (res) {
+                    first_set_disLoading(self);
+                    if(res.errorcode==0)
+                    {
+//                        hashChange(1);
+                        reset('basicSetting')
+                    }else{
+                        first_set_resultTipshow(0,res.msg);
+                    }
+                },
+                error:function () {
+                    first_set_disLoading(self);
+                    first_set_resultTipshow(0,'已超时，请检查网络连接状态');
+                }
+            })
+        })
+        var staticTip=$('.form-tip-content-static');
+        $('.staticbtn').on('click',function () {
+            var ip=$('.ip').val();
+            var mask=$('.mask').val();
+            var gateway=$('.gateway').val();
+            var preferreddns=$('.preferreddns').val()
+            var sparedns=$('.sparedns').val();
+            var check_info={
+                "ip":ip,
+                "mask":mask,
+                "gateway":gateway,
+                "preferreddns":preferreddns,
+                "sparedns":sparedns
+            }
+            var tip_var={
+                "ip":".ip",
+                "mask":".mask",
+                "gateway":".gateway",
+                "preferreddns":".preferreddns",
+                "sparedns":".sparedns"
+            }
+            var check_result=static_check(check_info,tip_var);
+            if(check_result==-1){
+                return;
+            }
+            first_set_loading(this);
+            var data = {
+                "data": {
+                    "connectiontype": "static",
+                    "ipaddr": ip,
+                    "netmask": mask,
+                    "gateway": gateway,
+                    "dns":check_result
+                },
+                "requestUrl": "set_basicwan_cfg",
+                "method": "put"
+            }
+            var self=this;
+            $.ajax({
+                type:'POST',
+                url:'/cgi-bin/web.cgi/',
+                data:JSON.stringify(data),
+                dataType:'json',
+                success:function (res) {
+                    first_set_disLoading(self);
+                    if(res.errorcode==0)
+                    {
+//                        hashChange(1);
+                        reset('basicSetting')
+                    }else{
+                        first_set_resultTipshow(0,res.msg);
+                    }
+                },
+                error:function () {
+                    first_set_disLoading(self);
+                    first_set_resultTipshow(0,'已超时，请检查网络连接状态');
+                }
+            })
+        })
+        $('.skip-btn').on('click',function () {
+//            hashChange(1);
+            reset('basicSetting')
+        })
+        var alone=0,savessid,savepwd,savemanagepwd;
+        function manage_pwd_set_alone(self) {
+            if($('.error-info').html().length>0){
+                errorhide();
+            }
+            $('.manage-pwd-item').parent().toggleClass('hide');
+            $('.form-tip-content').toggleClass('hide')
+            if(alone==0){
+                $(self).html('点击取消单独设置管理密码');
+                $('.wifi-pwd').attr('placeholder','请设置8-63位wifi密码')
+                alone=1;
+                return;
+            }
+            if(alone==1){
+                $(self).html('点击单独设置管理密码');
+                $('.wifi-pwd').attr('placeholder','请设置8-63位wifi和管理密码')
+                alone=0;
+                return;
+            }
+        }
+        $('.manage-pwd-set').click(function () {
+            var self=this;
+            manage_pwd_set_alone(self)
+        })
+        $('.btn').on('click',function () {
+            var ssid=$('.ssid').val();
+            if(ssid.length == 0)
+            {
+                errorShow('.ssid',"wifi名称不能为空");
+                return;
+            }
+            if(!check_reg.ssid_reg.test(ssid)){
+                errorShow('.ssid','请输入1-32位wifi名称');
+                return;
+            }
+            var pwd=$('.wifi-pwd').val();
+            if(pwd.length == 0)
+            {
+                errorShow('.wifi-pwd-item',"wifi密码不能为空");
+                return;
+            }
+            if(!check_reg.wifi_pwd_reg.test(pwd)){
+                errorShow('.wifi-pwd-item','请输入8-63位wifi密码');
+                return;
+            }
+            if(cn_test(pwd)==-1){
+                errorShow('.wifi-pwd-item',"wifi密码不支持中文字符");
+                return
+            }
+            if(alone==1){
+                var managePwd=$('.manage-pwd').val();
+                if(managePwd.length == 0)
+                {
+                    errorShow('.manage-pwd-item',"管理密码不能为空");
+                    return;
+                }
+                if(cn_test(managePwd)==-1){
+                    errorShow('.manage-pwd-item',"管理密码不支持中文字符");
+                    return
+                }
+                if(pwd!=managePwd){
+                    if(!check_reg.manage_pwd_reg.test(managePwd)){
+                        errorShow('.manage-pwd-item','请输入4-63位管理密码');
+                        return;
+                    }
+                }
+            }
+            savessid=ssid;
+            savepwd=pwd;
+            if(alone==1) {
+                savemanagePwd=managePwd;
+            }
+            if(alone==0) {
+                savemanagePwd=pwd;
+            }
+            first_set_loading(this);
+            var i=0;
+            var self=this;
+            getkey(pwd,self,i)
+        })
+        function getkey(pwd,self,i) {
+            var data={
+                "requestUrl": "getkeycfg",
+                "method": "get"
+            }
+            $.ajax({
+                type:'POST',
+                url:'/cgi-bin/web.cgi/',
+                data:JSON.stringify(data),
+                dataType:'json',
+                success:function (res) {
+                    if(res.errorcode==0)
+                    {
+                        var publickey=res.data.rand_key;
+                        if(publickey.length==0){
+                            if(i<3){
+                                getkey(pwd,self,i++)
+                            }else {
+                                first_set_disLoading(self);
+                                $('.wifi-pwd').val(pwd);
+                                first_set_resultTipshow(0,'网关异常请检查后重试');
+                            }
+                        }else {
+                            var encrypt = new JSEncrypt();
+                            encrypt.setPublicKey(publickey);
+                            var passencrypted = encrypt.encrypt(pwd);
+                            if(alone==1) {
+                                var managepassencrypted = encrypt.encrypt(savemanagePwd);
+                            }
+                            if(alone==0) {
+                                var managepassencrypted = passencrypted;
+                            }
+                            var data={"data":{
+                                "ssid":savessid,
+                                "key": passencrypted,
+                                "password": managepassencrypted,
+                            },
+                                "requestUrl": "set_firstconfigure_cfg",
+                                "method": "put"}
+                            submit(data,self);
+                        }
+                    }else{
+                        first_set_disLoading(self);
+                        $('.ssid-pwd').val(pwd);
+                        first_set_resultTipshow(res.msg);
+                    }
+                },
+                error:function () {
+                    first_set_disLoading(self);
+                    $('.ssid-pwd').val(pwd);
+                    first_set_resultTipshow(0,'已超时，请检查网络连接状态');
+                }
+            })
+        }
+        function submit(data,self) {
+            $.ajax({
+                type:'POST',
+                url:'/cgi-bin/web.cgi/',
+                data:JSON.stringify(data),
+                dataType:'json',
+                success:function (res) {
+                    if(res.errorcode==0)
+                    {
+                        $('.setting-ssid-normal>span').html(savessid);
+                        $('.setting-ssid-speed>span').html(savessid);
+                        $('.setting-pwd>span').html(savepwd);
+                        $('.setting-managepwd>span').html(savemanagePwd);
+                        $('.setting-success').fadeIn();
+                    }else{
+                        first_set_resultTipshow(0,res.msg);
+                    }
+                    first_set_disLoading(self);
+                },
+                error:function () {
+                    first_set_disLoading(self);
+                    first_set_resultTipshow(0,'已超时，请检查网络连接状态');
+                }
+            })
+        }
+        $('.setback').on('click',function () {
+            reset('connectWays')
+        })
+        $('.setting-btn').on('click',function () {
+            window.location.href = './login.html';
+        })
+    </script>
+</body>
+</html>

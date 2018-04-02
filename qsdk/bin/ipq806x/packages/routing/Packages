@@ -1,0 +1,154 @@
+Package: kmod-nat46
+Version: 3.14.77+6-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-ipv6
+Source: qca/feeds/routing/nat46
+License: GPL-2.0
+Section: kernel
+Maintainer: Steven Barth <cyrus@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 13626
+Filename: kmod-nat46_3.14.77+6-1_ipq806x.ipk
+Size: 14457
+MD5Sum: 74b2af287a4281b6ff1585071ebd7e86
+SHA256sum: 06f11345f7d12eced97fb66da462546de89051b96a0c6c0fe1faafb50f528465
+Description:  Stateless NAT46 translation kernel module
+
+Package: map-t
+Version: 6
+Depends: libc, map, kmod-nat46
+Source: qca/feeds/routing/nat46
+License: GPL-2.0
+Section: net
+Maintainer: Steven Barth <cyrus@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 105
+Filename: map-t_6_ipq806x.ipk
+Size: 823
+MD5Sum: 16e9a1919f7adfcf3b181e20f4ca60c5
+SHA256sum: e12d282d3db6a52bf5db3fb8adc3fb90ce10663480a6e48c9e286efa58bb47b5
+Description:  MAP-T configuration support
+
+Package: mcproxy
+Version: 2014-12-31-b7bd2d0809a0d1f177181c361b9a6c83e193b79a-2
+Depends: libc, libpthread, libstdcpp
+Source: qca/feeds/routing/mcproxy
+License: GPL-2.0+
+Section: net
+Maintainer: Steven Barth <cyrus@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 109163
+Filename: mcproxy_2014-12-31-b7bd2d0809a0d1f177181c361b9a6c83e193b79a-2_ipq806x.ipk
+Size: 110102
+MD5Sum: 5b4ff134437e1746b462173df481dc7a
+SHA256sum: 0d68c3329363cb4183d6ef301e327eb43edf778e83f6a607b3e112a6a990be7c
+Description:  mcproxy is a free & open source implementation of the IGMP/MLD proxy function (see  RFC 4605) for Linux systems.
+ It operates on the kernel tables for multicast routing and allows for multiple instantiations,
+ as well as dynamically changing downstream interfaces.
+
+Package: miniupnpd
+Version: 1.9.20150609-1
+Depends: libc, iptables, libip4tc, libip6tc, ip6tables
+Source: qca/feeds/routing/miniupnpd
+License: BSD-3-Clause
+Section: net
+Maintainer: Markus Stenberg <fingon@iki.fi>
+Architecture: ipq806x
+Installed-Size: 51815
+Filename: miniupnpd_1.9.20150609-1_ipq806x.ipk
+Size: 52793
+MD5Sum: 7a4f7080d29b7c060731a0dd13278b88
+SHA256sum: c52cfc1ccc9ec61a43390d05ac3668db7230c60e8d37e11a54f138f31c9ac61d
+Description:  Lightweight UPnP IGD, NAT-PMP & PCP daemon
+
+Package: quagga-libzebra
+Version: 0.99.22.4-2
+Depends: libc, quagga
+Source: qca/feeds/routing/quagga
+License: GPL-2.0
+Section: net
+Maintainer: Vasilis Tsiligiannis <b_tsiligiannis@silverton.gr>
+Architecture: ipq806x
+Installed-Size: 107162
+Filename: quagga-libzebra_0.99.22.4-2_ipq806x.ipk
+Size: 106723
+MD5Sum: 7709e44c8e7148dbcd4f29924c16bcd4
+SHA256sum: f5241e56bd052cd7a357003a45e127b28b2f280b194a1fac2b903d0ec1879fef
+Description:  zebra library
+
+Package: quagga-ripd
+Version: 0.99.22.4-2
+Depends: libc, quagga, quagga-libzebra
+Source: qca/feeds/routing/quagga
+License: GPL-2.0
+Section: net
+Maintainer: Vasilis Tsiligiannis <b_tsiligiannis@silverton.gr>
+Architecture: ipq806x
+Installed-Size: 32857
+Filename: quagga-ripd_0.99.22.4-2_ipq806x.ipk
+Size: 33493
+MD5Sum: c24de01624ef557ea0822e7f4a43edd4
+SHA256sum: 9d91088b41b4dcf7d3a314d1eee891a17f072ff09eae875367594db31dbaa965
+Description:  RIP routing engine
+
+Package: quagga-vtysh
+Version: 0.99.22.4-2
+Depends: libc, quagga, quagga-libzebra, libreadline, libncurses
+Source: qca/feeds/routing/quagga
+License: GPL-2.0
+Section: net
+Maintainer: Vasilis Tsiligiannis <b_tsiligiannis@silverton.gr>
+Architecture: ipq806x
+Installed-Size: 99904
+Filename: quagga-vtysh_0.99.22.4-2_ipq806x.ipk
+Size: 100602
+MD5Sum: fc02e9b055e22baea2e47d4018c06f3a
+SHA256sum: 52df71ee92764686925bb2f72ed0d6ed1d52ac4f32bbe35508693b5aeaa46a7e
+Description:  integrated shell for Quagga routing software
+
+Package: quagga-watchquagga
+Version: 0.99.22.4-2
+Depends: libc, quagga, quagga-libzebra
+Source: qca/feeds/routing/quagga
+License: GPL-2.0
+Section: net
+Maintainer: Vasilis Tsiligiannis <b_tsiligiannis@silverton.gr>
+Architecture: ipq806x
+Installed-Size: 10740
+Filename: quagga-watchquagga_0.99.22.4-2_ipq806x.ipk
+Size: 11501
+MD5Sum: e3f1c427d8b55e51c2e0fb8984f2ad1a
+SHA256sum: 02906b40cc73a4738c5333bc10dd32f3d4f48d758e8e6303a4f689602f994997
+Description:  Quagga watchdog
+
+Package: quagga-zebra
+Version: 0.99.22.4-2
+Depends: libc, quagga, quagga-libzebra
+Source: qca/feeds/routing/quagga
+License: GPL-2.0
+Section: net
+Maintainer: Vasilis Tsiligiannis <b_tsiligiannis@silverton.gr>
+Architecture: ipq806x
+Installed-Size: 63094
+Filename: quagga-zebra_0.99.22.4-2_ipq806x.ipk
+Size: 63728
+MD5Sum: fadb06c344c2cb65767d30a562e30901
+SHA256sum: e63e15da40356536038c4f827f6cd43489c4d0daf36364877d02e31e573b4aed
+Description:  Zebra daemon
+
+Package: quagga
+Version: 0.99.22.4-2
+Depends: libc, librt
+Source: qca/feeds/routing/quagga
+License: GPL-2.0
+Section: net
+Maintainer: Vasilis Tsiligiannis <b_tsiligiannis@silverton.gr>
+Architecture: ipq806x
+Installed-Size: 3551
+Filename: quagga_0.99.22.4-2_ipq806x.ipk
+Size: 4369
+MD5Sum: 7c581c8fafa5f0a3e423fe93ea7ddbd1
+SHA256sum: c13d5ebae4eb8c872c108ce9f032e2a6f7df4f0b7297d1f92774f7129393afdc
+Description:  A routing software package that provides TCP/IP based routing services
+ with routing protocols support such as RIPv1, RIPv2, RIPng, OSPFv2,
+ OSPFv3, BGP-4, and BGP-4+
+

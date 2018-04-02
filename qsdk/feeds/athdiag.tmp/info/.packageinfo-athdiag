@@ -1,0 +1,19 @@
+Source-Makefile: feeds/athdiag/athdiag/Makefile
+Package: athdiag
+Version: g96b5b9e-dirty-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +qca-wifi-10.4
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: QCA
+Category: QCA Proprietary software
+Title: QCA ATHDIAG(athdiag) Driver & tools
+Maintainer: 
+Source: 
+Type: ipkg
+Description:   athdiag command support for ath10k
+http://www.qca.qualcomm.com
+
+@@
+
+

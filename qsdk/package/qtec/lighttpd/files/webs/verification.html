@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>防蹭网验证</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" >
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <script src="/public/javascripts/flexible_css.js"></script>
+    <script src="/public/javascripts/flexible.js"></script>
+    <style>
+        html,body,header,div,span,label,input,button{
+            margin: 0;
+            padding: 0;
+            color: #555;
+            font-size: 16px;
+            font-family: PingFangSC-Regular,Microsoft Yahei,Helvetica Neue,Tahoma,Arial,sans-serif;
+        }
+        button{
+            cursor: pointer;
+        }
+        .hide{
+            display: none;
+        }
+        header{
+            width: 100%;
+            height: 60px;
+            background: #1195f5;
+            text-align: center;
+        }
+        header>span{
+            line-height: 60px;
+            font-size: 24px;
+            color: #fff;
+        }
+        .content{
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        .title,form{
+            text-align: center;
+        }
+        .title>span{
+            display: block;
+            padding: 4px 0;
+        }
+        .form-item{
+            max-width: 420px;
+            padding: 8px 16px;
+            margin: 0 auto;
+        }
+        .form-item>input{
+            width: 200px;
+            font-size: 14px;
+            padding: 8px;
+            border-radius: 3px;
+            border: 1px solid rgba(189,189,189,0.8);
+        }
+        .form-item .question{
+            border: none;
+            background: #fff;
+        }
+        .btn-form{
+            max-width: 320px;
+        }
+        .tip-line{
+            width: 100%;
+            line-height: 20px;
+            height: 20px;
+            text-align: center;
+        }
+        .tip-content{
+            font-size: 14px;
+            color: #ff0000;
+        }
+        button{
+            width: 100%;
+            max-width:380px;
+            background-color: #179CF3;
+            color: #fff;
+            padding: 10px 0;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .tip{
+            position: fixed;
+            top:0;
+            bottom:0;
+            left:0;
+            right: 0;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 99;
+        }
+        .tip-box{
+            position: absolute;
+            width: 300px;
+            height: 88px;
+            top: 50%;
+            left: 50%;
+            margin-top: -44px;
+            margin-left: -150px;
+            font-size: 16px;
+            background-color: #fff;
+            border-radius: 5px;
+            overflow: hidden;
+            text-align: center;
+        }
+        .success-result{
+            width: 600px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+        .success-content{
+            text-align: center;
+            font-size: 0;
+        }
+        .success-content>img{
+            height:54px;
+        }
+        .result-content{
+            padding-top: 6px;
+        }
+        .success-result span{
+            line-height: 28px;
+            vertical-align: bottom;
+            display: block;
+        }
+        .tip-box>img{
+            margin: 10px 0;
+            width: 40px;
+        }
+        .success-icon{
+            margin-top: 12px;
+        }
+        @media screen and (max-width:600px){
+            header{
+                height: 1.25rem;
+            }
+            header>span{
+                line-height: 1.25rem;
+                font-size: 0.48rem;
+            }
+            .content{
+                padding: 0.2rem 0.5rem;
+            }
+            .title>span{
+                padding: 0.1rem 0.2rem;
+                font-size: 0.4rem;
+                text-align: left;
+            }
+            form{
+                margin-top: 0.2rem;
+            }
+            .form-item{
+                font-size: 0;
+                padding: 0.16rem 0.4rem;
+            }
+            .form-item>input,.form-item>label{
+                width: 50%;
+                font-size: 0.4rem;
+            }
+            .form-item>label{
+                text-align: right;
+            }
+            .form-item>input{
+                padding: 0.14rem;
+            }
+            .tip-content{
+                font-size: 0.4rem;
+            }
+            button{
+                max-width: 12.8rem;
+                padding: 0.28rem 0;
+                font-size: 0.4rem;
+            }
+            .success-content>img{
+                height:1.4rem;
+            }
+            .result-content{
+                padding-top: 0.16rem;
+            }
+            .tip-box{
+                font-size: 0.4rem;
+                width: 90%;
+                max-width: 8.8rem;
+                height: 2.75rem;
+                top: 50%;
+                left: 50%;
+                margin-top: -1.375rem;
+                margin-left: -4.4rem;
+                border-radius: 0.08rem;
+            }
+            .tip-box>img{
+                margin: 0.3rem 0;
+                width: 1.2rem;
+            }
+            .success-result{
+                width: 100%;
+                padding: 1.066667rem 0;
+            }
+            .success-result span{
+                line-height: 0.7466667rem;
+                font-size: 0.4rem;
+            }
+        }
+        @media screen and (max-width:330px){
+            .form-item{
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <span>三点量子安全网关</span>
+</header>
+<div class="container">
+    <div class="content">
+        <div class="title">
+            <span>请您根据问题提示，输入正确的答案，回答正确后才能正常上面</span>
+            <span>回答错误将无法继续访问网络</span>
+        </div>
+        <form>
+            <div class="form-item">
+                <label>密码保护问题：</label>
+                <input class="question" type="text" disabled value=""/>
+            </div>
+            <div class="form-item">
+                <label>密码保护答案：</label>
+                <input class="answer" type="text" autofocus="autofocus" placeholder="请输入正确的答案" autocomplete="off">
+            </div>
+            <div class="tip-line"><span class="tip-content"></span></div>
+            <div class="form-item btn-form">
+                <button type="button" class="confirm-btn">确认</button>
+            </div>
+        </form>
+    </div>
+</div>
+    <div class="tip question-verification hide">
+        <div class="tip-box">
+            <img src="/public/images/spinner.gif" alt="loading...">
+            <div><span>正在验证...</span></div>
+        </div>
+    </div>
+    <div class="success-result hide">
+        <div class="success-content">
+            <img src="/public/images/success.png" alt="success...">
+            <div class="result-content">
+                <span class="result-info">您的设备已经通过认证</span>
+                <span class="result-info">可以关闭当前认证页面</span>
+                <span class="result-info">刷新页面继续之前的访问</span>
+            </div>
+        </div>
+    </div>
+    <script src="/public/javascripts/jquery-3.2.1.min.js"></script>
+    <script>
+        getQuestion();
+        function getQuestion() {
+            var data={
+                "requestUrl":"get_antiwifi_question",
+                "method": "get"
+            }
+            $.ajax({
+                type: 'POST',
+                url: 'http://gw.3caretec.com:81/cgi-bin/web.cgi/',
+                data: JSON.stringify(data),
+                dataType: 'json',
+                success: function (res) {
+                    if (res.errorcode == 0) {
+                        $('.question').val(res.data.question);
+                    }
+                }
+            })
+        }
+        var m=0;
+        $('.confirm-btn').click(function () {
+            if($('.answer').val().length>0){
+                $('.question-verification').removeClass('hide');
+                var data={
+                    "data":{
+                        "answer":$('.answer').val()
+                    },
+                    "requestUrl":"check_antiwifi_password",
+                    "method": "post"
+                }
+                $.ajax({
+                    type: 'POST',
+                    url: 'http://gw.3caretec.com:81/cgi-bin/web.cgi/',
+                    data: JSON.stringify(data),
+                    dataType: 'json',
+                    success: function (res) {
+                        if (res.errorcode == 0) {
+                            $('.question-verification').addClass('hide');
+                            if(res.data.checkresult==0){
+                                $('.container').addClass('hide');
+                                $('.success-result').removeClass('hide');
+//                                setTimeout(function () {
+//                                    location.reload()
+//                                },2000)
+                            } else {
+                                if(res.data.checkresult==1){
+                                    $('.tip-content').html('答案错误');
+                                }
+                            }
+                        }else {
+                            $('.tip-content').html(res.msg);
+                            $('.verification').addClass('hide');
+                        }
+                    },
+                    error:function () {
+                        $('.question-verification').addClass('hide');
+                        $('.tip-content').html('网络异常，请检查');
+
+                    }
+                })
+            }else {
+                $('.tip-content').html('请输入答案');
+            }
+        })
+        $('.answer').on('input',function () {
+            $('.tip-content').html('');
+        })
+    </script>
+</body>
+</html>
+

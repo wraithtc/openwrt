@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/gwsw/S304/!svn/ver/9844/trunk/platform/src/fwk/src/vos/linux
+END
+vos_mem_oal.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/gwsw/S304/!svn/ver/6308/trunk/platform/src/fwk/src/vos/linux/vos_mem_oal.c
+END
+vos_log_oal.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/gwsw/S304/!svn/ver/1017/trunk/platform/src/fwk/src/vos/linux/vos_log_oal.c
+END
+vos_mem_oal.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/gwsw/S304/!svn/ver/1017/trunk/platform/src/fwk/src/vos/linux/vos_mem_oal.h
+END
+vos_log_oal.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/gwsw/S304/!svn/ver/3556/trunk/platform/src/fwk/src/vos/linux/vos_log_oal.h
+END
+vos_msg_oal.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/gwsw/S304/!svn/ver/9844/trunk/platform/src/fwk/src/vos/linux/vos_msg_oal.c
+END
+vos_msg_oal.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/gwsw/S304/!svn/ver/2985/trunk/platform/src/fwk/src/vos/linux/vos_msg_oal.h
+END

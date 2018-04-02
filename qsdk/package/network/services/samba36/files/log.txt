@@ -1,0 +1,1 @@
+smb 3.6.25 require transfer encrypt

@@ -1,0 +1,203 @@
+body{
+    padding-top: 86px;
+}
+header{
+    position: fixed;
+    top:0;
+    left: 0;
+    z-index: 290;
+    width: 100%;
+    min-width: 1000px;
+    background-color: #319df3;
+    /*background: -webkit-linear-gradient(#43a5f3, #2196f3); !* Safari 5.1 - 6.0 *!*/
+    /*background: -o-linear-gradient(#43a5f3, #2196f3); !* Opera 11.1 - 12.0 *!*/
+    /*background: -moz-linear-gradient(#43a5f3, #2196f3); !* Firefox 3.6 - 15 *!*/
+    /*background: -ms-linear-gradient(#43a5f3, #2196f3);*/
+    /*background: linear-gradient(#43a5f3, #2196f3); !* 标准的语法 *!*/
+    /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#43a5f3', endColorstr='#2196f3',GradientType=0 );*/
+}
+:root .gradient{filter:none;}
+.header{
+    position: relative;
+    width: 1160px;
+    margin: 0 auto;
+    padding: 0 28px;
+    padding-right: 96px;
+    height: 64px;
+    line-height: 64px;
+    overflow: hidden;
+}
+.logo,.nav,.user{
+    height: 100%;
+}
+.logo{
+    position: relative;
+    left: -202px;
+    float: left;
+}
+.logo img{
+    width: 178px;
+    height: 24px;
+    line-height: 24px;
+    margin-top: 20px;
+}
+.nav{
+    position: relative;
+    width: 100%;
+    padding-left: 202px;
+    margin-right: -96px;
+    float: left;
+}
+.menu{
+    width: 100%;
+    height: 100%;
+    float: left;
+    padding: 0 33px;
+    margin-left: -202px;
+}
+.menu ul{
+    font-size: 0;
+    height: 100%;
+}
+.menu ul li{
+    float: left;
+    font-size: 0;
+    height: 100%;
+}
+.menu ul li:hover{
+    background: #86C9FF;
+    -webkit-transition:  background 0.3s ease-in;
+    -moz-transition: background 0.3s ease-in ;
+    -ms-transition: background 0.3s ease-in ;
+    -o-transition:  background 0.3s ease-in;
+    transition: background 0.3s ease-in ;
+}
+.menu ul li a{
+    display: inline-block;
+    color: #a3d2fb;
+    padding: 0 36px;
+    font-size: 16px;
+}
+.menu ul li .active{
+    color: #fff;
+    font-size: 18px;
+}
+.menu ul li a:hover{
+    color: #fff;
+}
+.logout-content{
+    position: relative;
+    right: -64px;
+    height: 100%;
+    float: right;
+}
+.logout{
+    color: #fff;
+    font-size: 16px;
+}
+.container{
+    width: 100%;
+    position: relative;
+    background: inherit;
+}
+.nav-list{
+    position: absolute;
+    width: 200px;
+    top:0;
+    background-color: #fff;
+}
+.nav-list .nav-list-content{
+    padding: 16px 0;
+}
+.nav-list ul{
+    font-size: 0;
+}
+.nav-list ul li{
+    width: 100%;
+    padding-left: 29px;
+    padding-bottom: 16px;
+    cursor: pointer;
+}
+.nav-list ul li a{
+    width: 100%;
+    display: inline-block;
+    padding: 6px 0;
+    padding-left: 30px;
+    font-size: 16px;
+    text-align: left;
+    color: #777;
+    font-weight: 300;
+    transition: background-color 0.35s ease-in;
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 17px 16px;
+}
+.nav-list ul li:hover>a,.nav-list ul li a.active{
+    color: #2196F3;
+    border-right: 3px solid #2196F3;
+    -webkit-transition:  background 0.3s ease-in;
+    -moz-transition: background 0.3s ease-in ;
+    -ms-transition: background 0.3s ease-in ;
+    -o-transition:  background 0.3s ease-in;
+    transition: background 0.3s ease-in ;
+}
+.row-list{
+    position: fixed;
+    top:64px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    padding: 20px 0;
+    background-color: #f8faff;
+    text-align: center;
+    z-index: 88;
+}
+
+.row-list .nav-list-content{
+    width: 1160px;
+    margin: 0 auto;
+    padding: 0;
+    background-color: #fff;
+}
+.row-list ul li{
+    display: inline-block;
+    padding: 12px 0;
+    margin: 0 14px;
+    width: auto;
+}
+.row-list ul li a{
+    padding: 30px 0 10px;
+    text-align: center;
+    background-position: top center;
+}
+.row-list ul li:hover>a,.row-list ul li a.active{
+    border: none;
+    border-bottom: 3px solid #2196F3;
+}
+.frame{
+    position: relative;
+    width: 1160px;
+    min-height: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    z-index: 200;
+    overflow: hidden;
+}
+.frame-container{
+    position: relative;
+}
+.frame-list>div{
+    display: none;
+}
+.frame-list>div.show{
+    padding: 24px 40px
+}
+.save-btn {
+    padding: 10px 0;
+    width: 240px;
+}
+.save-btn>span{
+    text-align: center;
+    color: #fff;
+    padding: 0 !important;
+}

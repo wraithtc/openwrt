@@ -1,0 +1,27 @@
+Package: kmod-qca-ssdk-hnat
+Version: 3.14.77+g1d65974-dirty-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-ipt-extra, kmod-ipt-filter, kmod-ipv6, kmod-qca-rfs, kmod-ppp
+Provides: qca-ssdk
+Source: qca/feeds/ssdk/qca-ssdk
+Section: kernel
+Architecture: ipq806x
+Installed-Size: 649615
+Filename: kmod-qca-ssdk-hnat_3.14.77+g1d65974-dirty-1_ipq806x.ipk
+Size: 633470
+MD5Sum: 76def3d931f6bbabf87e45f574dd847f
+SHA256sum: ceeac1820067fd5fe1642a9fddab8cd7a6797825c47e32c543435281aa6ea994
+Description:  Kernel driver for QCA SSDK (hnat)
+
+Package: qca-ssdk-shell
+Version: g1d65974-dirty-1
+Depends: libc
+Source: qca/feeds/ssdk/qca-ssdk-shell
+Section: QCA
+Architecture: ipq806x
+Installed-Size: 154404
+Filename: qca-ssdk-shell_g1d65974-dirty-1_ipq806x.ipk
+Size: 153429
+MD5Sum: 136ce8256c215e5e3ba0b2efbdfe0936
+SHA256sum: 6c3c7d3140b5873895fde13be63625d9650c79b5b11493db6d797565b501095c
+Description:  Shell application for QCA SSDK
+

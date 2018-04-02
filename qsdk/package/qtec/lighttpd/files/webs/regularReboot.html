@@ -1,0 +1,82 @@
+<div class="regular-reboot">
+    <div class="title-description">
+        <span class="title-main">定时重启</span>
+    </div>
+    <div class="regular-reboot-content">
+        <div class="form-item switch-content">
+            <label>定时重启开关</label>
+            <div class="switch">
+                <input type="checkbox" class="reboot-switch-input switch-input">
+                <span class="switch-icon"></span>
+            </div>
+        </div>
+        <div class="regular-reboot-settings" style="display: none;">
+            <div class="form-item">
+                <label>重启时间</label>
+                <div class="reboot-time">
+                    <!--<input class="time" type="time">-->
+                    <!--<label>时</label>-->
+                    <!--<input class="minute" type="number"><label>分</label>-->
+                    <input type="text" maxlength="2" value="00" class="hour" autocomplete="off"/>
+                    <label>时</label>
+                    <input type="text" maxlength="2" value="00" class="minute" autocomplete="off"/>
+                    <label>分</label>
+                </div>
+            </div>
+            <div class="form-item">
+                <label>重复周期</label>
+                <div class="checked-btn">
+                    <input type="checkbox" class="checkhide"/>
+                    <span class="workingday">工作日</span>
+                </div>
+                <div class="checked-btn">
+                    <input type="checkbox" class="checkhide"/>
+                    <span class="weekend">周末</span>
+                </div>
+                <div class="checked-btn">
+                    <input type="checkbox" class="checkhide"/>
+                    <span class="all">全选</span>
+                </div>
+                <div class="checked-btn">
+                    <input type="checkbox" class="checkhide"/>
+                    <span class="notAll">全不选</span>
+                </div>
+                <div class="checked-btn">
+                    <input type="checkbox" class="checkhide"/>
+                    <span class="inverse">反选</span>
+                </div>
+            </div>
+            <div class="cycle-list">
+                <div class="monday">
+                    <input type="checkbox" class="checkhide" checked/>
+                    <span>星期一</span>
+                </div>
+                <div class="tuesday">
+                    <input type="checkbox" class="checkhide" checked/>
+                    <span>星期二</span>
+                </div>
+                <div class="wednesday">
+                    <input type="checkbox" class="checkhide" checked/>
+                    <span>星期三</span>
+                </div>
+                <div class="thursday">
+                    <input type="checkbox" class="checkhide" checked/>
+                    <span>星期四</span>
+                </div>
+                <div class="friday">
+                    <input type="checkbox" class="checkhide" checked/>
+                    <span>星期五</span>
+                </div>
+                <div class="saturday">
+                    <input type="checkbox" class="checkhide" checked/>
+                    <span>星期六</span>
+                </div>
+                <div class="sunday">
+                    <input type="checkbox" class="checkhide"  checked/>
+                    <span>星期日</span>
+                </div>
+            </div>
+        </div>
+        <div class="setting-save"><button class="regular-start-save-btn save-btn" type="button"><span>保存</span><b class="disabled hide"></b></button></div>
+    </div>
+</div>

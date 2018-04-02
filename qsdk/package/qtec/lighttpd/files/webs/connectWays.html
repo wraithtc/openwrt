@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>上网方式选择</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" >
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="./public/styles/normalize.css">
+    <link rel="stylesheet" type="text/css" href="./public/styles/common.css?v=1.01.4a">
+    <link rel="stylesheet" type="text/css" href="./public/styles/connectways.css?v=1.01.4a">
+</head>
+<body>
+    <div class="container">
+        <div class="router-logo"><img src="./public/images/smart_home.png" alt="smart_home-logo"></div>
+        <div class="row">
+            <h1 class="text-center">欢迎使用九州量子路由器</h1>
+            <div class="connect-way-list">
+                <ul class="nav-tabs">
+                    <li class="pppoe active">宽带拨号(PPPoE)</a></li>
+                    <li class="dhcp">动态IP连接</a></li>
+                    <li class="static">静态IP连接</a></li>
+                </ul>
+                <div class="form-tabs">
+                    <div class="pppoe-form">
+                        <span>请输入网络运营商提供的帐号与密码</span>
+                        <form>
+                            <div class="form-item account-item">
+                                <label>宽带帐号</label>
+                                <input class="account" type="text"  maxlength="20" placeholder="请输入4-20位宽带帐号" autocomplete="off">
+                            </div>
+                            <div class="form-item pwd-item">
+                                <label>宽带密码</label>
+                                <div class="pwd-content">
+                                    <input class="pwd" type="password" maxlength="20" placeholder="请输入4-20位宽带密码" autocomplete="off">
+                                    <spsn class="pwd-switch hidePassword"></spsn>
+                                </div>
+                            </div>
+                            <div class="skip"><a href="javascript:void(0)" class="skip-btn">跳过此步骤</a></div>
+                            <div class="form-btn">
+                                <button class="pppoebtn"  type="button"><span>下一步</span><b class="disabled hide"></b></button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="dhcp-main hide" style="display: none">
+                        <span>动态IP上网方式，无需设置参数，直接点击下一步即可</span>
+                        <div class="skip"><a href="javascript:void(0)" class="skip-btn">跳过此步骤</a></div>
+                        <div class="dhcp-btn">
+                            <button class="dhcpbtn" type="button"><span>下一步</span><b class="disabled hide"></b></button>
+                        </div>
+                    </div>
+                    <div class="static-form hide" style="display: none">
+                        <span>请输入静态IP地址</span>
+                        <form>
+                            <div class="form-item ip-item">
+                                <label>IP地址</label>
+                                <input class="ip" type="text" maxlength="15" autocomplete="off" placeholder="请输入IP地址">
+                            </div>
+                            <div class="form-item mask-item">
+                                <label>子网掩码</label>
+                                <input class="mask" type="text" maxlength="15" autocomplete="off" placeholder="请输入子网掩码">
+                            </div>
+                            <div class="form-item gateway-item">
+                                <label>默认网关</label>
+                                <input class="gateway" type="text" maxlength="15" autocomplete="off" placeholder="请输入默认网关">
+                            </div>
+                            <div class="form-item preferreddns-item">
+                                <label>首选DNS</label>
+                                <input class="preferreddns" type="text" maxlength="15" autocomplete="off" placeholder="请输入首选DNS">
+                            </div>
+                            <div class="form-item sparedns-item">
+                                <label>备用DNS</label>
+                                <input class="sparedns" type="text" maxlength="15" autocomplete="off" placeholder="请输入备用DNS">
+                            </div>
+                            <div class="skip"><a href="javascript:void(0)" class="skip-btn">跳过此步骤</a></div>
+                            <div class="form-btn">
+                                <button class="staticbtn" type="button"><span>下一步</span><b class="disabled hide"></b></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="error-tip"><span class="error-info"></span></div>
+            </div>
+        </div>
+    </div>
+    <div class="tipshow" style="display: none;">
+        <div class="result-content">
+            <div class="failed-icon hide"><img src="./public/images/failed.png" alt="failed..."></div>
+            <div class="success-icon hide"><img src="./public/images/succees.png" alt="succees..."></div>
+            <div class="result-tip"></div>
+        </div>
+    </div>
+    <script src="./public/javascripts/jsencrypt.min.js"></script>
+    <script src="./public/javascripts/jquery-3.2.1.min.js"></script>
+    <script src="./public/javascripts/error.js?v=1.01.4a"></script>
+    <script>
+        function reloading() {
+            var data={
+                "requestUrl": "get_systemconfigure_cfg",
+                "method": "get"
+            };
+            $.ajax({
+                type:'POST',
+                url:'/cgi-bin/web.cgi/',
+                data:JSON.stringify(data),
+                dataType:'json',
+                success:function (res) {
+                    if(res.errorcode==0) {
+                        if (res.data.configured == 1) {
+                            location.href = './login.html';
+                        }
+                    }else {
+                        console.log(res.msg)
+                    }
+                },
+                error:function () {
+                    setTimeout(function () {
+                        reloading();
+                    },3000)
+                }
+            })
+        }
+        reloading();
+        function errorShow(m,n) {
+            $('.error-info').html(n)
+            $('.error-info').addClass('error-color');
+            var i=($(m).position().top).toFixed(0);
+            var j=($(m).position().left+$(m).outerWidth()+6).toFixed(0);
+            var k=($(m).height()).toFixed(0);
+            $('.error-tip').attr('style','visibility: visible;top:'+i+'px;left:'+j+'px;height:'+k+'px;line-height:'+k+'px;')
+            window.setTimeout(function () {
+                $('.error-info').removeClass('error-color');
+                window.setTimeout(function () {
+                    $('.error-info').addClass('error-color');
+                },300)
+            },250)
+        }
+        $('input').on('input',function () {
+            if($('.error-info').html().length>0){
+                errorhide();
+            }
+        })
+        function errorhide() {
+            $('.error-info').html('')
+            $('.error-tip').removeAttr('style')
+        }
+        function resultTipshow(m,n) {
+            if(m==0){
+                var icon='.failed-icon';
+            }
+            if(m==1){
+                var icon='.success-icon';
+            }
+            $(icon).removeClass('hide');
+            $('.result-tip').html(n);
+            $('.tipshow').fadeIn();
+            setTimeout(function () {
+                $('.tipshow').fadeOut();
+                $('.result-tip').html();
+                setTimeout(function () {
+                    $(icon).addClass('hide')
+                },500)
+            },2000)
+        }
+        function cn_test(m) {
+            var buf = m;
+            for (var h = 0; h < buf.length; h++) {
+                var tst = buf.substring(h, h + 1);
+                if (tst.charCodeAt(0) < 0 || tst.charCodeAt(0) > 255) {
+                    // var ss = '密码不支持中文字符';
+                    return -1;
+                }
+            }
+        }
+        var pwdSwitch=$('.pwd-switch');
+        pwdSwitch.click(function () {
+            pwdSwitch.toggleClass('hidePassword');
+            pwdSwitch.toggleClass('showPassword');
+            if($('.pwd').attr('type')=='password'){
+                $('.pwd').attr('type','text')
+            }else {
+                $('.pwd').attr('type','password')
+            }
+        })
+        function loading(e) {
+            $(e).attr('disabled','disabled');
+            $(e).addClass('disabled');
+            $(e).find('.disabled').removeClass('hide')
+//            $('.loading').fadeIn();
+        }
+        function disLoading(e) {
+            $(e).removeAttr('disabled');
+            $(e).removeClass('disabled');
+            $(e).find('.disabled').addClass('hide')
+//            $('.loading').fadeOut();
+        }
+        $('.nav-tabs li').click(function () {
+            if(!($(this).hasClass('active'))){
+                var i=$('.nav-tabs li.active').index();
+                $('.nav-tabs li.active').removeClass('active');
+                $('.form-tabs>div').eq(i).attr('style','display:none;')
+                $('.form-tabs>div').eq(i).addClass('hide');
+                var j=$(this).index();
+                $(this).addClass('active');
+                $('.form-tabs>div').eq(j).fadeIn()
+                $('.form-tabs>div').eq(j).removeClass('hide');
+            }
+            if($('.error-info').html().length>0){
+                errorhide();
+            }
+        })
+        var typeSwitch=$('.type-switch');
+        typeSwitch.click(function () {
+            typeSwitch.toggleClass('hidePassword');
+            typeSwitch.toggleClass('showPassword');
+            if($('.pwd').attr('type')=='passwoed'){
+                $('.pwd').attr('type','text')
+            }else {
+                $('.pwd').attr('type','passwoed')
+            }
+        })
+        var spacecheck=function (m) {
+            if((/\s/g).test(m)){
+                return -1;
+            }
+        }
+//        $('.account').on('input',function () {
+//            $(this).val($(this).val().replace(/\s/g,''));
+//        })
+        $('.static-form input').on('input',function () {
+//            var pos = this.selectionEnd;//获取位置
+//            $(this).val($(this).val().replace(/\s/g,''))
+//            this.setSelectionRange(pos,pos);//设置位置
+        })
+        function errorShow(m,n) {
+            $('.error-info').html('')
+            $('.error-info').removeClass('error-color');
+            var i=($(m).position().top).toFixed(0);
+            var j=($(m).position().left+$(m).outerWidth()+6).toFixed(0);
+            var k=($(m).height()).toFixed(0);
+            $('.error-tip').attr('style','visibility: visible;top:'+i+'px;left:'+j+'px;height:'+k+'px;line-height:'+k+'px;')
+            setTimeout(function () {
+                $('.error-info').html(n)
+                $('.error-info').addClass('error-color');
+                setTimeout(function () {
+                    $('.error-info').removeClass('error-color');
+                    setTimeout(function () {
+                        $('.error-info').addClass('error-color');
+                    },180)
+                },180)
+            },180)
+        }
+        $('.pppoebtn').click(function () {
+            var a=$('.account').val().length;
+            var b=$('.pwd').val().length;
+            var account=$('.account').val()
+            var pass=$('.pwd').val();
+            if (a == 0) {
+                errorShow('.account-item','宽带帐号不能为空');
+                return;
+            }
+            if(cn_test(account)==-1){
+                errorShow('.account-item',"宽带帐号不支持中文");
+                return
+            }
+            if(spacecheck(account) == -1){
+                errorShow('.account-item','宽带帐号不支持空格');
+                return;
+            }
+            if(a<4 || a>20){
+                errorShow('.account-item',"请输入4-20位的宽带帐号");
+                return
+            }
+            if (b == 0) {
+                errorShow('.pwd-item','宽带密码不能为空');
+                return;
+            }
+            if(spacecheck(pass) == -1){
+                errorShow('.pwd-item','宽带密码不支持空格');
+                return;
+            }
+            if(cn_test(pass)==-1){
+                errorShow('.pwd-item',"宽带密码不支持中文字符");
+                return
+            }
+            if(b<4 || b>20){
+                errorShow('.pwd-item',"请输入4-20位的宽带密码");
+                return
+            }
+            loading(this);
+            var self=this;
+            var i=0;
+            getkey(pass,self,i)
+        })
+        function getkey(pass,self,i) {
+            var data={
+                "requestUrl": "getkeycfg",
+                "method": "get"
+            }
+            $.ajax({
+                type:'POST',
+                url:'/cgi-bin/web.cgi/',
+                data:JSON.stringify(data),
+                dataType:'json',
+                success:function (res) {
+                    if(res.errorcode==0)
+                    {
+                        var publickey=res.data.rand_key;
+                        if(publickey.length==0){
+                            if(i<3){
+                                getkey(pass,self,i++)
+                            }else {
+                                disLoading(self);
+                                $('.pwd').val(pass);
+                                resultTipshow(0,'路由器异常请检查后重试');
+                            }
+                        }else {
+                            var encrypt = new JSEncrypt();
+                            encrypt.setPublicKey(publickey);
+                            var encrypted = encrypt.encrypt(pass);
+                            submit(encrypted,self);
+                        }
+                    }else{
+                        disLoading(self);
+                        $('.pwd').val(pass);
+                        resultTipshow(res.msg);
+                    }
+                },
+                error:function () {
+                    disLoading(self);
+                    $('.pwd').val(pass);
+                    resultTipshow(0,'已超时请检查网络连接状态');
+                }
+            })
+        }
+        function submit(encrypted,self) {
+            var data={"data":{"connectiontype": "pppoe",
+                "username": $('.account').val(),
+                "password": encrypted
+            },
+                "requestUrl": "set_basicwan_cfg",
+                "method": "put"}
+            $.ajax({
+                type:'POST',
+                url:'/cgi-bin/web.cgi/',
+                data:JSON.stringify(data),
+                dataType:'json',
+                success:function (res) {
+                    disLoading(self);
+                    if(res.errorcode==0)
+                    {
+//                            resultTipshow(1,'保存成功');
+//                            window.setTimeout(function () {
+                        location.href='./basicSetting.html';
+//                            },2000)
+                    }else{
+//                            if(res.errorcode==1){
+//                                resultTipshow(0,'用户名或密码错误');
+//                            }else{
+//                                resultTipshowl(0,res.msg);
+//                            }
+                        err.error_msg(res);
+                    }
+                },
+                error:function () {
+                    disLoading(self);
+                    resultTipshow(0,'已超时请检查网络连接状态');
+                }
+            })
+        }
+        $('.dhcpbtn').click(function () {
+            loading(this);
+            var data = {
+                "data": {"connectiontype": "dhcp"},
+                "requestUrl": "set_basicwan_cfg",
+                "method": "put"
+            }
+            var self=this;
+            $.ajax({
+                type:'POST',
+                url:'/cgi-bin/web.cgi/',
+                data:JSON.stringify(data),
+                dataType:'json',
+                success:function (res) {
+                    disLoading(self);
+                    if(res.errorcode==0)
+                    {
+//                        resultTipshow(1,'保存成功');
+//                        window.setTimeout(function () {
+                            location.href='./basicSetting.html';
+//                        },2000)
+                    }else{
+                        resultTipshow(0,res.msg);
+                    }
+                },
+                error:function () {
+                    disLoading(self);
+                    resultTipshow(0,'已超时请检查网络连接状态');
+                }
+            })
+        })
+        var staticTip=$('.form-tip-content-static');
+        $('.staticbtn').click(function () {
+            var ip=$('.ip').val();
+            if(ip.replace(/(^\s*)|(\s*$)/g,"").length == 0)
+            {
+                errorShow('.ip-item',"ip地址不能为空");
+                return;
+            }
+            if (spacecheck(ip) == -1) {
+                errorShow('.ip-item','ip地址不支持空格');
+                return;
+            }
+            var check=(/^((?:(?:25[0-5]|2[0-4]\d|((1\d{2})|([1-9]?\d)))\.){3}(?:25[0-5]|2[0-4]\d|((1\d{2})|([1-9]?\d))))$/);
+            var ip_filter = check.test(ip);
+            if(!ip_filter){
+                errorShow('.ip-item','ip地址格式错误');
+                return;
+            }
+            var mask=$('.mask').val();
+            if(mask.replace(/(^\s*)|(\s*$)/g,"").length == 0)
+            {
+                errorShow('.mask-item',"子网掩码不能为空");
+                return;
+            }
+            if (spacecheck(mask) == -1) {
+                errorShow('.mask-item','子网掩码不支持空格');
+                return;
+            }
+            var mask_filter = (/^(254|252|248|240|224|192|128|0)\.0\.0\.0$|^(255\.(254|252|248|240|224|192|128|0)\.0\.0)$|^(255\.255\.(254|252|248|240|224|192|128|0)\.0)$|^(255\.255\.255\.(254|252|248|240|224|192|128|0))$/).test(mask);
+            if(!mask_filter){
+                errorShow('.mask-item','子网掩码格式错误');
+                return;
+            }
+            var gateway=$('.gateway').val();
+            if(gateway.replace(/(^\s*)|(\s*$)/g,"").length == 0)
+            {
+                errorShow('.gateway-item',"默认网关不能为空");
+                return;
+            }
+            if (spacecheck(gateway) == -1) {
+                errorShow('.gateway-item','默认网关不支持空格');
+                return;
+            }
+            var gateway_filter = (/^((?:(?:25[0-5]|2[0-4]\d|((1\d{2})|([1-9]?\d)))\.){3}(?:25[0-5]|2[0-4]\d|((1\d{2})|([1-9]?\d))))$/).test(gateway);
+            if(!gateway_filter){
+                errorShow('.gateway-item', '默认网关输入错误');
+                return;
+            }
+            var preferreddns=$('.preferreddns').val();
+            if (preferreddns.replace(/(^\s*)|(\s*$)/g,"").length==0) {
+                errorShow('.preferreddns-item', '首选DNS不能为空');
+                return
+            }
+            if (spacecheck(preferreddns) == -1) {
+                errorShow('.preferreddns-item','首选DNS不支持空格');
+                return;
+            }
+            if (preferreddns) {
+                if (!check.test(preferreddns)) {
+                    errorShow('.preferreddns-item', '首选DNS输入错误');
+                    return
+                }
+            }
+            var sparedns=$('.sparedns').val();
+            if (spacecheck(sparedns) == -1) {
+                errorShow('.sparedns-item','备用DNS不支持空格');
+                return;
+            }
+            if (sparedns) {
+                if (!check.test(sparedns)) {
+                    errorShow('.sparedns-item','备用DNS输入错误');
+                    return
+                }
+            }
+            if(ip==gateway){
+                errorShow('.ip-item',"ip地址不能默认网关相同");
+                return;
+            }
+            var testip=ip.split('.');
+            var testmask=mask.split('.');
+            var testgateway=gateway.split('.');
+            for(var i=0;i<3;i++){
+                var a=parseInt(testip[i]) & parseInt(testmask[i]);
+                var b=parseInt(testmask[i]) & parseInt(testgateway[i]);
+                if(a!=b){
+                    errorShow('.ip-item', 'ip地址与默认网关应在同一网段');
+                    return
+                }
+            }
+//            var a=parseInt(testip[0]) & parseInt(testmask[0]);
+//            var b=parseInt(testip[1]) & parseInt(testmask[1]);
+//            var c=parseInt(testip[2]) & parseInt(testmask[2]);
+//            var d=parseInt(testip[3]) & parseInt(testmask[3]);
+//            var e=parseInt(testmask[0]) & parseInt(testgateway[0]);
+//            var f=parseInt(testmask[1]) & parseInt(testgateway[1]);
+//            var g=parseInt(testmask[2]) & parseInt(testgateway[2]);
+//            var h=parseInt(testmask[3]) & parseInt(testgateway[3]);
+//            var k=(a==e)&&(b==f)&&(c==g)&&(d==h);
+//            if(!k){
+//                errorShow('.gateway-item', '默认网关不在由ip地址和子网掩码定义的同一网络段上');
+//                return
+//            }
+            var dns='';
+            if(sparedns){
+                dns=preferreddns+' '+sparedns;
+            }else {
+                if(preferreddns){
+                    dns=preferreddns;
+                }else {
+                    dns='';
+                }
+            }
+            loading(this);
+            var data = {
+                "data": {
+                    "connectiontype": "static",
+                    "ipaddr": ip,
+                    "netmask": mask,
+                    "gateway": gateway,
+                    "dns":dns
+                },
+                "requestUrl": "set_basicwan_cfg",
+                "method": "put"
+            }
+            var self=this;
+            $.ajax({
+                type:'POST',
+                url:'/cgi-bin/web.cgi/',
+                data:JSON.stringify(data),
+                dataType:'json',
+                success:function (res) {
+                    disLoading(self);
+                    if(res.errorcode==0)
+                    {
+//                        resultTipshow(1,'保存成功');
+//                        window.setTimeout(function () {
+                            location.href='./basicSetting.html';
+//                        },2000)
+                    }else{
+                        resultTipshow(0,res.msg);
+                    }
+                },
+                error:function () {
+                    disLoading(self);
+                    resultTipshow(0,'已超时请检查网络连接状态');
+                }
+            })
+        })
+        $('.skip-btn').click(function () {
+            location.href='./basicSetting.html';
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+Source-Makefile: feeds/qca_10_4/net/qca-wrapd-10.4/Makefile
+Package: qca-wrapd-10.4
+Version: g96b5b9e-dirty-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread qca-hostap-10.4 @(!(PACKAGE_hostapd))
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Depends: qca-hostap-10.4
+Section: QCA
+Category: QCA Proprietary software
+Title: QCA wrapd daemon
+Maintainer: Qualcomm Atheros
+Source: 
+Type: ipkg
+Description:   User Space application to support QWRAP feature
+http://www.qca.qualcomm.com
+Qualcomm Atheros
+@@
+Config:
+	menu "custom source directory"
+		depends on PACKAGE_qca-wrapd
+	config qca-wrapd-10.4_USE_CUSTOM_SOURCE_DIR
+		depends on PACKAGE_qca-wrapd
+		bool "Use custom source directory"
+		default n
+	config qca-wrapd-10.4_CUSTOM_SOURCE_DIR
+		depends on qca-wrapd-10.4_USE_CUSTOM_SOURCE_DIR
+		string "Custom source directory"
+		default ""
+	endmenu
+	menu "overwrite package version"
+		depends on PACKAGE_qca-wrapd
+	config qca-wrapd-10.4_USE_CUSTOM_VERSION
+		depends on PACKAGE_qca-wrapd
+		bool "Use custom package version"
+		default n
+
+	config qca-wrapd-10.4_CUSTOM_VERSION
+		depends on qca-wrapd-10.4_USE_CUSTOM_VERSION
+		string "qca-wrapd-10.4 version as string (default version: g96b5b9e-dirty)"
+		default "g96b5b9e-dirty"
+
+	endmenu
+@@
+
+

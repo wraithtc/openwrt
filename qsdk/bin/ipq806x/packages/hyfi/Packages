@@ -1,0 +1,126 @@
+Package: kmod-qca-hyfi-bridge
+Version: 3.14.77+g1d65974-dirty-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-bridge
+Source: qca/feeds/hyfi/qca-hyfi-bridging/qca-hyfi-bridge
+Section: QCA
+Maintainer: Qualcomm Atheros, Inc.
+Architecture: ipq806x
+Installed-Size: 52853
+Filename: kmod-qca-hyfi-bridge_3.14.77+g1d65974-dirty-1_ipq806x.ipk
+Size: 53664
+MD5Sum: 093d77b922f404153405d3238413896f
+SHA256sum: 78c882a700b75ce27e71b5b55fb2b1f56e57d700152bde2855390974f42c4205
+Description:  This package installs the Hy-Fi bridging Netfilter Module
+
+Package: kmod-qca-hyfi-iptv-helper
+Version: 3.14.77+g1d65974-dirty-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-bridge
+Source: qca/feeds/hyfi/qca-hyfi-bridging/qca-hyfi-iptv-helper
+Section: QCA
+Maintainer: Qualcomm Atheros, Inc.
+Architecture: ipq806x
+Installed-Size: 4106
+Filename: kmod-qca-hyfi-iptv-helper_3.14.77+g1d65974-dirty-1_ipq806x.ipk
+Size: 4904
+MD5Sum: 0bb6b92d7407b0d5f7cd61445ff31a15
+SHA256sum: 93b3276ed97d6a392acb9b205f036c6bb9b0f65bf9261d0739d6de777e14a2e4
+Description:  This package installs the QCA Hy-Fi Netfilter for IPTV implementations on Wireless interface
+
+Package: kmod-qca-hyfi-qdisc
+Version: 3.14.77+g1d65974-dirty-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c)
+Source: qca/feeds/hyfi/qca-hyfi-bridging/qca-hyfi-qdisc
+Section: QCA
+Maintainer: Qualcomm Atheros
+Architecture: ipq806x
+Installed-Size: 3152
+Filename: kmod-qca-hyfi-qdisc_3.14.77+g1d65974-dirty-1_ipq806x.ipk
+Size: 4017
+MD5Sum: 5d6f60ca9d4ba213c42d99c00867ae01
+SHA256sum: 3141b8b3154728f8574434c32e1f540fd98e166b3288c1d80bda1dcfc604cd27
+Description:  This package installs the QCA Hy-Fi QDISC for raising priority of IEEE 1905.1 and HomePlugAV MME packets
+
+Package: luci-hyfi-advanced
+Version: 1
+Depends: libc, luci, luci-mod-admin-core, luci-mod-admin-full, luci-hyfi
+Source: qca/feeds/hyfi/qca-hyfi-luci
+Section: QCA
+Maintainer: Qualcomm Atheros
+Architecture: ipq806x
+Installed-Size: 3197
+Filename: luci-hyfi-advanced_1_ipq806x.ipk
+Size: 3934
+MD5Sum: a83f89e6df7ec792baae9afbb7c39307
+SHA256sum: f855bca5a3d0c22e87077be4f5d6f7731b56b525e8e68343d196511a56e0198c
+Description:  Luci WebUI for Hy-Fi - Advanced
+
+Package: luci-hyfi
+Version: 1
+Depends: libc, luci, luci-mod-admin-core, luci-mod-admin-full
+Source: qca/feeds/hyfi/qca-hyfi-luci
+Section: QCA
+Maintainer: Qualcomm Atheros
+Architecture: ipq806x
+Installed-Size: 3483
+Filename: luci-hyfi_1_ipq806x.ipk
+Size: 4191
+MD5Sum: 93057b2a1e30a2365adf13488a0b729a
+SHA256sum: 64247117c767d7cc03cf0bd827bc1d3dc70ec0d28f3047c2dd073926ebf4608d
+Description:  Luci WebUI for Hy-Fi
+
+Package: qca-acd
+Version: master.131
+Depends: libc, qca-ieee1905-init, kmod-qca-hyfi-bridge, qca-hyctl
+Source: qca/feeds/hyfi/qca-hyfi-networking/qca-acd
+Section: QCA
+Maintainer: Qualcomm Atheros, Inc.
+Architecture: ipq806x
+Installed-Size: 4840
+Filename: qca-acd_master.131_ipq806x.ipk
+Size: 5598
+MD5Sum: f1f002b88c4047bd8ef2fbc96a61f800
+SHA256sum: bbdb0b1df22e6de7230e8c04e149b9146a936ded39e5714b6fa0ea03d30f2174
+Description:  This package installs the Hy-Fi Auto-configuration scripts
+
+Package: qca-hyctl
+Version: g1d65974-dirty-1
+Depends: libc, kmod-qca-hyfi-bridge, qca-libhyfi-bridge
+Source: qca/feeds/hyfi/qca-hyfi-bridging/qca-hyctl
+Section: QCA
+Maintainer: Qualcomm Atheros, Inc.
+Architecture: ipq806x
+Installed-Size: 8696
+Filename: qca-hyctl_g1d65974-dirty-1_ipq806x.ipk
+Size: 9447
+MD5Sum: f0d9429993c3b340b991433eb156abe9
+SHA256sum: 654ba338e86271583f1f27e7f75643699e7e1f71f6cd0ed1dd116dbab453a1a5
+Description:  This package installs the Hy-Fi control command line utility
+
+Package: qca-hyd
+Version: ge84cedf-1
+Depends: libc, qca-ieee1905-init, kmod-qca-hyfi-bridge, qca-libhyfi-bridge, libieee1905, qca-hyctl, libhyficommon, qca-wifison-ext-lib, libpthread, qca-whc-lbd, jansson
+Source: qca/feeds/hyfi/qca-hyfi-networking/qca-hyd
+Section: QCA
+Maintainer: Qualcomm Atheros
+Architecture: ipq806x
+Installed-Size: 179225
+Filename: qca-hyd_ge84cedf-1_ipq806x.ipk
+Size: 179778
+MD5Sum: e393b5d0cba62e7ce3bf7a45018935fe
+SHA256sum: a81535026ed3aa4416fc458a329f862a4eb57b256249b9772ccc908a472b73f7
+Description:  This package installs the Hy-Fi Path-Selection daemon
+
+Package: qca-libhyfi-bridge
+Version: g1d65974-dirty-1
+Depends: libc, kmod-qca-hyfi-bridge
+Source: qca/feeds/hyfi/qca-hyfi-bridging/qca-libhyfi-bridge
+Section: QCA
+Maintainer: Qualcomm Atheros, Inc.
+Architecture: ipq806x
+Installed-Size: 4046
+Filename: qca-libhyfi-bridge_g1d65974-dirty-1_ipq806x.ipk
+Size: 4764
+MD5Sum: fb3d8f559a388c2c2339c6130c5e3f31
+SHA256sum: 4e4b2b03d9e0cbf455eaa00901352310ab32ca68f0381ad7eab8d6818e2fc2fb
+Description:  This package installs the Hy-Fi Bridging API Library
+

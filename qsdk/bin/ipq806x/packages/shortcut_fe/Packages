@@ -1,0 +1,26 @@
+Package: kmod-shortcut-fe-drv
+Version: 3.14.77+g1d65974-dirty-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c), kmod-shortcut-fe
+Source: qca/feeds/shortcut-fe/simulated-driver
+Section: kernel
+Architecture: ipq806x
+Installed-Size: 5990
+Filename: kmod-shortcut-fe-drv_3.14.77+g1d65974-dirty-1_ipq806x.ipk
+Size: 6796
+MD5Sum: 9b8f42f223088bb14af9204c8a4d06c8
+SHA256sum: bc7e5bd6aeed3e8ab63063e44bc212193431d33006c5dbd158c37871843da00a
+Description:  Simulated sfe driver for ECM
+
+Package: kmod-shortcut-fe
+Version: 3.14.77+g1d65974-dirty-1
+Depends: kernel (=3.14.77-1-d796117bc7f955e83c76f3da596c478c)
+Source: qca/feeds/shortcut-fe/shortcut-fe
+Section: kernel
+Architecture: ipq806x
+Installed-Size: 18924
+Filename: kmod-shortcut-fe_3.14.77+g1d65974-dirty-1_ipq806x.ipk
+Size: 19621
+MD5Sum: 3191f8e1c36e6b6a3153ec26c3126ad2
+SHA256sum: 999347aa9654ed9f4f43b4a7eb2c4907eba485ca08d07fd825938b6e3209257a
+Description:  Kernel driver for SFE
+

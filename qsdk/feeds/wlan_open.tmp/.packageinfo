@@ -1,0 +1,279 @@
+Source-Makefile: feeds/wlan_open/mac80211/Makefile
+Package: kmod-cfg80211
+Submenu: Wireless Drivers
+Version: <LINUX_VERSION>+20161201-1
+Depends:  +iw +kmod-crypto-core +kmod-crypto-manager
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: kernel
+Category: Kernel modules
+Title: cfg80211 - wireless configuration API
+Maintainer: Qualcomm Atheros
+Source: backports-20161201-<LINUX_VERSION>-9ab3068.tar.bz2
+Type: ipkg
+Description: cfg80211 is the Linux wireless LAN (802.11) configuration API.
+http://www.qca.qualcomm.com
+Qualcomm Atheros
+@@
+
+Package: kmod-mac80211
+Menu: 1
+Submenu: Wireless Drivers
+Version: <LINUX_VERSION>+20161201-1
+Depends:  @TARGET_ipq806x||TARGET_ar71xx +kmod-crypto-arc4 +kmod-crypto-aes +kmod-cfg80211 +hostapd-common
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Depends: PACKAGE_kmod-qca-nss-drv:kmod-qca-nss-drv PACKAGE_kmod-qca-nss-drv:kmod-qca-nss-drv
+Section: kernel
+Category: Kernel modules
+Title: Linux 802.11 Wireless Networking Stack
+Maintainer: Qualcomm Atheros
+Source: backports-20161201-<LINUX_VERSION>-9ab3068.tar.bz2
+Type: ipkg
+Kernel-Config: CONFIG_AVERAGE=y
+Description: Generic IEEE 802.11 Networking Stack (mac80211)
+http://www.qca.qualcomm.com
+Qualcomm Atheros
+@@
+Config:
+  if PACKAGE_kmod-mac80211
+
+    if PACKAGE_kmod-qca-nss-drv
+	config PACKAGE_MAC80211_NSS_SUPPORT
+		bool "Enable NSS support for IPQ platform"
+		default y
+		help
+		  This option enables support for NSS in boards
+		  like AP148.
+    endif
+
+	config PACKAGE_MAC80211_DEBUGFS
+		bool "Export mac80211 internals in DebugFS"
+		select KERNEL_DEBUG_FS
+		select KERNEL_RELAY if PACKAGE_kmod-ath9k-common
+		default y
+		help
+		  Select this to see extensive information about
+		  the internal state of mac80211 in debugfs.
+
+	config PACKAGE_MAC80211_MESH
+		bool "Enable 802.11s mesh support"
+		default y
+
+	config PACKAGE_MAC80211_MESSAGE_TRACING
+		bool "Enable mac80211 message tracing"
+		default n
+		help
+		  Select this option to enable tracing.
+
+	config PACKAGE_MAC80211_DEBUG_MENU
+		bool "Select mac80211 debugging features"
+		default n
+		help
+		  This option collects various mac80211 debug settings.
+
+	menu "mac80211 debugging features"
+		depends on PACKAGE_MAC80211_DEBUG_MENU
+
+	config PACKAGE_MAC80211_VERBOSE_DEBUG
+		bool "Verbose debugging output"
+		default n
+		help
+		  Selecting this option causes mac80211 to print out
+		  many debugging messages.
+
+	config PACKAGE_MAC80211_MLME_DEBUG
+		bool "Verbose managed MLME output"
+		default n
+		help
+		  Selecting this option causes mac80211 to print out
+		  debugging messages for the managed-mode MLME.
+
+	config PACKAGE_MAC80211_STA_DEBUG
+		bool "Verbose station debugging"
+		default n
+		help
+		  Selecting this option causes mac80211 to print out
+		  debugging messages for station addition/removal.
+
+	config PACKAGE_MAC80211_HT_DEBUG
+		bool "Verbose HT debugging"
+		default n
+		help
+		  This option enables 802.11n High Throughput features
+		  debug tracing output.
+
+	config PACKAGE_MAC80211_IBSS_DEBUG
+		bool "Verbose IBSS debugging"
+		default n
+		help
+		  Selecting this option causes mac80211 to print out
+		  very verbose IBSS debugging messages.
+
+	config PACKAGE_MAC80211_PS_DEBUG
+		bool "Verbose powersave mode debugging"
+		default n
+		help
+		  Selecting this option causes mac80211 to print out very
+		  verbose power save mode debugging messages (when mac80211
+		  is an AP and has power saving stations.)
+
+	endmenu
+  endif
+@@
+
+Package: kmod-ath9k-common
+Submenu: Wireless Drivers
+Version: <LINUX_VERSION>+20161201-1
+Depends:  @PCI_SUPPORT||USB_SUPPORT||TARGET_ar71xx +kmod-ath +@DRIVER_11N_SUPPORT
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Depends: PACKAGE_kmod-qca-nss-drv:kmod-qca-nss-drv PACKAGE_kmod-qca-nss-drv:kmod-qca-nss-drv
+Section: kernel
+Category: Kernel modules
+Title: QCA 802.11n wireless devices (common code for ath9k and ath9k_htc)
+Maintainer: Qualcomm Atheros
+Source: backports-20161201-<LINUX_VERSION>-9ab3068.tar.bz2
+Type: ipkg
+Description: QCA 802.11n wireless devices (common code for ath9k and ath9k_htc)
+http://linuxwireless.org/en/users/Drivers/ath9k
+Qualcomm Atheros
+@@
+
+Package: kmod-ath9k
+Submenu: Wireless Drivers
+Version: <LINUX_VERSION>+20161201-1
+Depends:  @PCI_SUPPORT||TARGET_ar71xx +kmod-ath9k-common
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Depends: PACKAGE_kmod-qca-nss-drv:kmod-qca-nss-drv PACKAGE_kmod-qca-nss-drv:kmod-qca-nss-drv
+Section: kernel
+Category: Kernel modules
+Title: QCA 802.11n PCI wireless cards support
+Maintainer: Qualcomm Atheros
+Source: backports-20161201-<LINUX_VERSION>-9ab3068.tar.bz2
+Type: ipkg
+Description: This module adds support for wireless adapters based on
+QCA IEEE 802.11n AR5008, AR9001,AR9002, AR9003, AR9004 family of chipsets.
+http://linuxwireless.org/en/users/Drivers/ath9k
+Qualcomm Atheros
+@@
+
+Package: kmod-ath9k-htc
+Submenu: Wireless Drivers
+Version: <LINUX_VERSION>+20161201-1
+Depends:  @USB_SUPPORT +kmod-ath9k-common +kmod-usb-core
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Depends: PACKAGE_kmod-qca-nss-drv:kmod-qca-nss-drv PACKAGE_kmod-qca-nss-drv:kmod-qca-nss-drv
+Section: kernel
+Category: Kernel modules
+Title: QCA 802.11n USB device support
+Maintainer: Qualcomm Atheros
+Source: backports-20161201-<LINUX_VERSION>-9ab3068.tar.bz2
+Type: ipkg
+Description: This module adds support for wireless adapters based on
+QCA USB AR9271 and AR7010 family of chipsets.
+http://linuxwireless.org/en/users/Drivers/ath9k
+Qualcomm Atheros
+@@
+
+Package: kmod-ath10k
+Submenu: Wireless Drivers
+Version: <LINUX_VERSION>+20161201-1
+Depends:  @PCI_SUPPORT +kmod-ath +@DRIVER_11N_SUPPORT +ath10k-firmware
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Depends: PACKAGE_kmod-qca-nss-drv:kmod-qca-nss-drv PACKAGE_kmod-qca-nss-drv:kmod-qca-nss-drv
+Section: kernel
+Category: Kernel modules
+Title: QCA 802.11ac wireless cards support
+Maintainer: Qualcomm Atheros
+Source: backports-20161201-<LINUX_VERSION>-9ab3068.tar.bz2
+Type: ipkg
+Description: This module adds support for wireless adapters based on
+QCA IEEE 802.11ac family of chipsets. For now only
+PCI is supported.
+http://wireless.kernel.org/en/users/Drivers/ath10k
+Qualcomm Atheros
+@@
+
+Package: kmod-ath
+Menu: 1
+Submenu: Wireless Drivers
+Version: <LINUX_VERSION>+20161201-1
+Depends:  @PCI_SUPPORT||USB_SUPPORT||TARGET_ar71xx||TARGET_atheros +kmod-mac80211
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Depends: PACKAGE_kmod-qca-nss-drv:kmod-qca-nss-drv PACKAGE_kmod-qca-nss-drv:kmod-qca-nss-drv
+Section: kernel
+Category: Kernel modules
+Title: QCA common driver part
+Maintainer: Qualcomm Atheros
+Source: backports-20161201-<LINUX_VERSION>-9ab3068.tar.bz2
+Type: ipkg
+Description:  This module contains some common parts needed by QCA Wireless drivers.
+http://www.qca.qualcomm.com
+Qualcomm Atheros
+@@
+Config:
+  if PACKAGE_kmod-ath
+	config ATH_USER_REGD
+		bool "Force Atheros drivers to respect the user's regdomain settings"
+		help
+		  Atheros' idea of regulatory handling is that the EEPROM of the card defines
+		  the regulatory limits and the user is only allowed to restrict the settings
+		  even further, even if the country allows frequencies or power levels that
+		  are forbidden by the EEPROM settings.
+
+		  Select this option if you want the driver to respect the user's decision about
+		  regulatory settings.
+
+	config PACKAGE_ATH_DEBUG
+		bool "Atheros wireless debugging"
+		help
+		  Say Y, if you want to debug atheros wireless drivers.
+		  Right now only ath9k makes use of this.
+  endif
+@@
+
+Package: kmod-wil6210
+Submenu: Wireless Drivers
+Version: <LINUX_VERSION>+20161201-1
+Depends:  @PCI_SUPPORT +kmod-cfg80211
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Depends: PACKAGE_kmod-qca-nss-drv:kmod-qca-nss-drv PACKAGE_kmod-qca-nss-drv:kmod-qca-nss-drv
+Section: kernel
+Category: Kernel modules
+Title: QCA 802.11ad wireless cards support
+Maintainer: Qualcomm Atheros
+Source: backports-20161201-<LINUX_VERSION>-9ab3068.tar.bz2
+Type: ipkg
+Description: This module adds support for wireless adapters based on
+60GHz QCA Wilocity family of chipsets. These support 802.11d.
+http://www.qca.qualcomm.com
+Qualcomm Atheros
+@@
+Config:
+  if PACKAGE_kmod-wil6210
+	if PACKAGE_kmod-qca-nss-drv
+	config PACKAGE_WIL6210_NSS_SUPPORT
+		bool "Enable NSS support for 11ad wil6210 driver"
+		default y
+		help
+		This option enables support for NSS in boards
+	endif
+
+  endif
+@@
+
+

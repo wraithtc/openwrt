@@ -1,0 +1,19 @@
+Source-Makefile: feeds/alljoyn/alljoyn-services_common/Makefile
+Package: alljoyn-services_common
+Version: 15.04.00-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread alljoyn
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Title: AllJoyn Services Common service library
+Maintainer: AllSeen Alliance <allseen-core@lists.allseenalliance.org>
+Source: alljoyn-services-15.04.00-src.tar.gz
+Type: ipkg
+Description: AllJoyn Services Common service library.
+http://www.allseenalliance.org
+AllSeen Alliance <allseen-core@lists.allseenalliance.org>
+@@
+
+
